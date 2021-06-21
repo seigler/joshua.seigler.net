@@ -120,6 +120,27 @@ li > header {
   display: flex;
   justify-content: space-between;
 }
+.fp1,
+h3 {
+  font-size: 1.333em;
+}
+.fp2,
+h2 {
+  font-size: 1.777em;
+}
+.fp3,
+h1 {
+  font-size: 2.369rem;
+}
+.fm1 {
+  font-size: 0.75em;
+}
+.fm2 {
+  font-size: 0.563em;
+}
+.fm3 {
+  font-size: 0.422em;
+}
 .grid {
   display: grid;
   gap: var(--gap);
