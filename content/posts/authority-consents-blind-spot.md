@@ -1,10 +1,12 @@
 ---
 title: Authority - Consent's Blind Spot
+slug: authority-consents-blind-spot
 description: Authority is the idea that certain people are justified in violating consent. This belief allows people to force others to do what they want with a clear conscience.
 date: 2020-07-02
 tags:
-  - 'society'
-  - 'governance'
+  - society
+  - governance
+  - authority
 ---
 
 Consent occurs when an individual voluntarily agrees to the proposal or desires of another. It comes from the concept that who should decide what happens to your person, is you.

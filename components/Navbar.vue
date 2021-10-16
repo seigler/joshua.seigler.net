@@ -3,6 +3,7 @@
     <div class="text-faint">joshua.seigler.net</div>
     <div class="links">
       <NuxtLink class="link" :to="`/`">Home</NuxtLink>
+      <NuxtLink class="link" :to="`/about`">About</NuxtLink>
       <NuxtLink class="link" :to="`/posts`">Posts</NuxtLink>
       <NuxtLink class="link" :to="`/timeline`">Timeline</NuxtLink>
     </div>

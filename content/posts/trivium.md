@@ -3,6 +3,10 @@ title: 'The Trivium: A Tool for Learning Anything'
 author: Joshua Seigler
 date: 2021-04-03
 description: An ancient methodology for learning, which formed the basis of classical education in the Middle Ages and Rennaisance.
+tags:
+  - education
+  - learning
+  - tools
 ---
 
 Information today has become siloed. It's a common belief that little, if any, expertise from one field of knowledge transfers over to other fields. But there is a forgotten tool that anyone can use to confidently approach new subjects and problems: the _Trivium_.

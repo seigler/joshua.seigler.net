@@ -3,6 +3,12 @@ title: Needs-based communication
 author: Joshua Seigler
 date: 2021-05-26
 description: How to connect with others through shared human needs
+tags:
+  - communication
+  - empathy
+  - nvc
+  - conflict
+  - tools
 ---
 
 Needs-based communication (usually called non-violent communication or NVC™) is a way of understanding yourself and others with a unique insight: everyone has their own personal reactions to the world, but people have the same basic needs. We recognize those needs in other people, and that common connection can allow us to communicate clearly when there is conflict.
