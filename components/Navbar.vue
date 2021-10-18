@@ -16,13 +16,17 @@ nav {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   display: flex;
+  gap: 1ex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.text-faint, .links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .links {
-  margin-left: auto;
-  display: flex;
-}
-.link {
-  margin-left: 1ex;
+  gap: 1ex;
 }
 .nuxt-link-exact-active {
   text-decoration: none;
