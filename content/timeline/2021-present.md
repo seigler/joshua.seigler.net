@@ -2,5 +2,5 @@
 title: Senior software engineer @ Prenda
 time: 2021-present
 description: |
-  This is at the intersection of many passions, including learning, communication, non-coercive relationships, and decentralized solutions. This is exactly where I want to be.
+  This is at the intersection of many interests, including learning, communication, and decentralized solutions. Prenda has an excellent culture that fosters humility and recognizes others' humanity.
 ---
