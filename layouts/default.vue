@@ -120,6 +120,10 @@ li > header {
   display: flex;
   justify-content: space-between;
 }
+sup {
+  margin-top: -1ch;
+  display: inline-block;
+}
 .fp1,
 h3 {
   font-size: 1.333em;
