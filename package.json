@@ -1,0 +1,15 @@
+{
+  "name": "homepage-rewrite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpx @11ty/eleventy --serve"
+  },
+  "keywords": [],
+  "author": "Joshua Seigler",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
