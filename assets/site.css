@@ -1,0 +1,134 @@
+@import url(fonts/inter/inter.css);
+@import url(fonts/ftaurebesh/ftaurebesh.css);
+
+:root {
+  --ecru: hsla(46, 56%, 65%, 1);
+  --wenge: hsla(288, 6%, 33%, 1);
+  --cordovan: hsla(354, 30%, 44%, 1);
+  --isabelline: hsla(40, 26%, 93%, 1);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  padding: 0;
+  font-size: 16px;
+  font-size: clamp(16px, 1.5vw, 36px);
+  line-height: 1.5;
+  --ratio: 1.333;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --content-width: clamp(87.5vw, 30rem, 100vw - 1rem);
+  --inset: calc(50vw - var(--content-width) / 2);
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+body {
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background-color: var(--isabelline);
+  color: var(--wenge);
+  border: 0.5rem solid var(--cordovan);
+}
+
+a {
+  color: inherit;
+}
+a:link {
+  text-decoration: underline;
+}
+
+li::marker {
+  color: color-mix(in lch, currentcolor 50%, transparent)
+}
+li > aside {
+  display: inline-block;
+  margin-left: 1ch;
+  font-size: var(--s-1);
+}
+ul, ol {
+  padding-left: 0;
+  ul, ol {
+    padding-left: 2em;
+  }
+}
+p {
+  margin: 0;
+  + p {
+    margin-top: 1lh;
+  }
+}
+
+body > header {
+  background-color: var(--wenge);
+  color: var(--isabelline);
+  padding: 0 var(--inset);
+  nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    gap: 1ch;
+    aside {
+      margin-left: auto;
+      font-size: var(--s-1);
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+  text-decoration: underline;
+  > input[type='radio'] {
+    visibility: hidden;
+    position: fixed;
+    bottom: 110%;
+  }
+}
+label:has(input[type='radio']:checked) {
+  color: var(--ecru);
+}
+
+[data-font=aurebesh] {
+  font-family: FTAurebesh;
+}
+[data-font=english] {
+  font-family: Inter;
+}
+
+h1,h2,h3,h4 {
+  font-weight: 700;
+  margin: 1rem calc(-0.5rem - var(--inset)) 0;
+  padding: 0 calc(0.5rem + var(--inset));
+}
+main {
+  h1,h2,h3,h4 {
+    background-image: linear-gradient(50deg, var(--ecru) 0%, var(--ecru) calc(var(--inset) * 0.25), transparent calc(var(--inset) + 12rem))
+  }
+  padding: 0 var(--inset);
+}
+h1 {
+  font-size: var(--s3);
+}
+h2 {
+  font-size: var(--s2);
+}
+h3 {
+  font-size: var(--s3);
+}

@@ -1,0 +1,32 @@
+<header>
+  <nav>
+    <div>
+      <a href="{{ "/" | url }}">joshua.seigler.net</a>
+      {% for name, collection in collections %}
+        {% if name !== "all" %}
+          <a href="{{ ["/", name ,"/"] | join("") | url }}">/{{name | capitalize }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <aside>
+      Language:
+      <label data-font="english">English <input type="radio" name="language" value="english"/></label>
+      <label data-font="aurebesh">Aurebesh <input type="radio" name="language" value="aurebesh"/></label>
+      <script type="text/javascript">
+        const initialLanguage = localStorage.getItem("language") ?? 'english'
+        document.body.setAttribute('data-font', initialLanguage);
+        document.querySelectorAll("input[name=language]").forEach(input => {
+          if (input.value === initialLanguage) {
+            input.checked = true;
+          }
+          input.addEventListener('change', function () {
+            const newValue = this.value;
+              localStorage.setItem("language", newValue);
+              document.body.setAttribute('data-font', newValue);
+          })
+        })
+      </script>
+    </aside>
+  </nav>
+  <h1>{{ tag | capitalize if tag else title }}</h1>
+</header>

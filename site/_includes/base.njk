@@ -7,15 +7,13 @@ title: Joshua's Homepage
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ "/assets/tufte.css" | url }}"/>
-    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/site.css" | url }}"/>
+    <title>{{ tag | capitalize if tag else title }} - joshua.seigler.net</title>
   </head>
-  <body>
-    <header>
-      <h1>
-        {{ title }}
-      </h1>
-    </header>
-    {{ content | safe }}
+  <body data-font="english">
+    {% include "-header.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
   </body>
 </html>
