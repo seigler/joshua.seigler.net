@@ -1,0 +1,18 @@
+---
+layout: "base.njk"
+eleventyComputed:
+  title: "{{ page.fileSlug | capitalize }}"
+---
+{{ content | safe }}
+{% set tag = page.fileSlug %}
+{% if collections[tag] %}
+  <section>
+    {% for item in collections[tag] | reverse %}
+    <article class="item-summary">
+      <a href="{{ item.url }}">{{ item.data.title }}</a>
+      {% if item.data.dateString %}<aside>{{item.data.dateString}}</aside>{% endif %}
+      <p class="item-summary-description">{{ item.data.description }}</p>
+    </article>
+    {% endfor %}
+  </section>
+{% endif %}

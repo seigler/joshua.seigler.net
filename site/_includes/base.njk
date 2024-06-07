@@ -10,10 +10,11 @@ title: Joshua's Homepage
     <link rel="stylesheet" href="{{ "/assets/site.css" | url }}"/>
     <title>{{ tag | capitalize if tag else title }} - joshua.seigler.net</title>
   </head>
-  <body data-font="english">
+  <body data-font="english" data-path="{{page.url}}">
     {% include "-header.njk" %}
     <main>
       {{ content | safe }}
     </main>
+    {% include "-footer.njk" %}
   </body>
 </html>

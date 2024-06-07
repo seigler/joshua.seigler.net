@@ -1,0 +1,12 @@
+---
+layout: base.njk
+tags: timeline
+permalink: timeline/index.html
+title: Timeline
+---
+{% for item in collections.timeline | reverse %}
+  {% if item.data.title !== "Timeline" %}
+    <h3 id="{{item.data.time}}"><a class="header-anchor" href="#{{item.data.time}}" aria-hidden="true"></a>{{ item.data.title }} <aside>{{item.data.time}}</aside></h3>
+    <p>{{ item.data.description }}</p>
+  {% endif %}
+{% endfor %}

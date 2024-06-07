@@ -1,5 +1,6 @@
 ---
 title: Sloppy Joes
+description: A summertime favorite, great over hot dogs
 ---
 ## Ingredients
 
@@ -10,7 +11,7 @@ title: Sloppy Joes
 - 1 Tablespoon chopped parsley
 - 1 Tablespoon Worcestershire sauce
 - v2 Tablespoons brown sugar
-- 2 Tablespoons vinegar
+- 2 Tablespoons apple cider vinegar
 - 1/2 cup chopped onion
 - 1/2 cup Ketchup
 - 1 cup water
@@ -22,4 +23,6 @@ title: Sloppy Joes
 1. Simmer 20 minutes or until thickened, stirring occasionally.
 1. Refrigerate overnight, serve hot.
 
-Recipe originally from Connie Henderson, Charlottesville, VA
+## Notes
+If you don't have onion you can substitute 1/2 tablespoon onion powder.
+Recipe originally from Connie Henderson of Charlottesville, VA

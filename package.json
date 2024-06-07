@@ -10,6 +10,9 @@
   "author": "Joshua Seigler",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "markdown-it-anchor": "^9.0.1",
+    "markdown-it-footnote": "^4.0.0",
+    "prettier": "^3.3.1"
   }
 }

@@ -1,17 +1,15 @@
 <header>
   <nav>
-    <div>
+    <div class="nav-categories">
       <a href="{{ "/" | url }}">joshua.seigler.net</a>
-      {% for name, collection in collections %}
-        {% if name !== "all" %}
-          <a href="{{ ["/", name ,"/"] | join("") | url }}">/{{name | capitalize }}</a>
-        {% endif %}
-      {% endfor %}
+      <a href="{{ "/posts" | url }}">/posts</a>
+      <a href="{{ "/timeline" | url }}">/timeline</a>
+      <a href="{{ "/recipes" | url }}">/recipes</a>
+      <a href="{{ "/music" | url }}">/music</a>
     </div>
     <aside>
-      Language:
-      <label data-font="english">English <input type="radio" name="language" value="english"/></label>
-      <label data-font="aurebesh">Aurebesh <input type="radio" name="language" value="aurebesh"/></label>
+      <label class="nav-language-button" data-font="english">English<input type="radio" name="language" value="english"/></label>
+      <label class="nav-language-button" data-font="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
       <script type="text/javascript">
         const initialLanguage = localStorage.getItem("language") ?? 'english'
         document.body.setAttribute('data-font', initialLanguage);
@@ -29,4 +27,12 @@
     </aside>
   </nav>
   <h1>{{ tag | capitalize if tag else title }}</h1>
+  <div class="header-meta">
+    {%-if author -%}
+      <author>{{ author }}</author>
+    {%- endif -%}
+    {%- if dateString -%}
+      <date>{{ dateString }}</date>
+    {%- endif -%}
+  </div>
 </header>

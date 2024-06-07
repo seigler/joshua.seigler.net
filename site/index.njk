@@ -3,18 +3,23 @@ layout: base
 title: Home
 ---
 
-{% for name, collection in collections %}
-  {% if name !== "all" %}
+<p>I'm Joshua Seigler, a homeschooled kid born in the 80s. I've watched technology advance from dial-up and Geocities pages, to federated social media and decentralized autonomous organizations.</p>
+<p>After a period exploring cryptocurrencies and building web development skills, I dove into political philosophy, focusing on economics, conspiracy, and truth-seeking generally.</p>
+<p>In an effort to make sense of the tremendous social shifts that occurred in 2019/2020, I started learning about symbolism and mysticism, trying to escape an obsolete materialistic mindset. In 2021 I returned to faith in Jesus and joined an Eastern Orthodox church.</p>
+<p>If you would like to reach me, you can <a href="mailto:joshua@seigler.net?subject=found+your+website">send me electronic mail</a>. Or for a closer look at my professional history, try my <a href="/timeline">timeline</a>.<p>
+
+{%- for name, collection in collections -%}
+  {%- if name not in ["all", "timeline", "pages"] -%}
     <h2>{{name | capitalize }}</h2>
     <ul>
-      {% for item in collection %}
+      {%- for item in collection | reverse -%}
         <li>
           <a href="{{item.url}}">{{item.data.title}}</a>
-          {% if item.data.dateString %}
+          {%- if item.data.dateString -%}
             <aside>{{item.data.dateString}}</aside>
-          {% endif %}
+          {%- endif -%}
         </li>
-      {% endfor %}
+      {%- endfor -%}
     </ul>
-  {% endif %}
-{% endfor %}
+  {%- endif -%}
+{%- endfor -%}

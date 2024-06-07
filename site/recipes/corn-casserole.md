@@ -1,5 +1,6 @@
 ---
 title: Corn Casserole
+description: An easy sweet cornbread casserole with a vegan variation
 ---
 
 ## Ingredients
