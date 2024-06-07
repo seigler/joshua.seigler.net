@@ -9,8 +9,8 @@ layout: "base.njk"
       {%- for item in collection | reverse -%}
         <li>
           <a href="{{item.url}}">{{item.data.title}}</a>
-          {%- if item.data.dateString -%}
-            <aside>{{item.data.dateString}}</aside>
+          {%- if item.data.date -%}
+            <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
           {%- endif -%}
         </li>
       {%- endfor -%}
