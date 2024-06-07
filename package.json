@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpx @11ty/eleventy --serve"
+    "dev": "pnpx @11ty/eleventy --serve",
+    "upload": "pnpx @11ty/eleventy && rsync -aP --delete dist/ joshua@seigler.net:/srv/www/joshua.seigler.net/public_html/"
   },
   "keywords": [],
   "author": "Joshua Seigler",
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "eleventy-plugin-clean": "^1.2.6",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-footnote": "^4.0.0",
     "prettier": "^3.3.1"

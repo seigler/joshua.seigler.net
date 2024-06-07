@@ -11,6 +11,9 @@ importers:
       '@11ty/eleventy':
         specifier: ^2.0.1
         version: 2.0.1
+      eleventy-plugin-clean:
+        specifier: ^1.2.6
+        version: 1.2.6(@11ty/eleventy@2.0.1)
       markdown-it-anchor:
         specifier: ^9.0.1
         version: 9.0.1(@types/markdown-it@14.1.1)(markdown-it@13.0.2)
@@ -63,6 +66,66 @@ packages:
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+
+  '@lmdb/lmdb-darwin-arm64@2.9.4':
+    resolution: {integrity: sha512-38XmbES/wVcvMXdwcM5QzL0cSaZu3VwE7mCd0I89eliHQTMQblgWXsr2HQoP9v0JnH6jVt7+E/TkeGNLmp4wzA==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@lmdb/lmdb-darwin-x64@2.9.4':
+    resolution: {integrity: sha512-JkPrV8rEu88FzMcuouZeU2b/NuVC3KwQxKo5vKhNycBtsCn7KCWHalxL4sdTiHQ4xtgMca3mmeDAdxgqQqnDig==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@lmdb/lmdb-linux-arm64@2.9.4':
+    resolution: {integrity: sha512-aIzmw0g4Wdd/w2rDppGfo1JEl4xWpg6HPbf5ZeuWXCjFms8oc8cazm6oBEAimiZEgYYBFPDPdM644xJcwuJbxQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@lmdb/lmdb-linux-arm@2.9.4':
+    resolution: {integrity: sha512-b3JZL5pLuvcGEbcsThUQPFlQdBFaBxImrlNbFUeJmzLwpdgGRi0RSQdZZ2PuIoZvpRj0tfNlhXQwXiYMz+9iTw==}
+    cpu: [arm]
+    os: [linux]
+
+  '@lmdb/lmdb-linux-x64@2.9.4':
+    resolution: {integrity: sha512-Yj6Nb+/j+ZZ65oH/UCE0UfUu/6TO5wWLIeE2izGCpsCxcozZVbzwhzrCs0FUXf6lXv46DJteONosWH9o1XjzqQ==}
+    cpu: [x64]
+    os: [linux]
+
+  '@lmdb/lmdb-win32-x64@2.9.4':
+    resolution: {integrity: sha512-0L6Tyun47/kQb+FzTDIumrfZgU6oEos0RgekKa/3YC7nsUY+ZASZHikzGgEZpMQHSz5YeR+DDUtOMSwqodWHDg==}
+    cpu: [x64]
+    os: [win32]
+
+  '@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.2':
+    resolution: {integrity: sha512-9bfjwDxIDWmmOKusUcqdS4Rw+SETlp9Dy39Xui9BEGEk19dDwH0jhipwFzEff/pFg95NKymc6TOTbRKcWeRqyQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@msgpackr-extract/msgpackr-extract-darwin-x64@3.0.2':
+    resolution: {integrity: sha512-lwriRAHm1Yg4iDf23Oxm9n/t5Zpw1lVnxYU3HnJPTi2lJRkKTrps1KVgvL6m7WvmhYVt/FIsssWay+k45QHeuw==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.2':
+    resolution: {integrity: sha512-FU20Bo66/f7He9Fp9sP2zaJ1Q8L9uLPZQDub/WlUip78JlPeMbVL8546HbZfcW9LNciEXc8d+tThSJjSC+tmsg==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm@3.0.2':
+    resolution: {integrity: sha512-MOI9Dlfrpi2Cuc7i5dXdxPbFIgbDBGgKR5F2yWEa6FVEtSWncfVNKW5AKjImAQ6CZlBK9tympdsZJ2xThBiWWA==}
+    cpu: [arm]
+    os: [linux]
+
+  '@msgpackr-extract/msgpackr-extract-linux-x64@3.0.2':
+    resolution: {integrity: sha512-gsWNDCklNy7Ajk0vBBf9jEx04RUxuDQfBse918Ww+Qb9HCPoGzS+XJTLe96iN3BVK7grnLiYghP/M4L8VsaHeA==}
+    cpu: [x64]
+    os: [linux]
+
+  '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.2':
+    resolution: {integrity: sha512-O+6Gs8UeDbyFpbSh2CPEz/UOrrdWPTBYNblZK5CxxLisYt4kGX3Sc+czffFonyjiGSq3jWLwJS/CCJc7tBr4sQ==}
+    cpu: [x64]
+    os: [win32]
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -253,6 +316,10 @@ packages:
     resolution: {integrity: sha512-JeMq7fEshyepOWDfcfHK06N3MhyPhz++vtqWhMT5O9A3K42rdsEDpfdVqjaqaAhsw6a+ZqeDvQVtD0hFHQWrzg==}
     engines: {node: '>= 0.6.0'}
 
+  detect-libc@2.0.3:
+    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
+    engines: {node: '>=8'}
+
   dev-ip@1.0.1:
     resolution: {integrity: sha512-LmVkry/oDShEgSZPNgqCIp2/TlqtExeGmymru3uCELnfyjY11IzpAproLYs+1X88fXO6DBoYP3ul2Xo2yz2j6A==}
     engines: {node: '>= 0.8.0'}
@@ -281,6 +348,11 @@ packages:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
     engines: {node: '>=0.10.0'}
     hasBin: true
+
+  eleventy-plugin-clean@1.2.6:
+    resolution: {integrity: sha512-eiK+VAzXqQLOhxyGoh6HcLyZhghjqhsU825gsI+nwhTvpp1Zbx46gY9ipofkwCKFOONGSP6ENDZpoULkTadfTQ==}
+    peerDependencies:
+      '@11ty/eleventy': 1.0.0 - 1.0.2 || ^2.0.0
 
   encodeurl@1.0.2:
     resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
@@ -511,6 +583,10 @@ packages:
   list-to-array@1.1.0:
     resolution: {integrity: sha512-+dAZZ2mM+/m+vY9ezfoueVvrgnHIGi5FvgSymbIgJOFwiznWyA59mav95L+Mc6xPtL3s9gm5eNTlNtxJLbNM1g==}
 
+  lmdb@2.9.4:
+    resolution: {integrity: sha512-Kri5TSKgpLk5q1VO7vYCcqAMyXTxmis6Et+6UARkU7ygvg3ZxUX2oEu/UwBkBskaS1d73effiBrTiHYyDppcBg==}
+    hasBin: true
+
   lodash.deburr@4.1.0:
     resolution: {integrity: sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ==}
 
@@ -581,6 +657,13 @@ packages:
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
+  msgpackr-extract@3.0.2:
+    resolution: {integrity: sha512-SdzXp4kD/Qf8agZ9+iTu6eql0m3kWm1A2y1hkpTeVNENutaB0BwHlSvAIaMxwntmRUAUjon2V4L8Z/njd0Ct8A==}
+    hasBin: true
+
+  msgpackr@1.10.2:
+    resolution: {integrity: sha512-L60rsPynBvNE+8BWipKKZ9jHcSGbtyJYIwjRq0VrIvQ08cRjntGXJYW/tmciZ2IHWIY8WEW32Qa2xbh5+SKBZA==}
+
   multimatch@5.0.0:
     resolution: {integrity: sha512-ypMKuglUrZUD99Tk2bUQ+xNQj43lPEfAeX2o9cTteAmShXy2VHDJpuwu1o0xqoKCt9jLVAvwyFKdLTPXKAfJyA==}
     engines: {node: '>=10'}
@@ -591,6 +674,17 @@ packages:
 
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+
+  node-addon-api@6.1.0:
+    resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
+
+  node-gyp-build-optional-packages@5.0.7:
+    resolution: {integrity: sha512-YlCCc6Wffkx0kHkmam79GKvDQ6x+QZkMjFGrIMxgFNILFvGSbCp2fCBC55pGTT9gVaz8Na5CLmxt/urtzRv36w==}
+    hasBin: true
+
+  node-gyp-build-optional-packages@5.1.1:
+    resolution: {integrity: sha512-+P72GAjVAbTxjjwUmwjVrqrdZROD4nf8KgpBoDxqXXTiYZZt/ud60dE5yvCSr9lRO8e8yv6kgJIC0K0PfZFVQw==}
+    hasBin: true
 
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
@@ -616,6 +710,9 @@ packages:
 
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
+
+  ordered-binary@1.5.1:
+    resolution: {integrity: sha512-5VyHfHY3cd0iza71JepYG50My+YUbrFtGoUz2ooEydPyPM7Aai/JW098juLr+RG6+rDJuzNNTsEQu2DZa1A41A==}
 
   parse-srcset@1.0.2:
     resolution: {integrity: sha512-/2qh0lav6CmI15FzA3i/2Bzk2zCgQhGMkvhOhKNcBVQ1ldgpbfiNTVslmooUmWJcADi1f1kIeynbDRVzNlfR6Q==}
@@ -827,6 +924,9 @@ packages:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
 
+  weak-lru-cache@1.2.2:
+    resolution: {integrity: sha512-DEAoo25RfSYMuTGc9vPJzZcZullwIqRDSI9LOy+fkCJPi6hykCnfKaXTuPBDuXAUcqHXyOgFtHNp/kB2FjYHbw==}
+
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
@@ -945,6 +1045,42 @@ snapshots:
       to-fast-properties: 2.0.0
 
   '@iarna/toml@2.2.5': {}
+
+  '@lmdb/lmdb-darwin-arm64@2.9.4':
+    optional: true
+
+  '@lmdb/lmdb-darwin-x64@2.9.4':
+    optional: true
+
+  '@lmdb/lmdb-linux-arm64@2.9.4':
+    optional: true
+
+  '@lmdb/lmdb-linux-arm@2.9.4':
+    optional: true
+
+  '@lmdb/lmdb-linux-x64@2.9.4':
+    optional: true
+
+  '@lmdb/lmdb-win32-x64@2.9.4':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-darwin-arm64@3.0.2':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-darwin-x64@3.0.2':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm64@3.0.2':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-linux-arm@3.0.2':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-linux-x64@3.0.2':
+    optional: true
+
+  '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.2':
+    optional: true
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -1124,6 +1260,8 @@ snapshots:
 
   dependency-graph@0.11.0: {}
 
+  detect-libc@2.0.3: {}
+
   dev-ip@1.0.1: {}
 
   doctypes@1.1.0: {}
@@ -1151,6 +1289,18 @@ snapshots:
   ejs@3.1.10:
     dependencies:
       jake: 10.9.1
+
+  eleventy-plugin-clean@1.2.6(@11ty/eleventy@2.0.1):
+    dependencies:
+      '@11ty/eleventy': 2.0.1
+      debug: 4.3.5
+      fast-glob: 3.3.2
+      is-glob: 4.0.3
+      kleur: 4.1.5
+      lmdb: 2.9.4
+      recursive-copy: 2.0.14
+    transitivePeerDependencies:
+      - supports-color
 
   encodeurl@1.0.2: {}
 
@@ -1378,6 +1528,21 @@ snapshots:
 
   list-to-array@1.1.0: {}
 
+  lmdb@2.9.4:
+    dependencies:
+      msgpackr: 1.10.2
+      node-addon-api: 6.1.0
+      node-gyp-build-optional-packages: 5.1.1
+      ordered-binary: 1.5.1
+      weak-lru-cache: 1.2.2
+    optionalDependencies:
+      '@lmdb/lmdb-darwin-arm64': 2.9.4
+      '@lmdb/lmdb-darwin-x64': 2.9.4
+      '@lmdb/lmdb-linux-arm': 2.9.4
+      '@lmdb/lmdb-linux-arm64': 2.9.4
+      '@lmdb/lmdb-linux-x64': 2.9.4
+      '@lmdb/lmdb-win32-x64': 2.9.4
+
   lodash.deburr@4.1.0: {}
 
   luxon@3.4.4: {}
@@ -1441,6 +1606,22 @@ snapshots:
 
   ms@2.1.2: {}
 
+  msgpackr-extract@3.0.2:
+    dependencies:
+      node-gyp-build-optional-packages: 5.0.7
+    optionalDependencies:
+      '@msgpackr-extract/msgpackr-extract-darwin-arm64': 3.0.2
+      '@msgpackr-extract/msgpackr-extract-darwin-x64': 3.0.2
+      '@msgpackr-extract/msgpackr-extract-linux-arm': 3.0.2
+      '@msgpackr-extract/msgpackr-extract-linux-arm64': 3.0.2
+      '@msgpackr-extract/msgpackr-extract-linux-x64': 3.0.2
+      '@msgpackr-extract/msgpackr-extract-win32-x64': 3.0.2
+    optional: true
+
+  msgpackr@1.10.2:
+    optionalDependencies:
+      msgpackr-extract: 3.0.2
+
   multimatch@5.0.0:
     dependencies:
       '@types/minimatch': 3.0.5
@@ -1452,6 +1633,15 @@ snapshots:
   mustache@4.2.0: {}
 
   neo-async@2.6.2: {}
+
+  node-addon-api@6.1.0: {}
+
+  node-gyp-build-optional-packages@5.0.7:
+    optional: true
+
+  node-gyp-build-optional-packages@5.1.1:
+    dependencies:
+      detect-libc: 2.0.3
 
   normalize-path@3.0.0: {}
 
@@ -1472,6 +1662,8 @@ snapshots:
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
+
+  ordered-binary@1.5.1: {}
 
   parse-srcset@1.0.2: {}
 
@@ -1688,6 +1880,8 @@ snapshots:
   unpipe@1.0.0: {}
 
   void-elements@3.1.0: {}
+
+  weak-lru-cache@1.2.2: {}
 
   which@2.0.2:
     dependencies:

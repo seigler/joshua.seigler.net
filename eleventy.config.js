@@ -4,6 +4,7 @@ const md = require("markdown-it");
 const mdAnchor = require("markdown-it-anchor");
 const mdFootnote = require("markdown-it-footnote");
 const prettier = require("prettier");
+const clean = require("eleventy-plugin-clean");
 
 module.exports = (config) => {
   const slugify = config.getFilter("slugify");
@@ -67,6 +68,7 @@ module.exports = (config) => {
     }
   })
 
+  clean.updateFileRecord("dist");
   return {
     dir: {
       input: "site",
