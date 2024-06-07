@@ -39,7 +39,7 @@
   :root {
     --c-highlight: hsl(217, 9%, 32%);
     --c-dark: hsl(217, 9%, 8%);
-    --c-accent: hsl(14, 62%, 53%);
+    --c-accent: hsl(14, 62%, 32%);
     --c-light: hsl(217, 9%, 16%);
 
     --c-text-light: hsla(0, 0%, 100%, 75%);
