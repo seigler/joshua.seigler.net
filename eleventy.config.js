@@ -22,7 +22,9 @@ module.exports = (config) => {
     })
     .use(mdFootnote)
   config.setLibrary("md", mdLib);
-  config.addPassthroughCopy("assets");
+  config.addPassthroughCopy({
+    "assets": "/"
+  });
 
   // collection from music folder
   config.addPassthroughCopy("site/music", {
