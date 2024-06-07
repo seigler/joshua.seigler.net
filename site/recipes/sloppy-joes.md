@@ -8,11 +8,11 @@ description: A summertime favorite, great over hot dogs
 - 1/2 teaspoon paprika
 - 1 teaspoon chili powder
 - 1 Tablespoon dry mustard
-- 1 Tablespoon chopped parsley
+- 1 Tablespoon parsley, chopped
 - 1 Tablespoon Worcestershire sauce
-- v2 Tablespoons brown sugar
+- 2 Tablespoons brown sugar
 - 2 Tablespoons apple cider vinegar
-- 1/2 cup chopped onion
+- 1/2 cup onion, diced
 - 1/2 cup Ketchup
 - 1 cup water
 
