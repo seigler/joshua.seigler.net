@@ -222,7 +222,13 @@ body > header {
   
     --c-text-light: black;
     --c-text-dark: black;
-    font-size: 12pt;
+
+    font-size: 10pt;
+
+    --content-width: 100vw;
+  }
+  h1,h2,h3,h4 {
+    opacity: 0.75;
   }
   body > header > nav {
     display: none;
