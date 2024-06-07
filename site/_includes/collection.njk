@@ -10,7 +10,7 @@ eleventyComputed:
     {% for item in collections[tag] | reverse %}
     <article class="item-summary">
       <a href="{{ item.url }}">{{ item.data.title }}</a>
-      {% if item.data.dateString %}<aside>{{item.data.dateString}}</aside>{% endif %}
+      {% if item.data.date %}<aside>{{item.data.date | formatDate("MMMM DD, YYYY")}}</aside>{% endif %}
       <p class="item-summary-description">{{ item.data.description }}</p>
     </article>
     {% endfor %}

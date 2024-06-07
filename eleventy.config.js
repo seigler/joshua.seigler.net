@@ -4,7 +4,9 @@ const md = require("markdown-it");
 const mdAnchor = require("markdown-it-anchor");
 const mdFootnote = require("markdown-it-footnote");
 const prettier = require("prettier");
+const dayjs = require("dayjs")
 const clean = require("eleventy-plugin-clean");
+const site = require("./site/_data/site");
 
 module.exports = (config) => {
   const slugify = config.getFilter("slugify");
@@ -21,10 +23,10 @@ module.exports = (config) => {
         symbol: "",
       }),
     })
-    .use(mdFootnote)
+    .use(mdFootnote);
   config.setLibrary("md", mdLib);
   config.addPassthroughCopy({
-    "assets": "/"
+    assets: "/",
   });
 
   // collection from music folder
@@ -52,8 +54,8 @@ module.exports = (config) => {
   });
 
   config.addTransform("prettier", (content, outputPath) => {
-    if (typeof outputPath !== 'string') {
-      return content
+    if (typeof outputPath !== "string") {
+      return content;
     }
     const extname = path.extname(outputPath);
     switch (extname) {
@@ -66,7 +68,17 @@ module.exports = (config) => {
       default:
         return content;
     }
-  })
+  });
+
+  config.addFilter("absoluteURL", (url) => {
+    return new URL(url, site.baseUrl).href;
+  });
+  config.addFilter("toISOString", (dateString) => {
+    return new Date(dateString).toISOString()
+  });
+  config.addFilter("formatDate", (date, format) => {
+    return dayjs(date).format(format);
+  });
 
   clean.updateFileRecord("dist");
   return {

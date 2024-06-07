@@ -1,11 +1,9 @@
-const { DateTime } = require("luxon");
-
 module.exports = {
   layout: "post.njk",
   permalink: "/posts/{{ title | slugify }}/",
   tags: ["posts"],
+  author: "Joshua Seigler",
   eleventyComputed: {
-    dateString: ({ page }) => DateTime.fromJSDate(page.date, { zone: 'utc' }).toLocaleString(DateTime.DATE_FULL)
-  },
-  author: "Joshua Seigler"
+    date: "{{ page.date }}"
+  }
 };

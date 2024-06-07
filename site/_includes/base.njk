@@ -1,14 +1,22 @@
 ---
 title: Joshua's Homepage
 ---
-
+{%- set computedTitle = tag | capitalize if tag else title -%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ "/site.css" | url }}"/>
-    <title>{{ tag | capitalize if tag else title }} - joshua.seigler.net</title>
+    <title>{{ computedTitle }} - {{ site.title }}</title>
+    <meta property="og:title" content="{{ computedTitle }}" />
+    <meta property="og:type" content="{{ article }}" />
+    <meta property="og:url" content="{{ url | absoluteURL }}" />
+    {# <meta property="og:image" content="https://....jpg" /> #}
+    <meta name="twitter:title" content="{{ computedTitle }}">
+    <meta name="twitter:description" content="{{ description }}">
+    {# <meta name="twitter:image" content="https://....jpg"> #}
+    <meta name="twitter:card" content="summary">
   </head>
   <body data-font="english" data-path="{{page.url}}">
     {% include "-header.njk" %}

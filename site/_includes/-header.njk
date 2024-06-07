@@ -1,7 +1,7 @@
 <header>
   <nav>
     <div class="nav-categories">
-      <a href="{{ "/" | url }}">joshua.seigler.net</a>
+      <a href="{{ "/" | url }}">{{ site.title }}</a>
       <a href="{{ "/posts" | url }}">/posts</a>
       <a href="{{ "/timeline" | url }}">/timeline</a>
       <a href="{{ "/recipes" | url }}">/recipes</a>
@@ -31,8 +31,8 @@
     {%-if author -%}
       <author>{{ author }}</author>
     {%- endif -%}
-    {%- if dateString -%}
-      <date>{{ dateString }}</date>
+    {%- if date -%}
+      <date>{{ date | formatDate("MMMM D, YYYY") }}</date>
     {%- endif -%}
   </div>
 </header>
