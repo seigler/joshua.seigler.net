@@ -17,7 +17,7 @@
   flex-grow: 1;
   padding: 0;
   font-size: 16px;
-  font-size: clamp(16px, 1.5vw, 36px);
+  font-size: clamp(16px, 8px + 1.5vw, 24px);
   line-height: 1.5;
   --ratio: 1.333;
   --s-5: calc(var(--s-4) / var(--ratio));
