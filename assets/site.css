@@ -200,18 +200,17 @@ body > header {
   padding: 0 var(--inset) 0.5rem;
   border-radius: 0.5rem 0.5rem 0 0;
   margin-bottom: 0.5rem;
-  nav {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    flex-wrap: wrap;
-    padding-top: 0.5rem;
-    gap: 1ch;
-    aside {
-      margin-left: auto;
-      font-size: var(--s-1);
-    }
-  }
+}
+body > header > nav {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1ch;
+}
+.nav-languages {
+  margin-left: auto;
+  font-size: var(--s-1);
 }
 @media print {
   :root {
@@ -260,7 +259,41 @@ body > footer {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1ch;
+  
+  position: relative;
+  z-index: 1;
+  background-color: var(--c-accent);
+  color: var(--c-text-light);
+  padding: 0 1ch 0.25rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: calc(1rem - 1px);
+    width: 1rem;
+    margin: -0.5rem 0 0 -0.5rem;
+    border-top-left-radius: 1rem;
+    top: 0;
+    border: 0.5rem solid var(--c-accent);
+    left: 100%;
+    border-width: 0.5rem 0 0 0.5rem;
+  }
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: calc(1rem - 1px);
+    width: 1rem;
+    margin: -0.5rem -0.5rem 0 0;
+    border-top-right-radius: 1rem;
+    top: 0;
+    border: 0.5rem solid var(--c-accent);
+    right: 100%;
+    border-width: 0.5rem 0.5rem 0 0;
+  }
 }
+
 
 label {
   cursor: pointer;

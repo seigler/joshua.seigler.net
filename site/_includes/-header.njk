@@ -7,7 +7,7 @@
       <a href="{{ "/recipes" | url }}">/recipes</a>
       <a href="{{ "/music" | url }}">/music</a>
     </div>
-    <aside>
+    <div class="nav-languages">
       <label class="nav-language-button" data-font="english">English<input type="radio" name="language" value="english"/></label>
       <label class="nav-language-button" data-font="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
       <script type="text/javascript">
@@ -24,7 +24,7 @@
           })
         })
       </script>
-    </aside>
+    </div>
   </nav>
   <h1>{{ tag | capitalize if tag else title }}</h1>
   <div class="header-meta">
