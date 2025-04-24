@@ -5,11 +5,11 @@ description: An easy sweet cornbread casserole with a vegan variation
 
 ## Ingredients
 
+- 1 can of corn drained
+- 1 can of creamed corn
 - 1 stick melted butter 1/2 cup
 - 1 box of Jiffy Corn Muffin mix
 - 1 cup sour cream
-- 1 can of creamed corn
-- 1 can of corn drained
 
 ## Instructions
 
