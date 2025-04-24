@@ -3,6 +3,8 @@ title: Authority - Consent's Blind Spot
 description: Authority is the idea that certain people are justified in violating consent. This belief allows people to force others to do what they want with a clear conscience.
 ---
 
+> 2025 disclaimer: I haven't thought through all these ideas in a while, but I probably would change some of this or soften/rephrase it.
+
 Consent occurs when an individual voluntarily agrees to the proposal or desires of another. It comes from the concept that who should decide what happens to your person, is you.
 
 There are two ways people interact: with consent, and without it. Some people care a lot about consent, but overall, most take whichever route is easiest, or more convenient.

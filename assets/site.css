@@ -188,6 +188,11 @@ p {
     margin-top: 1lh;
   }
 }
+blockquote {
+  margin: 1lh 0;
+  padding: 0 1em;
+  border-left: 0.2em solid var(--c-accent);
+}
 
 sup {
   font-size: var(--s-1);
