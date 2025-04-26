@@ -1,5 +1,6 @@
 ---
 title: Thinking machines - some thoughts about large language models
+slug: thinking-machines
 description: "The computers will start thinking, and people will stop."
 ---
 
