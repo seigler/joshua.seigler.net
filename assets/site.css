@@ -139,6 +139,10 @@ label:focus-visible {
   text-decoration-color: var(--c-accent);
 }
 
+main p img {
+  max-width: 100%;
+}
+
 section {
   margin-top: 1rem;
 }
@@ -148,6 +152,19 @@ section {
   &, a {
     text-decoration-color: var(--c-accent);
   };
+}
+
+.footnotes-sep {
+  margin-top: 4rem;
+  border: none;
+  height: 0.1rem;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--c-accent),
+    var(--c-accent) 0.5em,
+    transparent 0.5em,
+    transparent 1em
+  );
 }
 
 @keyframes ping {
@@ -191,7 +208,7 @@ p {
 blockquote {
   margin: 1lh 0;
   padding: 0 1em;
-  border-left: 0.2em solid var(--c-accent);
+  border-left: 0.2rem solid var(--c-accent);
 }
 
 sup {
@@ -363,6 +380,7 @@ main {
       var(--c-highlight) calc(var(--inset) * 0.25),
       transparent calc(var(--inset) + 12rem)
     );
+    margin-bottom: 0.25lh;
   }
   padding: 0 var(--inset);
 }
