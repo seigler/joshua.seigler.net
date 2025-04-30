@@ -3,7 +3,7 @@ layout: "base.njk"
 ---
 {{ content | safe }}
 {%- for name, collection in collections -%}
-  {%- if name not in ["all", "timeline", "pages"] -%}
+  {%- if name not in ["all", "timeline", "pages", "books"] -%}
     <h2>{{name | capitalize }}</h2>
     <ul>
       {%- for item in collection | reverse -%}

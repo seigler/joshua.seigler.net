@@ -56,5 +56,5 @@ Even without explicitly using this pattern (observation ➔ feeling ➔ need ➔
 Some resources for exploring these ideas more:
 
 - [The Right Words and Beyond](http://www.therightword.info/)
-- **Nonviolent Communication: a language of life** by Marshall Rosenberg
+- [Nonviolent Communication: A Language of Life](https://amzn.to/44cpIsV), ISBN 189200528X
 - [The Center for Nonviolent Communication](https://www.cnvc.org/)

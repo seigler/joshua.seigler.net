@@ -19,4 +19,4 @@ Investigating eastern orthodoxy, this ancient Christianity, revealed a better pa
 
 [^1]: [Free Man Beyond The Wall episode 478: We've Entered The 'Dim Age'](https://freemanbeyondthewall.libsyn.com/episode-478)
 [^2]: [Symbolism and Propaganda in Popular Culture](https://thesymbolicworld.com/videos/symbolism-propaganda-in-popular-culture/), [The Fall of Loki (Into the Multiverse)](https://thesymbolicworld.com/videos/the-fall-of-loki-into-the-multiverse/)
-[^3]: [Amazon](https://smile.amazon.com/Language-Creation-Symbolism-Genesis-Commentary/dp/1981549331), ISBN 978-1981549337
+[^3]: [The Language of Creation: Cosmic Symbolism in Genesis: A Commentary](https://amzn.to/4iBOExr), ISBN 978-1981549337
