@@ -2,17 +2,20 @@
 title: Thinking machines
 slug: thinking-machines
 description: "The computers will start thinking, and people will stop."
+cover: "/2025-04-24--computers-will-start-thinking.jpg"
 ---
 
 There's an exchange early in the classic '80s movie TRON. Some scientists are talking shop:
 
-> **ALAN:** Ever since he got that Master Control Program set up, system's got more bugs than a bait store.
-> 
-> **GIBBS:** Well, you have to expect some static. Computers are just machines after all, they can't think...
-> 
-> **ALAN:** They'll start to soon enough.
-> 
-> **GIBBS:** (wryly) Yes, won't that be grand -- *the computers will start thinking, and people will stop*.
+![Still from TRON, left to right Linda, Alan, and Gibbs, in conversation.](/2025-04-24--computers-will-start-thinking.jpg)
+
+> **ALAN:** I tell ya, ever since he got that Master Control Program, system's got more bugs than a bait store.
+>
+> **GIBBS:** Ehh, you gotta expect some static. After all, computers are just machines, they can't think...
+>
+> **ALAN:** Programs will be thinking _soon_.
+>
+> **GIBBS:** (wryly) Hahaha, won't that be grand -- *computers and the programs will start thinking, and the people will stop!*
 
 Gibbs has a point. The modern vision of a utopian future is one where work is relieved, and people are free to pursue leisure, or exercise their creativity with art, writing, and poetry. Thinking computers are here now, in the form of "large language models" (LLMs) like ChatGPT. Setting aside the irony that creative works are the first and most visible applications of LLM technology -- is that imagined future actually a good one?
 

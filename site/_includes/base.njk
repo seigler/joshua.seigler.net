@@ -11,12 +11,14 @@ title: Joshua's Homepage
     <title>{{ computedTitle }} - {{ site.title }}</title>
     <meta property="og:title" content="{{ computedTitle }}" />
     <meta property="og:type" content="{{ article }}" />
-    <meta property="og:url" content="{{ url | absoluteURL }}" />
-    {# <meta property="og:image" content="https://....jpg" /> #}
-    <meta name="twitter:title" content="{{ computedTitle }}">
-    <meta name="twitter:description" content="{{ description }}">
-    {# <meta name="twitter:image" content="https://....jpg"> #}
-    <meta name="twitter:card" content="summary">
+    <meta property="og:url" content="{{ page.url | absoluteURL }}" />
+    <meta name="twitter:title" content="{{ computedTitle }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    {% if cover %}
+    <meta property="og:image" content="{{ cover | absoluteURL }}" />
+    <meta name="twitter:image" content="{{ cover | absoluteURL }}" />
+    {% endif %}
+    <meta name="twitter:card" content="summary" />
   </head>
   <body data-font="english" data-path="{{page.url}}">
     {% include "-header.njk" %}
