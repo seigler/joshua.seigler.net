@@ -1,3 +1,2 @@
 [tools]
-pnpm = "latest"
-node = "20"
+npm = "latest"
