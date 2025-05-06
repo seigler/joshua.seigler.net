@@ -1,2 +1,2 @@
 [tools]
-npm = "latest"
+node = "latest"
