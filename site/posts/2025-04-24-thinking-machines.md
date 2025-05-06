@@ -35,9 +35,9 @@ If this was a person, someone who wanted your attention and had this kind of ind
 
 ## Don't create the torment nexus
 
-LLMs clearly manifest a type of intelligence. Sure, it's "just" some linear algebra and a ton of data. But it does exhibit a type of intelligence. One without empathy. Not being human, it *can't* have empathy -- and intelligence without empathy can be dangerous [^2] [^3].
+LLMs clearly manifest a type of intelligence. Sure, it's "just" some linear algebra and a ton of data. But it does exhibit a type of intelligence. One without empathy. Not being human, it *can't* have empathy -- and intelligence without empathy can be dangerous [^2] [^3] [^4].
 
-Science fiction is littered with cautionary tales about inhuman intelligence. For that matter, so is myth: genies give people whatever they want, but because people have self-destructive desires (like the desire to avoid work), it goes wrong. In TRON, Infocom has the MCP (Master Control Program), an overgrown chess program that is given access to whatever information it can consume, until its intelligence and capabilities are seemingly endless. The company leadership comes to rely on the program so completely that it becomes their entire interface for understanding and operating the business. There is also the irony that Infocom's success was built on the misuse of intellectual property, much as LLM companies have done [^4] [^5].
+Science fiction is littered with cautionary tales about inhuman intelligence. For that matter, so is myth: genies give people whatever they want, but because people have self-destructive desires (like the desire to avoid work), it goes wrong. In TRON, Infocom has the MCP (Master Control Program), an overgrown chess program that is given access to whatever information it can consume, until its intelligence and capabilities are seemingly endless. The company leadership comes to rely on the program so completely that it becomes their entire interface for understanding and operating the business. There is also the irony that Infocom's success was built on the misuse of intellectual property, much as LLM companies have done [^5] [^6].
 
 I don't think I am wise enough to safely use a genie in a bottle. And I don't want to outsource my creative efforts to an addictive, bullshitting alien intellect, even if it might save time and effort in the short term.
 
@@ -46,5 +46,6 @@ I don't think I am wise enough to safely use a genie in a bottle. And I don't wa
 [^1]: [On Bullshit by Harry Frankfurt | Internet Archive](https://archive.org/details/on-bullshit-by-harry-frankfurt)
 [^2]: [AI chatbot pushed teen to kill himself, lawsuit alleges | AP News](https://apnews.com/article/chatbot-ai-lawsuit-suicide-teen-artificial-intelligence-9d48adc572100822fdbc3c90d1456bd0)
 [^3]: [Belgian man dies by suicide following exchanges with chatbot | Brussels Times](https://www.brusselstimes.com/430098/belgian-man-commits-suicide-following-exchanges-with-chatgpt)
-[^4]: [AI, Copyright, and the Law: The Ongoing Battle Over Intellectual Property Rights | IP & Technology Law Society](https://sites.usc.edu/iptls/2025/02/04/ai-copyright-and-the-law-the-ongoing-battle-over-intellectual-property-rights/)
-[^5]: [Generative AI Has an Intellectual Property Problem | Harvard Business Review](https://hbr.org/2023/04/generative-ai-has-an-intellectual-property-problem)
+[^4]: [AI-Fueled Spiritual Delusions Are Destroying Human Relationships | Rolling Stone](https://www.rollingstone.com/culture/culture-features/ai-spiritual-delusions-destroying-human-relationships-1235330175/)
+[^5]: [AI, Copyright, and the Law: The Ongoing Battle Over Intellectual Property Rights | IP & Technology Law Society](https://sites.usc.edu/iptls/2025/02/04/ai-copyright-and-the-law-the-ongoing-battle-over-intellectual-property-rights/)
+[^6]: [Generative AI Has an Intellectual Property Problem | Harvard Business Review](https://hbr.org/2023/04/generative-ai-has-an-intellectual-property-problem)
