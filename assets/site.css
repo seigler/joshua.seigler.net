@@ -2,10 +2,11 @@
 @import url(fonts/ftaurebesh/ftaurebesh.css);
 
 :root {
-  --c-highlight: hsla(0, 0%, 100%, 87.5%);
-  --c-dark: hsl(217, 17%, 21%);
-  --c-accent: hsl(14, 62%, 53%);
+  --c-highlight: hsl(0 0% 100% / 87.5%);
+  --c-dark: hsl(217 17% 21%);
+  --c-accent: hsl(14 62% 53%);
   --c-light: #859cc4;
+  --c-text-background-light: hsl(0 0% 95% / 60%);
 
   --c-text-light: var(--c-highlight);
   --c-text-dark: var(--c-dark);
@@ -42,8 +43,9 @@
     --c-highlight: hsl(60 20% 60% / 50%);
     --c-dark: hsl(217 9% 8%);
     --c-accent: hsl(220 20% 35%);
-    --c-light: hsl(220 60% 10%);
+    --c-light: hsl(220 50% 10%);
 
+    --c-text-background-light: hsl(220 40% 10% / 40%);
     --c-text-light: hsl(60 50% 86.67%);
     --c-text-dark: hsl(60 50% 86.67%);
   }
@@ -271,6 +273,17 @@ label:focus-visible {
 main {
   @media screen {
     margin-top: var(--cloudyHeaderBottom);
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: calc(1rem + var(--cloudyHeaderBottom));
+      bottom: 0;
+      left: calc(var(--inset) - 1rem);
+      right: calc(var(--inset) - 1rem);
+      border-radius: 1rem 1rem 0 0;
+      background-color: var(--c-text-background-light);
+    }
   }
   margin-bottom: 4rem;
 }
@@ -329,15 +342,8 @@ aside {
   margin-left: 1ch;
   font-size: var(--s-1);
 }
-ul,
-ol {
-  padding-left: 0;
-  ul,
-  ol {
-    padding-left: 2em;
-  }
-}
 ul.collection {
+  padding-left: 0;
   > li {
     list-style-type: none;
     + li {
