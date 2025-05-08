@@ -4,7 +4,7 @@ const md = require("markdown-it");
 const mdAnchor = require("markdown-it-anchor");
 const mdFootnote = require("markdown-it-footnote");
 const prettier = require("prettier");
-const dayjs = require("dayjs")
+const dayjs = require("dayjs");
 const clean = require("eleventy-plugin-clean");
 const site = require("./site/_data/site");
 
@@ -74,13 +74,17 @@ module.exports = (config) => {
     return new URL(url, site.baseUrl).href;
   });
   config.addFilter("toISOString", (dateString) => {
-    return new Date(dateString).toISOString()
+    return new Date(dateString).toISOString();
   });
   config.addFilter("formatDate", (date, format) => {
     return dayjs(date).format(format);
   });
 
   clean.updateFileRecord("dist");
+
+  const buildTime = new Date().toISOString().replace(/[:.-]/g, "");
+  config.addGlobalData("buildTime", buildTime);
+
   return {
     dir: {
       input: "site",

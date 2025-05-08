@@ -34,6 +34,7 @@
   --content-width: clamp(75vw, 40rem, 100vw - 3rem);
   --inset: calc(50vw - var(--content-width) / 2);
   --scrollLengthPx: 0;
+  --cloudyHeaderBottom: max(35vh, 10rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,7 +66,10 @@ body {
   .scene {
     --durationSeconds: 120;
     --duration: calc(var(--durationSeconds) * 1s);
-    --viewPointDelta: min(1px * var(--scrollLengthPx), 35vh);
+    --viewPointDelta: min(
+      1px * var(--scrollLengthPx),
+      var(--cloudyHeaderBottom)
+    );
     --travelDistance: 90vh;
     z-index: -2;
     position: fixed;
@@ -74,7 +78,7 @@ body {
     right: 0;
     height: 100lvh;
     overflow: hidden;
-    perspective: 35vh;
+    perspective: calc(0.25 * var(--cloudyHeaderBottom) + 0.75 * 35vmax);
     perspective-origin: 50vw calc(15vh + 1.2 * var(--viewPointDelta));
   }
 
@@ -85,16 +89,17 @@ body {
   }
 
   .cloud {
+    --height: 90vh;
     pointer-events: none;
     position: absolute;
     left: -205vw;
     right: -205vw;
     top: calc(8vh - var(--viewPointDelta));
-    height: 90vh;
+    height: var(--height);
     background-image: url("./cloud.png");
     background-size: auto 100%;
     background-repeat: repeat-x;
-    background-position: calc(50% + cos(190 * var(--n)) * 100vh) 50%;
+    background-position: calc(50% + cos(230 * var(--n)) * var(--height)) 50%;
     animation-name: zoom;
     animation-duration: var(--duration);
     animation-timing-function: steps(calc(var(--durationSeconds) * 30));
@@ -121,7 +126,7 @@ body {
     left: var(--inset);
     right: var(--inset);
     padding: 0.5rem;
-    bottom: -35vh;
+    bottom: calc(-1 * var(--cloudyHeaderBottom));
     transform: translateY(calc(-1 * var(--viewPointDelta)));
     will-change: translateY;
   }
@@ -166,7 +171,7 @@ body {
     opacity: 0;
     transform: translate3d(
       0,
-      calc(-1 * var(--viewPointDelta)),
+      calc(-1 * var(--viewPointDelta) + calc(var(--cloudyHeaderBottom) - 35vh)),
       calc(0.33333 * var(--travelDistance))
     );
   }
@@ -265,7 +270,7 @@ label:focus-visible {
 
 main {
   @media screen {
-    margin-top: 35vh;
+    margin-top: var(--cloudyHeaderBottom);
   }
   margin-bottom: 4rem;
 }
