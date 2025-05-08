@@ -219,6 +219,7 @@ body {
       bottom: calc(1px - 0.5rem);
       border-radius: 1.3rem 1.3rem 1rem 1rem;
       border: 0.5rem solid var(--c-accent);
+      outline: 0.5rem solid var(--c-accent);
     }
   }
   body > footer {
@@ -266,7 +267,8 @@ a[href] {
 a[href]:hover,
 a[href]:focus-visible,
 label:hover,
-label:focus-visible {
+label:focus-visible,
+label:has(input:focus-visible) {
   text-decoration-color: var(--c-accent);
 }
 

@@ -8,7 +8,10 @@ title: Joshua's Homepage
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ "/site.css" | url }}?modified={{buildTime}}"/>
+    <link rel="preload" media="light" href="{{ "./cloud.png" | url }}" as="image" />
+    <link rel="preload" media="dark" href="{{ "./cloud-night.png" | url }}" as="image" />
     <title>{{ computedTitle }} - {{ site.title }}</title>
+    <meta name="description" content="{{ description }}" />
     <meta property="og:title" content="{{ computedTitle }}" />
     <meta property="og:type" content="{{ article }}" />
     <meta property="og:url" content="{{ page.url | absoluteURL }}" />
