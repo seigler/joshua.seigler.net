@@ -271,21 +271,22 @@ label:focus-visible {
 }
 
 main {
+  position: relative;
   @media screen {
     margin-top: var(--cloudyHeaderBottom);
     &::before {
       content: "";
       position: absolute;
-      z-index: -1;
-      top: calc(1rem + var(--cloudyHeaderBottom));
-      bottom: 0;
+      z-index: -2;
+      top: -1rem;
+      bottom: -5.1rem;
       left: calc(var(--inset) - 1rem);
       right: calc(var(--inset) - 1rem);
       border-radius: 1rem 1rem 0 0;
       background-color: var(--c-text-background-light);
     }
+    margin-bottom: 4rem;
   }
-  margin-bottom: 4rem;
 }
 
 main p img {
