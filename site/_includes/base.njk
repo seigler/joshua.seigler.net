@@ -27,4 +27,15 @@ title: Joshua's Homepage
     </main>
     {% include "-footer.njk" %}
   </body>
+  <script>
+    function setScrollAmount() {
+      const body = document.documentElement || document.body;
+      const scrolledFraction =
+        body.scrollTop / (body.scrollHeight - body.clientHeight);
+      body.style.setProperty("--scrollLengthPx", body.scrollTop);
+    }
+    setScrollAmount();
+    document.addEventListener("scroll", setScrollAmount);
+    document.addEventListener("resize", setScrollAmount);
+  </script>
 </html>

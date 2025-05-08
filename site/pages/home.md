@@ -1,6 +1,6 @@
 ---
 layout: home.njk
-title: Home
+title: Hello!
 permalink: /
 ---
 

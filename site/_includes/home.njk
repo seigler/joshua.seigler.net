@@ -5,13 +5,14 @@ layout: "base.njk"
 {%- for name, collection in collections -%}
   {%- if name in ["posts"] -%}
     <h2>{{name | capitalize }}</h2>
-    <ul>
+    <ul class="collection">
       {%- for item in collection | reverse -%}
         <li>
           <a href="{{item.url}}">{{item.data.title}}</a>
           {%- if item.data.date -%}
             <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
           {%- endif -%}
+          <p>{{item.data.description | safe}}</p>
         </li>
       {%- endfor -%}
     </ul>

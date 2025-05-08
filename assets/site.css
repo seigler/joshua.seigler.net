@@ -5,7 +5,7 @@
   --c-highlight: hsla(0, 0%, 100%, 87.5%);
   --c-dark: hsl(217, 17%, 21%);
   --c-accent: hsl(14, 62%, 53%);
-  --c-light: hsl(217, 17%, 85%);
+  --c-light: #859cc4;
 
   --c-text-light: var(--c-highlight);
   --c-text-dark: var(--c-dark);
@@ -33,17 +33,140 @@
   --s5: calc(var(--s4) * var(--ratio));
   --content-width: clamp(75vw, 40rem, 100vw - 3rem);
   --inset: calc(50vw - var(--content-width) / 2);
+  --scrollLengthPx: 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-highlight: hsl(217, 9%, 32%);
-    --c-dark: hsl(217, 9%, 8%);
-    --c-accent: hsl(14, 62%, 32%);
-    --c-light: hsl(217, 9%, 16%);
+    --c-highlight: hsl(60 20% 60% / 50%);
+    --c-dark: hsl(217 9% 8%);
+    --c-accent: hsl(220 20% 35%);
+    --c-light: hsl(220 60% 10%);
 
-    --c-text-light: hsla(0, 0%, 100%, 75%);
-    --c-text-dark: hsla(0, 0%, 100%, 75%);
+    --c-text-light: hsl(60 50% 86.67%);
+    --c-text-dark: hsl(60 50% 86.67%);
+  }
+}
+
+body {
+  background-size: 100% 80vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: var(--c-light);
+  background-image: linear-gradient(to bottom, #4379ef, #859cc4);
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--c-light);
+  }
+}
+
+@media screen {
+  .scene {
+    --durationSeconds: 120;
+    --duration: calc(var(--durationSeconds) * 1s);
+    --viewPointDelta: min(1px * var(--scrollLengthPx), 35vh);
+    --travelDistance: 90vh;
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100lvh;
+    overflow: hidden;
+    perspective: 35vh;
+    perspective-origin: 50vw calc(15vh + 1.2 * var(--viewPointDelta));
+  }
+
+  .sky {
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .cloud {
+    pointer-events: none;
+    position: absolute;
+    left: -205vw;
+    right: -205vw;
+    top: calc(8vh - var(--viewPointDelta));
+    height: 90vh;
+    background-image: url("./cloud.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: calc(50% + cos(190 * var(--n)) * 100vh) 50%;
+    animation-name: zoom;
+    animation-duration: var(--duration);
+    animation-timing-function: steps(calc(var(--durationSeconds) * 30));
+    animation-delay: calc(-0.1 * var(--duration) * var(--n));
+    animation-iteration-count: infinite;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    @media (prefers-reduced-motion: reduce) {
+      & {
+        animation-play-state: paused;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      & {
+        background-image: url("./cloud-night.png");
+      }
+    }
+  }
+}
+
+@media screen {
+  #brand {
+    position: absolute;
+    left: var(--inset);
+    right: var(--inset);
+    padding: 0.5rem;
+    bottom: calc(-35vh + var(--viewPointDelta));
+  }
+  @media (prefers-color-scheme: dark) {
+    #brand > * {
+      text-shadow: 0 0 0.5em currentColor;
+    }
+  }
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: translate3d(
+      0,
+      calc(4 * var(--viewPointDelta)),
+      calc(-0.66667 * var(--travelDistance))
+    );
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  56.6% {
+    opacity: 1;
+  }
+
+  66.66667% {
+    opacity: 0;
+  }
+
+  76.6% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(
+      0,
+      calc(-1 * var(--viewPointDelta)),
+      calc(0.33333 * var(--travelDistance))
+    );
   }
 }
 
@@ -123,7 +246,6 @@ body {
     right: 100%;
     border-width: 0 0.5rem 0.5rem 0;
   }
-
 }
 
 a {
@@ -139,6 +261,13 @@ label:focus-visible {
   text-decoration-color: var(--c-accent);
 }
 
+main {
+  @media screen {
+    margin-top: 35vh;
+  }
+  margin-bottom: 4rem;
+}
+
 main p img {
   max-width: 100%;
 }
@@ -147,11 +276,13 @@ section {
   margin-top: 1rem;
 }
 
-.footnote-item:target, .footnote-ref :target {
+.footnote-item:target,
+.footnote-ref :target {
   animation: ping 1s ease-out;
-  &, a {
+  &,
+  a {
     text-decoration-color: var(--c-accent);
-  };
+  }
 }
 
 .footnotes-sep {
@@ -199,6 +330,14 @@ ol {
     padding-left: 2em;
   }
 }
+ul.collection {
+  > li {
+    list-style-type: none;
+    + li {
+      margin-top: 1rem;
+    }
+  }
+}
 p {
   margin: 0;
   + p {
@@ -217,8 +356,7 @@ sup {
 }
 
 body > header {
-  background-color: var(--c-dark);
-  color: var(--c-text-light);
+  color: var(--c-text-dark);
   padding: 0 var(--inset) 0.5rem;
   border-radius: 0.5rem 0.5rem 0 0;
   margin-bottom: 0.5rem;
@@ -236,11 +374,10 @@ body > header > nav {
 }
 @media print {
   :root {
-    --c-highlight: white
-    --c-dark: white;
+    --c-highlight: white --c-dark: white;
     --c-accent: black;
     --c-light: white;
-  
+
     --c-text-light: black;
     --c-text-dark: black;
 
@@ -248,14 +385,20 @@ body > header > nav {
 
     --content-width: 100vw;
   }
-  h1,h2,h3,h4 {
+  body {
+    background: none;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
     opacity: 0.75;
   }
   body > header > nav {
     display: none;
   }
-  a[href^='http']::after {
-    content: ' (' attr(href) ')';
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
   }
 }
 
@@ -281,7 +424,7 @@ body > footer {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1ch;
-  
+
   position: relative;
   z-index: 1;
   background-color: var(--c-accent);
@@ -315,7 +458,6 @@ body > footer {
     border-width: 0.5rem 0.5rem 0 0;
   }
 }
-
 
 label {
   cursor: pointer;
