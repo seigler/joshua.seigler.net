@@ -17,7 +17,7 @@ These stories contain so much richness. One theme that stuck with me emerges in 
 ### [Leadership and Self-Deception](https://amzn.to/3GNsFGs)
 by The Arbinger Institute
 
-This book painted for me a vivid picture of the mechanics of selfish and self-centered thinking. It describes in detail the ways that we blind ourselves, especially in interpersonal communication. The result of internalizing the concepts in this book is a sort of secular elaboration of "Love your neighbor", but even though it misses (or omits? subtracts?) the spiritual core of things, it still rings quite true and the tools this book and others from the Arbinger Instuture present are fantastically valuable.
+This book painted for me a vivid picture of the mechanics of selfish and self-centered thinking. It describes in detail the ways that we blind ourselves, especially in interpersonal communication. The result of internalizing the concepts in this book is a sort of secular elaboration of "Love your neighbor", but even though it misses (or omits? subtracts?) the spiritual core of things, it still rings quite true and the tools found in this book and others from the Arbinger Instutute are fantastically valuable.
 If this is of interest, you may also enjoy Marshall Rosenberg's "Non-violent communication"
 
 ### [Orthodoxy and the Religion of the Future](https://amzn.to/4jVqE9F)

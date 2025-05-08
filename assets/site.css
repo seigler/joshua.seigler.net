@@ -121,7 +121,9 @@ body {
     left: var(--inset);
     right: var(--inset);
     padding: 0.5rem;
-    bottom: calc(-35vh + var(--viewPointDelta));
+    bottom: -35vh;
+    transform: translateY(calc(-1 * var(--viewPointDelta)));
+    will-change: translateY;
   }
   @media (prefers-color-scheme: dark) {
     #brand > * {
