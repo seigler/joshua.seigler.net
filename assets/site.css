@@ -2,6 +2,18 @@
 @import url(fonts/ftaurebesh/ftaurebesh.css);
 
 :root {
+  font-size: 16px;
+  font-size: clamp(16px, 8px + 1.5vw, 24px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex-grow: 1;
+  padding: 0;
+  line-height: 1.5;
+}
+
+body {
   --c-highlight: hsl(0 0% 100% / 87.5%);
   --c-dark: hsl(217 17% 21%);
   --c-accent: hsl(14 62% 53%);
@@ -11,15 +23,6 @@
   --c-text-light: var(--c-highlight);
   --c-text-dark: var(--c-dark);
 
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  flex-grow: 1;
-  padding: 0;
-  font-size: 16px;
-  font-size: clamp(16px, 8px + 1.5vw, 24px);
-  line-height: 1.5;
   --ratio: 1.333;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
@@ -34,34 +37,26 @@
   --s5: calc(var(--s4) * var(--ratio));
   --content-width: clamp(75vw, 40rem, 100vw - 3rem);
   --inset: calc(50vw - var(--content-width) / 2);
-  --scrollLengthPx: 0;
   --cloudyHeaderBottom: max(35vh, 10rem);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-highlight: hsl(60 20% 60% / 50%);
-    --c-dark: hsl(217 9% 8%);
-    --c-accent: hsl(220 20% 35%);
-    --c-light: hsl(220 50% 10%);
-
-    --c-text-background-light: hsl(220 40% 10% / 40%);
-    --c-text-light: hsl(60 50% 86.67%);
-    --c-text-dark: hsl(60 50% 86.67%);
-  }
-}
-
-body {
   background-size: 100% 80vh;
   background-position: top;
   background-repeat: no-repeat;
   background-color: var(--c-light);
   background-image: linear-gradient(to bottom, #4379ef, #859cc4);
 }
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--c-light);
-  }
+body[data-theme="dark"] {
+  background: var(--c-light);
+}
+
+[data-theme="dark"] {
+  --c-highlight: hsl(60 20% 60% / 50%);
+  --c-dark: hsl(217 9% 8%);
+  --c-accent: hsl(220 20% 35%);
+  --c-light: hsl(220 50% 10%);
+
+  --c-text-background-light: hsl(220 40% 10% / 40%);
+  --c-text-light: hsl(60 50% 86.67%);
+  --c-text-dark: hsl(60 50% 86.67%);
 }
 
 @media screen {
@@ -69,7 +64,7 @@ body {
     --durationSeconds: 120;
     --duration: calc(var(--durationSeconds) * 1s);
     --viewPointDelta: min(
-      1px * var(--scrollLengthPx),
+      1px * var(--scrollLengthPx, 0),
       var(--cloudyHeaderBottom)
     );
     --travelDistance: 90vh;
@@ -114,10 +109,8 @@ body {
         animation-play-state: paused;
       }
     }
-    @media (prefers-color-scheme: dark) {
-      & {
-        background-image: url("./cloud-night.png");
-      }
+    [data-theme="dark"] & {
+      background-image: url("./cloud-night.png");
     }
   }
 }
@@ -132,10 +125,8 @@ body {
     transform: translateY(calc(-1 * var(--viewPointDelta)));
     will-change: translateY;
   }
-  @media (prefers-color-scheme: dark) {
-    #brand > * {
-      text-shadow: 0 0 0.5em currentColor;
-    }
+  [data-theme="dark"] #brand > * {
+    text-shadow: 0 0 0.5em currentColor;
   }
 }
 
@@ -384,7 +375,7 @@ body > header > nav {
   flex-wrap: wrap;
   gap: 1ch;
 }
-.nav-languages {
+.nav-toggles {
   margin-left: auto;
   font-size: var(--s-1);
 }
@@ -484,7 +475,7 @@ label {
     bottom: 110%;
   }
 }
-.nav-language-button {
+.nav-toggle-button {
   margin-left: 0.5ch;
   position: relative;
   z-index: 0;
@@ -505,14 +496,14 @@ label {
   }
 }
 
-[data-font="aurebesh"] {
+[data-language="aurebesh"] {
   font-family: FTAurebesh;
   line-height: 1.25;
-  ul > li {
+  ul:not(.collection) > li {
     list-style-type: square;
   }
 }
-[data-font="english"] {
+[data-language="english"] {
   font-family: Inter;
 }
 
