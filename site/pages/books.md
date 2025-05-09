@@ -38,7 +38,7 @@ This book functions not only as an engaging story, but a primer for digital secu
 ### [Snow Crash](https://amzn.to/3SfPIMG)
 by Neal Stephenson
 
-A sympathetic main character, heaps of style, a hacker aesthetic, an evocative and lived-in setting, and non-stop action. This book magnified my love of the written word as a literal creative force. Digital reality and baseline reality are both created from language, but in different ways, and this story explores those ideas vigorously and memorably.
+A sympathetic main character, heaps of style, a hacker aesthetic, an evocative and lived-in setting, and non-stop action. This book magnified my love of the written word as a literal creative force. Digital reality and baseline reality are both shaped by language, but in different ways, and this story explores that distinction vigorously and memorably.
 
 ### [The Stranger](https://amzn.to/3SeBz2k)
 by Chris Van Allsburg
