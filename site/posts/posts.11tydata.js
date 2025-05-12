@@ -5,6 +5,14 @@ module.exports = {
   author: "Joshua Seigler",
   eleventyComputed: {
     date: "{{ page.date }}",
-    slug: "{{ page.slug }}"
-  }
+    slug: "{{ page.slug }}",
+    permalink: (data) => {
+      if (process.env.ELEVENTY_RUN_MODE !== "build") return data.permalink;
+      else return data.draft ? false : data.permalink;
+    },
+    eleventyExcludeFromCollections: (data) => {
+      if (process.env.ELEVENTY_RUN_MODE !== "build") return false;
+      else return data.draft ?? false;
+    },
+  },
 };
