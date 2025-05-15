@@ -5,8 +5,11 @@ const mdAnchor = require("markdown-it-anchor");
 const mdFootnote = require("markdown-it-footnote");
 const prettier = require("prettier");
 const dayjs = require("dayjs");
+const utc = require("dayjs/plugin/utc");
 const clean = require("eleventy-plugin-clean");
 const site = require("./site/_data/site");
+
+dayjs.extend(utc);
 
 module.exports = (config) => {
   const slugify = config.getFilter("slugify");
@@ -77,7 +80,7 @@ module.exports = (config) => {
     return new Date(dateString).toISOString();
   });
   config.addFilter("formatDate", (date, format) => {
-    return dayjs(date).format(format);
+    return dayjs(date).utc().format(format);
   });
 
   clean.updateFileRecord("dist");
