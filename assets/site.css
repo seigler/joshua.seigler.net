@@ -556,3 +556,12 @@ h3 {
 .item-summary {
   margin-bottom: 1rem;
 }
+
+p > code {
+  display: inline-block;
+  font-family: "Commit Mono", monospace;
+  background-color: var(--c-text-background-light);
+  padding: 0.1em;
+  margin: -0.1em;
+  border-radius: 0.5em;
+}
