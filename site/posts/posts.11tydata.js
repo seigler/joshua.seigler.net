@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   layout: "post.njk",
   permalink: "/posts/{{ slug | default:title | slugify }}/",
   tags: ["posts"],

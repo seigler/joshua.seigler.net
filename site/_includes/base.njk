@@ -22,6 +22,7 @@ title: Joshua's Homepage
     <meta name="twitter:image" content="{{ cover | absoluteURL }}" />
     {% endif %}
     <meta name="twitter:card" content="summary" />
+    <meta name="generator" content="{{ eleventy.generator }}">
   </head>
   <body data-font="english" data-path="{{page.url}}">
     {% include "-header.njk" %}

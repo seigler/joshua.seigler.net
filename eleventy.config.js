@@ -1,17 +1,18 @@
-const fs = require("fs");
-const path = require("path");
-const md = require("markdown-it");
-const mdAnchor = require("markdown-it-anchor");
-const mdFootnote = require("markdown-it-footnote");
-const prettier = require("prettier");
-const dayjs = require("dayjs");
-const utc = require("dayjs/plugin/utc");
-const clean = require("eleventy-plugin-clean");
-const site = require("./site/_data/site");
+import fs from "fs";
+import path from "path";
+import md from "markdown-it";
+import mdAnchor from "markdown-it-anchor";
+import mdFootnote from "markdown-it-footnote";
+import prettier from "prettier";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc.js";
+import clean from "eleventy-plugin-clean";
+import site from "./site/_data/site.js";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 dayjs.extend(utc);
 
-module.exports = (config) => {
+export default (config) => {
   const slugify = config.getFilter("slugify");
   const url = config.getFilter("url");
   const mdLib = md({
@@ -87,6 +88,26 @@ module.exports = (config) => {
 
   const buildTime = new Date().toISOString().replace(/[:.-]/g, "");
   config.addGlobalData("buildTime", buildTime);
+
+  config.addPlugin(feedPlugin, {
+    type: "atom", // "atom", ""rss", or "json"
+    outputPath: "/feed.xml",
+    collection: {
+      name: "posts", // iterate over `collections.posts`
+      limit: 0, // 0 means no limit
+    },
+    metadata: {
+      language: "en",
+      title: site.title,
+      subtitle: site.description,
+      base: site.baseUrl,
+      author: {
+        name: "Joshua Seigler",
+        // email: "", // Optional
+      },
+    },
+    stylesheet: "/simple-atom.xslt",
+  });
 
   return {
     dir: {
