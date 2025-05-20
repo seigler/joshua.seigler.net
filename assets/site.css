@@ -381,14 +381,15 @@ body > header > nav {
 }
 @media print {
   :root {
+    font-size: 10pt;
+  }
+  body {
     --c-highlight: white --c-dark: white;
     --c-accent: black;
     --c-light: white;
 
     --c-text-light: black;
     --c-text-dark: black;
-
-    font-size: 10pt;
 
     --content-width: 100vw;
   }

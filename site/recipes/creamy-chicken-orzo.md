@@ -1,6 +1,6 @@
 ---
 title: Creamy Chicken Orzo
-description:
+description: Rich and comforting chicken and pasta dish
 ---
 
 ## Ingredients
@@ -20,9 +20,9 @@ description:
 
 1. Cook the orzo per the package instructions.
 2. While that cooks, make a mirepoix:
-  a. In a large skillet over medium high heat add the butter and olive oil.
-  b. Once the butter is melted add in the diced onion, carrots and celery.
-  c. Allow the veggies to sauté for 4-5 minutes until they start to soften up.
+    1. In a large skillet over medium high heat add the butter and olive oil.
+    2. Once the butter is melted add in the diced onion, carrots and celery.
+    3. Allow the veggies to sauté for 4-5 minutes until they start to soften up.
 3.  Reduce the heat to low and sprinkle the all-purpose flour over the veggies and whisk together until it forms a paste/roux. While stirring constantly, allow the roux to cook for 2-3 minutes.
 4. Pour into the roux the chicken broth and heavy whipping cream. Whisk together until no clumps are present and the mixture starts to thicken.
 5. Add in the diced chicken and allow the mixture to simmer until it reaches desired thickness. Pour in drained orzo and stir to combine. Serve & enjoy!
