@@ -524,6 +524,7 @@ main {
   h2,
   h3,
   h4 {
+    clear: both;
     background-image: linear-gradient(
       50deg,
       var(--c-highlight) 0%,
