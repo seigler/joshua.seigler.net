@@ -33,4 +33,4 @@ P2P alternative to Dropbox, supports mobile and desktop. Synchronize folders of 
 For notes and reference. Sync across devices with `syncthing`.
 
 ### [KeePassXC](https://keepassxc.org/)
-For passwords. Sync across devives with `syncthing`.
+For passwords. Sync across devices with `syncthing`.
