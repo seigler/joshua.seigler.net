@@ -3,6 +3,7 @@ import path from "path";
 import md from "markdown-it";
 import mdAnchor from "markdown-it-anchor";
 import mdFootnote from "markdown-it-footnote";
+import mdLinkAttributes from "markdown-it-link-attributes";
 import prettier from "prettier";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
@@ -27,7 +28,16 @@ export default (config) => {
         symbol: "",
       }),
     })
-    .use(mdFootnote);
+    .use(mdFootnote)
+    .use(mdLinkAttributes, {
+      matcher(href) {
+        return href.match(/^https?:\/\//);
+      },
+      attrs: {
+        target: "_blank",
+        rel: "noopener",
+      },
+    });
   config.setLibrary("md", mdLib);
   config.addPassthroughCopy({
     assets: "/",

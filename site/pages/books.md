@@ -23,7 +23,7 @@ These stories contain so much richness. One theme that stuck with me emerges in 
 ### [![book cover, a tromp-l'oeil torn segment reveals in bold letters "SELF-DECEPTION"](/books/1523006560.jpg) Leadership and Self-Deception <small>- The Arbinger Institute</small>](https://amzn.to/3GNsFGs)
 
 This book painted for me a vivid picture of the mechanics of selfish and self-centered thinking. It describes in detail the ways that we blind ourselves, especially in interpersonal communication. The result of internalizing the concepts in this book is a sort of secular elaboration of "Love your neighbor", but even though it misses (or omits? subtracts?) the spiritual core of things, it still rings quite true and the tools found in this book and others from the Arbinger Instutute are fantastically valuable.
-If this is of interest, you may also enjoy Marshall Rosenberg's "Non-violent communication"
+If this is of interest, you may also enjoy [Marshall Rosenberg's "Non-violent communication"](https://amzn.to/3SmSQqi) or [my article on needs-based communication](/posts/needs-based-communication/).
 
 ### [![book cover, a byzantine icon "The triumph of the Archangel Michael over the antichrist, who is shown falling into the abyss together with the cities of this world at the end of time"](/books/188790400X.jpg) Orthodoxy and the Religion of the Future <small>- Fr. Seraphim Rose</small>](https://amzn.to/4jVqE9F)
 

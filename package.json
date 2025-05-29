@@ -18,6 +18,7 @@
     "eleventy-plugin-clean": "^2.0.1",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-footnote": "^4.0.0",
+    "markdown-it-link-attributes": "^4.0.1",
     "prettier": "^3.3.1"
   }
 }
