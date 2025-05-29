@@ -93,7 +93,7 @@ body[data-theme="dark"] {
     right: -205vw;
     top: calc(8vh - var(--viewPointDelta));
     height: var(--height);
-    background-image: url("./cloud.png");
+    background-image: url("/cloud.png");
     background-size: auto 100%;
     background-repeat: repeat-x;
     background-position: calc(50% + cos(230 * var(--n)) * var(--height)) 50%;
@@ -110,7 +110,7 @@ body[data-theme="dark"] {
       }
     }
     [data-theme="dark"] & {
-      background-image: url("./cloud-night.png");
+      background-image: url("/cloud-night.png");
     }
   }
 }
