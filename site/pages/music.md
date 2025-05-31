@@ -1,1 +1,1 @@
-These are songs chanted during certain Orthodox services. I created them with MuseScore from multiple sources, scanned or sung.
+These are songs chanted during certain Eastern Orthodox services. I transcribed them with MuseScore from multiple sources, scanned or sung.

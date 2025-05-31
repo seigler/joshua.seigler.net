@@ -1,7 +1,7 @@
 ---
 title: Tools of the trade
 slug: tools-of-the-trade
-description: Some dev tools I recommend
+description: Some dev tools I recommend.
 ---
 
 Everyone has different tools that they find especially effective. Here are some I have found with a few words about why I like them.
