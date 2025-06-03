@@ -38,6 +38,10 @@ body {
   --s5: calc(var(--s4) * var(--ratio));
   --content-width: clamp(75vw, 40rem, 100vw - 3rem);
   --inset: calc(50vw - var(--content-width) / 2);
+  background-image:
+    radial-gradient(circle at -20% -20vmin, #00f2, transparent 60%),
+    radial-gradient(circle at 120% calc(100% - 20vmin), #0873, transparent 60%),
+    url(/noise.png);
 }
 
 body[data-theme="dark"] {
@@ -55,7 +59,6 @@ body[data-theme="dark"] {
 }
 
 @media (prefers-color-scheme: dark) {
-
   body[data-theme="auto"] {
     background-color: var(--c-body-background);
   }
@@ -107,9 +110,9 @@ a[href] {
 }
 a[href]:hover,
 a[href]:focus-visible,
-label:hover,
-label:focus-visible,
-label:has(input:focus-visible),
+nav label:hover,
+nav label:focus-visible,
+nav label:has(input:focus-visible),
 .nav-toggle-button:has(input[type="radio"]:checked) {
   background-color: var(--c-accent);
   text-decoration: none;
@@ -139,7 +142,11 @@ section {
   margin: 4rem -1rem -4rem;
   height: 4.1rem;
   border: none;
-  background-image: radial-gradient(ellipse farthest-side at 50% 0%, var(--c-highlight), transparent);
+  background-image: radial-gradient(
+    ellipse farthest-side at 50% 0%,
+    var(--c-highlight),
+    transparent
+  );
   opacity: 0.5;
 }
 
@@ -188,14 +195,18 @@ blockquote {
   padding: 0 1em;
   border-left: 1px solid var(--c-accent);
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     top: -0.5lh;
     bottom: -0.5lh;
     left: -0.1em;
     width: 10rem;
-    background: radial-gradient(ellipse farthest-side at 0% 50%, var(--c-highlight), transparent);
+    background: radial-gradient(
+      ellipse farthest-side at 0% 50%,
+      var(--c-highlight),
+      transparent
+    );
     opacity: 0.5;
   }
 }
@@ -277,7 +288,7 @@ body > footer {
   }
 }
 
-label {
+nav label {
   cursor: pointer;
   text-decoration-line: underline;
   > input[type="radio"] {
@@ -310,13 +321,13 @@ h3,
 h4 {
   position: relative;
   font-weight: 700;
-  text-shadow: 0 0 0.2em var(--c-highlight);
+  text-shadow: 0 0 0.5em var(--c-highlight);
   &:hover .header-anchor {
     opacity: 1;
   }
   &::after {
     opacity: 0.5;
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     bottom: 0;
@@ -325,7 +336,11 @@ h4 {
     width: 30rem;
     max-width: 100%;
     /* outline: 1px solid red; */
-    background: radial-gradient(ellipse farthest-side at 50% 100%, var(--c-highlight), transparent);
+    background: radial-gradient(
+      ellipse farthest-side at 50% 100%,
+      var(--c-highlight),
+      transparent
+    );
   }
 }
 main {
@@ -369,4 +384,14 @@ p > code {
   padding: 0.1em;
   margin: -0.1em;
   border-radius: 0.5em;
+}
+
+#isso-thread {
+  margin-top: 4rem !important;
+}
+.isso-textarea {
+  margin: 0 !important;
+}
+.isso-thread-heading {
+  color: inherit !important;
 }
