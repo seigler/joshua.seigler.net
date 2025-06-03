@@ -9,8 +9,9 @@
       <a href="{{ "/books" | url }}">/books</a>
     </div>
     <div class="nav-toggles">
-      <label class="nav-toggle-button">☀️<input type="radio" name="theme" value="light"/></label>
-      <label class="nav-toggle-button">🌒<input type="radio" name="theme" value="dark"/></label>
+      <label class="nav-toggle-button" title="Light mode">☀️<input type="radio" name="theme" value="light"/></label>
+      <label class="nav-toggle-button" title="Automatic">🔄<input type="radio" name="theme" value="auto"/></label>
+      <label class="nav-toggle-button" title="Dark mode">🌒<input type="radio" name="theme" value="dark"/></label>
       /
       <label class="nav-toggle-button" data-language="english">English<input type="radio" name="language" value="english"/></label>
       <label class="nav-toggle-button" data-language="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
@@ -18,9 +19,7 @@
         const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const defaultPrefs = {
           language: 'english',
-          theme: darkModeMediaQuery.matches
-            ? 'dark'
-            : 'light'
+          theme: 'auto'
         };
         Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
           const currentPref = localStorage.getItem(key) ?? defaultPref;
@@ -31,18 +30,6 @@
             })
           })
         });
-        darkModeMediaQuery.addEventListener('change', e => {
-          if (localStorage.getItem('theme') != null) {
-            return;
-          }
-          applyPreference(
-            'theme',
-            e.matches
-              ? 'dark'
-              : 'light',
-            false
-          );
-        })
         function applyPreference(key, value, shouldSave) {
           document.body.setAttribute(`data-${key}`, value);
           document.querySelectorAll(`input[name=${key}]`).forEach(input => {
@@ -57,29 +44,13 @@
       </script>
     </div>
   </nav>
-  <div class="scene">
-    <div class="sky">
-      <div id="brand">
-        <h1>{{ tag | capitalize if tag else title }}</h1>
-        <div class="header-meta">
-          {%- if author -%}
-            <author>{{ author }}</author>
-          {%- endif -%}
-          {%- if date -%}
-            <date>{{ date | formatDate("MMMM D, YYYY") }}</date>
-          {%- endif -%}
-        </div>
-      </div>
-      <div class="cloud" style="--n: 0"></div>
-      <div class="cloud" style="--n: 1"></div>
-      <div class="cloud" style="--n: 2"></div>
-      <div class="cloud" style="--n: 3"></div>
-      <div class="cloud" style="--n: 4"></div>
-      <div class="cloud" style="--n: 5"></div>
-      <div class="cloud" style="--n: 6"></div>
-      <div class="cloud" style="--n: 7"></div>
-      <div class="cloud" style="--n: 8"></div>
-      <div class="cloud" style="--n: 9"></div>
-    </div>
+  <h1>{{ tag | capitalize if tag else title }}</h1>
+  <div class="header-meta">
+    {%- if author -%}
+      <author>{{ author }}</author>
+    {%- endif -%}
+    {%- if date -%}
+      <date>{{ date | formatDate("MMMM D, YYYY") }}</date>
+    {%- endif -%}
   </div>
 </header>
