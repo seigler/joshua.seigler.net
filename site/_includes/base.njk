@@ -22,6 +22,7 @@ title: Joshua's Homepage
     {% endif %}
     <meta name="twitter:card" content="summary" />
     <meta name="generator" content="{{ eleventy.generator }}">
+    <script defer src="https://stats.apps.seigler.net/script.js" data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"></script>
   </head>
   <body data-font="english" data-path="{{page.url}}">
     {% include "-header.njk" %}
@@ -33,8 +34,6 @@ title: Joshua's Homepage
   <script>
     function setScrollAmount() {
       const body = document.documentElement || document.body;
-      const scrolledFraction =
-        body.scrollTop / (body.scrollHeight - body.clientHeight);
       body.style.setProperty("--scrollLengthPx", body.scrollTop);
     }
     setScrollAmount();
