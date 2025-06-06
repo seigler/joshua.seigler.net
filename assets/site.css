@@ -402,7 +402,7 @@ h3 {
 a.header-anchor {
   position: absolute;
   transform: translateX(-100%);
-  margin-left: -0.2ch;
+  left: -0.2ch;
   opacity: 0;
   transition: opacity ease-in 0.1s;
   &::before {
