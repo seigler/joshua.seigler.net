@@ -6,7 +6,7 @@ title: Timeline
 ---
 {% for item in collections.timeline | reverse %}
   {% if item.data.title !== "Timeline" %}
-    <h3 id="{{item.data.time}}"><a class="header-anchor" href="#{{item.data.time}}" aria-hidden="true"></a>{{ item.data.title }} <aside>{{item.data.time}}</aside></h3>
-    <p>{{ item.data.description }}</p>
+    <h3 id="{{item.data.time}}"><a class="header-anchor" href="#{{item.data.time}}" aria-hidden="true"></a>{{ item.data.title | markdown | safe }} <aside>{{item.data.time}}</aside></h3>
+    <p>{{ item.data.description | markdown | safe }}</p>
   {% endif %}
 {% endfor %}

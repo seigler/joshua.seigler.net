@@ -93,6 +93,9 @@ export default (config) => {
   config.addFilter("formatDate", (date, format) => {
     return dayjs(date).utc().format(format);
   });
+  config.addFilter("markdown", (markdownString) => {
+    return mdLib.renderInline(String(markdownString ?? "").trim());
+  });
 
   clean.updateFileRecord("dist");
 

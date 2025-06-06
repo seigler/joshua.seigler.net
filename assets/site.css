@@ -38,7 +38,7 @@ body {
   --content-width: clamp(75vw, 40rem, 100vw - 3rem);
   --inset: calc(50vw - var(--content-width) / 2);
   background-image:
-    radial-gradient(circle at -20% -20vmin, #00f2, transparent 60%),
+    radial-gradient(circle at -20% -20vmin, #0000ff19, transparent 60%),
     radial-gradient(circle at 120% calc(100% - 20vmin), #0873, transparent 60%),
     url(/noise.png);
 }
@@ -52,7 +52,7 @@ body[data-theme="dark"] {
   --c-accent: hsl(220 20% 35%);
   --c-body-background: hsl(220 50% 5%);
 
-  --c-text-background-light: hsl(220 40% 10% / 40%);
+  --c-text-background-light: hsl(220 20% 35% / 30%);
   --c-text-light: hsl(60 50% 86.67%);
   --c-text-dark: hsl(60 50% 86.67%);
 }
@@ -67,7 +67,7 @@ body[data-theme="dark"] {
     --c-accent: hsl(220 20% 35%);
     --c-body-background: hsl(220 50% 5%);
 
-    --c-text-background-light: hsl(220 40% 10% / 40%);
+    --c-text-background-light: hsl(220 20% 35% / 30%);
     --c-text-light: hsl(60 50% 86.67%);
     --c-text-dark: hsl(60 50% 86.67%);
   }

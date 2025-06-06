@@ -14,7 +14,7 @@ It also supports installing specific global tools, like `angular-cli` from `npm`
 ### [stack-pr](https://github.com/modular/stack-pr)
 Open source tool for [stacking PRs](https://www.stacking.dev/).
 
-PR stacks are, as far as I can tell, the best way to manage large features in git. I first heard about this practice in a series of blog posts from Graphite, a company offering free PR-stacking software and related paid services. But you don't need a custom CI flow or managed service for stacking to work - this CLI tool or one of the others at stacking.dev can take care of this.
+PR stacks are, as far as I can tell, the best way to manage large features in git. I first heard about this practice in a series of blog posts from Graphite, a company offering free PR-stacking software and related paid services. But you don't need a custom CI flow or managed service for stacking to work - this CLI tool or one of the others at [stacking.dev](https://www.stacking.dev/) can take care of this.
 
 If you start using PR stacks your whole company will start copying you.
 
