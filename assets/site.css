@@ -115,10 +115,20 @@ a[href]:focus-visible,
 nav label:hover,
 nav label:focus-visible,
 nav label:has(input:focus-visible),
-.nav-toggle-button:has(input[type="radio"]:checked) {
+nav label:has(input:checked)
+{
+  outline: none;
   background-color: var(--c-accent);
+  box-shadow: 0 0 0.5rem var(--c-accent);
   text-decoration: none;
   border-radius: 0.5rem;
+}
+a[href]:focus-visible,
+nav label:focus-visible,
+nav label:has(input:focus-visible)
+{
+  z-index: 1;
+  outline: 2px solid var(--c-text-dark);
 }
 
 main p img {
@@ -301,6 +311,7 @@ footer section {
 }
 
 .nav-toggle-button {
+  position: relative;
   cursor: pointer;
   text-decoration-line: underline;
   display: inline-block;
@@ -310,9 +321,9 @@ footer section {
   border-radius: 0 !important;
   background-color: var(--c-text-background-light);
   > input[type="radio"] {
-    visibility: hidden;
-    position: fixed;
-    bottom: 110%;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
   }
   &:first-of-type {
     border-top-left-radius: 0.5rem !important;
