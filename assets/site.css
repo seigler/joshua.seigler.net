@@ -36,6 +36,7 @@ body {
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
   --content-width: clamp(75vw, 40rem, 100vw - 3rem);
+  --sidebar-width: clamp(10rem, calc(0.2 * var(--content-width)), calc(var(--content-width) * 0.5));
   --inset: calc(50vw - var(--content-width) / 2);
   background-image:
     radial-gradient(circle at -20% -20vmin, #0000ff19, transparent 60%),
@@ -186,6 +187,24 @@ aside {
   margin-left: 1ch;
   font-size: var(--s-1);
 }
+
+span.aside {
+  float: right;
+  clear: right;
+  width: var(--sidebar-width);
+  padding: 0.5rem 0 0.5rem 1rem;
+  font-size: var(--s-1);
+}
+@media (min-width: 40rem) {
+  main:has(span.aside) {
+    padding-right: calc(var(--inset) + var(--sidebar-width));
+  }
+  span.aside {
+    padding: 0 0 0 1rem;
+    margin-right: calc(-1 * var(--sidebar-width));
+  }
+}
+
 ul.collection {
   padding-left: 0;
   > li {
@@ -291,8 +310,15 @@ body > header > nav {
   body > header > nav {
     display: none;
   }
+  body > footer {
+    display: none;
+  }
   a[href^="http"]::after {
     content: " (" attr(href) ")";
+    font-size: 0.75em;
+    .footnotes & {
+      display: block;
+    }
   }
 }
 
@@ -388,6 +414,16 @@ h1 {
   > * + *::before {
     content: "-";
     padding: 0 0.5ch;
+  }
+}
+
+:where(ol li) {
+  list-style-type: decimal;
+  & :where(ol li) {
+    list-style-type: lower-alpha;
+    & :where(ol li) {
+      list-style-type: upper-alpha;
+    }
   }
 }
 

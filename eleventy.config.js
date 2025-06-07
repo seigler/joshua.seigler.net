@@ -3,6 +3,7 @@ import path from "path";
 import md from "markdown-it";
 import mdAnchor from "markdown-it-anchor";
 import mdFootnote from "markdown-it-footnote";
+import { spoiler as mdSpoiler } from "@mdit/plugin-spoiler";
 import mdLinkAttributes from "markdown-it-link-attributes";
 import prettier from "prettier";
 import dayjs from "dayjs";
@@ -29,6 +30,10 @@ export default (config) => {
       }),
     })
     .use(mdFootnote)
+    .use(mdSpoiler, {
+      tag: "span",
+      attrs: [["class", "aside"]]
+    })
     .use(mdLinkAttributes, {
       matcher(href) {
         return href.match(/^https?:\/\//);
@@ -38,6 +43,12 @@ export default (config) => {
         rel: "noopener",
       },
     });
+  mdLib.renderer.rules.render_footnote_anchor = (tokens, idx, options, env, slf) => {
+    let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
+    if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
+    /* ↩ with escape code to prevent display as Apple Emoji on iOS */
+    return ` <a href="#fnref${id}" class="footnote-backref">\u21a9\uFE0E</a>`
+  };
   config.setLibrary("md", mdLib);
   config.addPassthroughCopy({
     assets: "/",
