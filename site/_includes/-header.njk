@@ -1,50 +1,54 @@
 <header>
   <nav>
-    <div class="nav-categories">
-      <a href="{{ "/" | url }}">{{ site.title }}</a>
-      <a href="{{ "/posts" | url }}">/posts</a>
-      <a href="{{ "/timeline" | url }}">/timeline</a>
-      <a href="{{ "/recipes" | url }}">/recipes</a>
-      <a href="{{ "/music" | url }}">/music</a>
-      <a href="{{ "/books" | url }}">/books</a>
-    </div>
-    <div class="nav-settings">
-      <div class="nav-toggles">
-        <label class="nav-toggle-button" title="Light mode">☀️<input type="radio" name="theme" value="light"/></label>
-        <label class="nav-toggle-button" title="Automatic">🔄<input type="radio" name="theme" value="auto"/></label>
-        <label class="nav-toggle-button" title="Dark mode">🌒<input type="radio" name="theme" value="dark"/></label>
-      </div>
-      <div class="nav-toggles">
-        <label class="nav-toggle-button" data-language="english">English<input type="radio" name="language" value="english"/></label>
-        <label class="nav-toggle-button" data-language="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
-        <script type="text/javascript">
-          const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-          const defaultPrefs = {
-            language: 'english',
-            theme: 'auto'
-          };
-          Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
-            const currentPref = localStorage.getItem(key) ?? defaultPref;
-            applyPreference(key, currentPref, false)
-            document.querySelectorAll(`input[name=${key}]`).forEach(input => {
-              input.addEventListener('change', (e) => {
-                applyPreference(key, e.currentTarget.value, true);
+    <div class="nav-row">
+      <a class="nav-home" href="{{ "/" | url }}">{{ site.title }}</a>
+      <div class="nav-settings">
+        <div class="nav-toggles">
+          <label class="nav-toggle-button" title="Light mode">☀️<input type="radio" name="theme" value="light"/></label>
+          <label class="nav-toggle-button" title="Automatic">🔄<input type="radio" name="theme" value="auto"/></label>
+          <label class="nav-toggle-button" title="Dark mode">🌒<input type="radio" name="theme" value="dark"/></label>
+        </div>
+        <div class="nav-toggles">
+          <label class="nav-toggle-button" data-language="english">English<input type="radio" name="language" value="english"/></label>
+          <label class="nav-toggle-button" data-language="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
+          <script type="text/javascript">
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const defaultPrefs = {
+              language: 'english',
+              theme: 'auto'
+            };
+            Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
+              const currentPref = localStorage.getItem(key) ?? defaultPref;
+              applyPreference(key, currentPref, false)
+              document.querySelectorAll(`input[name=${key}]`).forEach(input => {
+                input.addEventListener('change', (e) => {
+                  applyPreference(key, e.currentTarget.value, true);
+                })
               })
-            })
-          });
-          function applyPreference(key, value, shouldSave) {
-            document.body.setAttribute(`data-${key}`, value);
-            document.querySelectorAll(`input[name=${key}]`).forEach(input => {
-              if (input.value === value) {
-                input.checked = true;
+            });
+            function applyPreference(key, value, shouldSave) {
+              document.body.setAttribute(`data-${key}`, value);
+              document.querySelectorAll(`input[name=${key}]`).forEach(input => {
+                if (input.value === value) {
+                  input.checked = true;
+                }
+              })
+              if (shouldSave) {
+                localStorage.setItem(key, value);
               }
-            })
-            if (shouldSave) {
-              localStorage.setItem(key, value);
             }
-          }
-        </script>
+          </script>
+        </div>
       </div>
+    </div>
+    <div class="nav-categories">
+      <a class="{{ 'nav-active' if '/posts' in page.url }}" href="{{ "/posts/" | url }}">/posts</a>
+      <a class="{{ 'nav-active' if '/about' in page.url }}" href="{{ "/about/" | url }}">/about</a>
+      <a class="{{ 'nav-active' if '/now' in page.url }}" href="{{ "/now/" | url }}">/now</a>
+      <a class="{{ 'nav-active' if '/uses' in page.url }}" href="{{ "/uses/" | url }}">/uses</a>
+      <a class="{{ 'nav-active' if '/recipes' in page.url }}" href="{{ "/recipes/" | url }}">/recipes</a>
+      <a class="{{ 'nav-active' if '/music' in page.url }}" href="{{ "/music/" | url }}">/music</a>
+      <a class="{{ 'nav-active' if '/books' in page.url }}" href="{{ "/books/" | url }}">/books</a>
     </div>
   </nav>
   <h1>{{ tag | capitalize if tag else title }}</h1>

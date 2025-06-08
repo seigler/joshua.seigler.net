@@ -7,13 +7,20 @@ layout: "base.njk"
     <h2>{{name | capitalize }}</h2>
     <ul class="collection">
       {%- for item in collection | reverse -%}
-        <li>
-          <a href="{{item.url}}">{{item.data.title}}</a>
-          {%- if item.data.date -%}
-            <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
-          {%- endif -%}
-          <p>{{item.data.description | safe}}</p>
-        </li>
+        {%- if (loop.index <= 5) -%}
+          <li>
+            <a href="{{item.url}}">{{item.data.title}}</a>
+            {%- if item.data.date -%}
+              <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
+            {%- endif -%}
+            <p>{{item.data.description | safe}}</p>
+          </li>
+        {%- endif -%}
+        {%- if (loop.index == 6) -%}
+          <li>
+            <a href="/{{name}}/">More {{name}}&hellip;</a>
+          </li>
+        {%- endif -%}
       {%- endfor -%}
     </ul>
   {%- endif -%}

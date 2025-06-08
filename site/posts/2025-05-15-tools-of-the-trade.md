@@ -6,6 +6,8 @@ description: Some dev tools I recommend.
 
 Everyone has different tools that they find especially effective. Here are some I have found with a few words about why I like them.
 
+> Update: I made a [/uses](/uses) page that lists these tools and many others I like.
+
 ### [mise-en-place](https://mise.jdx.dev/)
 Universal dev tool version manager. Specify tool versions in a config file and this tool can ensure that they are installed and active when entering the project directory. Amazing for getting a new dev environment set up in seconds. Replaces `asdf`, `nvm`, `pyenv`, `venv`, `rbenv`, and many other tool-specific version managers. Supports an incredible number of tools thanks to compatibility with `asdf`.
 
