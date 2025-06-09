@@ -34,7 +34,7 @@ body {
   --s3: calc(var(--s2) * var(--ratio));
   --s4: calc(var(--s3) * var(--ratio));
   --s5: calc(var(--s4) * var(--ratio));
-  --content-width: clamp(75vw, 40rem, 100vw - 3rem);
+  --content-width: clamp(75vw, 40rem, 100vw - 1rem);
   --sidebar-width: clamp(
     10rem,
     calc(0.2 * var(--content-width)),
@@ -272,6 +272,7 @@ body > header {
   color: var(--c-text-dark);
   padding: 0 var(--inset) 0;
   border-radius: 0.5rem 0.5rem 0 0;
+  padding-top: env(safe-area-inset-top, 0);
 }
 body > header > nav {
   margin: 0.5rem 0 3rem;
@@ -290,16 +291,19 @@ body > header > nav {
 .nav-row {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 0.25rem;
+}
+.nav-home {
+  flex-grow: 1;
+  order: 2;
 }
 .nav-home, .nav-active {
   font-weight: bold;
 }
 .nav-settings {
-  margin-left: auto;
   display: flex;
   gap: 0.5em;
   flex-direction: row;
@@ -354,6 +358,7 @@ body > footer {
   font-size: var(--s-1);
   margin: auto var(--inset) 0.5rem;
   padding-top: 4rem;
+  padding-bottom: env(safe-area-inset-bottom, 0);
   & a {
     white-space: nowrap;
   }
