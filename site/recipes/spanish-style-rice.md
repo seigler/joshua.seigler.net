@@ -26,4 +26,4 @@ Enjoy!
 
 ## Notes
 
-[Recipe from @dollartreedinners on TikTok](https://www.tiktok.com/t/ZT2Qy1AtF/)
+Original recipe from [dollartreedinners](https://www.tiktok.com/t/ZT2Qy1AtF/)

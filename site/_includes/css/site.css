@@ -255,10 +255,10 @@ blockquote {
     pointer-events: none;
     position: absolute;
     z-index: -1;
-    top: -0.5lh;
-    bottom: -0.5lh;
+    top: -1lh;
+    bottom: -1lh;
     left: -0.1em;
-    width: 10rem;
+    width: 15rem;
     max-width: 100%;
     background: radial-gradient(
       ellipse farthest-side at 0% 50%,
@@ -326,6 +326,9 @@ body > header > nav {
   :root {
     font-size: 10pt;
   }
+  * {
+    text-shadow: none !important;
+  }
   body {
     --c-highlight: white --c-dark: white;
     --c-accent: black;
@@ -343,7 +346,10 @@ body > header > nav {
   h2,
   h3,
   h4 {
-    opacity: 0.75;
+    opacity: 0.8;
+  }
+  :is(h1, h2, h3, h4, blockquote, .aside)::after {
+    content: none !important;
   }
   body > header > nav {
     display: none;
@@ -354,9 +360,14 @@ body > header > nav {
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.75em;
+    word-break: break-all;
+    font-family: "Commit Mono", monospace;
     .footnotes & {
       display: block;
     }
+  }
+  .isso-postbox {
+    display: none;
   }
 }
 
@@ -515,12 +526,94 @@ p > code {
   border-radius: 0.5em;
 }
 
-#isso-thread {
-  margin-top: 4rem !important;
+body #isso-thread {
+  margin-top: 4rem;
 }
-.isso-textarea {
-  margin: 0 !important;
+
+body .isso-postbox {
+  max-width: none;
 }
-.isso-thread-heading {
-  color: inherit !important;
+
+body .isso-textarea {
+  margin: 0;
+  line-height: 1.4rem;
+}
+body h4.isso-thread-heading {
+  color: inherit;
+}
+body .isso-auth-section {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  gap: 5px;
+  margin-top: 0.5rem;
+}
+body .isso-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--s-1);
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  flex-shrink: 1;
+}
+
+body .isso-input-wrapper label {
+  height: auto;
+}
+
+body .isso-input-wrapper input, body .isso-textarea, body .isso-preview {
+  color: inherit;
+  font-size: 1rem;
+  background-color: transparent;
+  padding: .5rem;
+  width: 100%;
+  border-radius: 0.2rem;
+  line-height: 1.4rem;
+  border: none;
+  border-bottom: 2px solid var(--c-accent);
+  box-shadow: inset 0 0 2rem -1rem var(--c-accent);
+  outline: none;
+  &:focus {
+    box-shadow: inset 0 0 2rem -1rem var(--c-accent), inset 0 -1.5rem 2.5rem -1.5rem var(--c-accent);
+    border-color: var(--c-accent);
+  }
+}
+body .isso-textarea {
+  line-height: 1.2;
+}
+body .isso-preview {
+  background: repeating-linear-gradient( -45deg, transparent, transparent 10px, var(--c-text-background-light) 10px, var(--c-text-background-light) 20px );
+}
+body .isso-post-action > input {
+  color: inherit;
+  background-color: var(--c-text-background-light);
+  font-size: 1rem;
+  padding: calc(0.5rem + 1px) 0.5rem;
+  border-radius: 0.2rem;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+  line-height: 1.4rem;
+  &:hover, &:focus-visible {
+    background-color: var(--c-accent);
+    box-shadow:
+      0 0 0.5rem var(--c-accent),
+      0 0 1rem var(--c-accent);
+
+  }
+}
+body .isso-post-action {
+  margin: 0;
+}
+.isso-postbox:not(.isso-preview-mode) .isso-post-action:has(input[name="edit"]) {
+  display: none;
+}
+@media (max-width: 60rem) {
+  body .isso-auth-section {
+    flex-wrap: wrap;
+  }
+  body .isso-input-wrapper {
+    width: 100%;
+  }
 }
