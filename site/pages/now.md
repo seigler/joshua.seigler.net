@@ -4,7 +4,7 @@ layout: "base.njk"
 date: 2025-06-07
 ---
 
-I live in Southbridge, Massachusetts since 2022, with my wife Sara and our three cats. We're starting to get more integrated here. I'm about to start a new role, my third or fourth startup depending on how you count it. I'm active in [a local church](https://www.stmichaelorthodox.com/). I enjoy spicy food, board games, and peace.
+I live in Southbridge, Massachusetts since 2022, with my wife Sara and our three cats. We're starting to get more integrated here. I'm about to start a new role, my third or fourth startup depending on how you count it. I'm active in [a local church](https://www.stmichaelorthodox.com/). I recently changed my mind about olives (I like them now).
 
 ## Goals
 
