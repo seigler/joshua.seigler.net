@@ -42,9 +42,13 @@ body {
   );
   --inset: calc(50vw - var(--content-width) / 2);
   background-image:
+    url(/noise.png),
     radial-gradient(circle at -20% 20vmin, var(--c-bg1), transparent 60%),
-    radial-gradient(circle at 120% calc(100% - 20vmin), var(--c-bg2), transparent 60%),
-    url(/noise.png);
+    radial-gradient(
+      circle at 120% calc(100% - 20vmin),
+      var(--c-bg2),
+      transparent 60%
+    );
 }
 
 body[data-theme="dark"] {
@@ -124,7 +128,9 @@ nav label:has(input:focus-visible),
 nav label:has(input:checked) {
   outline: none;
   background-color: var(--c-accent);
-  box-shadow: 0 0 0.5rem var(--c-accent), 0 0 1rem var(--c-accent);
+  box-shadow:
+    0 0 0.5rem var(--c-accent),
+    0 0 1rem var(--c-accent);
   text-decoration: none;
   border-radius: 0.5rem;
 }
@@ -300,7 +306,8 @@ body > header > nav {
   flex-grow: 1;
   order: 2;
 }
-.nav-home, .nav-active {
+.nav-home,
+.nav-active {
   font-weight: bold;
 }
 .nav-settings {
@@ -354,11 +361,12 @@ body > header > nav {
 }
 
 body > footer {
+  position: relative;
   text-align: right;
   font-size: var(--s-1);
-  margin: auto var(--inset) 0.5rem;
+  margin: auto var(--inset) 0;
   padding-top: 4rem;
-  padding-bottom: env(safe-area-inset-bottom, 0);
+  padding-bottom: max(env(safe-area-inset-bottom, 0), 0.5rem);
   & a {
     white-space: nowrap;
   }
