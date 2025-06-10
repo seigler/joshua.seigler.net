@@ -1,30 +1,31 @@
 ---
 title: Joshua's Homepage
 ---
+
 {%- set computedTitle = tag | capitalize if tag else title -%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="{{ "/site.css" | url }}?modified={{buildTime}}"/>
-    <link rel="webmention" href="https://webmention.io/joshua.seigler.net/webmention" />
+    <link rel="stylesheet" href="{{ "/site.css" | url }}?modified={{ buildTime }}"/>
+    <link rel="webmention" href="https://webmention.io/joshua.seigler.net/webmention"/>
     <title>{{ computedTitle }} - {{ site.title }}</title>
-    <meta name="description" content="{{ description }}" />
-    <meta property="og:title" content="{{ computedTitle }}" />
-    <meta property="og:type" content="{{ article }}" />
-    <meta property="og:url" content="{{ page.url | absoluteURL }}" />
-    <meta name="twitter:title" content="{{ computedTitle }}" />
-    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="description" content="{{ description }}"/>
+    <meta property="og:title" content="{{ computedTitle }}"/>
+    <meta property="og:type" content="{{ article }}"/>
+    <meta property="og:url" content="{{ page.url | absoluteURL }}"/>
+    <meta name="twitter:title" content="{{ computedTitle }}"/>
+    <meta name="twitter:description" content="{{ description }}"/>
     {% if cover %}
-    <meta property="og:image" content="{{ cover | absoluteURL }}" />
-    <meta name="twitter:image" content="{{ cover | absoluteURL }}" />
+      <meta property="og:image" content="{{ cover | absoluteURL }}"/>
+      <meta name="twitter:image" content="{{ cover | absoluteURL }}"/>
     {% endif %}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary"/>
     <meta name="generator" content="{{ eleventy.generator }}">
     <script defer src="https://stats.apps.seigler.net/script.js" data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"></script>
   </head>
-  <body data-font="english" data-path="{{page.url}}">
+  <body data-font="english" data-path="{{ page.url }}">
     {% include "-header.njk" %}
     <main>
       {{ content | safe }}
@@ -32,12 +33,50 @@ title: Joshua's Homepage
     {% include "-footer.njk" %}
   </body>
   <script>
+    const body = document.documentElement || document.body;
     function setScrollAmount() {
-      const body = document.documentElement || document.body;
       body.style.setProperty("--scrollLengthPx", body.scrollTop);
     }
     setScrollAmount();
     document.addEventListener("scroll", setScrollAmount);
     document.addEventListener("resize", setScrollAmount);
+    function rippleListener(el) {
+      return (evt) => {
+        const {
+          top,
+          right,
+          bottom,
+          left,
+        } = evt.target.getBoundingClientRect();
+        const effects = body.querySelector("#effects");
+        const newEffect = document.createElement("div");
+        newEffect.classList.add("effect-instance");
+        const padding = '10rem';
+        newEffect.style.top = `calc(${top + window.scrollY}px - ${padding})`;
+        newEffect.style.left = `calc(${left + window.scrollX}px - ${padding})`;
+        newEffect.style.width = `calc(${right - left}px + 2 * ${padding})`;
+        newEffect.style.height = `calc(${bottom - top}px + 2 * ${padding})`;
+        newEffect.style.borderRadius = `${Math.min(bottom - top, right - left) / 2}px`;
+        effects.appendChild(newEffect);
+        const reverser = () => {
+          newEffect.getAnimations().forEach(anim => {
+            anim.pause();
+            anim.updatePlaybackRate(5);
+            anim.reverse();
+            anim.addEventListener('finish', () => {
+              if (effects.contains(newEffect)) {
+                effects.removeChild(newEffect);
+              }
+            });
+          });
+        }
+        el.addEventListener('mouseleave', reverser);
+        el.addEventListener('blur', reverser);
+      }
+    }
+    Array.from(document.querySelectorAll('a[href],.nav-toggle-button')).forEach(el => {
+      el.addEventListener('mouseenter', rippleListener(el));
+      el.addEventListener('focus', rippleListener(el));
+    });
   </script>
 </html>
