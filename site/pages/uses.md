@@ -1,6 +1,7 @@
 ---
 title: What I Use
 layout: "base.njk"
+date: 2025-06-10
 ---
 
 ## Hardware
@@ -32,18 +33,30 @@ layout: "base.njk"
 
 - [Debian](https://www.debian.org/) server operating system.
 
-- [GrapheneOS](https://grapheneos.org/) Android OS with a privacy focus.
+- [GrapheneOS](https://grapheneos.org/) OS for Android with a privacy focus.
 
-- [SyncThing](https://syncthing.net/) P2P alternative to Dropbox, supports mobile and desktop. Synchronize folders of content across all my devices.
+- [SyncThing](https://syncthing.net/) file sync. P2P alternative to Dropbox, supports mobile and desktop. Synchronizes folders of content across all my devices.
 
-- [VSCodium](https://vscodium.com/) VSCode with less Microsoft.
+- [VSCodium](https://vscodium.com/) IDE. VSCode with less Microsoft.
 
-- [Obsidian](https://obsidian.md/) Notes and reference.
+- [Obsidian](https://obsidian.md/) for notes and reference.
 
-- [KeePassXC](https://keepassxc.org/) Secret management.
+- [KeePassXC](https://keepassxc.org/) secret management.
 
 ## Services
 
+- [FastMail](https://www.fastmail.com/) email, calendar, and contact hosting, DNS.
+
 - [DartNode](https://dartnode.com?aff=WigglySalmon747) VPS. Good value and specs, lets me bring my own server OS image.
 
-- [NameSilo](https://www.namesilo.com/?rid=df01e27pr) Domain registrar. Good prices, doesn't charge extra for domain privacy.
+- [NameSilo](https://www.namesilo.com/?rid=df01e27pr) domain registrar. Good prices, doesn't charge extra for domain privacy.
+
+- [Umami](https://umami.is/) analytics, self-hosted.
+
+- [Forgejo](https://forgejo.org/) git forge, self-hosted. Mirroring GitHub for now.
+
+- [Shaarli](https://github.com/shaarli/Shaarli) link site, self-hosted.
+
+- [Isso](https://isso-comments.de/) comments API, self hosted.
+
+- [HedgeDoc](https://hedgedoc.org/) markdown document collaboration, self-hosted.
