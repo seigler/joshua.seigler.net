@@ -85,7 +85,7 @@ title: Joshua's Homepage
       }
     }
     Array.from(
-      document.querySelectorAll('a[href],.nav-toggle-button,button,input[type="button"],input[type="submit"],input[type="reset"]')
+      document.querySelectorAll('a[href],.nav-toggle-button,button,input')
     ).forEach(el => {
       el.addEventListener('mouseenter', rippleListener(el));
       el.addEventListener('focus', rippleListener(el));
