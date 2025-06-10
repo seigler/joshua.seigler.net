@@ -643,5 +643,5 @@ body .isso-post-action {
   position: absolute;
   border-radius: 0.5rem;
   background: radial-gradient(ellipse farthest-side at 50% 50%, var(--c-accent) 25%, transparent);
-  animation: 5s ease normal forwards ripple;
+  animation: 10s ease-in normal forwards ripple;
 }
