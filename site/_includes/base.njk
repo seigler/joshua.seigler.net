@@ -24,6 +24,7 @@ title: Joshua's Homepage
     <meta name="twitter:card" content="summary"/>
     <meta name="generator" content="{{ eleventy.generator }}">
     <script defer src="https://stats.apps.seigler.net/script.js" data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"></script>
+    <script defer src="/scripts/animations.js"></script>
   </head>
   <body data-font="english" data-path="{{ page.url }}">
     {% include "-header.njk" %}
@@ -32,63 +33,4 @@ title: Joshua's Homepage
     </main>
     {% include "-footer.njk" %}
   </body>
-  <script>
-    const body = document.documentElement || document.body;
-    function setScrollAmount() {
-      body.style.setProperty("--scrollLengthPx", body.scrollTop);
-    }
-    setScrollAmount();
-    document.addEventListener("scroll", setScrollAmount);
-    document.addEventListener("resize", setScrollAmount);
-    function rippleListener(el) {
-      return(evt) => {
-        const {top, right, bottom, left} = evt.target.getBoundingClientRect();
-        const effects = body.querySelector("#effects");
-        const newEffect = document.createElement("div");
-        newEffect.classList.add("effect-instance");
-        const padding = '10rem';
-        newEffect.style.top = `calc(${
-          top + window.scrollY
-        }px - ${padding})`;
-        newEffect.style.left = `calc(${
-          left + window.scrollX
-        }px - ${padding})`;
-        newEffect.style.width = `calc(${
-          right - left
-        }px + 2 * ${padding})`;
-        newEffect.style.height = `calc(${
-          bottom - top
-        }px + 2 * ${padding})`;
-        newEffect.style.borderRadius = `${
-          Math.min(bottom - top, right - left) / 2
-        }px`;
-        effects.appendChild(newEffect);
-        const reverser = () => {
-          newEffect.getAnimations().forEach(anim => {
-            if (anim.currentTime < 100) {
-              anim.pause();
-              effects.removeChild(newEffect);
-              return;
-            }
-            anim.pause();
-            anim.updatePlaybackRate(1.5);
-            anim.reverse();
-            anim.addEventListener('finish', () => {
-              if (effects.contains(newEffect)) {
-                effects.removeChild(newEffect);
-              }
-            });
-          });
-        };
-        el.addEventListener('mouseleave', reverser);
-        el.addEventListener('blur', reverser);
-      }
-    }
-    Array.from(
-      document.querySelectorAll('a[href],.nav-toggle-button,button,input')
-    ).forEach(el => {
-      el.addEventListener('mouseenter', rippleListener(el));
-      el.addEventListener('focus', rippleListener(el));
-    });
-  </script>
 </html>
