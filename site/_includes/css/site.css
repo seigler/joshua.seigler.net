@@ -113,17 +113,24 @@ body {
 a {
   color: inherit;
 }
-a[href] {
+a[href], button#search {
+  appearance: none;
   text-decoration-line: underline;
   box-decoration-break: clone;
   padding: 0.1em;
   margin: -0.1em;
   position: relative;
 }
-a[href]:hover,
-a[href]:focus-visible,
-nav label:hover,
-nav label:focus-visible,
+button#search {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  margin-left: auto;
+}
+:is(a, nav label, button#search):hover,
+:is(a, nav label, button#search):focus-visible,
 nav label:has(input:focus-visible),
 nav label:has(input:checked) {
   outline: none;
@@ -139,8 +146,7 @@ nav label:has(input:checked) {
       0 0 1rem var(--c-accent);
   }
 }
-a[href]:focus-visible,
-nav label:focus-visible,
+:is(a[href], button, button#search, nav label):focus-visible,
 nav label:has(input:focus-visible) {
   z-index: 1;
   outline: 2px solid var(--c-text-dark);
@@ -396,7 +402,8 @@ footer section {
   position: relative;
   cursor: pointer;
   text-decoration-line: underline;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   border-radius: 0;
   padding: 0.1rem 0.25rem;
   margin: 0;
