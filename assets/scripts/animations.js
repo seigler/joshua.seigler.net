@@ -14,7 +14,7 @@ function addEffect({ target }) {
     target == null ||
     !target["matches"] ||
     !target.matches(
-      "a[href],.nav-toggle-button,button,input,label:not(:has(input))",
+      "a[href],.nav-toggle-button,button,input[type='radio']",
     )
   ) {
     return;

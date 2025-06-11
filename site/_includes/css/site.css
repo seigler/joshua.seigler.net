@@ -113,7 +113,7 @@ body {
 a {
   color: inherit;
 }
-a[href], button#search {
+a[href] {
   appearance: none;
   text-decoration-line: underline;
   box-decoration-break: clone;
@@ -121,16 +121,8 @@ a[href], button#search {
   margin: -0.1em;
   position: relative;
 }
-button#search {
-  background: transparent;
-  border: none;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  margin-left: auto;
-}
-:is(a, nav label, button#search):hover,
-:is(a, nav label, button#search):focus-visible,
+:is(a, nav label):hover,
+:is(a, nav label):focus-visible,
 nav label:has(input:focus-visible),
 nav label:has(input:checked) {
   outline: none;
@@ -146,7 +138,7 @@ nav label:has(input:checked) {
       0 0 1rem var(--c-accent);
   }
 }
-:is(a[href], button, button#search, nav label):focus-visible,
+:is(a[href], button, nav label):focus-visible,
 nav label:has(input:focus-visible) {
   z-index: 1;
   outline: 2px solid var(--c-text-dark);
@@ -575,6 +567,7 @@ body .isso-input-wrapper label {
 }
 
 body .isso-input-wrapper input,
+input[type='text'],
 body .isso-textarea,
 body .isso-preview {
   color: inherit;
@@ -607,7 +600,7 @@ body .isso-preview {
     var(--c-text-background-light) 20px
   );
 }
-body .isso-post-action > input {
+body .isso-post-action > input, button {
   color: inherit;
   background-color: var(--c-text-background-light);
   font-size: 1rem;
@@ -673,4 +666,22 @@ body .isso-post-action {
     transparent
   );
   animation: 1s ease normal forwards ripple;
+}
+.pagefind-ui__form {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr min-content;
+}
+.pagefind-ui__search-input {
+  margin-right: 0.5rem;
+  grid-column-start: 0;
+  grid-column-end: span 1;
+}
+.pagefind-ui__drawer {
+  grid-column-start: 0;
+  grid-column-end: span 2;
+  width: 100%;
+}
+.pagefind-ui__result-excerpt {
+  margin: 0.5rem 0;
 }
