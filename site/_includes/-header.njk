@@ -11,33 +11,6 @@
         <div class="nav-toggles">
           <label class="nav-toggle-button" data-language="english">English<input type="radio" name="language" value="english"/></label>
           <label class="nav-toggle-button" data-language="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
-          <script type="text/javascript">
-            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            const defaultPrefs = {
-              language: 'english',
-              theme: 'auto'
-            };
-            Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
-              const currentPref = localStorage.getItem(key) ?? defaultPref;
-              applyPreference(key, currentPref, false)
-              document.querySelectorAll(`input[name=${key}]`).forEach(input => {
-                input.addEventListener('change', (e) => {
-                  applyPreference(key, e.currentTarget.value, true);
-                })
-              })
-            });
-            function applyPreference(key, value, shouldSave) {
-              document.body.setAttribute(`data-${key}`, value);
-              document.querySelectorAll(`input[name=${key}]`).forEach(input => {
-                if (input.value === value) {
-                  input.checked = true;
-                }
-              })
-              if (shouldSave) {
-                localStorage.setItem(key, value);
-              }
-            }
-          </script>
         </div>
       </div>
     </div>

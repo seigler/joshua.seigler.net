@@ -1,11 +1,41 @@
 "use strict";
 
-// function setScrollAmount() {
-//   (document.documentElement || document.body).style.setProperty("--scrollLengthPx", body.scrollTop);
-// }
-// setScrollAmount();
-// document.addEventListener("scroll", setScrollAmount);
-// document.addEventListener("resize", setScrollAmount);
+const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const defaultPrefs = {
+  language: "english",
+  theme: "auto",
+};
+if (umami != null) {
+  umami.identify({ deviceTheme: darkModeMediaQuery ? "dark" : "light" });
+}
+Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
+  const currentPref = localStorage.getItem(key) ?? defaultPref;
+  applyPreference(key, currentPref, false);
+  document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
+    input.addEventListener("change", (e) => {
+      applyPreference(key, e.currentTarget.value, true);
+    });
+  });
+});
+function applyPreference(key, value, shouldSave) {
+  if (umami !== null) {
+    umami.identify({
+      [`pref-${key}`]: value,
+    });
+    if (shouldSave) {
+      umami.track(`Set ${key} to ${value}`);
+    }
+  }
+  document.body.setAttribute(`data-${key}`, value);
+  document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
+    if (input.value === value) {
+      input.checked = true;
+    }
+  });
+  if (shouldSave) {
+    localStorage.setItem(key, value);
+  }
+}
 
 /** @param {Event} evt */
 function addEffect({ target }) {
@@ -13,9 +43,7 @@ function addEffect({ target }) {
   if (
     target == null ||
     !target["matches"] ||
-    !target.matches(
-      "a[href],.nav-toggle-button,button,input[type='radio']",
-    )
+    !target.matches("a[href],.nav-toggle-button,button,input[type='radio']")
   ) {
     return;
   }
@@ -40,13 +68,13 @@ document.addEventListener("mouseenter", addEffect, true);
 document.addEventListener("focus", addEffect, true);
 
 /** @param {Event} evt */
-function removeEffect({target}) {
+function removeEffect({ target }) {
   const effectsLayer = document.querySelector("#effects");
   const effects = Array.from(effectsLayer.children).filter(
     (e) => e.__effectParent === target,
   );
-  effects.forEach(e => {
-    e.getAnimations().forEach(anim => {
+  effects.forEach((e) => {
+    e.getAnimations().forEach((anim) => {
       if (anim.currentTime < 100) {
         anim.pause();
         effectsLayer.removeChild(e);
@@ -55,13 +83,13 @@ function removeEffect({target}) {
       anim.pause();
       anim.updatePlaybackRate(-0.25);
       anim.play();
-      anim.addEventListener('finish', () => {
+      anim.addEventListener("finish", () => {
         if (effectsLayer.contains(e)) {
           effectsLayer.removeChild(e);
         }
       });
     });
-  })
-};
-document.addEventListener('mouseleave', removeEffect, true);
-document.addEventListener('blur', removeEffect, true);
+  });
+}
+document.addEventListener("mouseleave", removeEffect, true);
+document.addEventListener("blur", removeEffect, true);
