@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
-    "upload": "npx @11ty/eleventy && rsync -aP --delete dist/ joshua@seigler.net:/srv/www/joshua.seigler.net/public_html/"
+    "publish": "npx @11ty/eleventy && gh-pages -d dist -b gh-pages"
   },
   "keywords": [],
   "author": "Joshua Seigler",
@@ -25,6 +25,7 @@
     "prettier": "^3.3.1"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "pagefind": "^1.3.0"
   }
 }
