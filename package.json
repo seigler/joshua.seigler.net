@@ -18,6 +18,7 @@
     "@mdit/plugin-footnote": "^0.22.0",
     "@mdit/plugin-spoiler": "^0.21.0",
     "dayjs": "^1.11.11",
+    "eleventy-auto-cache-buster": "^0.8.1",
     "eleventy-plugin-clean": "^2.0.1",
     "markdown-it-anchor": "^9.0.1",
     "markdown-it-link-attributes": "^4.0.1",

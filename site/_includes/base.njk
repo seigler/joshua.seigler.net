@@ -8,7 +8,7 @@ title: Joshua's Homepage
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <link rel="stylesheet" href="{{ "/site.css" | url }}?modified={{ buildTime }}"/>
+    <link rel="stylesheet" href="{{ "/site.css" | url }}"/>
     <link rel="webmention" href="https://webmention.io/joshua.seigler.net/webmention"/>
     <title>{{ computedTitle }} - {{ site.title }}</title>
     <meta name="description" content="{{ description }}"/>
@@ -24,7 +24,7 @@ title: Joshua's Homepage
     <meta name="twitter:card" content="summary"/>
     <meta name="generator" content="{{ eleventy.generator }}">
     <script defer src="https://stats.apps.seigler.net/script.js" data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"></script>
-    <script defer src="/scripts/animations.js"></script>
+    <script defer src="/scripts/effects.js"></script>
   </head>
   <body data-font="english" data-path="{{ page.url }}">
     {% include "-header.njk" %}

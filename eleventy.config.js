@@ -12,6 +12,7 @@ import clean from "eleventy-plugin-clean";
 import site from "./site/_data/site.js";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import { execSync } from 'child_process';
+import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 
 dayjs.extend(utc);
 
@@ -133,6 +134,8 @@ export default (config) => {
     },
     stylesheet: "/simple-atom.xslt",
   });
+
+  config.addPlugin(eleventyAutoCacheBuster);
 
   config.on('eleventy.after', () => {
     execSync(`npx pagefind --site dist --glob \"**/*.html\"`, { encoding: 'utf-8' });
