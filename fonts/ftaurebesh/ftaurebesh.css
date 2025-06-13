@@ -1,0 +1,16 @@
+@font-face {
+  font-family: FTAurebesh;
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("/fonts/ftaurebesh/ftaurebesh-medium.woff2") format("woff2");
+  size-adjust: 125%;
+}
+@font-face {
+  font-family: FTAurebesh;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("/fonts/ftaurebesh/ftaurebesh-bold.woff2") format("woff2");
+  size-adjust: 125%;
+}

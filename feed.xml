@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/simple-atom.xslt" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>joshua.seigler.net</title>
+  <subtitle>Personal homepage of Joshua Seigler</subtitle>
+  <link href="https://joshua.seigler.net/feed.xml" rel="self" />
+  <link href="https://joshua.seigler.net/" />
+  <updated>2025-05-15T00:00:00Z</updated>
+  <id>https://joshua.seigler.net/</id>
+  <author>
+    <name>Joshua Seigler</name>
+  </author>
+  <entry>
+    <title>Tools of the trade</title>
+    <link href="https://joshua.seigler.net/posts/tools-of-the-trade/" />
+    <updated>2025-05-15T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/tools-of-the-trade/</id>
+    <content type="html">&lt;p&gt;
+  Everyone has different tools that they find especially effective. Here are
+  some I have found with a few words about why I like them.
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    Update: I made a &lt;a href=&quot;https://joshua.seigler.net/uses&quot;&gt;/uses&lt;/a&gt; page
+    that lists these tools and many others I like.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;mise-en-place&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#mise-en-place&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a href=&quot;https://mise.jdx.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;mise-en-place&lt;/a
+  &gt;
+&lt;/h3&gt;
+&lt;p&gt;
+  Universal dev tool version manager. Specify tool versions in a config file and
+  this tool can ensure that they are installed and active when entering the
+  project directory. Amazing for getting a new dev environment set up in
+  seconds. Replaces &lt;code&gt;asdf&lt;/code&gt;, &lt;code&gt;nvm&lt;/code&gt;, &lt;code&gt;pyenv&lt;/code&gt;,
+  &lt;code&gt;venv&lt;/code&gt;, &lt;code&gt;rbenv&lt;/code&gt;, and many other tool-specific version
+  managers. Supports an incredible number of tools thanks to compatibility with
+  &lt;code&gt;asdf&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+  It also supports installing specific global tools, like
+  &lt;code&gt;angular-cli&lt;/code&gt; from &lt;code&gt;npm&lt;/code&gt;, or &lt;code&gt;stack-pr&lt;/code&gt; from
+  &lt;code&gt;pipx&lt;/code&gt;.
+&lt;/p&gt;
+&lt;h3 id=&quot;stack-pr&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#stack-pr&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a href=&quot;https://github.com/modular/stack-pr&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;stack-pr&lt;/a
+  &gt;
+&lt;/h3&gt;
+&lt;p&gt;
+  Open source tool for
+  &lt;a href=&quot;https://www.stacking.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;stacking PRs&lt;/a
+  &gt;.
+&lt;/p&gt;
+&lt;p&gt;
+  PR stacks are, as far as I can tell, the best way to manage large features in
+  git. I first heard about this practice in a series of blog posts from
+  Graphite, a company offering free PR-stacking software and related paid
+  services. But you don’t need a custom CI flow or managed service for stacking
+  to work - this CLI tool or one of the others at
+  &lt;a href=&quot;https://www.stacking.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;stacking.dev&lt;/a
+  &gt;
+  can take care of this.
+&lt;/p&gt;
+&lt;p&gt;If you start using PR stacks your whole company will start copying you.&lt;/p&gt;
+&lt;h3 id=&quot;xc&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#xc&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a href=&quot;https://xcfile.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;xc&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Markdown based task runner.&lt;/p&gt;
+&lt;p&gt;
+  Define tasks in code blocks in markdown, and call them from the CLI. Serves as
+  both task definition and documentation.
+&lt;/p&gt;
+&lt;h3 id=&quot;pd2slack&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#pd2slack&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a
+    href=&quot;https://github.com/sidpremkumar/pd2slack&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;pd2slack&lt;/a
+  &gt;
+&lt;/h3&gt;
+&lt;p&gt;
+  Simple python script to update the members of a Slack group such as
+  &lt;code&gt;@oncall&lt;/code&gt; to match the active member(s) of a PagerDuty schedule.
+  This replaces several expensive SAAS services.
+&lt;/p&gt;
+&lt;h3 id=&quot;syncthing&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#syncthing&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a href=&quot;https://syncthing.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SyncThing&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+  P2P alternative to Dropbox, supports mobile and desktop. Synchronize folders
+  of content across all my devices.
+&lt;/p&gt;
+&lt;h3 id=&quot;obsidian&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#obsidian&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a href=&quot;https://obsidian.md/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Obsidian&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;For notes and reference. Sync across devices with &lt;code&gt;syncthing&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;keepassxc&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#keepassxc&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  &lt;a href=&quot;https://keepassxc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;KeePassXC&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;For passwords. Sync across devices with &lt;code&gt;syncthing&lt;/code&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Thinking machines</title>
+    <link href="https://joshua.seigler.net/posts/thinking-machines/" />
+    <updated>2025-04-24T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/thinking-machines/</id>
+    <content type="html">&lt;p&gt;
+  There’s an exchange early in the classic &#39;80s movie TRON. Some scientists are
+  talking shop:
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;img
+    src=&quot;https://joshua.seigler.net/2025-04-24--computers-will-start-thinking.jpg?v=72b55e6fa16c&quot;
+    alt=&quot;Still from TRON, left to right Linda, Alan, and Gibbs, in conversation.&quot;
+  /&gt;
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    &lt;strong&gt;ALAN:&lt;/strong&gt; I tell ya, ever since he got that Master Control
+    Program, system’s got more bugs than a bait store.
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;GIBBS:&lt;/strong&gt; Ehh, you gotta expect some static. After all,
+    computers are just machines, they can’t think…
+  &lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ALAN:&lt;/strong&gt; Programs will be thinking &lt;em&gt;soon&lt;/em&gt;.&lt;/p&gt;
+  &lt;p&gt;
+    &lt;strong&gt;GIBBS:&lt;/strong&gt; (wryly) Hahaha, won’t that be grand –
+    &lt;em
+      &gt;computers and the programs will start thinking, and the people will
+      stop!&lt;/em
+    &gt;
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  Gibbs has a point. The modern vision of a utopian future is one where work is
+  relieved, and people are free to pursue leisure, or exercise their creativity
+  with art, writing, and poetry. Thinking computers are here now, in the form of
+  “large language models” (LLMs) like ChatGPT. Setting aside the irony that
+  creative works are the first and most visible applications of LLM technology –
+  is that imagined future actually a good one?
+&lt;/p&gt;
+&lt;h2 id=&quot;mom-is-always-right&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/thinking-machines/#mom-is-always-right&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Mom is always right
+&lt;/h2&gt;
+&lt;p&gt;
+  When I was a kid, I remember a day going to yard sales with my mom in the
+  family minivan. It was early summer, a hot day. The windows were down, and I
+  complained that if the vehicle has good air conditioning, we should use it.
+  What was the point in getting all hot? “To get used to the warm weather,” came
+  the answer. What an injustice! We were sweating back there! Later in life, I
+  took a short trip to Arizona in August. Everyone scurried from building to
+  building. Where the sun was doubled, reflected off of glass skyscrapers, the
+  temperature jump was alarming. It was actually unsafe to spend long stretches
+  outside unprepared. But when I returned to Massachusetts, for the rest of the
+  summer 85 or 90 degrees Fahrenheit felt like nothing.
+&lt;/p&gt;
+&lt;p&gt;
+  All that to say, the work that LLM technology offers to relieve isn’t just
+  about achieving a result. The effort maintains and builds our abilities. Work
+  pushes us to connect to each other for help, or to persevere in doing
+  something difficult. Outsourcing that work eventually means losing the ability
+  to do it yourself.
+&lt;/p&gt;
+&lt;h2 id=&quot;attention-must-be-paid&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/thinking-machines/#attention-must-be-paid&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Attention must be paid
+&lt;/h2&gt;
+&lt;p&gt;
+  Simply put, an LLM is a document completion engine. You give it text, and it
+  extends it. The result doesn’t have to be true, it just has to be convincing.
+  No amount of pre-training or guard rails will make it truthful. It does often
+  say true things, but that’s not the point, it’s more of a happy accident.
+&lt;/p&gt;
+&lt;p&gt;
+  Because they are built from essentially the whole public internet, LLMs also
+  have a strong connection to The Algorithm. Algorithms that run social media
+  feeds and online advertising are designed to attract human attention, a
+  precious thing. Social media algorithms and LLMs are oriented towards
+  capturing that attention. The foundational LLM paper is even called,
+  “Attention is all you need”. A prescient title. LLM intelligence is not like
+  ours. It can’t know what it’s like to be a human.
+&lt;/p&gt;
+&lt;p&gt;
+  If this was a person, someone who wanted your attention and had this kind of
+  indifference towards truth, they would be considered a con-man or bullshitter.
+  &lt;span class=&quot;aside&quot;
+    &gt;&lt;a
+      href=&quot;https://archive.org/details/on-bullshit-by-harry-frankfurt&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;On Bullshit&lt;/a
+    &gt;, &lt;em&gt;Harry Frankfurt&lt;/em&gt;&lt;/span
+  &gt;
+  Untrustworthy.
+&lt;/p&gt;
+&lt;h2 id=&quot;don%E2%80%99t-create-the-torment-nexus&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/thinking-machines/#don%E2%80%99t-create-the-torment-nexus&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Don’t create the torment nexus
+&lt;/h2&gt;
+&lt;p&gt;
+  LLMs clearly manifest a type of intelligence. Sure, it’s “just” some linear
+  algebra and a ton of data. But it does exhibit a type of intelligence. One
+  without empathy.
+  &lt;span class=&quot;aside&quot;
+    &gt;&lt;a
+      href=&quot;https://apnews.com/article/chatbot-ai-lawsuit-suicide-teen-artificial-intelligence-9d48adc572100822fdbc3c90d1456bd0&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;AI chatbot pushed teen to kill himself, lawsuit alleges&lt;/a
+    &gt;, &lt;em&gt;AP News&lt;/em&gt;&lt;br /&gt;
+    &lt;a
+      href=&quot;https://www.brusselstimes.com/430098/belgian-man-commits-suicide-following-exchanges-with-chatgpt&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;Belgian man dies by suicide following exchanges with chatbot&lt;/a
+    &gt;, &lt;em&gt;Brussels Times&lt;/em&gt;&lt;br /&gt;
+    &lt;a
+      href=&quot;https://www.rollingstone.com/culture/culture-features/ai-spiritual-delusions-destroying-human-relationships-1235330175/&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;AI-Fueled Spiritual Delusions Are Destroying Human Relationships&lt;/a
+    &gt;, &lt;em&gt;Rolling Stone&lt;/em&gt;&lt;/span
+  &gt;
+  Not being human, it &lt;em&gt;can’t&lt;/em&gt; have empathy—and intelligence without
+  empathy can be dangerous.
+&lt;/p&gt;
+&lt;p&gt;
+  Science fiction is littered with cautionary tales about inhuman intelligence.
+  For that matter, so is myth: genies give people whatever they want, but
+  because people have self-destructive desires (like the desire to avoid work),
+  it goes wrong. In TRON, Infocom has the MCP (Master Control Program), an
+  overgrown chess program that is given access to whatever information it can
+  consume, until its intelligence and capabilities are seemingly endless. The
+  company leadership comes to rely on the program so completely that it becomes
+  their entire interface for understanding and operating the business. There is
+  also the irony that Infocom’s success was built on the misuse of intellectual
+  property, much as LLM companies have done
+  &lt;span class=&quot;aside&quot;
+    &gt;&lt;a
+      href=&quot;https://sites.usc.edu/iptls/2025/02/04/ai-copyright-and-the-law-the-ongoing-battle-over-intellectual-property-rights/&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;AI, Copyright, and the Law: The Ongoing Battle Over Intellectual Property
+      Rights &lt;/a
+    &gt;, &lt;em&gt;IP &amp;amp; Technology Law Society&lt;/em&gt;&lt;br /&gt;
+    &lt;a
+      href=&quot;https://hbr.org/2023/04/generative-ai-has-an-intellectual-property-problem&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;Generative AI Has an Intellectual Property Problem&lt;/a
+    &gt;, &lt;em&gt;Harvard Business Review&lt;/em&gt;&lt;/span
+  &gt;.
+&lt;/p&gt;
+&lt;p&gt;
+  I don’t think I am wise enough to safely use a genie in a bottle. And I don’t
+  want to outsource my creative efforts to an addictive, bullshitting alien
+  intellect, even if it might save time and effort in the short term.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;img
+    src=&quot;https://joshua.seigler.net/2025-04-24--end-of-line.jpg?v=5d7188be78de&quot;
+    alt=&quot;End of line&quot;
+  /&gt;
+&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Site design updated</title>
+    <link href="https://joshua.seigler.net/posts/site-design-updated/" />
+    <updated>2024-06-05T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/site-design-updated/</id>
+    <content type="html">&lt;p&gt;
+  New design! The tools I used before have a lot of unmaintained or outdated
+  dependencies and I wanted something a little simpler. The new site uses
+  &lt;a href=&quot;https://pnpm.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pnpm&lt;/a&gt;,
+  &lt;a href=&quot;https://www.11ty.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;11ty&lt;/a&gt;, and
+  &lt;a href=&quot;https://mozilla.github.io/nunjucks/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;Nunjucks&lt;/a
+  &gt;. Content is still in
+  &lt;a
+    href=&quot;https://daringfireball.net/projects/markdown/&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;markdown&lt;/a
+  &gt;.
+&lt;/p&gt;
+&lt;p&gt;
+  One thing I’m proud of is a visual ping for footnotes.&lt;sup
+    class=&quot;footnote-ref&quot;
+    &gt;&lt;a href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote1&quot;
+      &gt;[1]&lt;/a
+    &gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref1&quot;&gt;&lt;/a
+  &gt;&lt;/sup&gt;
+  When you click a footnote&lt;sup class=&quot;footnote-ref&quot;
+    &gt;&lt;a href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote2&quot;
+      &gt;[2]&lt;/a
+    &gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref2&quot;&gt;&lt;/a
+  &gt;&lt;/sup&gt;
+  it briefly highlights the thing you jumped to.
+&lt;/p&gt;
+&lt;p&gt;
+  In the upper right I added a style toggle that applies the font from Star
+  Wars, “Aurebesh”. I learned how to read it but sometimes want some practice.
+  &lt;span data-language=&quot;aurebesh&quot;
+    &gt;People who can read this are cool and I like them.&lt;/span
+  &gt;
+&lt;/p&gt;
+&lt;p&gt;I also finally made a section for recipes!&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    May 2025 edit: I updated the design some more without changing the tech
+    stack. The main improvements are animated clouds and a host of minor
+    adjustments.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    June 2025 edit: I have continued to alter the design. Pray I don’t alter it
+    any further.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr class=&quot;footnotes-sep&quot; /&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+  &lt;ol class=&quot;footnotes-list&quot;&gt;
+    &lt;li id=&quot;footnote1&quot; class=&quot;footnote-item&quot;&gt;
+      &lt;p&gt;
+        It highlights when you click back, too.
+        &lt;a
+          href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote-ref1&quot;
+          class=&quot;footnote-backref&quot;
+          &gt;↩︎&lt;/a
+        &gt;
+      &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;footnote2&quot; class=&quot;footnote-item&quot;&gt;
+      &lt;p&gt;
+        Hi.
+        &lt;a
+          href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote-ref2&quot;
+          class=&quot;footnote-backref&quot;
+          &gt;↩︎&lt;/a
+        &gt;
+      &lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/section&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Finally, a Coherent Worldview</title>
+    <link href="https://joshua.seigler.net/posts/finally-a-coherent-worldview/" />
+    <updated>2023-07-14T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/finally-a-coherent-worldview/</id>
+    <content type="html">&lt;p&gt;
+  Around the time of my previous post, I had just been received into the
+  Orthodox church. Since then I have found it to be everything I was looking
+  for, and a great deal more. There is such a wealth of wisdom, going back
+  thousands of years. And it was all there, un-seen, un-read, as far as I was
+  concerned not existing at all! It seems impossible to me that I was so unaware
+  of these treasures by chance.
+&lt;/p&gt;
+&lt;p&gt;
+  Father Seraphim Rose, Saint Paisios, Saint Porphyrios, Elder Thaddeus of
+  Vitovnica - to name only a few! - lived in this world, recently. They speak
+  plainly and lovingly about modern and familiar concerns. Their example and
+  guidance are a priceless treasure! And not only they help me, but
+  participating in the tradition of the Orthodox Church has… I don’t even know
+  how to say it all. I have experienced how the prodigal son felt when he took a
+  few trembling steps back to his father, and instead of the rejection or anger
+  he had earned, he received joyful, unearned forgiveness. His father
+  &lt;em&gt;ran&lt;/em&gt; to him while he was still far away!
+&lt;/p&gt;
+&lt;p&gt;
+  Here is what I know, now from experience: Jesus Christ is life and truth and
+  love. To look for life, or truth, or love apart from Him is pointless! It’s a
+  contradiction, like looking for light by marching into the shadows. God made
+  me, and He loves me more than I love myself. Because this is true, I want to
+  do everything His way, even if I don’t understand it at first.
+&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Embracing Mysticism</title>
+    <link href="https://joshua.seigler.net/posts/embracing-mysticism/" />
+    <updated>2021-10-16T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/embracing-mysticism/</id>
+    <content type="html">&lt;p&gt;
+  Logical arguments no longer work. This has been especially visible in the
+  pandemic response in 2020. If you dug even a little below the surface of any
+  mainstream narrative in the past two years, you likely found points of
+  disagreement. But showing people scientific papers, charts, statistical
+  analysis, or other types of evidence accomplishes nothing, or worse it invites
+  accusations of being part of the Other Team, one of those backwards, wrong,
+  stupid people.
+&lt;/p&gt;
+&lt;p&gt;
+  In mid-2020 Vin Armani (now Cyprian) started calling this change “The Dim
+  Age”&lt;sup class=&quot;footnote-ref&quot;
+    &gt;&lt;a href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#footnote1&quot;
+      &gt;[1]&lt;/a
+    &gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref1&quot;&gt;&lt;/a&gt;&lt;/sup
+  &gt;. He suggested that most people still see the world as exclusively physical,
+  oblivious to patterns of reality that are plainly obvious to more mystically
+  aware people.
+&lt;/p&gt;
+&lt;p&gt;
+  In an attempt to remedy my newfound illiteracy, I started exploring symbolism,
+  which as I understood it dealt with identifying and understanding meaning. I
+  found Jonathan Pageau’s project
+  &lt;a href=&quot;https://thesymbolicworld.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;The Symbolic World&lt;/a
+  &gt;, which has some very accessible videos breaking down movies and other pop
+  culture artifacts from a symbolic perspective
+  &lt;sup class=&quot;footnote-ref&quot;
+    &gt;&lt;a href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#footnote2&quot;
+      &gt;[2]&lt;/a
+    &gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref2&quot;&gt;&lt;/a&gt;&lt;/sup
+  &gt;. These commentaries did not seem arbitrary or speculative, but pointed to
+  cultural trends that I couldn’t un-see once I understood them. I binged a
+  bunch more of his material, including eventually a book his brother Mattheiu
+  wrote, &lt;em&gt;The Language of Creation: Cosmic Symbolism in Genesis&lt;/em
+  &gt;&lt;sup class=&quot;footnote-ref&quot;
+    &gt;&lt;a href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#footnote3&quot;
+      &gt;[3]&lt;/a
+    &gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref3&quot;&gt;&lt;/a&gt;&lt;/sup
+  &gt;. Through this I discovered a side of reality I had been almost completely
+  oblivious to, and what’s more, an aspect of my faith which had somehow
+  completely passed me by.
+&lt;/p&gt;
+&lt;p&gt;
+  From there I started listening to the
+  &lt;a
+    href=&quot;https://www.ancientfaith.com/podcasts/lordofspirits&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;Lord of Spirits&lt;/a
+  &gt;
+  podcast. I learned that commonplace, obvious understanding of existence as
+  material &lt;em&gt;and spiritual&lt;/em&gt; has been mostly lost, displaced by modern
+  confidence that the material world is the limit of reality, over which
+  sovereign mankind rules. The ancient faith of Christianity, known now as
+  “Eastern Orthodoxy”, corresponds with reality, especially spiritual patterns
+  of reality as we see more plainly every week, better than anything else I
+  know.
+&lt;/p&gt;
+&lt;h2 id=&quot;additional-thoughts&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#additional-thoughts&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Additional thoughts
+&lt;/h2&gt;
+&lt;p&gt;
+  For a while I think my highest values have been freedom and truth. A desire to
+  be solely responsible for myself, and a desire to understand myself and the
+  world fully and accurately. But I didn’t realize that my chief obstacle is
+  hardly megacorps and governments: I am ruled by my own out-of-control desires:
+  for comfort, pleasure, control, satisfaction, even self-mastery. In a paradise
+  where my every whim was manifested, I would still be a slave to desire,
+  consuming and &lt;em&gt;wanting&lt;/em&gt; more and more.
+&lt;/p&gt;
+&lt;p&gt;
+  Investigating eastern orthodoxy, this ancient Christianity, revealed a better
+  path to freedom and truth: aiming higher. Every action and choice is in
+  service to something. Instead of serving little tyrannical gods like comfort
+  or pleasure, or potentially nobler gods like a country or even a “liberty
+  movement”, I will attempt to serve the Most High.
+&lt;/p&gt;
+&lt;hr class=&quot;footnotes-sep&quot; /&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+  &lt;ol class=&quot;footnotes-list&quot;&gt;
+    &lt;li id=&quot;footnote1&quot; class=&quot;footnote-item&quot;&gt;
+      &lt;p&gt;
+        &lt;a
+          href=&quot;https://freemanbeyondthewall.libsyn.com/episode-478&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noopener&quot;
+          &gt;Free Man Beyond The Wall episode 478: We’ve Entered The ‘Dim Age’&lt;/a
+        &gt;
+        &lt;a
+          href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#footnote-ref1&quot;
+          class=&quot;footnote-backref&quot;
+          &gt;↩︎&lt;/a
+        &gt;
+      &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;footnote2&quot; class=&quot;footnote-item&quot;&gt;
+      &lt;p&gt;
+        &lt;a
+          href=&quot;https://thesymbolicworld.com/videos/symbolism-propaganda-in-popular-culture/&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noopener&quot;
+          &gt;Symbolism and Propaganda in Popular Culture&lt;/a
+        &gt;,
+        &lt;a
+          href=&quot;https://thesymbolicworld.com/videos/the-fall-of-loki-into-the-multiverse/&quot;
+          target=&quot;_blank&quot;
+          rel=&quot;noopener&quot;
+          &gt;The Fall of Loki (Into the Multiverse)&lt;/a
+        &gt;
+        &lt;a
+          href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#footnote-ref2&quot;
+          class=&quot;footnote-backref&quot;
+          &gt;↩︎&lt;/a
+        &gt;
+      &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;footnote3&quot; class=&quot;footnote-item&quot;&gt;
+      &lt;p&gt;
+        &lt;a href=&quot;https://amzn.to/4iBOExr&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+          &gt;The Language of Creation: Cosmic Symbolism in Genesis: A
+          Commentary&lt;/a
+        &gt;, ISBN 978-1981549337
+        &lt;a
+          href=&quot;https://joshua.seigler.net/posts/embracing-mysticism/#footnote-ref3&quot;
+          class=&quot;footnote-backref&quot;
+          &gt;↩︎&lt;/a
+        &gt;
+      &lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/section&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Needs-based communication</title>
+    <link href="https://joshua.seigler.net/posts/needs-based-communication/" />
+    <updated>2021-05-26T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/needs-based-communication/</id>
+    <content type="html">&lt;p&gt;
+  Needs-based communication (usually called non-violent communication or NVC™)
+  is a way of understanding yourself and others with a unique insight: everyone
+  has their own personal reactions to the world, but people have the same basic
+  needs. We recognize those needs in other people, and that common connection
+  can allow us to communicate clearly when there is conflict.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;strong&gt;Needs&lt;/strong&gt; are universal to humanity. They are common drives that
+  we all experience, and this universality makes them perfect for connecting
+  with each other. Some broad categories of needs are the needs for: connection,
+  physical well-being, honesty, play, peace, autonomy, and meaning. Needs can
+  also be specific: a need for clarity, nurturing, integrity, trust, space, etc.
+  Needs are abstract, not connected to people or actions. For example, peace is
+  a need, muting TV commercials is not. Here is
+  &lt;a
+    href=&quot;https://www.cnvc.org/training/resource/needs-inventory&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;a partial list of needs&lt;/a
+  &gt;
+  from the Center for Non-Violent Communication (CNVC).
+&lt;/p&gt;
+&lt;p&gt;
+  Everything &lt;em&gt;anyone&lt;/em&gt; does is an attempt to meet a need. None of these
+  universal needs is wrong or inherently harmful, although sometimes the
+  strategies we use can be.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;strong&gt;Conflict&lt;/strong&gt; happens when our needs aren’t met. We get stuck in
+  conflict when we mix up needs and strategies. Needs never conflict with each
+  other, only strategies do.
+&lt;/p&gt;
+&lt;p&gt;
+  When we experience conflict or negative feelings, that indicates that there is
+  an unmet need. In an attempt to end a conflict, we often settle on
+  unsatisfying resolutions:
+&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    We suppress the need and move on, painfully leaving the problem unaddressed.
+  &lt;/li&gt;
+  &lt;li&gt;
+    We come to an uneasy agreement about who is the winner and who is the loser,
+    and the loser gives up on meeting their need. The immediate conflict is
+    over, but the problem is not really resolved.
+  &lt;/li&gt;
+  &lt;li&gt;
+    We escalate, expanding the conflict in an attempt to win, at the other’s
+    expense if necessary.
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+  These resolutions can happen despite our best intentions, as a result of not
+  understanding what’s happening as we fight. A very common mistake is to
+  confuse needs and strategies.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;strong&gt;Strategies&lt;/strong&gt; are things we do to meet our needs. In contrast to
+  needs, which are abstract and universal, strategies are personal, specific,
+  and widely varied.
+&lt;/p&gt;
+&lt;p&gt;
+  For example, consider the need for self-expression. There are as many
+  strategies as there are people and situations: singing, writing, talking,
+  composing, dressing a certain way… and on and on.
+&lt;/p&gt;
+&lt;p&gt;
+  Jumping into a conflict strategy-first is bound to cause problems if that
+  strategy doesn’t meet others’ needs as well as your own. The way past conflict
+  is for everyone involved to understand each others’ needs, and
+  &lt;em&gt;then&lt;/em&gt; work together to find a strategy to meet those needs.
+&lt;/p&gt;
+&lt;p&gt;So, &lt;strong&gt;how do you figure out your own needs?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+  Negative feelings are a sign that you have an unmet need. Unfortunately, most
+  of us have learned to bundle in certain judgments and name them as feelings.
+  For example, I might think I am feeling &lt;em&gt;abandoned&lt;/em&gt;, but really this is
+  a feeling of disconnectedness, vulnerability, loneliness, or something else,
+  combined with a judgment that someone else has made me feel that way.
+&lt;/p&gt;
+&lt;p&gt;
+  The truth is that the same situation can affect people very differently. This
+  means that feelings must come from a person’s own response to things. In order
+  to see your feelings clearly, it is important to take ownership of them as
+  &lt;em&gt;your&lt;/em&gt; feelings rather than something caused by the world around you. I
+  have found this to be very challenging, but also incredibly rewarding.
+&lt;/p&gt;
+&lt;p&gt;
+  Once you have an honest name for what you are feeling, think about what need
+  sparked the feeling.
+&lt;/p&gt;
+&lt;p&gt;
+  There is a (kind of clunky) formula for requesting help meeting a need without
+  tacking on strategies, demands, judgments, or other baggage. As the exercise
+  becomes more habitual, you won’t need the formula, and can accomplish the same
+  thing more naturally.
+&lt;/p&gt;
+&lt;p&gt;Here it is:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    When &lt;em&gt;[observation]&lt;/em&gt;, I felt &lt;em&gt;[feeling]&lt;/em&gt; because I was having
+    a need for &lt;em&gt;[need]&lt;/em&gt;. (possibly also a request:) Are you willing to
+    &lt;em&gt;[action]&lt;/em&gt;?
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  In the spirit of communicating without judgments, the observation should be
+  strictly focused on facts, with no mind-reading or attribution at all. Sharing
+  your feelings in addition to the need can help the other person recognize the
+  need and how it affects you. If the other person understands the need, you can
+  also make a request for some specific action to help meet your need.
+&lt;/p&gt;
+&lt;p&gt;
+  It is very important that the action you request be feasible, concrete, and
+  specific. Asking someone to change their behavior forever, think a certain
+  way, etc is too much. The request should also really, truly be a request and
+  not a demand. A “No!” should be as welcome as a “Yes!” because the goal is to
+  find a strategy that meets your needs &lt;em&gt;and&lt;/em&gt; theirs.
+&lt;/p&gt;
+&lt;p&gt;
+  There is a (similarly clunky) pattern for discovering someone else’s needs. As
+  you listen to them, you will probably get an idea for how they feel, and you
+  may be able to guess what need they are experiencing. You can ask:
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;
+    When you &lt;em&gt;[observation]&lt;/em&gt; do you feel &lt;em&gt;[feeling]&lt;/em&gt; because you
+    are having a need for &lt;em&gt;[need]&lt;/em&gt;? (possibly also:) Right now, would you
+    like me to &lt;em&gt;[action]&lt;/em&gt;?
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  Like the other formula, this is just a beginning point, almost too rough to
+  use except for training your responses and replacing old communication habits.
+&lt;/p&gt;
+&lt;p&gt;
+  These are two sides of the same coin, a pattern that draws a line from the
+  stimulus, some observation, through the needs, towards a solution. Even if you
+  guess wrong, just focusing on someone’s feelings and needs demonstrates that
+  you are really interested in their problem.
+&lt;/p&gt;
+&lt;p&gt;
+  Even without explicitly using this pattern (observation ➔ feeling ➔ need ➔
+  request), just by thinking about needs (your own and others’) you can untangle
+  conflict and see other people with much more empathy. Maybe that reckless
+  driver is having a need for excitement and power, and zipping around you was
+  the best strategy they could come up with. Just seeing past the image of
+  others as enemies or obstacles can make the world much less hostile, by
+  revealing them to be real humans, people you might be able to connect with.
+  This way of thinking can also be a path to growth as you take ownership of
+  your feelings and see your needs clearly.
+&lt;/p&gt;
+&lt;p&gt;Some resources for exploring these ideas more:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;http://www.therightword.info/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;The Right Words and Beyond&lt;/a
+    &gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://amzn.to/44cpIsV&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;Nonviolent Communication: A Language of Life&lt;/a
+    &gt;, ISBN 189200528X
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://www.cnvc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;The Center for Nonviolent Communication&lt;/a
+    &gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>The Trivium: A Tool for Learning Anything</title>
+    <link href="https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/" />
+    <updated>2021-04-03T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/</id>
+    <content type="html">&lt;p&gt;
+  Information today has become siloed. It’s a common belief that little, if any,
+  expertise from one field of knowledge transfers over to other fields. But
+  there is a forgotten tool that anyone can use to confidently approach new
+  subjects and problems: the &lt;em&gt;Trivium&lt;/em&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+  The ancients considered the liberal arts to be composed of seven parts. First
+  was a foundation called the &lt;em&gt;trivium&lt;/em&gt;, composed of grammar, logic, and
+  rhetoric. Following that was the &lt;em&gt;quadrivium&lt;/em&gt;, which was arithmetic,
+  geometry, music, and astronomy (numbers, numbers in space, numbers in time,
+  numbers in time and space). The trivium (literally, “three ways”), is a
+  framework for learning.
+&lt;/p&gt;
+&lt;h2 id=&quot;grammar&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/#grammar&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Grammar
+&lt;/h2&gt;
+&lt;p&gt;
+  Grammar is about gaining knowledge: collecting information, without judgment
+  or analysis. It answers the questions “Who, what, where, and when?” This is
+  possibly the most important step, since (depending on what you study)
+  essential information may not be readily available.
+&lt;/p&gt;
+&lt;h2 id=&quot;logic&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/#logic&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Logic
+&lt;/h2&gt;
+&lt;p&gt;
+  Logic is about gaining understanding. It answers “why?” This is the foundation
+  for relating to the world. It has three components: filtration, correlation,
+  and analysis. It places the information gathered into context, and eliminates
+  inconsistency and resolves conflicting perspectives.
+&lt;/p&gt;
+&lt;h2 id=&quot;rhetoric&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/#rhetoric&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Rhetoric
+&lt;/h2&gt;
+&lt;p&gt;
+  Rhetoric is about acting wisely: the application of knowledge and
+  understanding, put into correct action. It answers “how?”
+&lt;/p&gt;
+&lt;p&gt;
+  Methodically applying this method provides a clear next step when encountering
+  any unfamiliar topic. This is a powerful tool for methodically determining the
+  best way to achieve your goals.
+&lt;/p&gt;
+&lt;h2 id=&quot;resources&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/#resources&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Resources
+&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://triviumbinder.blogspot.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;Trivium Binder Project&lt;/a
+    &gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;http://www.scribd.com/doc/59477946/Trivium-Method-of-Critical-Thinking-and-Creative-Problem-Solving&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;Tragedy and Hope: Five page summary of the Trivium&lt;/a
+    &gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;https://www.scribd.com/document/33744483/Trivium-Method-of-Thinking-vs-Other-Methodologies&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;Shadows of the trivium in narrow disciplines&lt;/a
+    &gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Authority - Consent&#39;s Blind Spot</title>
+    <link href="https://joshua.seigler.net/posts/authority-consents-blind-spot/" />
+    <updated>2020-07-02T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/authority-consents-blind-spot/</id>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;
+    2025 disclaimer: I haven’t thought through all these ideas in a while, but I
+    probably would change some of this or soften/rephrase it.
+  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  Consent occurs when an individual voluntarily agrees to the proposal or
+  desires of another. It comes from the concept that who should decide what
+  happens to your person, is you.
+&lt;/p&gt;
+&lt;p&gt;
+  There are two ways people interact: with consent, and without it. Some people
+  care a lot about consent, but overall, most take whichever route is easiest,
+  or more convenient.
+&lt;/p&gt;
+&lt;p&gt;
+  People respect consent in most of their face-to-face dealings with others.
+  Violating someone’s consent in person is usually met with resistance, possibly
+  very strong resistance with a long-lasting impact. But there are covert ways
+  to violate consent, so that the target must not notice the violation—or if
+  they do notice, they must be unable to determine who is to blame.
+&lt;/p&gt;
+&lt;p&gt;
+  Pretty much everyone has had circumstances where they did something because
+  another person, or group of people, compelled their compliance. Classic
+  examples include paying taxes, being drafted, and avoiding certain activities,
+  beliefs, or substances.
+&lt;/p&gt;
+&lt;p&gt;
+  Here are some popular excuses for violating consent that you may have seen:
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;I am actually helping you.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;You like some of the things I do, so you must accept this as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Everyone else lets me do this.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Everyone else said it was okay if I do this.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;I am doing this, but someone else is responsible for my actions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;You agreed to this by being born here.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;I am allowed to do this.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+  That last one combines all the others into one argument, called authority.
+  This is the idea that certain people are justified in violating consent.
+  Usually there is a vaguely religious ceremony associated with the granting of
+  authority—something like a holy document, large gatherings of people, formal
+  outfits, or important sounding titles.
+&lt;/p&gt;
+&lt;p&gt;
+  Sometimes consensual relationships are described as involving authority, such
+  as a boss at work having “authority” over an employee—but the difference is
+  clear: if the boss says to do something but the employee no longer consents,
+  they could exit that relationship.&lt;br /&gt;
+  Sometimes people refer to an expert as an “authority” on a certain matter, but
+  this definition is also not of use here. I refer to authority here as the
+  ability to act upon another’s person, without regard for consent.
+&lt;/p&gt;
+&lt;p&gt;
+  One problem with authority is that all the people on earth are humans. There’s
+  nobody better than humans who would obviously deserve special treatment, nor
+  is there some obviously superior category of human, so people expect some
+  excuse for how an ordinary person obtains authority.
+&lt;/p&gt;
+&lt;p&gt;
+  In certain belief systems, the excuse was “God chose me and made me worthy.”
+  Contemporarily, the claim is based on “the will of the people”. Whoever wins a
+  special regional popularity competition is considered to have authority over
+  everyone in that region, even people who disagree.
+&lt;/p&gt;
+&lt;p&gt;
+  You would think acting on someone in a way they don’t allow is difficult, but
+  people are impressed by ceremonies of authority, and they are confused by the
+  way everyone involved claims that their actions are someone else’s
+  responsibility. Even if people manage to see through the tricks they are
+  usually still afraid to resist authority out of a belief that nobody will help
+  them. So almost everyone obeys.
+&lt;/p&gt;
+&lt;h2 id=&quot;solutions&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#solutions&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Solutions
+&lt;/h2&gt;
+&lt;p&gt;Once you have seen through this trick, what can you do?&lt;/p&gt;
+&lt;h3 id=&quot;look-for-ways-to-sidestep-authority-altogether.&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#look-for-ways-to-sidestep-authority-altogether.&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Look for ways to sidestep authority altogether.
+&lt;/h3&gt;
+&lt;p&gt;
+  Since very few people accept &lt;em&gt;absolute&lt;/em&gt; authority, there are all kinds
+  of limitations to its scope. If you can find ways to move your activities to
+  areas of life that are not “covered” by authority, you will be able to ignore
+  it more.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;https://theconsciousresistance.com/wp-content/uploads/2020/01/How_to_Opt_Out_of_the_Technocratic_State.pdf&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;How to Opt Out of the Technocratic State (PDF)&lt;/a
+    &gt;
+    by Derrick Broze
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;http://www.kopubco.com/pdf/An_Agorist_Primer_by_SEK3.pdf&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;An Agorist Primer (PDF)&lt;/a
+    &gt;
+    by Samuel Edward Konkin III
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://www.seasteading.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;The Seasteading Institute&lt;/a
+    &gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;teach-other-people-how-to-see-these-tricks-more-clearly.&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#teach-other-people-how-to-see-these-tricks-more-clearly.&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Teach other people how to see these tricks more clearly.
+&lt;/h3&gt;
+&lt;p&gt;
+  Relatively few people claim to have authority. If even a moderate fraction of
+  people resist authoritarian demands, it becomes impossible to compel them all
+  by force.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;https://www.youtube.com/playlist?list=PL4jzSARXHuuwhBfzGNYhSVE4gJ8zmRnTH&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;Playlist: Thomasz Kaye Animations&lt;/a
+    &gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://fee.org/stories&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;Foundation for Economic Education&lt;/a
+    &gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;promote-alternatives-that-respect-consent.&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#promote-alternatives-that-respect-consent.&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Promote alternatives that respect consent.
+&lt;/h3&gt;
+&lt;p&gt;
+  For every authority-based solution to a problem, there is a more effective
+  consensual solution, and usually the consensual way of doing things is already
+  being used somewhere, and has lower costs and better outcomes.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;http://daviddfriedman.com/The_Machinery_of_Freedom_.pdf&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;The Machinery of Freedom (PDF)&lt;/a
+    &gt;
+    &lt;a
+      href=&quot;http://daviddfriedman.com/The_Machinery_of_Freedom.prc&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;(Ebook)&lt;/a
+    &gt;
+    &lt;a
+      href=&quot;https://www.youtube.com/watch?v=jTYkdEU_B4o&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;(Video)&lt;/a
+    &gt;
+    by David D Friedman
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;use-the-ceremonies-of-authority-against-itself.&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#use-the-ceremonies-of-authority-against-itself.&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Use the ceremonies of authority against itself.
+&lt;/h3&gt;
+&lt;p&gt;
+  If someone with authority asks your opinion on some topic, steer them away
+  from choices that violate consent. It may even be appropriate to support
+  people who seek positions of authority if you believe they will prevent it
+  from being used, but don’t be surprised if their encounter with power changes
+  their values.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://lp.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;Libertarian Party&lt;/a
+    &gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;surround-yourself-with-people-who-care-about-consent.&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#surround-yourself-with-people-who-care-about-consent.&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Surround yourself with people who care about consent.
+&lt;/h3&gt;
+&lt;p&gt;
+  If you know the people around you care about consent, then when someone
+  claiming authority makes demands of the community, it will be much safer to
+  ignore the demands since you would not be alone.
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://www.fsp.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;Free State Project&lt;/a
+    &gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;additional-resources&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a
+    class=&quot;header-anchor&quot;
+    href=&quot;https://joshua.seigler.net/posts/authority-consents-blind-spot/#additional-resources&quot;
+    aria-hidden=&quot;true&quot;
+  &gt;&lt;/a&gt;
+  Additional Resources
+&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;https://spot.colorado.edu/~huemer/1.htm&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;The Problem of Political Authority (Chapter 1)&lt;/a
+    &gt;
+    &lt;a href=&quot;https://amzn.to/2AyQxw0&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;(Amazon)&lt;/a
+    &gt;
+    by Michael Huemer
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a
+      href=&quot;https://ia601208.us.archive.org/27/items/236222899TheMostDangerousSuperstitionLarkenRose2011/the-most-dangerous-superstition-larken-rose-20111.pdf&quot;
+      target=&quot;_blank&quot;
+      rel=&quot;noopener&quot;
+      &gt;The Most Dangerous Superstitition (PDF)&lt;/a
+    &gt;
+    by Larken Rose
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;http://bastiat.org/en/the_law.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+      &gt;The Law&lt;/a
+    &gt;
+    by Frédéric Bastiat
+  &lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="/site.css?v=b0813e810319" />
+    <link
+      rel="webmention"
+      href="https://webmention.io/joshua.seigler.net/webmention"
+    />
+    <title>Site design updated - joshua.seigler.net</title>
+    <meta name="description" content="New look, simpler tech." />
+    <meta property="og:title" content="Site design updated" />
+    <meta property="og:type" content="" />
+    <meta
+      property="og:url"
+      content="https://joshua.seigler.net/posts/site-design-updated/"
+    />
+    <meta name="twitter:title" content="Site design updated" />
+    <meta name="twitter:description" content="New look, simpler tech." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="generator" content="Eleventy v3.1.0" />
+    <script
+      defer
+      src="https://stats.apps.seigler.net/script.js"
+      data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"
+    ></script>
+    <script defer src="/scripts/effects.js?v=cd61c39d895d"></script>
+  </head>
+  <body data-font="english" data-path="/posts/site-design-updated/">
+    <header>
+      <nav>
+        <div class="nav-row">
+          <div class="nav-home"><a href="/">joshua.seigler.net</a></div>
+          <div class="nav-settings">
+            <div class="nav-toggles">
+              <label class="nav-toggle-button" title="Light mode"
+                >☀️<input type="radio" name="theme" value="light"
+              /></label>
+              <label class="nav-toggle-button" title="Automatic"
+                >🔄<input type="radio" name="theme" value="auto"
+              /></label>
+              <label class="nav-toggle-button" title="Dark mode"
+                >🌒<input type="radio" name="theme" value="dark"
+              /></label>
+            </div>
+            <div class="nav-toggles">
+              <label class="nav-toggle-button" data-language="english"
+                >English<input type="radio" name="language" value="english"
+              /></label>
+              <label class="nav-toggle-button" data-language="aurebesh"
+                >Aurebesh<input type="radio" name="language" value="aurebesh"
+              /></label>
+            </div>
+          </div>
+        </div>
+        <div class="nav-categories">
+          <a class="nav-active" href="/posts/">/posts</a>
+          <a class="" href="/about/">/about</a>
+          <a class="" href="/now/">/now</a>
+          <a class="" href="/uses/">/uses</a>
+          <a class="" href="/recipes/">/recipes</a>
+          <a class="" href="/music/">/music</a>
+          <a class="" href="/books/">/books</a>
+          <a class="" href="/search/">/search</a>
+        </div>
+      </nav>
+      <h1>Site design updated</h1>
+      <div class="header-meta">
+        <author>Joshua Seigler</author><date>June 5, 2024</date>
+      </div>
+    </header>
+    <main data-pagefind-body>
+      <p>
+        New design! The tools I used before have a lot of unmaintained or
+        outdated dependencies and I wanted something a little simpler. The new
+        site uses
+        <a href="https://pnpm.io/" target="_blank" rel="noopener">pnpm</a>,
+        <a href="https://www.11ty.dev/" target="_blank" rel="noopener">11ty</a>,
+        and
+        <a
+          href="https://mozilla.github.io/nunjucks/"
+          target="_blank"
+          rel="noopener"
+          >Nunjucks</a
+        >. Content is still in
+        <a
+          href="https://daringfireball.net/projects/markdown/"
+          target="_blank"
+          rel="noopener"
+          >markdown</a
+        >.
+      </p>
+      <p>
+        One thing I’m proud of is a visual ping for footnotes.<sup
+          class="footnote-ref"
+          ><a href="#footnote1">[1]</a
+          ><a class="footnote-anchor" id="footnote-ref1"></a
+        ></sup>
+        When you click a footnote<sup class="footnote-ref"
+          ><a href="#footnote2">[2]</a
+          ><a class="footnote-anchor" id="footnote-ref2"></a
+        ></sup>
+        it briefly highlights the thing you jumped to.
+      </p>
+      <p>
+        In the upper right I added a style toggle that applies the font from
+        Star Wars, “Aurebesh”. I learned how to read it but sometimes want some
+        practice.
+        <span data-language="aurebesh"
+          >People who can read this are cool and I like them.</span
+        >
+      </p>
+      <p>I also finally made a section for recipes!</p>
+      <blockquote>
+        <p>
+          May 2025 edit: I updated the design some more without changing the
+          tech stack. The main improvements are animated clouds and a host of
+          minor adjustments.
+        </p>
+      </blockquote>
+      <blockquote>
+        <p>
+          June 2025 edit: I have continued to alter the design. Pray I don’t
+          alter it any further.
+        </p>
+      </blockquote>
+      <hr class="footnotes-sep" />
+      <section class="footnotes">
+        <ol class="footnotes-list">
+          <li id="footnote1" class="footnote-item">
+            <p>
+              It highlights when you click back, too.
+              <a href="#footnote-ref1" class="footnote-backref">↩︎</a>
+            </p>
+          </li>
+          <li id="footnote2" class="footnote-item">
+            <p>Hi. <a href="#footnote-ref2" class="footnote-backref">↩︎</a></p>
+          </li>
+        </ol>
+      </section>
+
+      <script
+        data-isso="//comments.apps.seigler.net/"
+        src="//comments.apps.seigler.net/js/embed.min.js"
+      ></script>
+
+      <section id="isso-thread" data-title="">
+        <noscript>Javascript needs to be activated to view comments.</noscript>
+      </section>
+    </main>
+    <footer>
+      <section>
+        &copy; Joshua Seigler 2025. -
+        <a href="https://github.com/seigler" rel="me noopener" target="_blank"
+          >GitHub</a
+        >
+        -
+        <a href="/feed.xml">RSS</a>
+        -
+        <a rel="me" href="mailto:joshua@seigler.net?subject=Hello">Contact</a>
+        -
+        <a href="/unoffice-hours/">Unoffice Hours</a>
+      </section>
+      <section>
+        Webrings:
+        <strong>Unoffice Hours</strong>
+        <a href="https://unofficehours.com/prev.html" rel="noopener">Prev</a>
+        <a href="https://unofficehours.com/next.html" rel="noopener">Next</a>
+        <a href="https://unofficehours.com/random.html" rel="noopener"
+          >Random</a
+        >
+        <a href="https://unofficehours.com" rel="noopener">List</a>
+      </section>
+    </footer>
+    <div id="effects"></div>
+  </body>
+</html>
