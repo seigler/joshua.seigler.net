@@ -55,6 +55,8 @@ date: 2025-06-10
 
 - [Forgejo](https://forgejo.org/) git forge, self-hosted. Mirroring GitHub for now.
 
+- [Webhook](https://github.com/adnanh/webhook/) to pull static sites when they are built.
+
 - [Shaarli](https://github.com/shaarli/Shaarli) link site, self-hosted.
 
 - [Isso](https://isso-comments.de/) comments API, self hosted.
