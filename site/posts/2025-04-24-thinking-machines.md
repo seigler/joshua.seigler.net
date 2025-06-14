@@ -5,7 +5,7 @@ description: "The computers will start thinking, and people will stop."
 cover: "/2025-04-24--computers-will-start-thinking.jpg"
 ---
 
-There's an exchange early in the classic '80s movie TRON. Some scientists are talking shop:
+There's an exchange early in the classic '80s movie [TRON](https://www.themoviedb.org/movie/97-tron). Some scientists are talking shop:
 
 ![Still from TRON, left to right Linda, Alan, and Gibbs, in conversation.](/2025-04-24--computers-will-start-thinking.jpg)
 
