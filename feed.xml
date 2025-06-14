@@ -146,8 +146,13 @@
     <updated>2025-04-24T00:00:00Z</updated>
     <id>https://joshua.seigler.net/posts/thinking-machines/</id>
     <content type="html">&lt;p&gt;
-  There’s an exchange early in the classic &#39;80s movie TRON. Some scientists are
-  talking shop:
+  There’s an exchange early in the classic &#39;80s movie
+  &lt;a
+    href=&quot;https://www.themoviedb.org/movie/97-tron&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;TRON&lt;/a
+  &gt;. Some scientists are talking shop:
 &lt;/p&gt;
 &lt;p&gt;
   &lt;img
