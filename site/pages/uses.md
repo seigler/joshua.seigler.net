@@ -37,6 +37,10 @@ date: 2025-06-10
 
 - [SyncThing](https://syncthing.net/) file sync. P2P alternative to Dropbox, supports mobile and desktop. Synchronizes folders of content across all my devices.
 
+- [Mise](https://mise.jdx.dev/) Dev environment manager, replacing `nvm`, `pyenv`, `venv`, and dozens of others. Great DX.
+
+- [Stack-PR](https://github.com/modular/stack-pr) PR stacking tool, the best way I know to handle feature branches.
+
 - [VSCodium](https://vscodium.com/) IDE. VSCode with less Microsoft.
 
 - [Obsidian](https://obsidian.md/) for notes and reference.
