@@ -112,82 +112,77 @@ Also make sure to replace your execute-command lines with ones referencing your 
 `/etc/webhook.conf`
 ```json
 [
-	{
-		"id": "update-pages",
-		"execute-command": "su joshua /home/joshua/webhooks/update-pages.sh",
-		"command-working-directory": "/var/www",
-		"pass-arguments-to-command":
-		[
-			{
-				"source": "payload",
-				"name": "repository.name"
-			},
-			{
-				"source": "payload",
-				"name": "repository.clone_url"
-			},
-		],
-		"trigger-rule":
-		{
-			"and":
-			[
-				{
-					"match":
-					{
-						"type": "payload-hmac-sha256",
-						"secret": "(omitted)",
-						"parameter":
-						{
-							"source": "header",
-							"name": "X-Forgejo-Signature"
-						}
-					}
-				},
-				{
-					"match":
-					{
-						"type": "value",
-						"value": "refs/heads/gh-pages",
-						"parameter":
-						{
-							"source": "payload",
-							"name": "ref"
-						}
-					}
-				}
-			]
-		}
-	},
-	{
-		"id": "remove-pages",
-		"execute-command": "su joshua /home/joshua/webhooks/remove-pages.sh",
-		"command-working-directory": "/var/www",
-		"pass-arguments-to-command":
-		[
-			{
-				"source": "payload",
-				"name": "repository.name"
-			},
-		],
-		"trigger-rule":
-		{
-			"and":
-			[
-				{
-					"match":
-					{
-						"type": "payload-hmac-sha256",
-						"secret": "(omitted)",
-						"parameter":
-						{
-							"source": "header",
-							"name": "X-Forgejo-Signature"
-						}
-					}
-				}
-			]
-		}
-	}
+  {
+    "id": "update-pages",
+    "execute-command": "/usr/bin/sudo",
+    "pass-arguments-to-command":
+    [
+      { "source": "string", "name": "-u"},
+      { "source": "string", "name": "joshua"},
+      { "source": "string", "name": "/home/joshua/webhooks/update-pages.sh"},
+      { "source": "payload", "name": "repository.name" },
+      { "source": "payload", "name": "repository.clone_url" }
+    ],
+    "trigger-rule":
+    {
+      "and":
+      [
+        {
+          "match":
+          {
+            "type": "payload-hmac-sha256",
+            "secret": "(omitted)",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Forgejo-Signature"
+            }
+          }
+        },
+        {
+          "match":
+          {
+            "type": "value",
+            "value": "refs/heads/gh-pages",
+            "parameter":
+            {
+              "source": "payload",
+              "name": "ref"
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "remove-pages",
+    "execute-command": "/usr/bin/sudo",
+    "pass-arguments-to-command":
+    [
+      { "source": "string", "name": "-u"},
+      { "source": "string", "name": "joshua"},
+      { "source": "string", "name": "/home/joshua/webhooks/remove-pages.sh"},
+      { "source": "payload", "name": "repository.name" }
+    ],
+    "trigger-rule":
+    {
+      "and":
+      [
+        {
+          "match":
+          {
+            "type": "payload-hmac-sha256",
+            "secret": "(omitted)",
+            "parameter":
+            {
+              "source": "header",
+              "name": "X-Forgejo-Signature"
+            }
+          }
+        }
+      ]
+    }
+  }
 ]
 ```
 
