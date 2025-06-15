@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <link rel="stylesheet" href="/site.css?v=b0813e810319" />
+    <link rel="me" href="https://github.com/seigler" />
+    <link
+      rel="webmention"
+      href="https://webmention.io/joshua.seigler.net/webmention"
+    />
+    <title>My Very Own GitHub Pages - joshua.seigler.net</title>
+    <meta
+      name="description"
+      content="How to self-host Forgejo and automatically serve your web build branches with SSL"
+    />
+    <meta property="og:title" content="My Very Own GitHub Pages" />
+    <meta property="og:type" content="" />
+    <meta
+      property="og:url"
+      content="https://joshua.seigler.net/posts/my-very-own-github-pages/"
+    />
+    <meta name="twitter:title" content="My Very Own GitHub Pages" />
+    <meta
+      name="twitter:description"
+      content="How to self-host Forgejo and automatically serve your web build branches with SSL"
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="generator" content="Eleventy v3.1.0" />
+    <script
+      defer
+      src="https://stats.apps.seigler.net/script.js"
+      data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"
+    ></script>
+    <script defer src="/scripts/effects.js?v=cd61c39d895d"></script>
+  </head>
+  <body data-font="english" data-path="/posts/my-very-own-github-pages/">
+    <header>
+      <nav>
+        <div class="nav-row">
+          <div class="nav-home"><a href="/">joshua.seigler.net</a></div>
+          <div class="nav-settings">
+            <div class="nav-toggles">
+              <label class="nav-toggle-button" title="Light mode"
+                >☀️<input type="radio" name="theme" value="light"
+              /></label>
+              <label class="nav-toggle-button" title="Automatic"
+                >🔄<input type="radio" name="theme" value="auto"
+              /></label>
+              <label class="nav-toggle-button" title="Dark mode"
+                >🌒<input type="radio" name="theme" value="dark"
+              /></label>
+            </div>
+            <div class="nav-toggles">
+              <label class="nav-toggle-button" data-language="english"
+                >English<input type="radio" name="language" value="english"
+              /></label>
+              <label class="nav-toggle-button" data-language="aurebesh"
+                >Aurebesh<input type="radio" name="language" value="aurebesh"
+              /></label>
+            </div>
+          </div>
+        </div>
+        <div class="nav-categories">
+          <a class="nav-active" href="/posts/">/posts</a>
+          <a class="" href="/about/">/about</a>
+          <a class="" href="/now/">/now</a>
+          <a class="" href="/uses/">/uses</a>
+          <a class="" href="/recipes/">/recipes</a>
+          <a class="" href="/music/">/music</a>
+          <a class="" href="/books/">/books</a>
+          <a class="" href="/search/">/search</a>
+        </div>
+      </nav>
+      <h1>My Very Own GitHub Pages</h1>
+      <div class="header-meta">
+        <author>Joshua Seigler</author><date>June 15, 2025</date>
+      </div>
+    </header>
+    <main data-pagefind-body>
+      <p>
+        I recently started self-hosting
+        <a href="https://forgejo.org/" target="_blank" rel="noopener">Forgejo</a
+        >, but I wanted something to replace GitHub pages, which has been very
+        convenient for publishing little website projects. My server runs
+        Debian, so I decided to use
+        <a
+          href="https://github.com/adnanh/webhook"
+          target="_blank"
+          rel="noopener"
+          >webhook</a
+        >
+        and
+        <a href="https://caddyserver.com/" target="_blank" rel="noopener"
+          >Caddy</a
+        >. I’m very happy how it turned out.
+      </p>
+      <h2 id="the-result" tabindex="-1">
+        <a class="header-anchor" href="#the-result" aria-hidden="true"></a> The
+        result
+      </h2>
+      <p>
+        When I push a <code>gh-pages</code> branch to any public repository on
+        my Forgejo instance, the name of the repo is used as a domain name (e.g.
+        <a
+          href="https://marklink.pages.seigler.net/"
+          target="_blank"
+          rel="noopener"
+          >marklink.pages.seigler.net</a
+        >) and the branch contents are automatically served with SSL. If I push
+        updates to the branch, they are automatically published. If the branch
+        or repo is deleted, the site is taken down.
+      </p>
+      <h2 id="how-to-do-it" tabindex="-1">
+        <a class="header-anchor" href="#how-to-do-it" aria-hidden="true"></a>
+        How to do it
+      </h2>
+      <h3 id="debian-server-preparation" tabindex="-1">
+        <a
+          class="header-anchor"
+          href="#debian-server-preparation"
+          aria-hidden="true"
+        ></a>
+        Debian server preparation
+      </h3>
+      <p>
+        In case you don’t have a basic server setup routine yet, this is a good
+        start:
+      </p>
+      <ul>
+        <li>Change the default root password</li>
+        <li>
+          Create a new user, add it to the sudo group. In my examples below the
+          user is <code>joshua</code>.
+        </li>
+        <li>
+          Use <code>ssh-copy-id</code> to install your ssl pubkey for easier
+          login
+        </li>
+        <li>Disable/lock root’s password</li>
+        <li>
+          Disable root login over ssh and change the SSL port number. Pick a new
+          port lower than 1024.
+        </li>
+        <li>
+          Edit your local <code>~/.ssh/config</code> so you don’t have to
+          specify the port number every time you connect.
+        </li>
+        <li>
+          On the server, install and enable <code>ufw</code> and
+          <code>fail2ban</code>. In addition to allowing your custom SSL port,
+          be sure to enable ports 80 and 443 with
+          <code>sudo ufw allow &quot;WWW Full&quot;</code>.
+        </li>
+      </ul>
+      <h3 id="caddy" tabindex="-1">
+        <a class="header-anchor" href="#caddy" aria-hidden="true"></a> Caddy
+      </h3>
+      <p>
+        I usually use nginx, but I wanted to give Caddy a shot, and it has been
+        a great experience. I installed Caddy using the
+        <a
+          href="https://caddyserver.com/docs/install"
+          target="_blank"
+          rel="noopener"
+          >official instructions</a
+        >.<br />
+        Here is the Caddyfile I made - you will need to change the domains names
+        and the email. Email could be removed, but it is recommended so SSL
+        certificate issues can contact you if there is a problem with your
+        certificates.
+      </p>
+      <p><code>/etc/caddy/Caddyfile</code></p>
+      <pre><code># Global options block
+{
+		email you@example.com # &lt;&lt;&lt;&lt; change this
+        on_demand_tls {
+                ask http://localhost/check
+        }
+}
+
+omitted.webhooks.subdomain.tld { # &lt;&lt;&lt;&lt; change this
+        reverse_proxy localhost:9000
+}
+
+http://localhost {
+        handle /check {
+                root * /var/www
+                @deny not file /{query.domain}/
+                respond @deny 404
+        }
+}
+
+https:// {
+        tls {
+                on_demand
+        }
+        root /var/www
+        rewrite /{host}{uri}
+        # Block files that start with a .
+        @forbidden {
+                path /.*
+        }
+        respond @forbidden 404
+        file_server
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
+
+# This config based on information at
+# https://caddy.community/t/on-demand-tls-with-dynamic-content-paths/18140
+# checked and corrected with `caddy validate`
+</code></pre>
+      <p>
+        I also took ownership of <code>/var/www</code> with
+        <code>chown -R joshua:joshua /var/www</code> since the webhooks will run
+        as my login account.
+      </p>
+      <h3 id="webhook" tabindex="-1">
+        <a class="header-anchor" href="#webhook" aria-hidden="true"></a> Webhook
+      </h3>
+      <p>
+        I altered the systemd service definition for <code>webhook</code> so I
+        could organize the hook definitions into separate files. I also set
+        <code>User=joshua</code> and <code>Group=joshua</code> so the commands
+        run as my user instead of root.
+      </p>
+      <p><code>sudo mkdir /etc/webhook.conf.d/</code></p>
+      <p><code>/lib/systemd/system/webhook.service</code></p>
+      <pre><code class="language-ini">[Unit]
+Description=Small server for creating HTTP endpoints (hooks)
+Documentation=https://github.com/adnanh/webhook/
+ConditionPathExists=/etc/webhook.conf
+
+[Service]
+ExecStart=/usr/bin/webhook -nopanic -hooks /etc/webhook.conf.d/*.conf
+
+User=joshua
+Group=joshua
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+      <p>
+        If you are debugging your webhook output, consider adding
+        <code>-debug</code> next to <code>-nopanic</code> for more useful logs.
+      </p>
+      <p>
+        After changing the service definition, reload systemd to run the updated
+        service:
+      </p>
+      <pre><code class="language-bash">sudo systemctl daemon-reload
+</code></pre>
+      <p>Then you can remove the now-unused config file:</p>
+      <pre><code class="language-bash">sudo rm /etc/webhook.conf
+</code></pre>
+      <p>Here are the three hook definitions:</p>
+      <h4 id="create-pages" tabindex="-1">
+        <a class="header-anchor" href="#create-pages" aria-hidden="true"></a>
+        Create pages
+      </h4>
+      <p><code>/etc/webhook.conf.d/create-pages.conf</code></p>
+      <pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;create-pages&quot;,
+    &quot;execute-command&quot;: &quot;/home/joshua/webhooks/create-pages.sh&quot;,
+    &quot;command-working-directory&quot;: &quot;/var/www&quot;,
+    &quot;pass-arguments-to-command&quot;:
+    [
+      {
+        &quot;source&quot;: &quot;payload&quot;,
+        &quot;name&quot;: &quot;repository.name&quot;
+      },
+      {
+        &quot;source&quot;: &quot;payload&quot;,
+        &quot;name&quot;: &quot;clone_url&quot;,
+      }
+    ],
+    &quot;trigger-rule&quot;:
+    {
+      &quot;and&quot;:
+      [
+        {
+          &quot;match&quot;:
+          {
+            &quot;type&quot;: &quot;payload-hmac-sha256&quot;,
+            &quot;secret&quot;: &quot;(omitted)&quot;,
+            &quot;parameter&quot;:
+            {
+              &quot;source&quot;: &quot;header&quot;,
+              &quot;name&quot;: &quot;X-Forgejo-Signature&quot;
+            }
+          }
+        }
+      ]
+    }
+  }
+]
+</code></pre>
+      <h4 id="remove-pages" tabindex="-1">
+        <a class="header-anchor" href="#remove-pages" aria-hidden="true"></a>
+        Remove pages
+      </h4>
+      <p><code>/etc/webhook.conf.d/remove-pages.conf</code></p>
+      <pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;remove-pages&quot;,
+    &quot;execute-command&quot;: &quot;/home/joshua/webhooks/remove-pages.sh&quot;,
+    &quot;command-working-directory&quot;: &quot;/var/www&quot;,
+    &quot;pass-arguments-to-command&quot;:
+    [
+      {
+        &quot;source&quot;: &quot;payload&quot;,
+        &quot;name&quot;: &quot;repository.name&quot;
+      },
+    ],
+    &quot;trigger-rule&quot;:
+    {
+      &quot;and&quot;:
+      [
+        {
+          &quot;match&quot;:
+          {
+            &quot;type&quot;: &quot;payload-hmac-sha256&quot;,
+            &quot;secret&quot;: &quot;(omitted)&quot;,
+            &quot;parameter&quot;:
+            {
+              &quot;source&quot;: &quot;header&quot;,
+              &quot;name&quot;: &quot;X-Forgejo-Signature&quot;
+            }
+          }
+        }
+      ]
+    }
+  }
+]
+</code></pre>
+      <h4 id="update-pages" tabindex="-1">
+        <a class="header-anchor" href="#update-pages" aria-hidden="true"></a>
+        Update pages
+      </h4>
+      <p><code>/etc/webhook.conf.d/update-pages.conf</code></p>
+      <pre><code class="language-json">[
+  {
+    &quot;id&quot;: &quot;update-pages&quot;,
+    &quot;execute-command&quot;: &quot;/home/joshua/webhooks/update-pages.sh&quot;,
+    &quot;command-working-directory&quot;: &quot;/var/www&quot;,
+    &quot;pass-arguments-to-command&quot;:
+    [
+      {
+        &quot;source&quot;: &quot;payload&quot;,
+        &quot;name&quot;: &quot;repository.name&quot;
+      },
+    ],
+    &quot;trigger-rule&quot;:
+    {
+      &quot;and&quot;:
+      [
+        {
+          &quot;match&quot;:
+          {
+            &quot;type&quot;: &quot;payload-hmac-sha256&quot;,
+            &quot;secret&quot;: &quot;(omitted)&quot;,
+            &quot;parameter&quot;:
+            {
+              &quot;source&quot;: &quot;header&quot;,
+              &quot;name&quot;: &quot;X-Forgejo-Signature&quot;
+            }
+          }
+        },
+        {
+          &quot;match&quot;:
+          {
+            &quot;type&quot;: &quot;value&quot;,
+            &quot;value&quot;: &quot;refs/heads/gh-pages&quot;,
+            &quot;parameter&quot;:
+            {
+              &quot;source&quot;: &quot;payload&quot;,
+              &quot;name&quot;: &quot;ref&quot;
+            }
+          }
+        }
+      ]
+    }
+  }
+]
+</code></pre>
+      <p>In my home directory I defined all three hook scripts:</p>
+      <p><code>webhooks/create-pages.sh</code></p>
+      <pre><code class="language-bash">#!/bin/bash
+# parameter 1 is repo name, parameter 2 is clone URL
+[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1; # no slashes in the name
+[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1; # no .. in the name
+[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1; # no wildcards in the name
+[ -d &quot;/var/www/$1&quot; ] &amp;&amp; exit 1; # the directory must not exist
+cd &quot;/var/www&quot;;
+git clone -b gh-pages --single-branch &quot;$2&quot; &quot;$1&quot; || exit 1;
+</code></pre>
+      <p><code>webhooks/remove-pages.sh</code></p>
+      <pre><code class="language-bash">#!/bin/bash
+# parameter 1 is repo name
+[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1; # no slashes in the name
+[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1; # no .. in the name
+[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1; # no wildcards in the name
+[ -d &quot;/var/www/$1&quot; ] &amp;&amp; exit 1; # the directory must exist
+cd &quot;/var/www&quot;;
+rm -rf &quot;/var/www/$1&quot;;
+</code></pre>
+      <p><code>webhooks/update-pages.sh</code></p>
+      <pre><code class="language-bash">#!/bin/bash
+# parameter 1 is repo name
+[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1; # no slashes in the name
+[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1; # no .. in the name
+[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1; # no wildcards in the name
+[ -d &quot;/var/www/$1&quot; ] || exit 1; # the directory must exist
+cd &quot;/var/www/$1&quot;;
+git fetch origin gh-pages;
+git reset --hard origin/gh-pages;
+exit;
+</code></pre>
+      <h3 id="forgejo" tabindex="-1">
+        <a class="header-anchor" href="#forgejo" aria-hidden="true"></a> Forgejo
+      </h3>
+      <p>
+        Forgejo supports running webhooks conditionally triggered by certain
+        conditions.<br />
+        Under my main user settings I set up each webhook:
+      </p>
+      <h4 id="create-pages-1" tabindex="-1">
+        <a class="header-anchor" href="#create-pages-1" aria-hidden="true"></a>
+        Create pages
+      </h4>
+      <p>
+        Target URL: https:// <em>your domain here</em> /hooks/create-pages<br />
+        HTTP Method: <code>POST</code> (the default)<br />
+        POST content type: <code>application/json</code> (the default)<br />
+        Secret: <em>omitted, use your own</em><br />
+        Trigger on: Custom Events &gt; Create<br />
+        Branch filter: <code>gh-pages</code>
+      </p>
+      <h4 id="remove-pages-1" tabindex="-1">
+        <a class="header-anchor" href="#remove-pages-1" aria-hidden="true"></a>
+        Remove pages
+      </h4>
+      <p>
+        Target URL: https:// <em>your domain here</em> /hooks/remove-pages<br />
+        HTTP Method: <code>POST</code> (the default)<br />
+        POST content type: <code>application/json</code> (the default)<br />
+        Secret: <em>omitted, use your own</em><br />
+        Trigger on: Custom Events &gt; Repository &gt; Delete<br />
+        Branch filter: <code>gh-pages</code>
+      </p>
+      <h4 id="update-pages-1" tabindex="-1">
+        <a class="header-anchor" href="#update-pages-1" aria-hidden="true"></a>
+        Update pages
+      </h4>
+      <p>
+        Target URL: https:// <em>your domain here</em> /hooks/update-pages<br />
+        HTTP Method: <code>POST</code> (the default)<br />
+        POST content type: <code>application/json</code> (the default)<br />
+        Secret: <em>omitted, use your own</em><br />
+        Trigger on: Push events<br />
+        Branch filter: <code>gh-pages</code>
+      </p>
+      <h2 id="conclusion" tabindex="-1">
+        <a class="header-anchor" href="#conclusion" aria-hidden="true"></a>
+        Conclusion
+      </h2>
+      <p>
+        It works!<br />
+        This repo is in my Forgejo instance:
+        <a
+          href="https://git.apps.seigler.net/joshua/marklink.pages.seigler.net"
+          target="_blank"
+          rel="noopener"
+          >https://git.apps.seigler.net/joshua/marklink.pages.seigler.net</a
+        ><br />
+        And its contents are visible here on my Caddy server:
+        <a
+          href="https://marklink.pages.seigler.net/"
+          target="_blank"
+          rel="noopener"
+          >https://marklink.pages.seigler.net/</a
+        >
+      </p>
+      <p>
+        There is room to make the scripts a little smarter. They don’t handle
+        renaming very well right now, and a few times I had to log in and
+        manually run my webhook scripts, like this:
+      </p>
+      <pre><code class="language-bash">~/webhooks/create-pages.sh marklink.pages.seigler.net &quot;https://git.apps.seigler.net/joshua/marklink.pages.seigler.net.git&quot;
+</code></pre>
+      <p>
+        The really important thing is that updates just require pushing to
+        <code>gh-pages</code> which you can easily do with e.g.
+        <a
+          href="https://www.npmjs.com/package/gh-pages"
+          target="_blank"
+          rel="noopener"
+          >gh-pages @ npm</a
+        >.
+      </p>
+      <p>
+        I’m also putting off rolling my own CI server, but I imagine that’s the
+        next stage here. Stay tuned.
+      </p>
+
+      <script
+        data-isso="//comments.apps.seigler.net/"
+        src="//comments.apps.seigler.net/js/embed.min.js"
+      ></script>
+
+      <section id="isso-thread" data-title="">
+        <noscript>Javascript needs to be activated to view comments.</noscript>
+      </section>
+    </main>
+    <footer>
+      <section>
+        &copy; Joshua Seigler 2025. -
+        <a rel="me" href="mailto:joshua@seigler.net?subject=Hello">Contact</a>
+        -
+        <a href="/feed.xml">RSS</a>
+        -
+        <a href="/unoffice-hours/">Unoffice Hours</a>
+      </section>
+      <section>
+        Webrings:
+        <strong>Unoffice Hours</strong>
+        <a href="https://unofficehours.com/prev.html" rel="noopener">Prev</a>
+        <a href="https://unofficehours.com/next.html" rel="noopener">Next</a>
+        <a href="https://unofficehours.com/random.html" rel="noopener"
+          >Random</a
+        >
+        <a href="https://unofficehours.com" rel="noopener">List</a>
+      </section>
+    </footer>
+    <div id="effects"></div>
+  </body>
+</html>

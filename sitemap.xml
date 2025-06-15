@@ -220,8 +220,15 @@
   
     
       <url>
+        <loc>/posts/my-very-own-github-pages/</loc>
+        <lastmod>2025-06-15T00:00:00.000Z</lastmod>
+      </url>
+    
+  
+    
+      <url>
         <loc>/feed.xml</loc>
-        <lastmod>2025-06-14T08:41:49.608Z</lastmod>
+        <lastmod>2025-06-15T05:11:26.173Z</lastmod>
       </url>
     
   
