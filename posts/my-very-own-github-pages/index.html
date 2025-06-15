@@ -177,36 +177,38 @@
       <p><code>/etc/caddy/Caddyfile</code></p>
       <pre><code># Global options block
 {
-		email you@example.com # &lt;&lt;&lt;&lt; change this
-        on_demand_tls {
-                ask http://localhost/check
-        }
+	email you@example.com # &lt;&lt;&lt;&lt; CHANGE THIS &lt;&lt;&lt;&lt;
+	on_demand_tls {
+		ask http://localhost/check
+	}
 }
 
-omitted.webhooks.subdomain.tld { # &lt;&lt;&lt;&lt; change this
-        reverse_proxy localhost:9000
+# Webhooks
+https://webhooks.subdomain.here.tld { &lt;&lt;&lt;&lt; CHANGE THIS &lt;&lt;&lt;&lt;
+	reverse_proxy localhost:9000
 }
 
+# Filter for which SSL certs we will create. Prevents abuse.
 http://localhost {
-        handle /check {
-                root * /var/www
-                @deny not file /{query.domain}/
-                respond @deny 404
-        }
+	handle /check {
+		root * /var/www
+		@deny not file /{query.domain}/
+		respond @deny 404
+	}
 }
 
+# This automatically handles upgrading http:// requests with a redirect
 https:// {
-        tls {
-                on_demand
-        }
-        root /var/www
-        rewrite /{host}{uri}
-        # Block files that start with a .
-        @forbidden {
-                path /.*
-        }
-        respond @forbidden 404
-        file_server
+	tls {
+		on_demand
+	}
+	root /var/www
+	rewrite /{host}{uri}
+	@forbidden {
+		path /.*
+	}
+	respond @forbidden 404
+	file_server
 }
 
 # Refer to the Caddy docs for more information:
@@ -221,207 +223,127 @@ https:// {
         <code>chown -R joshua:joshua /var/www</code> since the webhooks will run
         as my login account.
       </p>
-      <h3 id="webhook" tabindex="-1">
-        <a class="header-anchor" href="#webhook" aria-hidden="true"></a> Webhook
+      <h3 id="webhooks" tabindex="-1">
+        <a class="header-anchor" href="#webhooks" aria-hidden="true"></a>
+        Webhooks
       </h3>
-      <p>
-        I altered the systemd service definition for <code>webhook</code> so I
-        could organize the hook definitions into separate files. I also set
-        <code>User=joshua</code> and <code>Group=joshua</code> so the commands
-        run as my user instead of root.
-      </p>
-      <p><code>sudo mkdir /etc/webhook.conf.d/</code></p>
-      <p><code>/lib/systemd/system/webhook.service</code></p>
-      <pre><code class="language-ini">[Unit]
-Description=Small server for creating HTTP endpoints (hooks)
-Documentation=https://github.com/adnanh/webhook/
-ConditionPathExists=/etc/webhook.conf
-
-[Service]
-ExecStart=/usr/bin/webhook -nopanic -hooks /etc/webhook.conf.d/*.conf
-
-User=joshua
-Group=joshua
-
-[Install]
-WantedBy=multi-user.target
-</code></pre>
-      <p>
-        If you are debugging your webhook output, consider adding
-        <code>-debug</code> next to <code>-nopanic</code> for more useful logs.
-      </p>
-      <p>
-        After changing the service definition, reload systemd to run the updated
-        service:
-      </p>
-      <pre><code class="language-bash">sudo systemctl daemon-reload
-</code></pre>
-      <p>Then you can remove the now-unused config file:</p>
-      <pre><code class="language-bash">sudo rm /etc/webhook.conf
-</code></pre>
-      <p>Here are the three hook definitions:</p>
-      <h4 id="create-pages" tabindex="-1">
-        <a class="header-anchor" href="#create-pages" aria-hidden="true"></a>
-        Create pages
-      </h4>
-      <p><code>/etc/webhook.conf.d/create-pages.conf</code></p>
-      <pre><code class="language-json">[
-  {
-    &quot;id&quot;: &quot;create-pages&quot;,
-    &quot;execute-command&quot;: &quot;/home/joshua/webhooks/create-pages.sh&quot;,
-    &quot;command-working-directory&quot;: &quot;/var/www&quot;,
-    &quot;pass-arguments-to-command&quot;:
-    [
-      {
-        &quot;source&quot;: &quot;payload&quot;,
-        &quot;name&quot;: &quot;repository.name&quot;
-      },
-      {
-        &quot;source&quot;: &quot;payload&quot;,
-        &quot;name&quot;: &quot;clone_url&quot;,
-      }
-    ],
-    &quot;trigger-rule&quot;:
-    {
-      &quot;and&quot;:
-      [
-        {
-          &quot;match&quot;:
-          {
-            &quot;type&quot;: &quot;payload-hmac-sha256&quot;,
-            &quot;secret&quot;: &quot;(omitted)&quot;,
-            &quot;parameter&quot;:
-            {
-              &quot;source&quot;: &quot;header&quot;,
-              &quot;name&quot;: &quot;X-Forgejo-Signature&quot;
-            }
-          }
-        }
-      ]
-    }
-  }
-]
-</code></pre>
-      <h4 id="remove-pages" tabindex="-1">
-        <a class="header-anchor" href="#remove-pages" aria-hidden="true"></a>
-        Remove pages
-      </h4>
-      <p><code>/etc/webhook.conf.d/remove-pages.conf</code></p>
-      <pre><code class="language-json">[
-  {
-    &quot;id&quot;: &quot;remove-pages&quot;,
-    &quot;execute-command&quot;: &quot;/home/joshua/webhooks/remove-pages.sh&quot;,
-    &quot;command-working-directory&quot;: &quot;/var/www&quot;,
-    &quot;pass-arguments-to-command&quot;:
-    [
-      {
-        &quot;source&quot;: &quot;payload&quot;,
-        &quot;name&quot;: &quot;repository.name&quot;
-      },
-    ],
-    &quot;trigger-rule&quot;:
-    {
-      &quot;and&quot;:
-      [
-        {
-          &quot;match&quot;:
-          {
-            &quot;type&quot;: &quot;payload-hmac-sha256&quot;,
-            &quot;secret&quot;: &quot;(omitted)&quot;,
-            &quot;parameter&quot;:
-            {
-              &quot;source&quot;: &quot;header&quot;,
-              &quot;name&quot;: &quot;X-Forgejo-Signature&quot;
-            }
-          }
-        }
-      ]
-    }
-  }
-]
-</code></pre>
-      <h4 id="update-pages" tabindex="-1">
-        <a class="header-anchor" href="#update-pages" aria-hidden="true"></a>
-        Update pages
-      </h4>
-      <p><code>/etc/webhook.conf.d/update-pages.conf</code></p>
-      <pre><code class="language-json">[
-  {
-    &quot;id&quot;: &quot;update-pages&quot;,
-    &quot;execute-command&quot;: &quot;/home/joshua/webhooks/update-pages.sh&quot;,
-    &quot;command-working-directory&quot;: &quot;/var/www&quot;,
-    &quot;pass-arguments-to-command&quot;:
-    [
-      {
-        &quot;source&quot;: &quot;payload&quot;,
-        &quot;name&quot;: &quot;repository.name&quot;
-      },
-    ],
-    &quot;trigger-rule&quot;:
-    {
-      &quot;and&quot;:
-      [
-        {
-          &quot;match&quot;:
-          {
-            &quot;type&quot;: &quot;payload-hmac-sha256&quot;,
-            &quot;secret&quot;: &quot;(omitted)&quot;,
-            &quot;parameter&quot;:
-            {
-              &quot;source&quot;: &quot;header&quot;,
-              &quot;name&quot;: &quot;X-Forgejo-Signature&quot;
-            }
-          }
-        },
-        {
-          &quot;match&quot;:
-          {
-            &quot;type&quot;: &quot;value&quot;,
-            &quot;value&quot;: &quot;refs/heads/gh-pages&quot;,
-            &quot;parameter&quot;:
-            {
-              &quot;source&quot;: &quot;payload&quot;,
-              &quot;name&quot;: &quot;ref&quot;
-            }
-          }
-        }
-      ]
-    }
-  }
-]
-</code></pre>
-      <p>In my home directory I defined all three hook scripts:</p>
-      <p><code>webhooks/create-pages.sh</code></p>
-      <pre><code class="language-bash">#!/bin/bash
-# parameter 1 is repo name, parameter 2 is clone URL
-[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1; # no slashes in the name
-[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1; # no .. in the name
-[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1; # no wildcards in the name
-[ -d &quot;/var/www/$1&quot; ] &amp;&amp; exit 1; # the directory must not exist
-cd &quot;/var/www&quot;;
-git clone -b gh-pages --single-branch &quot;$2&quot; &quot;$1&quot; || exit 1;
-</code></pre>
-      <p><code>webhooks/remove-pages.sh</code></p>
-      <pre><code class="language-bash">#!/bin/bash
-# parameter 1 is repo name
-[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1; # no slashes in the name
-[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1; # no .. in the name
-[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1; # no wildcards in the name
-[ -d &quot;/var/www/$1&quot; ] &amp;&amp; exit 1; # the directory must exist
-cd &quot;/var/www&quot;;
-rm -rf &quot;/var/www/$1&quot;;
-</code></pre>
-      <p><code>webhooks/update-pages.sh</code></p>
-      <pre><code class="language-bash">#!/bin/bash
-# parameter 1 is repo name
-[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1; # no slashes in the name
-[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1; # no .. in the name
-[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1; # no wildcards in the name
-[ -d &quot;/var/www/$1&quot; ] || exit 1; # the directory must exist
+      <p>In my home directory I defined two hook scripts:</p>
+      <p><code>~/webhooks/update-pages.sh</code></p>
+      <pre><code class="language-bash">
+#!/bin/bash
+# parameter 1 is repo name, parameter 2 is clone url
+[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1;
+[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1;
+[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1;
+if [ -d &quot;/var/www/$1&quot; ]; then
+	git clone -b gh-pages --single-branch &quot;$2&quot; &quot;$1&quot; || exit 1;
+	exit;
+fi;
 cd &quot;/var/www/$1&quot;;
 git fetch origin gh-pages;
 git reset --hard origin/gh-pages;
 exit;
+</code></pre>
+      <p><code>~/webhooks/remove-pages.sh</code></p>
+      <pre><code class="language-bash">#!/bin/bash
+# parameter 1 is repo name
+[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1;
+[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1;
+[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1;
+[ -d &quot;/var/www/$1&quot; ] || exit 1;
+cd &quot;/var/www&quot;;
+rm -rf &quot;/var/www/$1&quot;;
+</code></pre>
+      <p>
+        To trigger these hooks I am using <code>webhook</code> which is in the
+        default Debian repository.
+      </p>
+      <p>
+        Here are the hook definitions: one for creating/updating a site, and one
+        for deleting. You will need to generate one or two secret values that
+        the server can use to know that the webhook is authorized to run. I used
+        linux command <code>uuidgen -r</code> to create mine. Save these values
+        so you can enter them in Forgejo later.
+      </p>
+      <p>
+        Also make sure to replace your execute-command lines with ones
+        referencing your username and script paths.
+      </p>
+      <p><code>/etc/webhook.conf</code></p>
+      <pre><code class="language-json">[
+	{
+		&quot;id&quot;: &quot;update-pages&quot;,
+		&quot;execute-command&quot;: &quot;su joshua /home/joshua/webhooks/update-pages.sh&quot;,
+		&quot;command-working-directory&quot;: &quot;/var/www&quot;,
+		&quot;pass-arguments-to-command&quot;:
+		[
+			{
+				&quot;source&quot;: &quot;payload&quot;,
+				&quot;name&quot;: &quot;repository.name&quot;
+			},
+		],
+		&quot;trigger-rule&quot;:
+		{
+			&quot;and&quot;:
+			[
+				{
+					&quot;match&quot;:
+					{
+						&quot;type&quot;: &quot;payload-hmac-sha256&quot;,
+						&quot;secret&quot;: &quot;(omitted)&quot;,
+						&quot;parameter&quot;:
+						{
+							&quot;source&quot;: &quot;header&quot;,
+							&quot;name&quot;: &quot;X-Forgejo-Signature&quot;
+						}
+					}
+				},
+				{
+					&quot;match&quot;:
+					{
+						&quot;type&quot;: &quot;value&quot;,
+						&quot;value&quot;: &quot;refs/heads/gh-pages&quot;,
+						&quot;parameter&quot;:
+						{
+							&quot;source&quot;: &quot;payload&quot;,
+							&quot;name&quot;: &quot;ref&quot;
+						}
+					}
+				}
+			]
+		}
+	},
+	{
+		&quot;id&quot;: &quot;remove-pages&quot;,
+		&quot;execute-command&quot;: &quot;su joshua /home/joshua/webhooks/remove-pages.sh&quot;,
+		&quot;command-working-directory&quot;: &quot;/var/www&quot;,
+		&quot;pass-arguments-to-command&quot;:
+		[
+			{
+				&quot;source&quot;: &quot;payload&quot;,
+				&quot;name&quot;: &quot;repository.name&quot;
+			},
+		],
+		&quot;trigger-rule&quot;:
+		{
+			&quot;and&quot;:
+			[
+				{
+					&quot;match&quot;:
+					{
+						&quot;type&quot;: &quot;payload-hmac-sha256&quot;,
+						&quot;secret&quot;: &quot;(omitted)&quot;,
+						&quot;parameter&quot;:
+						{
+							&quot;source&quot;: &quot;header&quot;,
+							&quot;name&quot;: &quot;X-Forgejo-Signature&quot;
+						}
+					}
+				}
+			]
+		}
+	}
+]
 </code></pre>
       <h3 id="forgejo" tabindex="-1">
         <a class="header-anchor" href="#forgejo" aria-hidden="true"></a> Forgejo
@@ -431,32 +353,8 @@ exit;
         conditions.<br />
         Under my main user settings I set up each webhook:
       </p>
-      <h4 id="create-pages-1" tabindex="-1">
-        <a class="header-anchor" href="#create-pages-1" aria-hidden="true"></a>
-        Create pages
-      </h4>
-      <p>
-        Target URL: https:// <em>your domain here</em> /hooks/create-pages<br />
-        HTTP Method: <code>POST</code> (the default)<br />
-        POST content type: <code>application/json</code> (the default)<br />
-        Secret: <em>omitted, use your own</em><br />
-        Trigger on: Custom Events &gt; Create<br />
-        Branch filter: <code>gh-pages</code>
-      </p>
-      <h4 id="remove-pages-1" tabindex="-1">
-        <a class="header-anchor" href="#remove-pages-1" aria-hidden="true"></a>
-        Remove pages
-      </h4>
-      <p>
-        Target URL: https:// <em>your domain here</em> /hooks/remove-pages<br />
-        HTTP Method: <code>POST</code> (the default)<br />
-        POST content type: <code>application/json</code> (the default)<br />
-        Secret: <em>omitted, use your own</em><br />
-        Trigger on: Custom Events &gt; Repository &gt; Delete<br />
-        Branch filter: <code>gh-pages</code>
-      </p>
-      <h4 id="update-pages-1" tabindex="-1">
-        <a class="header-anchor" href="#update-pages-1" aria-hidden="true"></a>
+      <h4 id="update-pages" tabindex="-1">
+        <a class="header-anchor" href="#update-pages" aria-hidden="true"></a>
         Update pages
       </h4>
       <p>
@@ -465,6 +363,18 @@ exit;
         POST content type: <code>application/json</code> (the default)<br />
         Secret: <em>omitted, use your own</em><br />
         Trigger on: Push events<br />
+        Branch filter: <code>gh-pages</code>
+      </p>
+      <h4 id="remove-pages" tabindex="-1">
+        <a class="header-anchor" href="#remove-pages" aria-hidden="true"></a>
+        Remove pages
+      </h4>
+      <p>
+        Target URL: https:// <em>your domain here</em> /hooks/remove-pages<br />
+        HTTP Method: <code>POST</code> (the default)<br />
+        POST content type: <code>application/json</code> (the default)<br />
+        Secret: <em>omitted, use your own</em><br />
+        Trigger on: Custom Events &gt; Repository &gt; Delete<br />
         Branch filter: <code>gh-pages</code>
       </p>
       <h2 id="conclusion" tabindex="-1">
@@ -489,25 +399,18 @@ exit;
         >
       </p>
       <p>
-        There is room to make the scripts a little smarter. They don’t handle
-        renaming very well right now, and a few times I had to log in and
-        manually run my webhook scripts, like this:
-      </p>
-      <pre><code class="language-bash">~/webhooks/create-pages.sh marklink.pages.seigler.net &quot;https://git.apps.seigler.net/joshua/marklink.pages.seigler.net.git&quot;
-</code></pre>
-      <p>
-        The really important thing is that updates just require pushing to
-        <code>gh-pages</code> which you can easily do with e.g.
+        For repos with npm build scripts, I use
         <a
           href="https://www.npmjs.com/package/gh-pages"
           target="_blank"
           rel="noopener"
           >gh-pages @ npm</a
-        >.
+        >
+        to push the build to the gh-pages branch and up to the server.
       </p>
       <p>
-        I’m also putting off rolling my own CI server, but I imagine that’s the
-        next stage here. Stay tuned.
+        I’m putting off rolling my own CI server, but I imagine that’s the next
+        stage here. Stay tuned.
       </p>
 
       <script
