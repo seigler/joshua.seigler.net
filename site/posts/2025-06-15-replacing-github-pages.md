@@ -24,7 +24,7 @@ I usually use nginx, but I wanted to give Caddy a shot, and it has been a great 
 Here is the Caddyfile I made - you will need to change the domains names and the email. Email could be removed, but it is recommended so SSL certificate issues can contact you if there is a problem with your certificates.
 
 `/etc/caddy/Caddyfile`
-```
+```undefined
 # Global options block
 {
 	email you@example.com # <<<< CHANGE THIS <<<<
@@ -83,13 +83,12 @@ In my home directory I defined two hook scripts:
 [[ "$1" == *".."* ]] && exit 1;
 [[ "$1" == *"*"* ]] && exit 1;
 if [ -d "/var/www/$1" ]; then
-	git clone -b gh-pages --single-branch "$2" "$1" || exit 1;
-	exit;
+  cd "/var/www/$1";
+  git fetch origin gh-pages;
+  git reset --hard origin/gh-pages;
+  exit;
 fi;
-cd "/var/www/$1";
-git fetch origin gh-pages;
-git reset --hard origin/gh-pages;
-exit;
+git clone -b gh-pages --single-branch "$2" "$1" || exit 1;
 ```
 
 `~/webhooks/remove-pages.sh`
@@ -122,6 +121,10 @@ Also make sure to replace your execute-command lines with ones referencing your 
 			{
 				"source": "payload",
 				"name": "repository.name"
+			},
+			{
+				"source": "payload",
+				"name": "repository.clone_url"
 			},
 		],
 		"trigger-rule":
