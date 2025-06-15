@@ -261,9 +261,10 @@ ul.collection {
 }
 p {
   margin: 0;
-  + p {
-    margin-top: 1lh;
-  }
+}
+p + p,
+pre + p {
+  margin-top: 1lh;
 }
 blockquote {
   position: relative;
@@ -738,7 +739,7 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  font-size: 1em;
+  font-size: 0.8rem;
   line-height: 1.5em;
   color: var(--c-text-dim);
   -moz-tab-size: 4;
