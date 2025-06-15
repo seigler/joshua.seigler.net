@@ -235,7 +235,7 @@ https:// {
       <pre><code class="language-ini">[Unit]
 Description=Small server for creating HTTP endpoints (hooks)
 Documentation=https://github.com/adnanh/webhook/
-ConditionPathExists=/etc/webhook.conf
+ConditionPathExistsGlob=/etc/webhook.conf.d/*
 
 [Service]
 ExecStart=/usr/bin/webhook -nopanic -hooks /etc/webhook.conf.d/*.conf
