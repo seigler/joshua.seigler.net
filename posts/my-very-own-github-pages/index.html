@@ -237,13 +237,12 @@ https:// {
 <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">".."</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">"*"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-d</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-	<span class="token function">git</span> clone <span class="token parameter variable">-b</span> gh-pages --single-branch <span class="token string">"<span class="token variable">$2</span>"</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">||</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
-	<span class="token builtin class-name">exit</span><span class="token punctuation">;</span>
+  <span class="token builtin class-name">cd</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span><span class="token punctuation">;</span>
+  <span class="token function">git</span> fetch origin gh-pages<span class="token punctuation">;</span>
+  <span class="token function">git</span> reset <span class="token parameter variable">--hard</span> origin/gh-pages<span class="token punctuation">;</span>
+  <span class="token builtin class-name">exit</span><span class="token punctuation">;</span>
 <span class="token keyword">fi</span><span class="token punctuation">;</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span><span class="token punctuation">;</span>
-<span class="token function">git</span> fetch origin gh-pages<span class="token punctuation">;</span>
-<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> origin/gh-pages<span class="token punctuation">;</span>
-<span class="token builtin class-name">exit</span><span class="token punctuation">;</span>
+<span class="token function">git</span> clone <span class="token parameter variable">-b</span> gh-pages --single-branch <span class="token string">"<span class="token variable">$2</span>"</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">||</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
 </code></pre>
       <p><code>~/webhooks/remove-pages.sh</code></p>
       <pre
@@ -285,6 +284,10 @@ https:// {
 			<span class="token punctuation">{</span>
 				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
 				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token punctuation">{</span>
+				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
+				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.clone_url"</span>
 			<span class="token punctuation">}</span><span class="token punctuation">,</span>
 		<span class="token punctuation">]</span><span class="token punctuation">,</span>
 		<span class="token property">"trigger-rule"</span><span class="token operator">:</span>
