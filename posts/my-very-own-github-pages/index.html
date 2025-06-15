@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <link rel="stylesheet" href="/site.css?v=b0813e810319" />
+    <link rel="stylesheet" href="/site.css?v=122d2bbcc39b" />
     <link rel="me" href="https://github.com/seigler" />
     <link
       rel="webmention"
@@ -229,30 +229,33 @@ https:// {
       </h3>
       <p>In my home directory I defined two hook scripts:</p>
       <p><code>~/webhooks/update-pages.sh</code></p>
-      <pre><code class="language-bash">
-#!/bin/bash
-# parameter 1 is repo name, parameter 2 is clone url
-[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1;
-[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1;
-[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1;
-if [ -d &quot;/var/www/$1&quot; ]; then
-	git clone -b gh-pages --single-branch &quot;$2&quot; &quot;$1&quot; || exit 1;
-	exit;
-fi;
-cd &quot;/var/www/$1&quot;;
-git fetch origin gh-pages;
-git reset --hard origin/gh-pages;
-exit;
+      <pre
+        class="language-bash"
+      ><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># parameter 1 is repo name, parameter 2 is clone url</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">"/"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">".."</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">"*"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-d</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+	<span class="token function">git</span> clone <span class="token parameter variable">-b</span> gh-pages --single-branch <span class="token string">"<span class="token variable">$2</span>"</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">||</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token builtin class-name">exit</span><span class="token punctuation">;</span>
+<span class="token keyword">fi</span><span class="token punctuation">;</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span><span class="token punctuation">;</span>
+<span class="token function">git</span> fetch origin gh-pages<span class="token punctuation">;</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> origin/gh-pages<span class="token punctuation">;</span>
+<span class="token builtin class-name">exit</span><span class="token punctuation">;</span>
 </code></pre>
       <p><code>~/webhooks/remove-pages.sh</code></p>
-      <pre><code class="language-bash">#!/bin/bash
-# parameter 1 is repo name
-[[ &quot;$1&quot; == *&quot;/&quot;* ]] &amp;&amp; exit 1;
-[[ &quot;$1&quot; == *&quot;..&quot;* ]] &amp;&amp; exit 1;
-[[ &quot;$1&quot; == *&quot;*&quot;* ]] &amp;&amp; exit 1;
-[ -d &quot;/var/www/$1&quot; ] || exit 1;
-cd &quot;/var/www&quot;;
-rm -rf &quot;/var/www/$1&quot;;
+      <pre
+        class="language-bash"
+      ><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># parameter 1 is repo name</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">"/"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">".."</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token operator">==</span> *<span class="token string">"*"</span>* <span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">[</span> <span class="token parameter variable">-d</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token builtin class-name">exit</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"/var/www"</span><span class="token punctuation">;</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> <span class="token string">"/var/www/<span class="token variable">$1</span>"</span><span class="token punctuation">;</span>
 </code></pre>
       <p>
         To trigger these hooks I am using <code>webhook</code> which is in the
@@ -270,80 +273,82 @@ rm -rf &quot;/var/www/$1&quot;;
         referencing your username and script paths.
       </p>
       <p><code>/etc/webhook.conf</code></p>
-      <pre><code class="language-json">[
-	{
-		&quot;id&quot;: &quot;update-pages&quot;,
-		&quot;execute-command&quot;: &quot;su joshua /home/joshua/webhooks/update-pages.sh&quot;,
-		&quot;command-working-directory&quot;: &quot;/var/www&quot;,
-		&quot;pass-arguments-to-command&quot;:
-		[
-			{
-				&quot;source&quot;: &quot;payload&quot;,
-				&quot;name&quot;: &quot;repository.name&quot;
-			},
-		],
-		&quot;trigger-rule&quot;:
-		{
-			&quot;and&quot;:
-			[
-				{
-					&quot;match&quot;:
-					{
-						&quot;type&quot;: &quot;payload-hmac-sha256&quot;,
-						&quot;secret&quot;: &quot;(omitted)&quot;,
-						&quot;parameter&quot;:
-						{
-							&quot;source&quot;: &quot;header&quot;,
-							&quot;name&quot;: &quot;X-Forgejo-Signature&quot;
-						}
-					}
-				},
-				{
-					&quot;match&quot;:
-					{
-						&quot;type&quot;: &quot;value&quot;,
-						&quot;value&quot;: &quot;refs/heads/gh-pages&quot;,
-						&quot;parameter&quot;:
-						{
-							&quot;source&quot;: &quot;payload&quot;,
-							&quot;name&quot;: &quot;ref&quot;
-						}
-					}
-				}
-			]
-		}
-	},
-	{
-		&quot;id&quot;: &quot;remove-pages&quot;,
-		&quot;execute-command&quot;: &quot;su joshua /home/joshua/webhooks/remove-pages.sh&quot;,
-		&quot;command-working-directory&quot;: &quot;/var/www&quot;,
-		&quot;pass-arguments-to-command&quot;:
-		[
-			{
-				&quot;source&quot;: &quot;payload&quot;,
-				&quot;name&quot;: &quot;repository.name&quot;
-			},
-		],
-		&quot;trigger-rule&quot;:
-		{
-			&quot;and&quot;:
-			[
-				{
-					&quot;match&quot;:
-					{
-						&quot;type&quot;: &quot;payload-hmac-sha256&quot;,
-						&quot;secret&quot;: &quot;(omitted)&quot;,
-						&quot;parameter&quot;:
-						{
-							&quot;source&quot;: &quot;header&quot;,
-							&quot;name&quot;: &quot;X-Forgejo-Signature&quot;
-						}
-					}
-				}
-			]
-		}
-	}
-]
+      <pre
+        class="language-json"
+      ><code class="language-json"><span class="token punctuation">[</span>
+	<span class="token punctuation">{</span>
+		<span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"update-pages"</span><span class="token punctuation">,</span>
+		<span class="token property">"execute-command"</span><span class="token operator">:</span> <span class="token string">"su joshua /home/joshua/webhooks/update-pages.sh"</span><span class="token punctuation">,</span>
+		<span class="token property">"command-working-directory"</span><span class="token operator">:</span> <span class="token string">"/var/www"</span><span class="token punctuation">,</span>
+		<span class="token property">"pass-arguments-to-command"</span><span class="token operator">:</span>
+		<span class="token punctuation">[</span>
+			<span class="token punctuation">{</span>
+				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
+				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token property">"trigger-rule"</span><span class="token operator">:</span>
+		<span class="token punctuation">{</span>
+			<span class="token property">"and"</span><span class="token operator">:</span>
+			<span class="token punctuation">[</span>
+				<span class="token punctuation">{</span>
+					<span class="token property">"match"</span><span class="token operator">:</span>
+					<span class="token punctuation">{</span>
+						<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"payload-hmac-sha256"</span><span class="token punctuation">,</span>
+						<span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"(omitted)"</span><span class="token punctuation">,</span>
+						<span class="token property">"parameter"</span><span class="token operator">:</span>
+						<span class="token punctuation">{</span>
+							<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
+							<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"X-Forgejo-Signature"</span>
+						<span class="token punctuation">}</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+				<span class="token punctuation">{</span>
+					<span class="token property">"match"</span><span class="token operator">:</span>
+					<span class="token punctuation">{</span>
+						<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
+						<span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"refs/heads/gh-pages"</span><span class="token punctuation">,</span>
+						<span class="token property">"parameter"</span><span class="token operator">:</span>
+						<span class="token punctuation">{</span>
+							<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
+							<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ref"</span>
+						<span class="token punctuation">}</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">]</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token punctuation">{</span>
+		<span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"remove-pages"</span><span class="token punctuation">,</span>
+		<span class="token property">"execute-command"</span><span class="token operator">:</span> <span class="token string">"su joshua /home/joshua/webhooks/remove-pages.sh"</span><span class="token punctuation">,</span>
+		<span class="token property">"command-working-directory"</span><span class="token operator">:</span> <span class="token string">"/var/www"</span><span class="token punctuation">,</span>
+		<span class="token property">"pass-arguments-to-command"</span><span class="token operator">:</span>
+		<span class="token punctuation">[</span>
+			<span class="token punctuation">{</span>
+				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
+				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token property">"trigger-rule"</span><span class="token operator">:</span>
+		<span class="token punctuation">{</span>
+			<span class="token property">"and"</span><span class="token operator">:</span>
+			<span class="token punctuation">[</span>
+				<span class="token punctuation">{</span>
+					<span class="token property">"match"</span><span class="token operator">:</span>
+					<span class="token punctuation">{</span>
+						<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"payload-hmac-sha256"</span><span class="token punctuation">,</span>
+						<span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"(omitted)"</span><span class="token punctuation">,</span>
+						<span class="token property">"parameter"</span><span class="token operator">:</span>
+						<span class="token punctuation">{</span>
+							<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
+							<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"X-Forgejo-Signature"</span>
+						<span class="token punctuation">}</span>
+					<span class="token punctuation">}</span>
+				<span class="token punctuation">}</span>
+			<span class="token punctuation">]</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
 </code></pre>
       <h3 id="forgejo" tabindex="-1">
         <a class="header-anchor" href="#forgejo" aria-hidden="true"></a> Forgejo
