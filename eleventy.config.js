@@ -13,6 +13,7 @@ import site from "./site/_data/site.js";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import { execSync } from 'child_process';
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
+import mdPrism from "markdown-it-prism";
 
 dayjs.extend(utc);
 
@@ -44,7 +45,8 @@ export default (config) => {
         target: "_blank",
         rel: "noopener",
       },
-    });
+    })
+    .use(mdPrism);
   mdLib.renderer.rules.render_footnote_anchor = (tokens, idx, options, env, slf) => {
     let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
     if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`

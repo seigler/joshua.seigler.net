@@ -521,13 +521,15 @@ a.header-anchor {
   margin-bottom: 1rem;
 }
 
-p > code {
-  display: inline-block;
+p > code, pre {
   font-family: "Commit Mono", monospace;
   background-color: var(--c-text-background-light);
   padding: 0.1em;
-  margin: -0.1em;
   border-radius: 0.5em;
+}
+p > code {
+  margin: -0.1em;
+  display: inline-block;
 }
 
 body #isso-thread {
@@ -569,7 +571,8 @@ body .isso-input-wrapper label {
 body .isso-input-wrapper input,
 input[type='text'],
 body .isso-textarea,
-body .isso-preview {
+body .isso-preview,
+pre {
   color: inherit;
   font-size: 1rem;
   background-color: transparent;

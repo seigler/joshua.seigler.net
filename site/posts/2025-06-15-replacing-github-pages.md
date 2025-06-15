@@ -77,7 +77,6 @@ In my home directory I defined two hook scripts:
 
 `~/webhooks/update-pages.sh`
 ```bash
-
 #!/bin/bash
 # parameter 1 is repo name, parameter 2 is clone url
 [[ "$1" == *"/"* ]] && exit 1;
