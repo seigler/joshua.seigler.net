@@ -64,15 +64,15 @@
   In case you don’t have a basic server setup routine yet, this is a good start:
 &lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Change the default root password&lt;/li&gt;
+  &lt;li&gt;Change the default root password.&lt;/li&gt;
   &lt;li&gt;
-    Create a new user, add it to the sudo group. In my examples below the user
-    is &lt;code&gt;joshua&lt;/code&gt;.
+    Create a new user and add it to the sudo group. In my examples below the
+    user is &lt;code&gt;joshua&lt;/code&gt;.
   &lt;/li&gt;
   &lt;li&gt;
-    Use &lt;code&gt;ssh-copy-id&lt;/code&gt; to install your ssl pubkey for easier login
+    Use &lt;code&gt;ssh-copy-id&lt;/code&gt; to install your ssl pubkey for easier login.
   &lt;/li&gt;
-  &lt;li&gt;Disable/lock root’s password&lt;/li&gt;
+  &lt;li&gt;Disable/lock root’s password.&lt;/li&gt;
   &lt;li&gt;
     Disable root login over ssh and change the SSL port number. Pick a new port
     lower than 1024.
@@ -102,9 +102,9 @@
   &lt;a href=&quot;https://caddyserver.com/docs/install&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
     &gt;official instructions&lt;/a
   &gt;.&lt;br /&gt;
-  Here is the Caddyfile I made - you will need to change the domains names and
-  the email. Email could be removed, but it is recommended so SSL certificate
-  issues can contact you if there is a problem with your certificates.
+  Here is the Caddyfile I made—you will need to change the domains names and the
+  email. Email could be removed, but it is recommended so SSL certificate
+  issuers can contact you if there is a problem with your certificates.
 &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
 &lt;pre
