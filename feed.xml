@@ -107,7 +107,9 @@
   issues can contact you if there is a problem with your certificates.
 &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Global options block
+&lt;pre
+  class=&quot;language-undefined&quot;
+&gt;&lt;code class=&quot;language-undefined&quot;&gt;# Global options block
 {
 	email you@example.com # &amp;lt;&amp;lt;&amp;lt;&amp;lt; CHANGE THIS &amp;lt;&amp;lt;&amp;lt;&amp;lt;
 	on_demand_tls {
