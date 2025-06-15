@@ -246,9 +246,9 @@ ul.collection {
 }
 p {
   margin: 0;
-  + p {
-    margin-top: 1lh;
-  }
+}
+p + p, pre + p {
+  margin-top: 1lh;
 }
 blockquote {
   position: relative;
@@ -482,6 +482,30 @@ h1 {
     & :where(ol li) {
       list-style-type: upper-alpha;
     }
+  }
+}
+
+@media screen {
+  p:has(+ pre[class*="language-"] > code) {
+    position: relative;
+    font-size: 0.8em;
+  }
+  p:has(+ pre[class*="language-"]) > code::after {
+    content: "";
+    pointer-events: none;
+    opacity: 0.5;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: -2rem;
+    height: 4rem;
+    width: 20rem;
+    max-width: 100%;
+    background: radial-gradient(
+      ellipse farthest-side at 50% 100%,
+      var(--c-highlight),
+      transparent
+    );
   }
 }
 

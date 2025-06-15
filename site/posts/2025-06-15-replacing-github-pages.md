@@ -10,18 +10,20 @@ I recently started self-hosting [Forgejo](https://forgejo.org/), but I wanted so
 When I push a `gh-pages` branch to any public repository on my Forgejo instance, the name of the repo is used as a domain name (e.g. [marklink.pages.seigler.net](https://marklink.pages.seigler.net/)) and the branch contents are automatically served with SSL. If I push updates to the branch, they are automatically published. If the branch or repo is deleted, the site is taken down.
 
 ## How to do it
+
 ### Debian server preparation
 In case you don't have a basic server setup routine yet, this is a good start:
-- Change the default root password
-- Create a new user, add it to the sudo group. In my examples below the user is `joshua`.
-- Use `ssh-copy-id` to install your ssl pubkey for easier login
-- Disable/lock root's password
+- Change the default root password.
+- Create a new user and add it to the sudo group. In my examples below the user is `joshua`.
+- Use `ssh-copy-id` to install your ssl pubkey for easier login.
+- Disable/lock root's password.
 - Disable root login over ssh and change the SSL port number. Pick a new port lower than 1024.
 - Edit your local `~/.ssh/config` so you don't have to specify the port number every time you connect.
 - On the server, install and enable `ufw` and `fail2ban`. In addition to allowing your custom SSL port, be sure to enable ports 80 and 443 with `sudo ufw allow "WWW Full"`.
+
 ### Caddy
 I usually use nginx, but I wanted to give Caddy a shot, and it has been a great experience. I installed Caddy using the [official instructions](https://caddyserver.com/docs/install).
-Here is the Caddyfile I made - you will need to change the domains names and the email. Email could be removed, but it is recommended so SSL certificate issues can contact you if there is a problem with your certificates.
+Here is the Caddyfile I made---you will need to change the domains names and the email. Email could be removed, but it is recommended so SSL certificate issuers can contact you if there is a problem with your certificates.
 
 `/etc/caddy/Caddyfile`
 ```undefined
