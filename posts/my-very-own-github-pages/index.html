@@ -277,82 +277,77 @@ https:// {
       <pre
         class="language-json"
       ><code class="language-json"><span class="token punctuation">[</span>
-	<span class="token punctuation">{</span>
-		<span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"update-pages"</span><span class="token punctuation">,</span>
-		<span class="token property">"execute-command"</span><span class="token operator">:</span> <span class="token string">"sudo -u joshua /home/joshua/webhooks/update-pages.sh"</span><span class="token punctuation">,</span>
-		<span class="token property">"command-working-directory"</span><span class="token operator">:</span> <span class="token string">"/var/www"</span><span class="token punctuation">,</span>
-		<span class="token property">"pass-arguments-to-command"</span><span class="token operator">:</span>
-		<span class="token punctuation">[</span>
-			<span class="token punctuation">{</span>
-				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
-				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span>
-			<span class="token punctuation">}</span><span class="token punctuation">,</span>
-			<span class="token punctuation">{</span>
-				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
-				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.clone_url"</span>
-			<span class="token punctuation">}</span><span class="token punctuation">,</span>
-		<span class="token punctuation">]</span><span class="token punctuation">,</span>
-		<span class="token property">"trigger-rule"</span><span class="token operator">:</span>
-		<span class="token punctuation">{</span>
-			<span class="token property">"and"</span><span class="token operator">:</span>
-			<span class="token punctuation">[</span>
-				<span class="token punctuation">{</span>
-					<span class="token property">"match"</span><span class="token operator">:</span>
-					<span class="token punctuation">{</span>
-						<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"payload-hmac-sha256"</span><span class="token punctuation">,</span>
-						<span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"(omitted)"</span><span class="token punctuation">,</span>
-						<span class="token property">"parameter"</span><span class="token operator">:</span>
-						<span class="token punctuation">{</span>
-							<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
-							<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"X-Forgejo-Signature"</span>
-						<span class="token punctuation">}</span>
-					<span class="token punctuation">}</span>
-				<span class="token punctuation">}</span><span class="token punctuation">,</span>
-				<span class="token punctuation">{</span>
-					<span class="token property">"match"</span><span class="token operator">:</span>
-					<span class="token punctuation">{</span>
-						<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
-						<span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"refs/heads/gh-pages"</span><span class="token punctuation">,</span>
-						<span class="token property">"parameter"</span><span class="token operator">:</span>
-						<span class="token punctuation">{</span>
-							<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
-							<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ref"</span>
-						<span class="token punctuation">}</span>
-					<span class="token punctuation">}</span>
-				<span class="token punctuation">}</span>
-			<span class="token punctuation">]</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span><span class="token punctuation">,</span>
-	<span class="token punctuation">{</span>
-		<span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"remove-pages"</span><span class="token punctuation">,</span>
-		<span class="token property">"execute-command"</span><span class="token operator">:</span> <span class="token string">"sudo -u joshua /home/joshua/webhooks/remove-pages.sh"</span><span class="token punctuation">,</span>
-		<span class="token property">"command-working-directory"</span><span class="token operator">:</span> <span class="token string">"/var/www"</span><span class="token punctuation">,</span>
-		<span class="token property">"pass-arguments-to-command"</span><span class="token operator">:</span>
-		<span class="token punctuation">[</span>
-			<span class="token punctuation">{</span>
-				<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
-				<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span>
-			<span class="token punctuation">}</span><span class="token punctuation">,</span>
-		<span class="token punctuation">]</span><span class="token punctuation">,</span>
-		<span class="token property">"trigger-rule"</span><span class="token operator">:</span>
-		<span class="token punctuation">{</span>
-			<span class="token property">"and"</span><span class="token operator">:</span>
-			<span class="token punctuation">[</span>
-				<span class="token punctuation">{</span>
-					<span class="token property">"match"</span><span class="token operator">:</span>
-					<span class="token punctuation">{</span>
-						<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"payload-hmac-sha256"</span><span class="token punctuation">,</span>
-						<span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"(omitted)"</span><span class="token punctuation">,</span>
-						<span class="token property">"parameter"</span><span class="token operator">:</span>
-						<span class="token punctuation">{</span>
-							<span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
-							<span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"X-Forgejo-Signature"</span>
-						<span class="token punctuation">}</span>
-					<span class="token punctuation">}</span>
-				<span class="token punctuation">}</span>
-			<span class="token punctuation">]</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"update-pages"</span><span class="token punctuation">,</span>
+    <span class="token property">"execute-command"</span><span class="token operator">:</span> <span class="token string">"/usr/bin/sudo"</span><span class="token punctuation">,</span>
+    <span class="token property">"pass-arguments-to-command"</span><span class="token operator">:</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"-u"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"joshua"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"/home/joshua/webhooks/update-pages.sh"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.clone_url"</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"trigger-rule"</span><span class="token operator">:</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"and"</span><span class="token operator">:</span>
+      <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"match"</span><span class="token operator">:</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"payload-hmac-sha256"</span><span class="token punctuation">,</span>
+            <span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"(omitted)"</span><span class="token punctuation">,</span>
+            <span class="token property">"parameter"</span><span class="token operator">:</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"X-Forgejo-Signature"</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"match"</span><span class="token operator">:</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"value"</span><span class="token punctuation">,</span>
+            <span class="token property">"value"</span><span class="token operator">:</span> <span class="token string">"refs/heads/gh-pages"</span><span class="token punctuation">,</span>
+            <span class="token property">"parameter"</span><span class="token operator">:</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ref"</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"remove-pages"</span><span class="token punctuation">,</span>
+    <span class="token property">"execute-command"</span><span class="token operator">:</span> <span class="token string">"/usr/bin/sudo"</span><span class="token punctuation">,</span>
+    <span class="token property">"pass-arguments-to-command"</span><span class="token operator">:</span>
+    <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"-u"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"joshua"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"string"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"/home/joshua/webhooks/remove-pages.sh"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"payload"</span><span class="token punctuation">,</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"repository.name"</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"trigger-rule"</span><span class="token operator">:</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"and"</span><span class="token operator">:</span>
+      <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">"match"</span><span class="token operator">:</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"payload-hmac-sha256"</span><span class="token punctuation">,</span>
+            <span class="token property">"secret"</span><span class="token operator">:</span> <span class="token string">"(omitted)"</span><span class="token punctuation">,</span>
+            <span class="token property">"parameter"</span><span class="token operator">:</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">"source"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"X-Forgejo-Signature"</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
 <span class="token punctuation">]</span>
 </code></pre>
       <h3 id="forgejo" tabindex="-1">
