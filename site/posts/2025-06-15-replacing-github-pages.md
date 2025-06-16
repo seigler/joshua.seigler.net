@@ -26,7 +26,7 @@ I usually use nginx, but I wanted to give Caddy a shot, and it has been a great 
 Here is the Caddyfile I made---you will need to change the domains names and the email. Email could be removed, but it is recommended so SSL certificate issuers can contact you if there is a problem with your certificates.
 
 `/etc/caddy/Caddyfile`
-```undefined
+```caddy
 # Global options block
 {
 	email you@example.com # <<<< CHANGE THIS <<<<

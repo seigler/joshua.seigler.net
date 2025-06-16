@@ -8,15 +8,16 @@
   flex-grow: 1;
   padding: 0;
   line-height: 1.5;
+  font-display: swap;
 }
 
 body {
   --c-highlight: oklch(100% 0 0 / 0.875);
   --c-accent: white;
   --c-dark: oklch(32.1% 0.022 259.9);
-  --c-body-background: oklch(85% 0 338);
-  --c-bg1: oklch(85% 0.04 285);
-  --c-bg2: oklch(85% 0.04 160);
+  --c-body-background: oklch(87.5% 0 338);
+  --c-bg1: oklch(87.5% 0.04 285);
+  --c-bg2: oklch(87.5% 0.04 160);
   --c-text-background-light: oklch(96.2% 0 0 / 0.6);
 
   --c-text-light: var(--c-highlight);
@@ -44,11 +45,11 @@ body {
   --inset: calc(50vw - var(--content-width) / 2);
   background-image:
     url(/noise.png),
-    radial-gradient(circle at -20% 20vmin, var(--c-bg1), transparent 60%),
+    radial-gradient(circle at -20% 20vmin, var(--c-bg1), transparent 150vmin),
     radial-gradient(
       circle at 120% calc(100% - 20vmin),
       var(--c-bg2),
-      transparent 60%
+      transparent 150vmin
     );
 }
 
@@ -106,7 +107,9 @@ body {
   flex-grow: 1;
   padding: 0;
   margin: 0;
-  font-family: Inter, sans-serif;
+  font-family:
+    Inter, Ubuntu, "Noto Sans", "Fira Sans", Roboto, "Helvetica Neue",
+    "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   background-color: var(--c-body-background);
   color: var(--c-text-dark);
 }
@@ -247,7 +250,8 @@ ul.collection {
 p {
   margin: 0;
 }
-p + p, pre + p {
+p + p,
+pre + p {
   margin-top: 1lh;
 }
 blockquote {
@@ -546,7 +550,8 @@ a.header-anchor {
   margin-bottom: 1rem;
 }
 
-p > code, pre {
+p > code,
+pre {
   font-family: "Commit Mono", monospace;
   background-color: var(--c-text-background-light);
   padding: 0.1em;
@@ -594,7 +599,7 @@ body .isso-input-wrapper label {
 }
 
 body .isso-input-wrapper input,
-input[type='text'],
+input[type="text"],
 body .isso-textarea,
 body .isso-preview {
   color: inherit;
@@ -627,7 +632,8 @@ body .isso-preview {
     var(--c-text-background-light) 20px
   );
 }
-body .isso-post-action > input, button {
+body .isso-post-action > input,
+button {
   color: inherit;
   background-color: var(--c-text-background-light);
   font-size: 1rem;
