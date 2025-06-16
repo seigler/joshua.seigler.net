@@ -107,9 +107,7 @@
   issuers can contact you if there is a problem with your certificates.
 &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
-&lt;pre
-  class=&quot;language-undefined&quot;
-&gt;&lt;code class=&quot;language-undefined&quot;&gt;# Global options block
+&lt;pre class=&quot;language-caddy&quot;&gt;&lt;code class=&quot;language-caddy&quot;&gt;# Global options block
 {
 	email you@example.com # &amp;lt;&amp;lt;&amp;lt;&amp;lt; CHANGE THIS &amp;lt;&amp;lt;&amp;lt;&amp;lt;
 	on_demand_tls {
@@ -341,27 +339,28 @@ https:// {
 &lt;/h2&gt;
 &lt;p&gt;
   It works!&lt;br /&gt;
-  This repo is in my Forgejo instance:
+  Here is
   &lt;a
     href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seigler.net&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
-    &gt;https://git.apps.seigler.net/joshua/marklink.pages.seigler.net&lt;/a
-  &gt;&lt;br /&gt;
-  And its contents are visible here on my Caddy server:
-  &lt;a href=&quot;https://marklink.pages.seigler.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
-    &gt;https://marklink.pages.seigler.net/&lt;/a
+    &gt;the marklink repo in my Forgejo instance&lt;/a
   &gt;
+  and
+  &lt;a href=&quot;https://marklink.pages.seigler.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;its contents on my Caddy server&lt;/a
+  &gt;.
 &lt;/p&gt;
 &lt;p&gt;
-  For repos with npm build scripts, I use
+  That repo is just HTML and JS with only a gh-pages branch, but for repos with
+  npm build scripts, I use
   &lt;a
     href=&quot;https://www.npmjs.com/package/gh-pages&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
     &gt;gh-pages @ npm&lt;/a
   &gt;
-  to push the build to the gh-pages branch and up to the server.
+  to push the build to a gh-pages branch and up to the server.
 &lt;/p&gt;
 &lt;p&gt;
   I’m putting off rolling my own CI server, but I imagine that’s the next stage
