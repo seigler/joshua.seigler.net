@@ -565,7 +565,7 @@ a.header-anchor {
   margin-bottom: 1rem;
 }
 
-code,
+:not(pre) > code,
 pre {
   font-family: "Commit Mono", monospace;
   background-color: var(--c-text-background-light);
