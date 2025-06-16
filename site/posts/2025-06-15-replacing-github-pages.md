@@ -192,6 +192,7 @@ Also make sure to replace your execute-command lines with ones referencing your 
 
 Forgejo supports running webhooks conditionally triggered by certain conditions.
 Under my main user settings I set up each webhook:
+
 #### Update pages
 
 Target URL: https:// _your domain here_ /hooks/update-pages
@@ -200,6 +201,7 @@ POST content type: `application/json` (the default)
 Secret: _omitted, use your own_
 Trigger on: Push events
 Branch filter: `gh-pages`
+
 #### Remove pages
 
 Target URL: https:// _your domain here_ /hooks/remove-pages
@@ -208,12 +210,12 @@ POST content type: `application/json` (the default)
 Secret: _omitted, use your own_
 Trigger on: Custom Events > Repository > Delete
 Branch filter: `gh-pages`
+
 ## Conclusion
 
 It works!
-This repo is in my Forgejo instance: https://git.apps.seigler.net/joshua/marklink.pages.seigler.net
-And its contents are visible here on my Caddy server: https://marklink.pages.seigler.net/
+Here is [the marklink repo in my Forgejo instance](https://git.apps.seigler.net/joshua/marklink.pages.seigler.net) and [its contents on my Caddy server](https://marklink.pages.seigler.net/).
 
-For repos with npm build scripts, I use [gh-pages @ npm](https://www.npmjs.com/package/gh-pages) to push the build to the gh-pages branch and up to the server.
+That repo is just HTML and JS with only a gh-pages branch, but for repos with npm build scripts, I use [gh-pages @ npm](https://www.npmjs.com/package/gh-pages) to push the build to a gh-pages branch and up to the server.
 
 I'm putting off rolling my own CI server, but I imagine that's the next stage here. Stay tuned.
