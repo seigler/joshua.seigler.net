@@ -102,9 +102,9 @@
   &lt;a href=&quot;https://caddyserver.com/docs/install&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
     &gt;official instructions&lt;/a
   &gt;.&lt;br /&gt;
-  Here is the Caddyfile I made—you will need to change the domains names and the
-  email. Email could be removed, but it is recommended so SSL certificate
-  issuers can contact you if there is a problem with your certificates.
+  Here is the Caddyfile I made—you will need to change the domain names and the
+  email. Email could be removed, but it is there so that SSL certificate issuers
+  can contact you if there is a problem with your certificates.
 &lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
 &lt;pre class=&quot;language-caddy&quot;&gt;&lt;code class=&quot;language-caddy&quot;&gt;# Global options block
