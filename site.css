@@ -58,13 +58,26 @@ body {
     calc(var(--content-width) * 0.5)
   );
   --inset: calc(50vw - var(--content-width) / 2);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+  font-family:
+    Inter, Ubuntu, "Noto Sans", "Fira Sans", Roboto, "Helvetica Neue",
+    "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  background-color: var(--c-body-background);
+  color: var(--c-text-dark);
   background-image:
     url(/noise.png?v=4d90f5eca162),
-    radial-gradient(circle at -20% 20vmin, var(--c-bg1), transparent 150vmin),
+    radial-gradient(ellipse at -20% 20vmin, var(--c-bg1), transparent 90%),
     radial-gradient(
-      circle at 120% calc(100% - 20vmin),
+      ellipse at 120% calc(100% - 20vmin),
       var(--c-bg2),
-      transparent 150vmin
+      transparent 90%
     );
 }
 
@@ -112,21 +125,6 @@ body[data-theme="dark"] {
   font-family: inherit;
   text-decoration-color: color-mix(in srgb, currentColor 50%, transparent);
   text-decoration-thickness: 0.1rem;
-}
-
-body {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-  flex-grow: 1;
-  padding: 0;
-  margin: 0;
-  font-family:
-    Inter, Ubuntu, "Noto Sans", "Fira Sans", Roboto, "Helvetica Neue",
-    "Arial Nova", "Nimbus Sans", Arial, sans-serif;
-  background-color: var(--c-body-background);
-  color: var(--c-text-dark);
 }
 
 a {
