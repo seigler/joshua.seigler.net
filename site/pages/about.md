@@ -13,7 +13,7 @@ One job led to another, and we moved around between Connecticut, Rhode Island, a
 
 The societal metamorphosis of 2019-2021 came at a time when I was also exploring a values shift, from politics as a source-of-truth back to faith, and I started trying to [learn to see the world mystically](/posts/embracing-mysticism). This began a change in my orientation that is still playing out.
 
-In my next few roles, I found that I have a taste for the laser focus and fast pace of startups. I like building exciting new things, talking to customers, owning whole sections of the product, juggling priorities, and balanceing clean perfection against shipping quickly.
+In my next few roles, I found that I have a taste for the laser focus and fast pace of startups. I like building exciting new things, talking to customers, owning whole sections of the product, juggling priorities, and balancing clean perfection against shipping quickly.
 
 I don't know what tomorrow holds, but I'm sure it's going to be great.
 
