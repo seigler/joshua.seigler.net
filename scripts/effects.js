@@ -5,7 +5,7 @@ const defaultPrefs = {
   language: "english",
   theme: "auto",
 };
-document.addEventListener('load', () => {
+window.addEventListener('load', () => {
   document.querySelector('script[data-website-id]').addEventListener('load', () => {
     try {
       umami.identify({ deviceTheme: darkModeMediaQuery ? "dark" : "light" });
