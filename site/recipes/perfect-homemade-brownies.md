@@ -1,6 +1,7 @@
 ---
 title: Perfect Homemade Brownies
 description: Decadent brownies made from scratch
+date: 2025-05-20
 ---
 
 ## Ingredients
@@ -26,3 +27,7 @@ description: Decadent brownies made from scratch
 ## Notes
 
 Original recipe from [Buns In My Oven](https://www.bunsinmyoven.com/good-ol-homemade-brownies/)
+
+## Nutrition Information
+
+16 servings. Each serving: **Calories** 419kcal (21%) **Carbohydrates** 53g (18%) **Protein** 5g (10%) **Fat** 22g (34%) **Saturated Fat** 13g (81%) **Cholesterol** 78mg (26%) **Sodium** 268mg (12%) **Potassium** 290mg (8%) **Fiber** 4g (17%) **Sugar** 36g (40%) **Vitamin A** 435IU (9%) **Calcium** 46mg (5%) **Iron** 3.2mg (18%)

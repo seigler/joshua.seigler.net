@@ -1,6 +1,7 @@
 ---
 title: Spanish Style Rice
 description: One-pan restaurant style spanish rice
+date: 2025-05-05
 ---
 
 ## Ingredients

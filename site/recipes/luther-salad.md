@@ -1,6 +1,7 @@
 ---
 title: Luther Salad
 description: Simple italian pasta salad
+date: 2025-05-05
 ---
 
 ## Ingredients
@@ -34,3 +35,7 @@ The base salad already covers elements of [salt, fat, acid, and heat](https://ww
 - sliced black olives, drained
 - cubed cheese
 - chopped pepperoni
+
+## Nutrition Information
+
+This is less a recipe and more a category of foods. It has a pound of pasta, a good amount of oil, and some protein. So, kinda high on carbs but not the worst thing. No label for this one.
