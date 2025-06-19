@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <link rel="stylesheet" href="/site.css?v=c3e270e387f1" />
+    <link rel="stylesheet" href="/site.css?v=bbe1feb38ff7" />
     <link rel="preload" as="font" href="/fonts/inter/InterVariable.woff2" />
     <script
       defer
@@ -91,7 +91,30 @@
         <author>Joshua Seigler</author><date>June 15, 2025</date>
       </div>
     </header>
-    <main data-pagefind-body>
+
+    <header class="toc">
+      <span class="toc">
+        <ol>
+          <li><a href="#the-objective"> The objective</a></li>
+          <li>
+            <a href="#how-to-do-it"> How to do it</a>
+            <ol>
+              <li>
+                <a href="#debian-server-preparation">
+                  Debian server preparation</a
+                >
+              </li>
+              <li><a href="#caddy"> Caddy</a></li>
+              <li><a href="#webhooks"> Webhooks</a></li>
+              <li><a href="#forgejo"> Forgejo</a></li>
+            </ol>
+          </li>
+          <li><a href="#conclusion"> Conclusion</a></li>
+        </ol>
+      </span>
+    </header>
+
+    <main data-pagefind-body="data-pagefind-body">
       <p>
         I recently started self-hosting
         <a href="https://forgejo.org/" target="_blank" rel="noopener">Forgejo</a
@@ -109,9 +132,9 @@
           >Caddy</a
         >. I’m very happy how it turned out.
       </p>
-      <h2 id="the-result" tabindex="-1">
-        <a class="header-anchor" href="#the-result" aria-hidden="true"></a> The
-        result
+      <h2 id="the-objective" tabindex="-1">
+        <a class="header-anchor" href="#the-objective" aria-hidden="true"></a>
+        The objective
       </h2>
       <p>
         When I push a <code>gh-pages</code> branch to any public repository on
@@ -428,16 +451,15 @@ https:// {
         I’m putting off rolling my own CI server, but I imagine that’s the next
         stage here. Stay tuned.
       </p>
-
-      <script
-        data-isso="//comments.apps.seigler.net/"
-        src="//comments.apps.seigler.net/js/embed.min.js"
-      ></script>
-
-      <section id="isso-thread" data-title="">
-        <noscript>Javascript needs to be activated to view comments.</noscript>
-      </section>
     </main>
+    <script
+      data-isso="//comments.apps.seigler.net/"
+      src="//comments.apps.seigler.net/js/embed.min.js"
+    ></script>
+    <section id="isso-thread" data-title="">
+      <noscript>Javascript needs to be activated to view comments.</noscript>
+    </section>
+
     <footer>
       <section>
         &copy; Joshua Seigler 2025. -
