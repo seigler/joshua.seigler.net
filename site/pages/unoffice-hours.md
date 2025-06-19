@@ -1,6 +1,6 @@
 ---
 title: Unoffice Hours
-layout: "post.njk"
+layout: "page.njk"
 omitDate: true
 omitTOS: true
 ---

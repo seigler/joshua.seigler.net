@@ -1,6 +1,6 @@
 ---
 title: Now
-layout: "post.njk"
+layout: "page.njk"
 date: 2025-06-07
 omitTOC: true
 ---

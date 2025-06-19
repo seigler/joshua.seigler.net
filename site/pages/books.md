@@ -1,6 +1,6 @@
 ---
 title: Books
-layout: "post.njk"
+layout: "page.njk"
 omitTOC: true
 ---
 These books had a big influence on my thinking and taste.

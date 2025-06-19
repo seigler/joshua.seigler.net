@@ -1,0 +1,9 @@
+---
+layout: base.njk
+---
+{% if not omitTOC %}
+  <header class="toc">{{ content | toc('{"tags":["h2", "h3"],"wrapper":"span"}') | safe }}</header>
+{% endif %}
+<main data-pagefind-body="data-pagefind-body">
+  {{ content | safe }}
+</main>
