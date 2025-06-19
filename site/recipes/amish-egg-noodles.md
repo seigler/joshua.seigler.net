@@ -20,13 +20,12 @@ date: 2025-06-13
 - Top with the remaining 4 tablespoons of butter, parsley, and salt and pepper to taste.
 - Serve immediately or leave in the pan, covered, until ready to serve. These will stay warm for 20 more minutes or so with no problems.
 
-## Notes:
-We use 4.5 tsp of Better than Bullion with 28oz water, replacing the broth and bullion cube.
+## Notes
+We use 4.5 tsp of Better than Bouillon with 28oz water, replacing the broth and bouillon cube.
 We also usually brown some canned chicken and add it at the same time as the butter and seasonings.
 
 Original recipe from [bunsinmyoven](https://www.bunsinmyoven.com/amish-egg-noodles/)
 
-## Nutrition Information:
+## Nutrition Information
 Makes 6 servings. Each serving:
-**Calories** 328kcal (16%), **Fat** 14g (22%), Saturated Fat 7g (44%), **Cholesterol** 77mg (26%), **Sodium** 758mg (33%), **Total Carbohydrates** 41g (14%), Fiber 2g (8%), Sugar 1g (1%), **Protein** 9g (18%), **Vitamin C** 10.3mg (12%), **Vitamin A** 400IU (8%), **Iron** 1.5mg (8%)
-**Calcium** 41mg (4%), **Potassium** 266mg (8%)
+**Calories** 328kcal (16%), **Total Fat** 14g (22%), Saturated Fat 7g (44%), Cholesterol 77mg (26%), **Sodium** 758mg (33%), **Total Carbohydrates** 41g (14%), Dietary Fiber 2g (8%), Sugar 1g (1%), **Protein** 9g (18%), **Vitamin C** 10.3mg (12%), **Vitamin A** 400IU (8%), **Iron** 1.5mg (8%), **Calcium** 41mg (4%), **Potassium** 266mg (8%)

@@ -1,4 +1,6 @@
 export default {
-  layout: "base.njk",
+  layout: "post.njk",
   tags: ["recipes"],
+  omitMetadata: true,
+  omitTOC: true,
 };

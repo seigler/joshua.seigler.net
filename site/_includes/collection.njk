@@ -3,16 +3,23 @@ layout: "base.njk"
 eleventyComputed:
   title: "{{ page.fileSlug | capitalize }}"
 ---
-{{ content | safe }}
-{% set tag = page.fileSlug %}
-{% if collections[tag] %}
-  <section>
-    {% for item in collections[tag] | reverse %}
-    <article class="item-summary">
-      <a href="{{ item.url }}">{{ item.data.title }}</a>
-      {% if item.data.date %}<aside>{{item.data.date | formatDate("MMMM DD, YYYY")}}</aside>{% endif %}
-      <p class="item-summary-description">{{ item.data.description }}</p>
-    </article>
-    {% endfor %}
+
+<main>
+  <section data-pagefind-body>
+    {{ content | safe }}
   </section>
-{% endif %}
+  {% set tag = page.fileSlug %}
+  {% if collections[tag] %}
+    <section>
+      {% for item in collections[tag] | reverse %}
+        <article class="item-summary">
+          <a href="{{ item.url }}">{{ item.data.title }}</a>
+          {% if item.data.date %}
+            <aside>{{ item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
+          {% endif %}
+          <p class="item-summary-description">{{ item.data.description }}</p>
+        </article>
+      {% endfor %}
+    </section>
+  {% endif %}
+</main>

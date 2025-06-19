@@ -1,11 +1,13 @@
 ---
 layout: base.njk
 ---
-
-{{ content | safe }}
-
+{% if not omitTOC %}
+  <header class="toc">{{ content | toc('{"tags":["h2", "h3"],"wrapper":"span"}') | safe }}</header>
+{% endif %}
+<main data-pagefind-body="data-pagefind-body">
+  {{ content | safe }}
+</main>
 <script data-isso="//comments.apps.seigler.net/" src="//comments.apps.seigler.net/js/embed.min.js"></script>
-
 <section id="isso-thread" data-title="{{computedTitle}}">
   <noscript>Javascript needs to be activated to view comments.</noscript>
 </section>

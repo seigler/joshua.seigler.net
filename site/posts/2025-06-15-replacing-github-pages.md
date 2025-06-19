@@ -6,7 +6,7 @@ description: How to self-host Forgejo and automatically serve your web build bra
 
 I recently started self-hosting [Forgejo](https://forgejo.org/), but I wanted something to replace GitHub pages, which has been very convenient for publishing little website projects. My server runs Debian, so I decided to use [webhook](https://github.com/adnanh/webhook) and [Caddy](https://caddyserver.com/). I'm very happy how it turned out.
 
-## The result
+## The objective
 When I push a `gh-pages` branch to any public repository on my Forgejo instance, the name of the repo is used as a domain name (e.g. [marklink.pages.seigler.net](https://marklink.pages.seigler.net/)) and the branch contents are automatically served with SSL. If I push updates to the branch, they are automatically published. If the branch or repo is deleted, the site is taken down.
 
 ## How to do it

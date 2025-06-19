@@ -9,6 +9,7 @@ import prettier from "prettier";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import clean from "eleventy-plugin-clean";
+import toc from "eleventy-plugin-toc";
 import site from "./site/_data/site.js";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import { execSync } from 'child_process';
@@ -138,6 +139,8 @@ export default (config) => {
   });
 
   config.addPlugin(eleventyAutoCacheBuster);
+
+  config.addPlugin(toc);
 
   config.on('eleventy.after', () => {
     execSync(`npx pagefind --site dist --glob \"**/*.html\"`, { encoding: 'utf-8' });

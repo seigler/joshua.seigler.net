@@ -5,21 +5,21 @@ date: 2025-05-20
 ---
 
 ## Ingredients
-- 2 Boneless Skinless Chicken Breasts, cooked and diced
-- 8 ounces Orzo Pasta
-- 2 Celery Stalks, finely diced
-- 2 Carrots, finely diced
-- 1/2 Yellow Onion, finely diced
-- 5 tablespoons Butter
-- 2 tablespoons Olive Oil
-- 2 cups Chicken Broth
-- ½ cup Heavy Whipping Cream
-- 1 teaspoon Chicken Bouillon Powder
-- 1/3 cup All Purpose Flour
+- 2 boneless skinless chicken breasts, cooked and diced
+- 8 ounces Orzo pasta
+- 2 celery stalks, finely diced
+- 2 carrots, finely diced
+- 1/2 yellow onion, finely diced
+- 5 tablespoons butter
+- 2 tablespoons olive oil
+- 2 cups chicken broth
+- ½ cup heavy whipping cream
+- 1 teaspoon chicken bouillon powder
+- 1/3 cup all purpose flour
 
 ## Instructions
 
-1. Cook the orzo per the package instructions.
+1. Cook the Orzo per the package instructions.
 2. While that cooks, make a mirepoix:
     1. In a large skillet over medium high heat add the butter and olive oil.
     2. Once the butter is melted add in the diced onion, carrots and celery.

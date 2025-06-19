@@ -11,8 +11,6 @@ In an attempt to remedy my newfound illiteracy, I started exploring symbolism, w
 
 From there I started listening to the [Lord of Spirits](https://www.ancientfaith.com/podcasts/lordofspirits) podcast. I learned that commonplace, obvious understanding of existence as material _and spiritual_ has been mostly lost, displaced by modern confidence that the material world is the limit of reality, over which sovereign mankind rules. The ancient faith of Christianity, known now as "Eastern Orthodoxy", corresponds with reality, especially spiritual patterns of reality as we see more plainly every week, better than anything else I know.
 
-## Additional thoughts
-
 For a while I think my highest values have been freedom and truth. A desire to be solely responsible for myself, and a desire to understand myself and the world fully and accurately. But I didn't realize that my chief obstacle is hardly megacorps and governments: I am ruled by my own out-of-control desires: for comfort, pleasure, control, satisfaction, even self-mastery. In a paradise where my every whim was manifested, I would still be a slave to desire, consuming and _wanting_ more and more.
 
 Investigating eastern orthodoxy, this ancient Christianity, revealed a better path to freedom and truth: aiming higher. Every action and choice is in service to something. Instead of serving little tyrannical gods like comfort or pleasure, or potentially nobler gods like a country or even a "liberty movement", I will attempt to serve the Most High.

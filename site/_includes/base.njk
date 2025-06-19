@@ -34,9 +34,7 @@ title: Joshua's Homepage
   <body data-font="english" data-path="{{ page.url }}">
     <script>{% include "-darklight.js" %}</script>
     {% include "-header.njk" %}
-    <main data-pagefind-body>
-      {{ content | safe }}
-    </main>
+    {{ content | safe }}
     {% include "-footer.njk" %}
   </body>
 </html>

@@ -30,7 +30,7 @@
     {%- if author -%}
       <author>{{ author }}</author>
     {%- endif -%}
-    {%- if date -%}
+    {%- if date and not omitMetadata -%}
       <date>{{ date | formatDate("MMMM D, YYYY") }}</date>
     {%- endif -%}
   </div>
