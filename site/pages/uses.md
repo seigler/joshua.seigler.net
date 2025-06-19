@@ -1,6 +1,6 @@
 ---
 title: What I Use
-layout: "base.njk"
+layout: "post.njk"
 date: 2025-06-10
 ---
 

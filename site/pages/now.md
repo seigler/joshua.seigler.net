@@ -1,7 +1,8 @@
 ---
 title: Now
-layout: "base.njk"
+layout: "post.njk"
 date: 2025-06-07
+omitTOC: true
 ---
 
 I live in Southbridge, Massachusetts since 2022, with my wife Sara and our three cats. We're starting to get more integrated here. I'm about to start a new role, my third or fourth startup depending on how you count it. I'm active in [a local church](https://www.stmichaelorthodox.com/). I recently changed my mind about olives (I like them now).
