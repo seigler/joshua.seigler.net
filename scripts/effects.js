@@ -85,7 +85,7 @@ function addEffect({ target }) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
     const currentPref = localStorage.getItem(key) ?? defaultPref;
     applyPreference(key, currentPref, false);
@@ -100,4 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener("mouseleave", removeEffect, true);
   document.addEventListener("blur", removeEffect, true);
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
