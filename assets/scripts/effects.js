@@ -85,19 +85,17 @@ function addEffect({ target }) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
-    const currentPref = localStorage.getItem(key) ?? defaultPref;
-    applyPreference(key, currentPref, false);
-    document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
-      input.addEventListener("change", (e) => {
-        applyPreference(key, e.currentTarget.value, true);
-      });
+Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
+  const currentPref = localStorage.getItem(key) ?? defaultPref;
+  applyPreference(key, currentPref, false);
+  document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
+    input.addEventListener("change", (e) => {
+      applyPreference(key, e.currentTarget.value, true);
     });
   });
-  document.addEventListener("mouseenter", addEffect, true);
-  document.addEventListener("focus", addEffect, true);
-
-  document.addEventListener("mouseleave", removeEffect, true);
-  document.addEventListener("blur", removeEffect, true);
 });
+document.addEventListener("mouseenter", addEffect, true);
+document.addEventListener("focus", addEffect, true);
+
+document.addEventListener("mouseleave", removeEffect, true);
+document.addEventListener("blur", removeEffect, true);
