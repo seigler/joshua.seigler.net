@@ -45,7 +45,21 @@
   
     
       <url>
+        <loc>/recipes/sloppy-joes/</loc>
+        <lastmod>2024-06-07T00:00:00.000Z</lastmod>
+      </url>
+    
+  
+    
+      <url>
         <loc>/posts/thinking-machines/</loc>
+        <lastmod>2025-04-24T00:00:00.000Z</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/recipes/corn-casserole/</loc>
         <lastmod>2025-04-24T00:00:00.000Z</lastmod>
       </url>
     
@@ -65,18 +79,6 @@
     
   
     
-      <url>
-        <loc>/recipes/corn-casserole/</loc>
-        <lastmod>2025-04-30T17:17:21.972Z</lastmod>
-      </url>
-    
-  
-    
-      <url>
-        <loc>/recipes/sloppy-joes/</loc>
-        <lastmod>2025-04-30T17:17:21.972Z</lastmod>
-      </url>
-    
   
     
   
@@ -100,27 +102,25 @@
   
     
   
-    
-  
-    
-  
-    
-      <url>
-        <loc>/recipes/</loc>
-        <lastmod>2025-05-06T13:59:24.323Z</lastmod>
-      </url>
     
   
     
       <url>
         <loc>/recipes/luther-salad/</loc>
-        <lastmod>2025-05-06T13:59:24.323Z</lastmod>
+        <lastmod>2025-05-05T00:00:00.000Z</lastmod>
       </url>
     
   
     
       <url>
         <loc>/recipes/spanish-style-rice/</loc>
+        <lastmod>2025-05-05T00:00:00.000Z</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/recipes/</loc>
         <lastmod>2025-05-06T13:59:24.323Z</lastmod>
       </url>
     
@@ -141,22 +141,22 @@
   
     
       <url>
-        <loc>/recipes/perfect-homemade-brownies/</loc>
-        <lastmod>2025-05-20T16:38:11.138Z</lastmod>
-      </url>
-    
-  
-    
-      <url>
         <loc>/recipes/creamy-chicken-orzo/</loc>
-        <lastmod>2025-05-20T18:08:29.069Z</lastmod>
+        <lastmod>2025-05-20T00:00:00.000Z</lastmod>
       </url>
     
   
     
       <url>
         <loc>/recipes/pasta-rosatella/</loc>
-        <lastmod>2025-05-20T18:48:58.708Z</lastmod>
+        <lastmod>2025-05-20T00:00:00.000Z</lastmod>
+      </url>
+    
+  
+    
+      <url>
+        <loc>/recipes/perfect-homemade-brownies/</loc>
+        <lastmod>2025-05-20T00:00:00.000Z</lastmod>
       </url>
     
   
@@ -214,7 +214,7 @@
     
       <url>
         <loc>/recipes/amish-egg-noodles/</loc>
-        <lastmod>2025-06-13T02:54:28.190Z</lastmod>
+        <lastmod>2025-06-13T00:00:00.000Z</lastmod>
       </url>
     
   
@@ -228,7 +228,7 @@
     
       <url>
         <loc>/feed.xml</loc>
-        <lastmod>2025-06-19T01:26:46.464Z</lastmod>
+        <lastmod>2025-06-19T06:00:59.250Z</lastmod>
       </url>
     
   
