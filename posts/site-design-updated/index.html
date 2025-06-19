@@ -13,7 +13,7 @@
       src="https://stats.apps.seigler.net/script.js"
       data-website-id="ccb4bd94-2a71-47fe-8eea-d85bf75b7f6d"
     ></script>
-    <script async src="/scripts/effects.js?v=16b805f6f664"></script>
+    <script defer src="/scripts/effects.js?v=233a67aa5f48"></script>
     <link rel="prefetch" href="/fonts/inter/InterVariable-Italic.woff2" />
     <link rel="prefetch" href="/fonts/ftaurebesh/ftaurebesh-medium.woff2" />
     <link rel="prefetch" href="/fonts/ftaurebesh/ftaurebesh-bold.woff2" />
@@ -37,6 +37,12 @@
     <meta name="generator" content="Eleventy v3.1.0" />
   </head>
   <body data-font="english" data-path="/posts/site-design-updated/">
+    <script>
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme != null) {
+        document.body.setAttribute("data-theme", savedTheme);
+      }
+    </script>
     <header>
       <nav>
         <div class="nav-row">
