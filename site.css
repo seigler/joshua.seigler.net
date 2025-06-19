@@ -619,7 +619,7 @@ p > code {
 }
 
 body #isso-thread {
-  margin-top: 4rem;
+  margin-top: 4rem var(--inset) 0;
 }
 
 body .isso-postbox {
