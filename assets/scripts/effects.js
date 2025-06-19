@@ -5,18 +5,13 @@ const defaultPrefs = {
   language: "english",
   theme: "auto",
 };
-if (umami != null) {
-  umami.identify({ deviceTheme: darkModeMediaQuery ? "dark" : "light" });
-}
-Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
-  const currentPref = localStorage.getItem(key) ?? defaultPref;
-  applyPreference(key, currentPref, false);
-  document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
-    input.addEventListener("change", (e) => {
-      applyPreference(key, e.currentTarget.value, true);
-    });
-  });
+
+document.querySelector('script[data-website-id]').addEventListener('load', () => {
+  try {
+    umami.identify({ deviceTheme: darkModeMediaQuery ? "dark" : "light" });
+  } catch {}
 });
+
 function applyPreference(key, value, shouldSave) {
   if (umami !== null) {
     umami.identify({
@@ -35,6 +30,31 @@ function applyPreference(key, value, shouldSave) {
   if (shouldSave) {
     localStorage.setItem(key, value);
   }
+}
+
+/** @param {Event} evt */
+function removeEffect({ target }) {
+  const effectsLayer = document.querySelector("#effects");
+  const effects = Array.from(effectsLayer.children).filter(
+    (e) => e.__effectParent === target,
+  );
+  effects.forEach((e) => {
+    e.getAnimations().forEach((anim) => {
+      if (anim.currentTime < 100) {
+        anim.pause();
+        effectsLayer.removeChild(e);
+        return;
+      }
+      anim.pause();
+      anim.updatePlaybackRate(-0.25);
+      anim.play();
+      anim.addEventListener("finish", () => {
+        if (effectsLayer.contains(e)) {
+          effectsLayer.removeChild(e);
+        }
+      });
+    });
+  });
 }
 
 /** @param {Event} evt */
@@ -64,32 +84,20 @@ function addEffect({ target }) {
     effectsLayer.appendChild(newEffect);
   });
 }
-document.addEventListener("mouseenter", addEffect, true);
-document.addEventListener("focus", addEffect, true);
 
-/** @param {Event} evt */
-function removeEffect({ target }) {
-  const effectsLayer = document.querySelector("#effects");
-  const effects = Array.from(effectsLayer.children).filter(
-    (e) => e.__effectParent === target,
-  );
-  effects.forEach((e) => {
-    e.getAnimations().forEach((anim) => {
-      if (anim.currentTime < 100) {
-        anim.pause();
-        effectsLayer.removeChild(e);
-        return;
-      }
-      anim.pause();
-      anim.updatePlaybackRate(-0.25);
-      anim.play();
-      anim.addEventListener("finish", () => {
-        if (effectsLayer.contains(e)) {
-          effectsLayer.removeChild(e);
-        }
+document.addEventListener('DOMContentLoaded', () => {
+  Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
+    const currentPref = localStorage.getItem(key) ?? defaultPref;
+    applyPreference(key, currentPref, false);
+    document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
+      input.addEventListener("change", (e) => {
+        applyPreference(key, e.currentTarget.value, true);
       });
     });
   });
-}
-document.addEventListener("mouseleave", removeEffect, true);
-document.addEventListener("blur", removeEffect, true);
+  document.addEventListener("mouseenter", addEffect, true);
+  document.addEventListener("focus", addEffect, true);
+
+  document.addEventListener("mouseleave", removeEffect, true);
+  document.addEventListener("blur", removeEffect, true);
+});
