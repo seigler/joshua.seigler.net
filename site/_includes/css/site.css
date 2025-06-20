@@ -52,8 +52,8 @@ body {
   padding: 0;
   margin: 0;
   font-family:
-    Inter, Ubuntu, "Noto Sans", "Fira Sans", Roboto, "Helvetica Neue",
-    "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+    "Inter", "Inter Variable", Ubuntu, "Noto Sans", "Fira Sans", Roboto,
+    "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   background-color: var(--c-body-background);
   color: var(--c-text-dark);
   background-image:
@@ -157,7 +157,7 @@ main p img {
   max-width: 100%;
 }
 
-section:nth-child(n+2) {
+section:nth-child(n + 2) {
   margin-top: 1rem;
 }
 
@@ -173,8 +173,8 @@ header.toc {
   li {
     display: inline;
     list-style: none;
-    &:nth-child(n+2):before {
-      content: ' · ';
+    &:nth-child(n + 2):before {
+      content: " · ";
     }
   }
 }
@@ -271,7 +271,8 @@ span.aside {
   }
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.5rem;
 }
 
@@ -478,7 +479,7 @@ h4 {
   font-weight: 700;
   text-shadow: 0 0 0.5em var(--c-highlight);
   margin-top: 0;
-  main > &:nth-child(n+2) {
+  main > &:nth-child(n + 2) {
     margin-top: 1.5rem;
   }
   margin-bottom: 0.5rem;
