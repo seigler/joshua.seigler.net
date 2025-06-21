@@ -1,29 +1,13 @@
 ---
 layout: "base.njk"
 ---
+{%- from "components/collectionList.njk" import collectionList with context -%}
 <main data-pagefind-body>
   {{ content | safe }}
   {%- for name, collection in collections -%}
     {%- if name in ["posts"] -%}
       <h2>{{name | capitalize }}</h2>
-      <ul class="collection">
-        {%- for item in collection | reverse -%}
-          {%- if (loop.index <= 5) -%}
-            <li>
-              <a href="{{item.url}}">{{item.data.title}}</a>
-              {%- if item.data.date -%}
-                <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
-              {%- endif -%}
-              <p>{{item.data.description | safe}}</p>
-            </li>
-          {%- endif -%}
-          {%- if (loop.index == 6) -%}
-            <li>
-              <a href="/{{name}}/">More {{name}}&hellip;</a>
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
+      {{ collectionList(collection, limit=5) }}
     {%- endif -%}
   {%- endfor -%}
 </main>

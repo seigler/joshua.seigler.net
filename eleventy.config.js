@@ -12,7 +12,7 @@ import clean from "eleventy-plugin-clean";
 import toc from "eleventy-plugin-toc";
 import site from "./site/_data/site.js";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
-import { execSync } from 'child_process';
+import { execSync } from "child_process";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import mdPrism from "markdown-it-prism";
 
@@ -36,7 +36,7 @@ export default (config) => {
     .use(mdFootnote)
     .use(mdSpoiler, {
       tag: "span",
-      attrs: [["class", "aside"]]
+      attrs: [["class", "aside"]],
     })
     .use(mdLinkAttributes, {
       matcher(href) {
@@ -48,11 +48,17 @@ export default (config) => {
       },
     })
     .use(mdPrism);
-  mdLib.renderer.rules.render_footnote_anchor = (tokens, idx, options, env, slf) => {
-    let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
-    if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
+  mdLib.renderer.rules.render_footnote_anchor = (
+    tokens,
+    idx,
+    options,
+    env,
+    slf,
+  ) => {
+    let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+    if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`;
     /* ↩ with escape code to prevent display as Apple Emoji on iOS */
-    return ` <a href="#fnref${id}" class="footnote-backref">\u21a9\uFE0E</a>`
+    return ` <a href="#fnref${id}" class="footnote-backref">\u21a9\uFE0E</a>`;
   };
   config.setLibrary("md", mdLib);
   config.addPassthroughCopy({
@@ -81,6 +87,24 @@ export default (config) => {
       };
     });
     return musicFiles;
+  });
+
+  config.addCollection("categories", (collectionApi) => {
+    const posts = collectionApi
+      .getFilteredByTag("posts")
+      .filter(
+        (p) => !p.data.draft || process.env.ELEVENTY_RUN_MODE !== "build",
+      );
+
+    return posts.reduce((tags, post) => {
+      post.data.tags
+        .filter((tag) => tag !== "posts")
+        .forEach((tag) => {
+          const prev = tags[tag] ?? { id: Object.keys(tags).length, count: 0 };
+          tags[tag] = { ...prev, count: prev.count + 1 };
+        });
+      return tags;
+    }, {});
   });
 
   config.addTransform("prettier", (content, outputPath) => {
@@ -142,8 +166,10 @@ export default (config) => {
 
   config.addPlugin(toc);
 
-  config.on('eleventy.after', () => {
-    execSync(`npx pagefind --site dist --glob \"**/*.html\"`, { encoding: 'utf-8' });
+  config.on("eleventy.after", () => {
+    execSync(`npx pagefind --site dist --glob \"**/*.html\"`, {
+      encoding: "utf-8",
+    });
   });
 
   return {

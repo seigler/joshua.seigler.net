@@ -2,6 +2,10 @@
 title: My Very Own GitHub Pages
 slug: my-very-own-github-pages
 description: How to self-host Forgejo and automatically serve your web build branches with SSL.
+tags:
+  - how to
+  - technical
+  - selfhosting
 ---
 
 I recently started self-hosting [Forgejo](https://forgejo.org/), but I wanted something to replace GitHub pages, which has been very convenient for publishing little website projects. My server runs Debian, so I decided to use [webhook](https://github.com/adnanh/webhook) and [Caddy](https://caddyserver.com/). I'm very happy how it turned out.

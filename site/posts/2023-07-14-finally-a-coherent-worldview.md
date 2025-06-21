@@ -1,6 +1,9 @@
 ---
 title: Finally, a Coherent Worldview
 description: Why did I think I could figure everything out on my own?
+tags:
+  - faith
+  - worldview
 ---
 
 Around the time of my previous post, I had just been received into the Orthodox church. Since then I have found it to be everything I was looking for, and a great deal more. There is such a wealth of wisdom, going back thousands of years. And it was all there, un-seen, un-read, as far as I was concerned not existing at all! It seems impossible to me that I was so unaware of these treasures by chance.

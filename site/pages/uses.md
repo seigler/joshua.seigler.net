@@ -1,13 +1,13 @@
 ---
 title: What I Use
 layout: "page.njk"
-date: 2025-06-10
+date: 2025-06-20
 ---
 
 ## Hardware
 - Lenovo LOQ laptop (personal), Framework laptop (work).
 
-- Google Pixel 8 phone.
+- Google Pixel 7 phone.
 
 - Wide IKEA GALANT desk (discontinued).
 
@@ -19,7 +19,7 @@ date: 2025-06-10
 
 - [High-output LED light](https://amzn.to/4kUm2ku) in an [IKEA REGOLIT shade](https://www.ikea.com/us/en/p/regolit-pendant-lamp-shade-white-handmade-70103410/) for mood regulation and for the webcam.
 
-- [USB microphone with boom](https://amzn.to/4lgbwob).
+- [USB microphone with boom](https://amzn.to/4lgbwob) but I recently got [a better mic arm](https://amzn.to/4l2wE16).
 
 - [Sony WH1000XM2 headphones](https://www.sony.com/electronics/support/wireless-headphones-bluetooth-headphones/wh-1000xm2/specifications).
 

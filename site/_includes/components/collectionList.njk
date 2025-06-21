@@ -1,0 +1,23 @@
+{%- from "components/tagList.njk" import tagList with context -%}
+
+{% macro collectionList(collection, limit=0) %}
+  <ul class="collection">
+    {%- for item in collection | reverse -%}
+      {%- if (limit === 0 or loop.index <= limit) -%}
+        <li>
+          <a href="{{item.url}}">{{item.data.title}}</a>
+          {%- if item.data.date -%}
+            <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
+          {%- endif -%}
+            <aside>{{ tagList(item.data.tags.slice(1)) }}</aside>
+          <p>{{item.data.description | safe}}</p>
+        </li>
+      {%- endif -%}
+      {%- if (limit !== 0 and loop.index == limit + 1) -%}
+        <li>
+          <a href="/{{name}}/">More {{name}}&hellip;</a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{% endmacro %}

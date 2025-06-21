@@ -22,7 +22,9 @@ body {
 
   --c-text-light: var(--c-highlight);
   --c-text-dark: var(--c-dark);
-  --c-text-dim: color-mix(in lch, var(--c-text-dark), transparent 30%);
+  --c-text-dim: color-mix(in lch, var(--c-text-dark), transparent 50%);
+
+  --tag-luminance: 0.4;
 
   --ratio: 1.333;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -79,6 +81,7 @@ body[data-theme="dark"] {
   --c-text-background-light: oklch(45% 0.135 280 / 0.3);
   --c-text-light: oklch(94% 0.045 107.2);
   --c-text-dark: oklch(94% 0.045 107.2);
+  --tag-luminance: 0.85;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -95,6 +98,7 @@ body[data-theme="dark"] {
     --c-text-background-light: oklch(45% 0.135 280 / 0.3);
     --c-text-light: oklch(94% 0.045 107.2);
     --c-text-dark: oklch(94% 0.045 107.2);
+    --tag-luminance: 0.85;
   }
 }
 
@@ -151,6 +155,13 @@ nav label:has(input:checked) {
 nav label:has(input:focus-visible) {
   z-index: 1;
   outline: 2px solid var(--c-text-dark);
+}
+
+.tag {
+  &::before {
+    content: "#";
+  }
+  color: oklch(var(--tag-luminance) 0.25 calc(222.5 * var(--tagIndex, 0)) / 0.8);
 }
 
 main p img {
@@ -280,6 +291,16 @@ ul.collection {
   padding-left: 0;
   > li {
     list-style-type: none;
+    display: grid;
+    align-items: baseline;
+    grid-template-columns: auto auto 1fr;
+    > p {
+      &::before {
+        content: none;
+      }
+      width: 100%;
+      grid-column: 1/-1;
+    }
     + li {
       margin-top: 1rem;
     }
@@ -479,39 +500,38 @@ h4 {
   font-weight: 700;
   text-shadow: 0 0 0.5em var(--c-highlight);
   margin-top: 0;
-  main > &:nth-child(n + 2) {
-    margin-top: 1.5rem;
+  &:nth-child(n + 2) {
+    margin-top: 2rem;
   }
   margin-bottom: 0.5rem;
   &:hover .header-anchor {
     opacity: 1;
   }
 }
-:is(h1, h2, h3)::after {
-  pointer-events: none;
-  opacity: 0.5;
-  content: "";
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  left: -4rem;
-  height: 4em;
-  width: 30rem;
-  max-width: 100%;
-  background: radial-gradient(
-    ellipse farthest-side at 50% 100%,
-    var(--c-highlight),
-    transparent
-  );
+@media screen {
+  :is(h1, h2, h3)::after {
+    pointer-events: none;
+    opacity: 0.5;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: -4rem;
+    height: 4em;
+    width: 30rem;
+    max-width: 100%;
+    background: radial-gradient(
+      ellipse farthest-side at 50% 100%,
+      var(--c-highlight),
+      transparent
+    );
+  }
 }
 
 h1 {
   margin-bottom: 0;
 }
 .header-meta {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   font-size: var(--s-1);
   > * + *::before {
     content: "-";
