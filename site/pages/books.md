@@ -2,6 +2,7 @@
 title: Books
 layout: "page.njk"
 omitTOC: true
+keywords: books
 ---
 These books had a big influence on my thinking and taste.
 

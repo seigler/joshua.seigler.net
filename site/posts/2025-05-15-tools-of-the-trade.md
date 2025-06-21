@@ -5,7 +5,6 @@ description: Some dev tools I recommend.
 tags:
   - technical
   - software
-  - opinions
 ---
 
 Everyone has different tools that they find especially effective. Here are some I have found with a few words about why I like them.

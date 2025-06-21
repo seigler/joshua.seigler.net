@@ -6,6 +6,7 @@ export default {
   eleventyComputed: {
     date: "{{ page.date }}",
     slug: "{{ page.slug }}",
+    keywords: (data) => data.tags.join(", "),
     permalink: (data) => {
       if (process.env.ELEVENTY_RUN_MODE !== "build") return data.permalink;
       else return data.draft ? false : data.permalink;

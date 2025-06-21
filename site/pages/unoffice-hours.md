@@ -3,6 +3,7 @@ title: Unoffice Hours
 layout: "page.njk"
 omitDate: true
 omitTOS: true
+keywords: Unoffice hours
 ---
 
 Working remotely has a lot of benefits, but we miss out on the serendipitous connections and socialization that happened just from being in the same room. Unoffice hours is part of an attempt to make new connections, but without applying the giant invisible filter of my own preferences.

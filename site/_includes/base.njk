@@ -2,7 +2,7 @@
 title: Joshua's Homepage
 ---
 
-{%- set computedTitle = tag | capitalize if tag else title -%}
+{%- set computedTitle = tag | capitalize if tag and not useTitle else title -%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +19,9 @@ title: Joshua's Homepage
     <link rel="webmention" href="https://webmention.io/joshua.seigler.net/webmention"/>
     <title>{{ computedTitle }} - {{ site.title }}</title>
     <meta name="description" content="{{ description }}"/>
+    {%- if keywords -%}
+    <meta name="keywords" content="{{ keywords }}">
+    {%- endif %}
     <meta property="og:title" content="{{ computedTitle }}"/>
     <meta property="og:type" content="{{ article }}"/>
     <meta property="og:url" content="{{ page.url | absoluteURL }}"/>

@@ -2,9 +2,8 @@
 title: Embracing Mysticism
 description: Society is moving from a materialistic era into a mystical one. I describe my attempt to gain mystical proficiency.
 tags:
-  - opinions
   - faith
-  - worldview
+  - ethos
 ---
 
 Logical arguments no longer work. This has been especially visible in the pandemic response in 2020. If you dug even a little below the surface of any mainstream narrative in the past two years, you likely found points of disagreement. But showing people scientific papers, charts, statistical analysis, or other types of evidence accomplishes nothing, or worse it invites accusations of being part of the Other Team, one of those backwards, wrong, stupid people.

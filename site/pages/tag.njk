@@ -1,0 +1,24 @@
+---
+layout: "base.njk"
+eleventyComputed:
+  title: "Posts tagged #{{ tag }}"
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - posts
+    - recipes
+    - timeline
+permalink: /tags/{{ tag | slugify }}/
+useTitle: true
+---
+{%- from "components/collectionList.njk" import collectionList with context -%}
+<main>
+  <section data-pagefind-body>
+    {{ content | safe }}
+  </section>
+  {% if collections[tag] %}
+    {{ collectionList(collections[tag]) }}
+  {% endif %}
+</main>

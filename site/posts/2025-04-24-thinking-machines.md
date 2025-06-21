@@ -4,8 +4,7 @@ slug: thinking-machines
 description: "The computers will start thinking, and people will stop."
 cover: "/2025-04-24--computers-will-start-thinking.jpg"
 tags:
-  - opinions
-  - trends
+  - zeitgeist
   - ai
 ---
 

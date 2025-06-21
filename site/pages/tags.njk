@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Tags
+permalink: /tags/
+---
+<main>
+  <ul class="collection">
+    {%- for tag, data in collections.categories -%}
+      <li>
+        <a class="tag" href="/posts/tag/{{tag | slugify}}">{{tag}}</a>
+          <aside>{{ data.count }}</aside>
+      </li>
+    {%- endfor -%}
+  </ul>
+</main>

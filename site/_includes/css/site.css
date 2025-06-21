@@ -1,6 +1,6 @@
 :root {
   font-size: 16px;
-  font-size: clamp(14px, 8px + 0.65vw, 24px);
+  font-size: clamp(14px, 8px + 0.65vw, 30px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -139,6 +139,7 @@ a[href] {
 nav label:has(input:focus-visible),
 nav label:has(input:checked) {
   outline: none;
+  color: var(--c-text-dark);
   background-color: var(--c-accent);
   box-shadow:
     0 0 0.5rem var(--c-accent),
@@ -161,7 +162,7 @@ nav label:has(input:focus-visible) {
   &::before {
     content: "#";
   }
-  color: oklch(var(--tag-luminance) 0.25 calc(222.5 * var(--tagIndex, 0)) / 0.8);
+  color: oklch(var(--tag-luminance) 0.25 calc(25 + 360 * var(--tagIndex, 0) / var(--totalTags, 1)) / 0.8);
 }
 
 main p img {

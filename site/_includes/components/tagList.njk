@@ -1,10 +1,10 @@
 {% macro tagList(tags) %}
-  <span class="tags">
+  <span class="tags" style="--totalTags:{{ collections.categories | dictsort | length }}">
   {%- for tag in tags -%}
     <a
       class="tag"
       style="--tagIndex:{{ collections.categories[tag].id }}"
-      href="/posts/tag/{{ tag | slugify }}"
+      href="/tags/{{ tag | slugify }}"
     >{{ tag }}</a>
   {% endfor -%}
   </span>

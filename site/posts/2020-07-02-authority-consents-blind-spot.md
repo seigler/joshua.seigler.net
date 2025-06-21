@@ -2,8 +2,7 @@
 title: Authority - Consent's Blind Spot
 description: Authority is the idea that certain people are justified in violating consent. This belief allows people to force others to do what they want with a clear conscience.
 tags:
-  - opinions
-  - worldview
+  - ethos
 ---
 
 > 2025 disclaimer: I haven't thought through all these ideas in a while, but I probably would change some of this or soften/rephrase it.
