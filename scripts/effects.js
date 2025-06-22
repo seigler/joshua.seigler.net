@@ -1,36 +1,12 @@
 "use strict";
 
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-const defaultPrefs = {
-  language: "english",
-  theme: "auto",
-};
 
 document.querySelector('script[data-website-id]').addEventListener('load', () => {
   try {
     umami.identify({ deviceTheme: darkModeMediaQuery ? "dark" : "light" });
   } catch {}
 });
-
-function applyPreference(key, value, shouldSave) {
-  if (umami !== null) {
-    umami.identify({
-      [`pref-${key}`]: value,
-    });
-    if (shouldSave) {
-      umami.track(`Set ${key} to ${value}`);
-    }
-  }
-  document.body.setAttribute(`data-${key}`, value);
-  document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
-    if (input.value === value) {
-      input.checked = true;
-    }
-  });
-  if (shouldSave) {
-    localStorage.setItem(key, value);
-  }
-}
 
 /** @param {Event} evt */
 function removeEffect({ target }) {
@@ -87,15 +63,6 @@ function addEffect({ target }) {
   });
 }
 
-Object.entries(defaultPrefs).forEach(([key, defaultPref]) => {
-  const currentPref = localStorage.getItem(key) ?? defaultPref;
-  applyPreference(key, currentPref, false);
-  document.querySelectorAll(`input[name=${key}]`).forEach((input) => {
-    input.addEventListener("change", (e) => {
-      applyPreference(key, e.currentTarget.value, true);
-    });
-  });
-});
 document.addEventListener("mouseenter", addEffect, true);
 document.addEventListener("focus", addEffect, true);
 

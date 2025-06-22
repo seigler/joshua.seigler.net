@@ -771,7 +771,10 @@ https:// {
     <link href="https://joshua.seigler.net/posts/site-design-updated/" />
     <updated>2024-06-05T00:00:00Z</updated>
     <id>https://joshua.seigler.net/posts/site-design-updated/</id>
-    <content type="html">&lt;p&gt;
+    <content type="html">&lt;style&gt;
+  @import url(&quot;/fonts/ftaurebesh/ftaurebesh.css?v=b6b5f713b0fb&quot;);
+&lt;/style&gt;
+&lt;p&gt;
   New design! The tools I used before have a lot of unmaintained or outdated
   dependencies and I wanted something a little simpler. The new site uses
   &lt;a href=&quot;https://pnpm.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pnpm&lt;/a&gt;,
