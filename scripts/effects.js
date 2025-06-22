@@ -67,6 +67,7 @@ function addEffect({ target }) {
   ) {
     return;
   }
+  const color = window.getComputedStyle(target).getPropertyValue('--glowColor');
   const rects = Array.from(target.getClientRects());
   Array.from(target.children).forEach((child) => {
     rects.push(...Array.from(child.getClientRects()));
@@ -81,6 +82,7 @@ function addEffect({ target }) {
     newEffect.style.left = `calc(${left + window.scrollX}px - ${padding})`;
     newEffect.style.width = `calc(${width}px + 2 * ${padding})`;
     newEffect.style.height = `calc(${height}px + 2 * ${padding})`;
+    newEffect.style.setProperty('--glowColor', color);
     effectsLayer.appendChild(newEffect);
   });
 }
