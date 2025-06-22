@@ -12,15 +12,16 @@
 }
 
 body {
-  --c-highlight: oklch(45% 0.135 280 / 0.7);
-  --c-accent: oklch(45% 0.135 280 / 0.8);
-  --c-body-background: oklch(15% 0.05 262);
-  --c-bg1: oklch(15% 0.05 290);
-  --c-bg2: oklch(15% 0.05 188);
-  --c-dark: oklch(19.1% 0.005 259.9);
-  --c-text-background-light: oklch(45% 0.135 280 / 0.3);
-  --c-text-light: oklch(94% 0.045 107.2);
-  --c-text-dark: oklch(94% 0.045 107.2);
+  --hue-main: 280;
+  --c-highlight: oklch(45% 0.135 var(--hue-main) / 0.7);
+  --c-accent: oklch(45% 0.135 var(--hue-main) / 0.8);
+  --c-body-background: oklch(15% 0.05 var(--hue-main));
+  --c-bg1: oklch(15% 0.05 calc(var(--hue-main) + 30));
+  --c-bg2: oklch(15% 0.05 calc(var(--hue-main) - 30));
+  --c-dark: oklch(19.1% 0.005 var(--hue-main));
+  --c-text-background-light: oklch(45% 0.135 var(--hue-main) / 0.3);
+  --c-text-light: oklch(94% 0.045 calc(var(--hue-main) + 180));
+  --c-text-dark: oklch(94% 0.045 calc(var(--hue-main) + 180));
   --tag-luminance: 0.85;
 
   --ratio: 1.333;
