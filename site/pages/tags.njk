@@ -3,12 +3,13 @@ layout: base.njk
 title: Tags
 permalink: /tags/
 ---
+
 <main>
-  <ul class="collection">
+  <ul class="collection" style="--totalTags:{{ collections.categories | dictsort | length }}">
     {%- for tag, data in collections.categories -%}
       <li>
-        <a class="tag" href="/posts/tag/{{tag | slugify}}">{{tag}}</a>
-          <aside>{{ data.count }}</aside>
+        <a class="tag" style="--tagIndex:{{ collections.categories[tag].id }}" href="/tags/{{ tag | slugify }}">{{ tag }}</a>
+        <aside>{{ data.count }}</aside>
       </li>
     {%- endfor -%}
   </ul>

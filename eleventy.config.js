@@ -96,7 +96,7 @@ export default (config) => {
         (p) => !p.data.draft || process.env.ELEVENTY_RUN_MODE !== "build",
       );
 
-    return posts.reduce((tags, post) => {
+    const categories = posts.reduce((tags, post) => {
       post.data.tags
         .filter((tag) => tag !== "posts")
         .forEach((tag) => {
@@ -105,6 +105,11 @@ export default (config) => {
         });
       return tags;
     }, {});
+    return Object.fromEntries(
+      Object.entries(categories).sort((a, b) => {
+        return b[1].count - a[1].count;
+      }),
+    );
   });
 
   config.addTransform("prettier", (content, outputPath) => {

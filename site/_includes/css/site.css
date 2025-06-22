@@ -780,3 +780,10 @@ body .isso-post-action {
 .pagefind-ui__result-excerpt {
   margin: 0.5rem 0;
 }
+
+.feature {
+  > p:first-child::first-line {
+    font-size: var(--s2);
+    font-weight: 200;
+  }
+}
