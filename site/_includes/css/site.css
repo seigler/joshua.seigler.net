@@ -123,8 +123,9 @@ mark {
   text-decoration-thickness: 0.1rem;
 }
 
-a {
+a, label {
   color: inherit;
+  --glowColor: var(--c-accent);
 }
 a[href] {
   appearance: none;
@@ -140,16 +141,16 @@ nav label:has(input:focus-visible),
 nav label:has(input:checked) {
   outline: none;
   color: var(--c-text-dark);
-  background-color: var(--c-accent);
+  background-color: var(--glowColor);
   box-shadow:
-    0 0 0.5rem var(--c-accent),
-    0 0 1rem var(--c-accent);
+    0 0 0.5rem var(--glowColor),
+    0 0 1rem var(--glowColor);
   text-decoration: none;
   border-radius: 0.5rem;
   & img {
     box-shadow:
-      0 0 0.5rem var(--c-accent),
-      0 0 1rem var(--c-accent);
+      0 0 0.5rem var(--glowColor),
+      0 0 1rem var(--glowColor);
   }
 }
 :is(a[href], button, nav label):focus-visible,
@@ -162,7 +163,11 @@ nav label:has(input:focus-visible) {
   &::before {
     content: "#";
   }
+  --glowColor: oklch(var(--tag-luminance) 0.25 calc(25 + 360 * var(--tagIndex, 0) / var(--totalTags, 1)) / 0.3);
   color: oklch(var(--tag-luminance) 0.25 calc(25 + 360 * var(--tagIndex, 0) / var(--totalTags, 1)) / 0.8);
+  &:hover {
+    color: var(--c-text-dark);
+  }
 }
 
 main p img {
@@ -293,7 +298,7 @@ ul.collection {
   > li {
     list-style-type: none;
     > aside {
-      display: inline-block;
+      display: inline;
     }
     > p {
       &::before {
@@ -754,9 +759,9 @@ body .isso-post-action {
   border-radius: 0.5rem;
   background: radial-gradient(
     ellipse farthest-side at 50% 50%,
-    var(--c-accent) 10%,
-    color-mix(in lch, var(--c-accent), transparent) 25%,
-    color-mix(in lch, var(--c-accent), transparent 80%) 35%,
+    var(--glowColor) 10%,
+    color-mix(in lch, var(--glowColor), transparent) 25%,
+    color-mix(in lch, var(--glowColor), transparent 80%) 35%,
     transparent
   );
   animation: 1s ease normal forwards ripple;
