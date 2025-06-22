@@ -14,3 +14,10 @@
   src: url("/fonts/ftaurebesh/ftaurebesh-bold.woff2") format("woff2");
   size-adjust: 125%;
 }
+[data-language="aurebesh"] {
+  font-family: FTAurebesh;
+  line-height: 1.25;
+  ul:not(.collection) > li {
+    list-style-type: square;
+  }
+}

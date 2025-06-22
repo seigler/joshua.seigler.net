@@ -12,19 +12,16 @@
 }
 
 body {
-  --c-highlight: oklch(100% 0 0 / 0.875);
-  --c-accent: white;
-  --c-dark: oklch(32.1% 0.022 259.9);
-  --c-body-background: oklch(87.5% 0 338);
-  --c-bg1: oklch(87.5% 0.04 285);
-  --c-bg2: oklch(87.5% 0.04 160);
-  --c-text-background-light: oklch(96.2% 0 0 / 0.6);
-
-  --c-text-light: var(--c-highlight);
-  --c-text-dark: var(--c-dark);
-  --c-text-dim: color-mix(in lch, var(--c-text-dark), transparent 50%);
-
-  --tag-luminance: 0.4;
+  --c-highlight: oklch(45% 0.135 280 / 0.7);
+  --c-accent: oklch(45% 0.135 280 / 0.8);
+  --c-body-background: oklch(15% 0.05 262);
+  --c-bg1: oklch(15% 0.05 290);
+  --c-bg2: oklch(15% 0.05 188);
+  --c-dark: oklch(19.1% 0.005 259.9);
+  --c-text-background-light: oklch(45% 0.135 280 / 0.3);
+  --c-text-light: oklch(94% 0.045 107.2);
+  --c-text-dark: oklch(94% 0.045 107.2);
+  --tag-luminance: 0.85;
 
   --ratio: 1.333;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -66,40 +63,6 @@ body {
       var(--c-bg2),
       transparent 90%
     );
-}
-
-body[data-theme="dark"] {
-  background-color: var(--c-body-background);
-}
-[data-theme="dark"] {
-  --c-highlight: oklch(45% 0.135 280 / 0.7);
-  --c-accent: oklch(45% 0.135 280 / 0.8);
-  --c-body-background: oklch(15% 0.05 262);
-  --c-bg1: oklch(15% 0.05 290);
-  --c-bg2: oklch(15% 0.05 188);
-  --c-dark: oklch(19.1% 0.005 259.9);
-  --c-text-background-light: oklch(45% 0.135 280 / 0.3);
-  --c-text-light: oklch(94% 0.045 107.2);
-  --c-text-dark: oklch(94% 0.045 107.2);
-  --tag-luminance: 0.85;
-}
-
-@media (prefers-color-scheme: dark) {
-  body[data-theme="auto"] {
-    background-color: var(--c-body-background);
-  }
-  [data-theme="auto"] {
-    --c-highlight: oklch(45% 0.135 280 / 0.7);
-    --c-accent: oklch(45% 0.135 280 / 0.8);
-    --c-body-background: oklch(15% 0.05 262);
-    --c-bg1: oklch(15% 0.05 290);
-    --c-bg2: oklch(15% 0.05 188);
-    --c-dark: oklch(19.1% 0.005 259.9);
-    --c-text-background-light: oklch(45% 0.135 280 / 0.3);
-    --c-text-light: oklch(94% 0.045 107.2);
-    --c-text-dark: oklch(94% 0.045 107.2);
-    --tag-luminance: 0.85;
-  }
 }
 
 ::selection {
@@ -484,17 +447,6 @@ footer section {
     border-top-right-radius: 0.5rem !important;
     border-bottom-right-radius: 0.5rem !important;
   }
-}
-
-[data-language="aurebesh"] {
-  font-family: FTAurebesh;
-  line-height: 1.25;
-  ul:not(.collection) > li {
-    list-style-type: square;
-  }
-}
-[data-language="english"] {
-  font-family: Inter;
 }
 
 h1,

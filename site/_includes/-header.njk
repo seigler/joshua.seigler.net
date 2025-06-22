@@ -3,17 +3,6 @@
   <nav>
     <div class="nav-row">
       <div class="nav-home"><a href="{{ "/" | url }}">{{ site.title }}</a></div>
-      <div class="nav-settings">
-        <div class="nav-toggles">
-          <label class="nav-toggle-button" title="Light mode">☀️<input type="radio" name="theme" value="light"/></label>
-          <label class="nav-toggle-button" title="Automatic">🔄<input type="radio" name="theme" value="auto"/></label>
-          <label class="nav-toggle-button" title="Dark mode">🌒<input type="radio" name="theme" value="dark"/></label>
-        </div>
-        <div class="nav-toggles">
-          <label class="nav-toggle-button" data-language="english">English<input type="radio" name="language" value="english"/></label>
-          <label class="nav-toggle-button" data-language="aurebesh">Aurebesh<input type="radio" name="language" value="aurebesh"/></label>
-        </div>
-      </div>
     </div>
     <div class="nav-categories">
       <a class="{{ 'nav-active' if '/posts' in page.url }}" href="{{ "/posts/" | url }}">/posts</a>
