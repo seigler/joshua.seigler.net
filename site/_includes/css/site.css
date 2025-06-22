@@ -292,15 +292,14 @@ ul.collection {
   padding-left: 0;
   > li {
     list-style-type: none;
-    display: grid;
-    align-items: baseline;
-    grid-template-columns: auto auto 1fr;
+    > aside {
+      display: inline-block;
+    }
     > p {
       &::before {
         content: none;
       }
       width: 100%;
-      grid-column: 1/-1;
     }
     + li {
       margin-top: 1rem;
