@@ -506,7 +506,7 @@ h1 {
 }
 .header-meta {
   font-size: var(--s-1);
-  > * + *::before {
+  > * + *:not(:empty)::before {
     content: "-";
     padding: 0 0.5ch;
   }
