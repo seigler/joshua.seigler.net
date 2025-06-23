@@ -90,6 +90,7 @@ mark {
 a, label {
   color: inherit;
   --glowColor: var(--c-accent);
+  --c-accent: oklch(45% 0.135 var(--hue-main) / 0.8);
 }
 a[href] {
   appearance: none;
@@ -154,7 +155,7 @@ header.toc {
   li {
     display: inline;
     list-style: none;
-    &:nth-child(n + 2):before {
+    &:nth-child(n + 2)::before {
       content: " · ";
     }
   }
@@ -417,10 +418,17 @@ body > footer {
   & a {
     white-space: nowrap;
   }
-}
-
-footer section {
-  margin-top: 0;
+  ul {
+    padding: 0;
+    display: inline;
+    > li {
+      display: inline;
+      + li::before {
+        content: " · ";
+        padding-inline: 0.5ch;
+      }
+    }
+  }
 }
 
 .nav-toggle-button {
@@ -652,8 +660,9 @@ body .isso-preview {
   );
 }
 body .isso-post-action > input,
-button {
+button, a.button {
   color: inherit;
+  text-decoration: none;
   background-color: var(--c-text-background-light);
   font-size: 1rem;
   padding: calc(0.5rem + 1px) 0.5rem;
@@ -670,6 +679,7 @@ button {
       0 0 1rem var(--c-accent);
   }
 }
+
 body .isso-post-action {
   margin: 0;
 }
