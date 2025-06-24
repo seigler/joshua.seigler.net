@@ -10,6 +10,6 @@ eleventyComputed:
   </section>
   {% set tag = page.fileSlug %}
   {% if collections[tag] %}
-    {{ collectionList(collections[tag]) }}
+    {{ collectionList(tag) }}
   {% endif %}
 </main>

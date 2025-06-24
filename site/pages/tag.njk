@@ -18,7 +18,5 @@ useTitle: true
   <section data-pagefind-body>
     {{ content | safe }}
   </section>
-  {% if collections[tag] %}
-    {{ collectionList(collections[tag]) }}
-  {% endif %}
+  {{ collectionList(tag) }}
 </main>

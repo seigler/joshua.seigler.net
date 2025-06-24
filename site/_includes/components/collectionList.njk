@@ -1,8 +1,8 @@
 {%- from "components/tagList.njk" import tagList with context -%}
 
-{% macro collectionList(collection, limit=0) %}
+{% macro collectionList(tagName, limit=0) %}
   <ul class="collection">
-    {%- for item in collection | reverse -%}
+    {%- for item in collections[tagName] | reverse -%}
       {%- if (limit === 0 or loop.index <= limit) -%}
         <li>
           <a href="{{item.url}}">{{item.data.title}}</a>
@@ -15,7 +15,7 @@
       {%- endif -%}
       {%- if (limit !== 0 and loop.index == limit + 1) -%}
         <li>
-          <a href="/{{name}}/">More {{name}}&hellip;</a>
+          <a href="/{{tagName}}/">More {{tagName}}&hellip;</a>
         </li>
       {%- endif -%}
     {%- endfor -%}
