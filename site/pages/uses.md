@@ -49,7 +49,7 @@ date: 2025-06-20
 
 ## Services
 
-- [FastMail](https://www.fastmail.com/) email, calendar, and contact hosting, DNS.
+- [FastMail](https://www.fastmail.com/) email, calendar, and contact hosting.
 
 - [DartNode](https://dartnode.com?aff=WigglySalmon747) VPS. Good value and specs, lets me bring my own server OS image.
 
