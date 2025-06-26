@@ -5,11 +5,99 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feed.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2025-06-21T00:00:00Z</updated>
+  <updated>2025-06-26T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name>Joshua Seigler</name>
   </author>
+  <entry>
+    <title>FFmpeg audio cleanup</title>
+    <link href="https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/" />
+    <updated>2025-06-26T00:00:00Z</updated>
+    <id>https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/</id>
+    <content type="html">&lt;p&gt;
+  I recently needed to process 20+ phone audio recordings. The audio is mp3
+  recordings in stereo, made in an environment with echoes and noise from
+  fans/heaters.
+&lt;/p&gt;
+&lt;p&gt;
+  Although I could do it easily with
+  &lt;a href=&quot;https://tenacityaudio.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;
+    &gt;Tenacity&lt;/a
+  &gt;
+  I didn’t want to use a manual process, since it would take days. So I tried
+  using FFmpeg filters and Bash scripting.
+&lt;/p&gt;
+&lt;p&gt;
+  I found an FFmpeg filter called
+  &lt;a
+    href=&quot;https://ffmpeg.org/ffmpeg-filters.html#compand&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;compand&lt;/a
+  &gt;
+  which lets you map an input decibel range to an output decibel range. I also
+  used the
+  &lt;a
+    href=&quot;https://ffmpeg.org/ffmpeg-filters.html#anlmdn&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;anlmdn&lt;/a
+  &gt;
+  filter to reduce noise, and the
+  &lt;a
+    href=&quot;https://ffmpeg.org/ffmpeg-filters.html#highpass&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+    &gt;highpass&lt;/a
+  &gt;
+  filter to help with clarity.
+&lt;/p&gt;
+&lt;p&gt;I ran into a couple gotchas.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;code&gt;mpv&lt;/code&gt; does something special for audio playback that prevents
+    audio from clipping. &lt;code&gt;vlc&lt;/code&gt; plays the file as it is.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Because the compressor has an attack and decay (which is necessary for
+    things to sound good) it can cause clipping if the volume rises sharply.
+    Applying a &lt;code&gt;delay&lt;/code&gt; parameter with half the duration of the attack
+    length fixed this.
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here is the script:&lt;/p&gt;
+&lt;pre
+  class=&quot;language-bash&quot;
+&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$#&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Error: no arguments provided.&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Usage: &lt;span class=&quot;token variable&quot;&gt;$0&lt;/span&gt; file1 file2 file3 ...&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;   or: &lt;span class=&quot;token variable&quot;&gt;$0&lt;/span&gt; *.ext&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;exit&quot;&lt;/span&gt; INT
+
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$#&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${1&lt;span class=&quot;token operator&quot;&gt;%%&lt;/span&gt;.*}&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;ext&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${1&lt;span class=&quot;token operator&quot;&gt;##&lt;/span&gt;*.}&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;outfile&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;./normalized--&lt;span class=&quot;token variable&quot;&gt;$base&lt;/span&gt;.&lt;span class=&quot;token variable&quot;&gt;$ext&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$outfile&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Processing &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;
+    ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; warning &lt;span class=&quot;token parameter variable&quot;&gt;-ac&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-af&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;compand=attacks=0.3:decays=0.3:delay=0.15:points=-80/-300|-45/-25|-27/-15|0/-12|20/-12,anlmdn=s=10,highpass=f=500&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-threads&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$outfile&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Skipping &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;, already processed.&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;shift&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+  If this is useful to you please leave a comment or send an email, I would love
+  to hear about it.
+&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>War</title>
     <link href="https://joshua.seigler.net/posts/july-21-2025/" />
