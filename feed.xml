@@ -16,7 +16,7 @@
     <updated>2025-06-26T00:00:00Z</updated>
     <id>https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/</id>
     <content type="html">&lt;p&gt;
-  I recently needed to process 20+ phone audio recordings. The audio is mp3
+  I recently needed to process 20+ phone audio recordings. The files are mp3
   recordings in stereo, made in an environment with echoes and noise from
   fans/heaters.
 &lt;/p&gt;
