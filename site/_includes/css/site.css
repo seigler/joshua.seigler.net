@@ -516,7 +516,7 @@ h1 {
 }
 
 @media screen {
-  p:has(+ pre[class*="language-"] > code) {
+  p:has(+ pre[class*="language-"]) > code:first-child:last-child {
     position: relative;
     font-size: 0.8em;
   }
