@@ -152,25 +152,26 @@
         </li>
       </ol>
       <p>Here is the script:</p>
+      <p><code>process-audio.sh</code></p>
       <pre
         class="language-bash"
       ><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$#</span>"</span> <span class="token operator">==</span> <span class="token string">"0"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
   <span class="token builtin class-name">echo</span> <span class="token string">"Error: no arguments provided."</span>
   <span class="token builtin class-name">echo</span> <span class="token string">"Usage: <span class="token variable">$0</span> file1 file2 file3 ..."</span>
-  <span class="token builtin class-name">echo</span> <span class="token string">"   or: <span class="token variable">$0</span> *.ext"</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"or <span class="token variable">$0</span> *.ext"</span>
   <span class="token builtin class-name">exit</span> <span class="token number">1</span>
 <span class="token keyword">fi</span>
 
 <span class="token builtin class-name">trap</span> <span class="token string">"exit"</span> INT
 
 <span class="token keyword">while</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$#</span>"</span> <span class="token operator">!=</span> <span class="token string">"0"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
-  <span class="token assign-left variable">base</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${1<span class="token operator">%%</span>.*}</span>"</span>
-  <span class="token assign-left variable">ext</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${1<span class="token operator">##</span>*.}</span>"</span>
-  <span class="token assign-left variable">outfile</span><span class="token operator">=</span><span class="token string">"./normalized--<span class="token variable">$base</span>.<span class="token variable">$ext</span>"</span>
+  <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${1<span class="token operator">%</span><span class="token operator">/</span>*}</span>"</span>
+  <span class="token assign-left variable">file</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${1<span class="token operator">##</span>*<span class="token operator">/</span>}</span>"</span>
+  <span class="token assign-left variable">outfile</span><span class="token operator">=</span><span class="token string">"./normalized--<span class="token variable">$file</span>"</span>
   <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> <span class="token string">"<span class="token variable">$outfile</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
     <span class="token builtin class-name">echo</span> <span class="token string">"Processing <span class="token variable">$1</span>"</span>
-    ffmpeg <span class="token parameter variable">-i</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token parameter variable">-v</span> warning <span class="token parameter variable">-ac</span> <span class="token number">1</span> <span class="token parameter variable">-af</span> <span class="token string">"compand=attacks=0.3:decays=0.3:delay=0.15:points=-80/-300|-45/-25|-27/-15|0/-12|20/-12,anlmdn=s=10,highpass=f=500"</span> <span class="token parameter variable">-threads</span> <span class="token number">4</span> <span class="token string">"<span class="token variable">$outfile</span>"</span>
+    ffmpeg <span class="token parameter variable">-i</span> <span class="token string">"<span class="token variable">$1</span>"</span> <span class="token parameter variable">-v</span> warning <span class="token parameter variable">-ac</span> <span class="token number">1</span> <span class="token parameter variable">-af</span> <span class="token string">"compand=attacks=1:decays=1:delay=0.75:points=-80/-300|-45/-25|-27/-15|0/-12|20/-12,anlmdn=s=10,highpass=f=500"</span> <span class="token parameter variable">-threads</span> <span class="token number">4</span> <span class="token string">"<span class="token variable">$outfile</span>"</span>
   <span class="token keyword">else</span>
     <span class="token builtin class-name">echo</span> <span class="token string">"Skipping <span class="token variable">$1</span>, already processed."</span>
   <span class="token keyword">fi</span>
