@@ -15,10 +15,12 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import { execSync } from "child_process";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import mdPrism from "markdown-it-prism";
+import fetch from "@11ty/eleventy-fetch";
+import { XMLValidator, XMLParser } from "fast-xml-parser";
 
 dayjs.extend(utc);
 
-export default (config) => {
+export default async (config) => {
   const slugify = config.getFilter("slugify");
   const url = config.getFilter("url");
   const mdLib = md({
@@ -112,6 +114,8 @@ export default (config) => {
     );
   });
 
+  config.addCollection("webroll", fetchShaarliWebroll);
+
   config.addTransform("prettier", (content, outputPath) => {
     if (typeof outputPath !== "string") {
       return content;
@@ -184,3 +188,29 @@ export default (config) => {
     },
   };
 };
+
+async function fetchShaarliWebroll() {
+  const url = "https://links.apps.seigler.net/feed/atom?&searchtags=%24webroll";
+  const urlTextContent = await fetch(url, { duration: "30s", type: "text" });
+  const validation = XMLValidator.validate(urlTextContent);
+  let feedContent;
+  if (validation === true) {
+    feedContent = new XMLParser({
+      ignoreAttributes: false,
+    }).parse(urlTextContent).feed.entry;
+  } else {
+    throw new Error(`Invalid XML from webroll feed. Reason: ${validation.err.msg}`);
+  }
+  const entries = feedContent.map(entry => {
+    return {
+      url: entry.link['@_href'],
+      data: {
+        title: entry.title,
+        date: new Date(entry.published),
+        description: entry.content['#text'].split('\n<br>&#8212; <a href="https://links.apps.seigler.net/')[0],
+        tags: entry.category.map(category => category['@_label']).filter(category => category !== '$webroll'),
+      }
+    }
+  });
+  return entries;
+}

@@ -1,0 +1,183 @@
+<?xml  version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shaarli</title>
+  <subtitle>Shaared links</subtitle>
+  
+    <updated>2025-06-27T14:41:37-04:00</updated>
+  
+  <link rel="self" href="https://links.apps.seigler.net/feed/atom?&amp;searchtags=%24webroll" />
+  <link rel="search" type="application/opensearchdescription+xml" href="https://links.apps.seigler.net/open-search"
+        title="Shaarli search - Shaarli" />
+  
+  <author>
+    <name>Shaarli</name>
+    <uri>https://links.apps.seigler.net/</uri>
+  </author>
+  <id>https://links.apps.seigler.net/</id>
+  <generator>Shaarli</generator>
+  
+    <entry>
+      <title>Comic Helvetic Font | dafont.com</title>
+      
+        <link href="https://www.dafont.com/comic-helvetic.font" />
+      
+      <id>https://links.apps.seigler.net/shaare/WUenqw</id>
+      
+        <published>2025-06-26T10:29:51-04:00</published>
+        <updated>2025-06-27T14:41:37-04:00</updated>
+      
+      <content type="html" xml:lang="en"><![CDATA[<div class="markdown"><p>I don't understand why this feels ok but Comic Sans makes my skin crawl.</p></div>
+
+<br>&#8212; <a href="https://links.apps.seigler.net/shaare/WUenqw" title="Permalink">Permalink</a>]]></content>
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="fonts" label="fonts" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="typefaces" label="typefaces" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="typography" label="typography" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="comicsans" label="comicsans" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="$webroll" label="$webroll" />
+      
+      
+    </entry>
+  
+    <entry>
+      <title>NIKA:\git-revise\&gt;</title>
+      
+        <link href="https://mystor.github.io/git-revise.html" />
+      
+      <id>https://links.apps.seigler.net/shaare/-cyjHA</id>
+      
+        <published>2025-06-18T12:18:36-04:00</published>
+        <updated>2025-06-27T13:10:02-04:00</updated>
+      
+      <content type="html" xml:lang="en"><![CDATA[<div class="markdown"><p>git-revise is a history editing tool designed for the patch-stack workflow. It's fast, non-destructive, and aims to provide a familiar, powerful, and easy to use re-imagining of the patch stack workflow.</p></div>
+
+<br>&#8212; <a href="https://links.apps.seigler.net/shaare/-cyjHA" title="Permalink">Permalink</a>]]></content>
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="git" label="git" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="history" label="history" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="rewriting" label="rewriting" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="fixup" label="fixup" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="$webroll" label="$webroll" />
+      
+      
+    </entry>
+  
+    <entry>
+      <title>Markdown Code Blocks With a Title / Filename - Lusitos Tech Blog</title>
+      
+        <link href="https://blog.lusito.info/markdown-code-blocks-with-a-title-filename.html" />
+      
+      <id>https://links.apps.seigler.net/shaare/iRIOLg</id>
+      
+        <published>2025-06-14T22:28:23-04:00</published>
+        <updated>2025-06-27T13:10:02-04:00</updated>
+      
+      <content type="html" xml:lang="en"><![CDATA[<div class="markdown"><p>Smart alternative to immediately using some kind of markdown extension or plugin. Good perspective.</p></div>
+
+<br>&#8212; <a href="https://links.apps.seigler.net/shaare/iRIOLg" title="Permalink">Permalink</a>]]></content>
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="markdown" label="Markdown" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="web-development" label="Web-Development" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="progressive-enhancement" label="Progressive-Enhancement" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="performance" label="Performance" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="$webroll" label="$webroll" />
+      
+      
+    </entry>
+  
+    <entry>
+      <title>MidWord! The world's favorite word guessing game</title>
+      
+        <link href="https://midword.com/" />
+      
+      <id>https://links.apps.seigler.net/shaare/fS7Wtg</id>
+      
+        <published>2025-06-14T04:28:49+00:00</published>
+        <updated>2025-06-27T13:10:02-04:00</updated>
+      
+      <content type="html" xml:lang="en"><![CDATA[<div class="markdown"><p>Just found my new favorite long-car-ride verbal game!</p></div>
+
+<br>&#8212; <a href="https://links.apps.seigler.net/shaare/fS7Wtg" title="Permalink">Permalink</a>]]></content>
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="games" label="games" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="simple" label="simple" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="elegant" label="elegant" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="language" label="language" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="$webroll" label="$webroll" />
+      
+      
+    </entry>
+  
+    <entry>
+      <title>Verissimo Monthly - May 2025 - by Binyamin Grobman</title>
+      
+        <link href="https://verissimo.substack.com/p/verissimo-monthly-may-2025" />
+      
+      <id>https://links.apps.seigler.net/shaare/NWhCQg</id>
+      
+        <published>2025-06-03T17:39:50+00:00</published>
+        <updated>2025-06-27T13:10:02-04:00</updated>
+      
+      <content type="html" xml:lang="en"><![CDATA[<div class="markdown"><p>The Unreliability of LLMs &amp; What Lies Ahead</p></div>
+
+<br>&#8212; <a href="https://links.apps.seigler.net/shaare/NWhCQg" title="Permalink">Permalink</a>]]></content>
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="llm" label="llm" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="hallucinations" label="hallucinations" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="software" label="software" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="reliability" label="reliability" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="$webroll" label="$webroll" />
+      
+      
+    </entry>
+  
+    <entry>
+      <title>Keeping up appearances | deadSimpleTech</title>
+      
+        <link href="https://deadsimpletech.com/blog/keeping_up_appearances" />
+      
+      <id>https://links.apps.seigler.net/shaare/3e_KhA</id>
+      
+        <published>2025-05-31T04:02:35+00:00</published>
+        <updated>2025-06-27T13:10:02-04:00</updated>
+      
+      <content type="html" xml:lang="en"><![CDATA[<div class="markdown"><p>The only reason that LLMs took root in the first place was because our societies in the anglosphere have already developed cultures solely devoted to gaining status and keeping up the appearance of doing things rather than actually doing them. All other values, increasingly including even the accumulation of wealth (while this is still very much a thing that people pursue, wealth is increasingly becoming a proxy for status more than something desired in itself) are becoming subordinated to symbolic status games completely detached from anything real.</p></div>
+
+<br>&#8212; <a href="https://links.apps.seigler.net/shaare/3e_KhA" title="Permalink">Permalink</a>]]></content>
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="llm" label="llm" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="strategy" label="strategy" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="status" label="status" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="career" label="career" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="advice" label="advice" />
+      
+        <category scheme="https://links.apps.seigler.net/?searchtags=" term="$webroll" label="$webroll" />
+      
+      
+    </entry>
+  
+</feed>

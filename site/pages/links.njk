@@ -1,0 +1,22 @@
+---
+layout: "base.njk"
+title: "Links"
+permalink: /links/
+useTitle: true
+---
+<main>
+  <section data-pagefind-body>
+    <ul class="collection">
+      {%- for item in collections.webroll -%}
+        <li>
+          <a href="{{item.url}}">{{item.data.title}}</a>
+          {%- if item.data.date -%}
+            <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
+          {%- endif -%}
+            <aside>Tags: {{ item.data.tags | join(", ") }}</aside>
+          {{item.data.description | safe}}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+</main>
