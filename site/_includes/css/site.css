@@ -406,6 +406,9 @@ body > header > nav {
   .isso-postbox {
     display: none;
   }
+  .tag {
+    color: inherit;
+  }
 }
 
 body > footer {
@@ -462,12 +465,13 @@ h1,
 h2,
 h3,
 h4 {
+  color: color-mix(in lch, currentColor 90%, transparent);
   position: relative;
   font-weight: 700;
   text-shadow: 0 0 0.5em var(--c-highlight);
-  margin-top: 0;
-  &:nth-child(n + 2) {
-    margin-top: 2rem;
+  margin-top: 3rem;
+  + h1, + h2, + h3, + h4 {
+    margin-top: 0;
   }
   margin-bottom: 0.5rem;
   &:hover .header-anchor {
@@ -475,7 +479,7 @@ h4 {
   }
 }
 @media screen {
-  :is(h1, h2, h3)::after {
+  :is(h1, h2)::after {
     pointer-events: none;
     opacity: 0.5;
     content: "";
@@ -551,12 +555,15 @@ main {
   padding: 0 var(--inset);
 }
 h1 {
-  font-size: var(--s3);
+  font-size: var(--s4);
 }
 h2 {
-  font-size: var(--s2);
+  font-size: var(--s3);
 }
 h3 {
+  font-size: var(--s2);
+}
+h4 {
   font-size: var(--s1);
 }
 a.header-anchor {
