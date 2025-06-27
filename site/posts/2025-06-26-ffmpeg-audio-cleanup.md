@@ -21,21 +21,22 @@ I ran into a couple gotchas.
 
 Here is the script:
 
+`process-audio.sh`
 ```bash
 #!/bin/bash
 if [ "$#" == "0" ]; then
   echo "Error: no arguments provided."
   echo "Usage: $0 file1 file2 file3 ..."
-  echo "   or: $0 *.ext"
+  echo "or $0 *.ext"
   exit 1
 fi
 
 trap "exit" INT
 
 while [ "$#" != "0" ]; do
-  base="${1%%.*}"
-  ext="${1##*.}"
-  outfile="./normalized--$base.$ext"
+  path="${1%/*}"
+  file="${1##*/}"
+  outfile="./normalized--$file"
   if [ ! -f "$outfile" ]; then
     echo "Processing $1"
     ffmpeg -i "$1" -v warning -ac 1 -af "compand=attacks=0.3:decays=0.3:delay=0.15:points=-80/-300|-45/-25|-27/-15|0/-12|20/-12,anlmdn=s=10,highpass=f=500" -threads 4 "$outfile"
