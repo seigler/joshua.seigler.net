@@ -5,18 +5,18 @@ import mdAnchor from "markdown-it-anchor";
 import { spoiler as mdSpoiler } from "@mdit/plugin-spoiler";
 import { footnote as mdFootnote } from "@mdit/plugin-footnote";
 import mdLinkAttributes from "markdown-it-link-attributes";
-import prettier from "prettier";
+import mdPrism from "markdown-it-prism";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import clean from "eleventy-plugin-clean";
 import toc from "eleventy-plugin-toc";
 import site from "./site/_data/site.js";
-import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import { feedPlugin as EleventyFeedPlugin } from "@11ty/eleventy-plugin-rss";
+import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import { execSync } from "child_process";
-import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
-import mdPrism from "markdown-it-prism";
 import fetch from "@11ty/eleventy-fetch";
 import { XMLValidator, XMLParser } from "fast-xml-parser";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 dayjs.extend(utc);
 
@@ -116,26 +116,6 @@ export default async (config) => {
 
   config.addCollection("webroll", fetchShaarliWebroll);
 
-  config.addTransform("prettier", (content, outputPath) => {
-    if (typeof outputPath !== "string") {
-      return content;
-    }
-    const extname = path.extname(outputPath);
-    switch (extname) {
-      case ".html":
-      case ".css":
-      case ".json":
-        // Strip leading period from extension and use as the Prettier parser.
-        const parser = extname.replace(/^./, "");
-        return prettier.format(content, { parser });
-      default:
-        return content;
-    }
-  });
-
-  config.addFilter("absoluteURL", (url) => {
-    return new URL(url, site.baseUrl).href;
-  });
   config.addFilter("toISOString", (dateString) => {
     return new Date(dateString).toISOString();
   });
@@ -151,7 +131,7 @@ export default async (config) => {
   const buildTime = new Date().toISOString().replace(/[:.-]/g, "");
   config.addGlobalData("buildTime", buildTime);
 
-  config.addPlugin(feedPlugin, {
+  config.addPlugin(EleventyFeedPlugin, {
     type: "atom", // "atom", ""rss", or "json"
     outputPath: "/feed.xml",
     collection: {
@@ -171,7 +151,20 @@ export default async (config) => {
     stylesheet: "/simple-atom.xslt",
   });
 
-  config.addPlugin(eleventyAutoCacheBuster);
+  config.addPlugin(EleventyVitePlugin, {
+    viteOptions: {
+      server: {
+        port: 8080
+      },
+      build: {
+        mode: 'production',
+        sourcemap: true,
+      },
+      plugins: [
+        ViteMinifyPlugin({})
+      ]
+    }
+  });
 
   config.addPlugin(toc);
 

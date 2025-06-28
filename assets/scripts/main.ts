@@ -1,22 +1,15 @@
-"use strict";
-
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-document.querySelector('script[data-website-id]').addEventListener('load', () => {
-  try {
-    umami.identify({ deviceTheme: darkModeMediaQuery ? "dark" : "light" });
-  } catch {}
-});
 
 /** @param {Event} evt */
 function removeEffect({ target }) {
   const effectsLayer = document.querySelector("#effects");
+  if (effectsLayer == null) { return };
   const effects = Array.from(effectsLayer.children).filter(
-    (e) => e.__effectParent === target,
+    (e) => e['__effectParent'] === target,
   );
   effects.forEach((e) => {
     e.getAnimations().forEach((anim) => {
-      if (anim.currentTime < 100) {
+      if (+(anim.currentTime ?? 0) < 100) {
         anim.pause();
         effectsLayer.removeChild(e);
         return;
@@ -33,12 +26,14 @@ function removeEffect({ target }) {
   });
 }
 
-/** @param {Event} evt */
-function addEffect({ target }) {
+function isElement(target: EventTarget | null): target is Element {
+  return target !== null && typeof target["matches"] === 'function'
+}
+
+function addEffect({ target }: UIEvent) {
   const effectsLayer = document.querySelector("#effects");
   if (
-    target == null ||
-    !target["matches"] ||
+    !isElement(target) ||
     !target.matches("a[href],.nav-toggle-button,button,input[type='radio']")
   ) {
     return;
@@ -51,7 +46,7 @@ function addEffect({ target }) {
   rects.forEach((rect) => {
     const { top, left, width, height } = rect;
     const newEffect = document.createElement("div");
-    newEffect.__effectParent = target;
+    newEffect['__effectParent'] = target;
     newEffect.classList.add("effect-instance");
     const padding = "10rem";
     newEffect.style.top = `calc(${top + window.scrollY}px - ${padding})`;
@@ -59,7 +54,7 @@ function addEffect({ target }) {
     newEffect.style.width = `calc(${width}px + 2 * ${padding})`;
     newEffect.style.height = `calc(${height}px + 2 * ${padding})`;
     newEffect.style.setProperty('--glowColor', color);
-    effectsLayer.appendChild(newEffect);
+    effectsLayer?.appendChild(newEffect);
   });
 }
 
