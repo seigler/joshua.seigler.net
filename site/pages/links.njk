@@ -13,7 +13,6 @@ useTitle: true
           {%- if item.data.date -%}
             <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
           {%- endif -%}
-            <aside>Tags: {{ item.data.tags | join(", ") }}</aside>
           {{item.data.description | safe}}
         </li>
       {%- endfor -%}

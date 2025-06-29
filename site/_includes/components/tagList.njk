@@ -5,7 +5,7 @@
     <a
       class="tag"
       style="--tagIndex:{{ collections.categories[tag].id }}"
-      href="/tags/{{ tag | slugify }}"
+      href="/tags/{{ tag | slugify }}/"
     >{{ tag }}</a>
     {%- endif %}
   {% endfor -%}
