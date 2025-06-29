@@ -7,6 +7,7 @@ layout: "base.njk"
   {%- for name, collection in collections -%}
     {%- if name in ["posts"] -%}
       <h2>{{name | capitalize }}</h2>
+      {% include "-taglist.njk" %}
       {{ collectionList(name, limit=5) }}
     {%- endif -%}
   {%- endfor -%}
