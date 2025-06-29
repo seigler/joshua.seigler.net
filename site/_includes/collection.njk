@@ -3,6 +3,7 @@ layout: "base.njk"
 eleventyComputed:
   title: "{{ page.fileSlug | capitalize }}"
 ---
+
 {%- from "components/collectionList.njk" import collectionList with context -%}
 <main>
   <section data-pagefind-body>
@@ -10,6 +11,15 @@ eleventyComputed:
   </section>
   {% set tag = page.fileSlug %}
   {% if collections[tag] %}
+    {% if tag === "posts" %}
+      <div style="--totalTags:{{ collections.categories | dictsort | length }}">
+        {%- for tag, data in collections.categories -%}
+          <a class="button tag" style="--tagIndex:{{ collections.categories[tag].id }}" href="/tags/{{ tag | slugify }}/">{{ tag }}
+            <span class="tagCount">{{ data.count }}</span>
+          </a>
+        {%- endfor -%}
+      </div>
+    {% endif %}
     {{ collectionList(tag) }}
   {% endif %}
 </main>
