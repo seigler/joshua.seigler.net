@@ -131,7 +131,7 @@ export default async (config) => {
 
   config.addPlugin(EleventyFeedPlugin, {
     type: "atom", // "atom", ""rss", or "json"
-    outputPath: "/feed.xml",
+    outputPath: "/assets/feed.xml",
     collection: {
       name: "posts", // iterate over `collections.posts`
       limit: 0, // 0 means no limit
@@ -151,11 +151,15 @@ export default async (config) => {
 
   config.addPlugin(EleventyVitePlugin, {
     viteOptions: {
+      appType: "mpa",
+      publicDir: "assets/",
       server: {
         port: 8080,
+        middleWareMode: true,
       },
       build: {
         mode: "production",
+        emptyOutDir: true,
         sourcemap: true,
       },
       plugins: [ViteMinifyPlugin({})],
