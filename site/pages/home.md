@@ -1,6 +1,7 @@
 ---
 layout: home.njk
 title: Hello!
+description: Software engineer personal homepage
 permalink: /
 ---
 
