@@ -7,7 +7,7 @@ tags:
 date: 2021-05-26
 updated: 2025-06-30
 cover: "/2021-05-26--needs-based-communication.jpg"
-coverInfo: "[Jeremy Bishop](https://unsplash.com/photos/two-birds-sitting-on-top-of-a-white-rope-VYEBlG63bwc)"
+coverInfo: "[David Clode](https://unsplash.com/photos/two-birds-sitting-on-top-of-a-white-rope-VYEBlG63bwc)"
 ---
 
 Needs-based communication (usually called non-violent communication or NVC™) is a way of understanding yourself and others with a unique insight: everyone has their own personal reactions to the world, but people have the same basic needs. We recognize those needs in other people, and that common connection can allow us to communicate clearly when there is conflict.
