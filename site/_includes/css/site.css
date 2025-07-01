@@ -251,8 +251,34 @@ ul.collection {
   padding-left: 0;
   > li {
     list-style-type: none;
+    position: relative;
+    &:has(.collection-cover) {
+      padding-bottom: 2lh;
+      @media (min-width: 60rem) {
+        padding-bottom: 0.5rem;
+        padding-right: 50%;
+        .collection-cover {
+          left: 50%;
+          width: 50%;
+          mask-image: linear-gradient(to right, transparent, white 20%);
+        }
+      }
+    }
+    .collection-cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 30%;
+      border-radius: 0.25rem;
+      z-index: -1;
+      @media print {
+        opacity: 0.2;
+      }
+    }
     @media screen {
-      position: relative;
       background-color: oklch(from var(--c-accent) calc(l * 0.4) calc(c * 0.33) h / 0.67);
       box-shadow: inset 0 0 2rem -1rem var(--c-accent);
       padding: 0.5rem;
@@ -280,6 +306,11 @@ ul.collection {
     }
     + li {
       margin-top: 1rem;
+    }
+    @media (max-width: 40rem) {
+      .tags {
+        display: block;
+      }
     }
   }
 }
@@ -368,6 +399,31 @@ body > header > nav {
   font-size: var(--s-1);
 }
 
+.cover {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 20rem;
+  > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+    z-index: -1;
+    mask-image: linear-gradient(to bottom, white 8rem, transparent);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  > h1 {
+    padding: 0 0.5rem;
+    margin-top: 10rem;
+  }
+}
+
 body > footer {
   position: relative;
   text-align: right;
@@ -427,6 +483,7 @@ h4 {
   font-weight: 700;
   text-shadow: 0 0 0.5em var(--c-highlight);
   margin-top: 3rem;
+  line-height: 1.1;
   + h1, + h2, + h3, + h4 {
     margin-top: 0;
   }
@@ -464,6 +521,9 @@ h1 {
     content: "-";
     padding: 0 0.5ch;
   }
+}
+.cover-info {
+  color: var(--c-text-dim);
 }
 
 :where(ol li) {

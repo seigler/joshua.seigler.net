@@ -131,7 +131,7 @@ export default async (config) => {
 
   config.addPlugin(EleventyFeedPlugin, {
     type: "atom", // "atom", ""rss", or "json"
-    outputPath: "/assets/feed.xml",
+    outputPath: "/feed.xml",
     collection: {
       name: "posts", // iterate over `collections.posts`
       limit: 0, // 0 means no limit

@@ -5,6 +5,9 @@
     {%- for item in collections[tagName] | reverse -%}
       {%- if (limit === 0 or loop.index <= limit) -%}
         <li>
+          {% if item.data.cover %}
+            <img class="collection-cover" src="{{ item.data.cover | url }}">
+          {% endif %}
           <a href="{{item.url}}">{{item.data.title}}</a>
           {%- if item.data.date -%}
             <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>

@@ -2,7 +2,7 @@
 title: Thinking machines
 slug: thinking-machines
 description: "The computers will start thinking, and people will stop."
-cover: "/2025-04-24--computers-will-start-thinking.jpg"
+cover: "/2025-04-24--tron-mcp.jpg"
 tags:
   - zeitgeist
   - ai

@@ -16,13 +16,26 @@
       <a class="{{ 'nav-active' if '/search' in page.url }}" href="{{ "/search/" | url }}">/search</a>
     </div>
   </nav>
-  <h1>{{ title }}</h1>
+  {%- if cover %}
+  <div class="cover">
+    <img src="{{ cover | url }}" alt="" loading="eager">
+    <h1>{{ title }}</h1>
+  </div>
+  {%- else %}
+    <h1>{{ title }}</h1>
+  {%- endif %}
   <div class="header-meta">
     {%- if date and not omitMetadata -%}
-      <date>{{ date | formatDate("MMMM D, YYYY") }}</date>
+      <span>
+        {{ date | formatDate("MMMM D, YYYY") }}
+        {%- if updated and not omitMetadata %}
+        (Updated {{ updated | formatDate("MMMM D, YYYY") }})
+        {%- endif -%}
+      </span>
     {%- endif -%}
-    {# {%- if tags -%} #}
-      {{ tagList(tags.slice(1)) }}
-    {# {%- endif -%} #}
+    {{ tagList(tags.slice(1)) }}
+    {%- if coverInfo -%}
+      <span class="cover-info">Image: {{ coverInfo | markdown | safe }}</span>
+    {%- endif -%}
   </div>
 </header>
