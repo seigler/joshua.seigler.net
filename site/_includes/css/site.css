@@ -515,6 +515,21 @@ h4 {
 h1 {
   margin-bottom: 0;
 }
+a.rss {
+  float: right;
+  height: 1lh;
+  width: 1lh;
+  margin: 0 0 0 0.5rem;
+  --glowColor: #F80A;
+  background: url("/icons/rss.svg");
+  border-radius: 0.25em;
+  opacity: 0.25;
+  transition: 5s opacity;
+  &:hover {
+    opacity: 1;
+    transition: none;
+  }
+}
 .header-meta {
   font-size: var(--s-1);
   > * + *:not(:empty)::before {

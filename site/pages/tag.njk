@@ -1,7 +1,5 @@
 ---
 layout: "base.njk"
-eleventyComputed:
-  title: "Posts tagged #{{ tag }}"
 pagination:
   data: collections
   size: 1
@@ -10,8 +8,11 @@ pagination:
     - posts
     - recipes
     - timeline
-permalink: /tags/{{ tag | slugify }}/
 useTitle: true
+eleventyComputed:
+  title: "Posts tagged #{{ tag }}"
+  permalink: /tags/{{ tag | slugify }}/
+  rssUrl: /feeds/{{ tag | slugify }}.xml
 ---
 {%- from "components/collectionList.njk" import collectionList with context -%}
 <main>

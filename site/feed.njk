@@ -1,0 +1,40 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - pages
+    - links
+    - timeline
+eleventyComputed:
+  finalLink: "{% if tag == 'posts' %}feed.xml{% else %}feeds/{{tag | slugify}}.xml{% endif %}"
+  permalink: "/assets/{{finalLink}}"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
+  <title>{{ site.title }} - {{ tag }}</title>
+  <subtitle>{{ collections.pages[tag].data.description or site.description }}</subtitle>
+  <link href="{{ site.baseUrl }}{{ finalLink }}" rel="self" />
+  <link href="{{ site.baseUrl | addPathPrefixToFullUrl }}" />
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ site.baseUrl | addPathPrefixToFullUrl }}</id>
+  <author>
+    <name>{{ site.author.name }}</name>
+  </author>
+  {%- for entry in collections[tag] | reverse %}
+  {%- if entry.url and entry.date -%}
+    {%- set absolutePostUrl %}{{ entry.url | htmlBaseUrl(site.baseUrl) }}{% endset %}
+    <entry>
+      <title>{{ entry.data.title }}</title>
+      <link href="{{ absolutePostUrl }}" />
+      <updated>{{ entry.date | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content type="html">{{ entry.content | renderTransforms(entry.data.page, site.baseUrl) }}</content>
+    </entry>
+  {%- endif -%}
+  {%- endfor %}
+</feed>

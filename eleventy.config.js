@@ -11,7 +11,7 @@ import utc from "dayjs/plugin/utc.js"
 import site from "./site/_data/site.js"
 import clean from "eleventy-plugin-clean"
 import toc from "eleventy-plugin-toc"
-import { feedPlugin as EleventyFeedPlugin } from "@11ty/eleventy-plugin-rss"
+import EleventyFeedPlugin from "@11ty/eleventy-plugin-rss"
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
 import { ViteMinifyPlugin } from "vite-plugin-minify"
 import { execSync } from "child_process"
@@ -112,7 +112,7 @@ export default async (config) => {
     )
   })
 
-  config.addCollection("webroll", fetchShaarliWebroll)
+  config.addCollection("links", fetchShaarliWebroll)
 
   config.addFilter("toISOString", (dateString) => {
     return new Date(dateString).toISOString()
@@ -129,25 +129,7 @@ export default async (config) => {
   const buildTime = new Date().toISOString().replace(/[:.-]/g, "")
   config.addGlobalData("buildTime", buildTime)
 
-  config.addPlugin(EleventyFeedPlugin, {
-    type: "atom", // "atom", ""rss", or "json"
-    outputPath: "/feed.xml",
-    collection: {
-      name: "posts", // iterate over `collections.posts`
-      limit: 0, // 0 means no limit
-    },
-    metadata: {
-      language: "en",
-      title: site.title,
-      subtitle: site.description,
-      base: site.baseUrl,
-      author: {
-        name: "Joshua Seigler",
-        // email: "", // Optional
-      },
-    },
-    stylesheet: "/simple-atom.xslt",
-  })
+  config.addPlugin(EleventyFeedPlugin)
 
   config.addPlugin(EleventyVitePlugin, {
     viteOptions: {

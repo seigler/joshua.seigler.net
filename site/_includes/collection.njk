@@ -1,7 +1,17 @@
 ---
 layout: "base.njk"
 eleventyComputed:
-  title: "{{ page.fileSlug | capitalize }}"
+  tag: "{{ page.fileSlug }}"
+  title: "{{ tag | capitalize }}"
+  rssUrl: "
+  {%- if tag == 'posts' -%}
+  /feed.xml
+  {%- else -%}
+    {%- if tag != 'music' -%}
+      /feeds/{{tag}}
+    {%- endif -%}
+  {%- endif -%}
+  "
 ---
 
 {%- from "components/collectionList.njk" import collectionList with context -%}
@@ -9,7 +19,6 @@ eleventyComputed:
   <section data-pagefind-body>
     {{ content | safe }}
   </section>
-  {% set tag = page.fileSlug %}
   {% if collections[tag] %}
     {% if tag === "posts" %}
       {% include "-taglist.njk" %}

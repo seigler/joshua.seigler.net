@@ -9,11 +9,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="referrer" content="unsafe-url" />
 		<title><xsl:value-of select="/atom:feed/atom:title"/></title>
-		<link rel="stylesheet" href="https://www.rss.style/css/water.min.css" />
+		<link rel="stylesheet" href="/simple-atom.css" />
 	</head>
 	<body>
 		<h1>
-			<img alt="feed icon" src="https://www.vectorlogo.zone/logos/rss/rss-tile.svg" style="height:1em;vertical-align:middle;" />&#xa0;
+			<img alt="feed icon" src="/icons/rss.svg" style="height:1em;vertical-align:middle;" />&#xa0;
 			<xsl:value-of select="/atom:feed/atom:title"/>
 		</h1>
 

@@ -19,10 +19,10 @@
   {%- if cover %}
   <div class="cover">
     <img src="{{ cover | url }}" alt="" loading="eager">
-    <h1>{{ title }}</h1>
+    <h1>{{ title }}{% if rssUrl %}<a class="rss" href="{{rssUrl}}"></a>{% endif %}</h1>
   </div>
   {%- else %}
-    <h1>{{ title }}</h1>
+    <h1>{{ title }}{% if rssUrl %}<a class="rss" href="{{rssUrl}}"></a>{% endif %}</h1>
   {%- endif %}
   <div class="header-meta">
     {%- if date and not omitMetadata -%}
