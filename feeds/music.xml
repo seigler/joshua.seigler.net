@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
   <title>joshua.seigler.net - music</title>
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
-  <link href="https://joshua.seigler.net//feeds/music.xml" rel="self" />
+  <link href="https://joshua.seigler.net/feeds/music.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
   <updated>2025-06-28T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
