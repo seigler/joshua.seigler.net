@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>joshua.seigler.net - technical</title>
+  <subtitle>Personal homepage of Joshua Seigler</subtitle>
+  <link href="https://joshua.seigler.net//feeds/technical.xml" rel="self" />
+  <link href="https://joshua.seigler.net/" />
+  <updated>2025-06-28T00:00:00Z</updated>
+  <id>https://joshua.seigler.net/</id>
+  <author>
+    <name></name>
+  </author>
+    <entry>
+      <title>FFmpeg audio cleanup</title>
+      <link href="https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/" />
+      <updated>2025-06-26T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/</id>
+      <content type="html">&lt;p&gt;I recently needed to process 20+ phone audio recordings. The files are mp3 recordings in stereo, made in an environment with echoes and noise from fans/heaters.&lt;/p&gt;
+&lt;p&gt;Although I could do it easily with &lt;a href=&quot;https://tenacityaudio.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Tenacity&lt;/a&gt; I didn’t want to use a manual process, since it would take days. So I tried using FFmpeg filters and Bash scripting.&lt;/p&gt;
+&lt;p&gt;I found an FFmpeg filter called &lt;a href=&quot;https://ffmpeg.org/ffmpeg-filters.html#compand&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;compand&lt;/a&gt; which lets you map an input decibel range to an output decibel range. I also used the &lt;a href=&quot;https://ffmpeg.org/ffmpeg-filters.html#anlmdn&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;anlmdn&lt;/a&gt; filter to reduce noise, and the &lt;a href=&quot;https://ffmpeg.org/ffmpeg-filters.html#highpass&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;highpass&lt;/a&gt; filter to help with clarity.&lt;/p&gt;
+&lt;p&gt;I ran into a couple gotchas.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;mpv&lt;/code&gt; does something special for audio playback that prevents audio from clipping. &lt;code&gt;vlc&lt;/code&gt; plays the file as it is.&lt;/li&gt;
+&lt;li&gt;Because the compressor has an attack and decay (which is necessary for things to sound good) it can cause clipping if the volume rises sharply. Applying a &lt;code&gt;delay&lt;/code&gt; parameter with half the duration of the attack length fixed this.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here is the script:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;process-audio.sh&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$#&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Error: no arguments provided.&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Usage: &lt;span class=&quot;token variable&quot;&gt;$0&lt;/span&gt; file1 file2 file3 ...&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;or &lt;span class=&quot;token variable&quot;&gt;$0&lt;/span&gt; *.ext&quot;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;token builtin class-name&quot;&gt;trap&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;exit&quot;&lt;/span&gt; INT
+
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$#&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${1&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;*}&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;${1&lt;span class=&quot;token operator&quot;&gt;##&lt;/span&gt;*&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;}&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token assign-left variable&quot;&gt;outfile&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;./normalized--&lt;span class=&quot;token variable&quot;&gt;$file&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$outfile&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+    &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Processing &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;
+    ffmpeg &lt;span class=&quot;token parameter variable&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-v&lt;/span&gt; warning &lt;span class=&quot;token parameter variable&quot;&gt;-ac&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-af&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;compand=attacks=0.3:decays=0.3:delay=0.15:points=-80/-300|-45/-25|-27/-15|0/-12|20/-12,anlmdn=s=10,highpass=f=500&quot;&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-threads&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$outfile&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Skipping &lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;, already processed.&quot;&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;shift&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If this is useful to you please leave a comment or send an email, I would love to hear about it.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>My Very Own GitHub Pages</title>
+      <link href="https://joshua.seigler.net/posts/my-very-own-github-pages/" />
+      <updated>2025-06-15T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/my-very-own-github-pages/</id>
+      <content type="html">&lt;p&gt;I recently started self-hosting &lt;a href=&quot;https://forgejo.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Forgejo&lt;/a&gt;, but I wanted something to replace GitHub pages, which has been very convenient for publishing little website projects. My server runs Debian, so I decided to use &lt;a href=&quot;https://github.com/adnanh/webhook&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;webhook&lt;/a&gt; and &lt;a href=&quot;https://caddyserver.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Caddy&lt;/a&gt;. I’m very happy how it turned out.&lt;/p&gt;
+&lt;h2 id=&quot;the-objective&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#the-objective&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; The objective&lt;/h2&gt;
+&lt;p&gt;When I push a &lt;code&gt;gh-pages&lt;/code&gt; branch to any public repository on my Forgejo instance, the name of the repo is used as a domain name (e.g. &lt;a href=&quot;https://marklink.pages.seigler.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;marklink.pages.seigler.net&lt;/a&gt;) and the branch contents are automatically served with SSL. If I push updates to the branch, they are automatically published. If the branch or repo is deleted, the site is taken down.&lt;/p&gt;
+&lt;h2 id=&quot;how-to-do-it&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#how-to-do-it&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; How to do it&lt;/h2&gt;
+&lt;h3 id=&quot;debian-server-preparation&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#debian-server-preparation&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Debian server preparation&lt;/h3&gt;
+&lt;p&gt;In case you don’t have a basic server setup routine yet, this is a good start:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change the default root password.&lt;/li&gt;
+&lt;li&gt;Create a new user and add it to the sudo group. In my examples below the user is &lt;code&gt;joshua&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;ssh-copy-id&lt;/code&gt; to install your ssl pubkey for easier login.&lt;/li&gt;
+&lt;li&gt;Disable/lock root’s password.&lt;/li&gt;
+&lt;li&gt;Disable root login over ssh and change the SSL port number. Pick a new port lower than 1024.&lt;/li&gt;
+&lt;li&gt;Edit your local &lt;code&gt;~/.ssh/config&lt;/code&gt; so you don’t have to specify the port number every time you connect.&lt;/li&gt;
+&lt;li&gt;On the server, install and enable &lt;code&gt;ufw&lt;/code&gt; and &lt;code&gt;fail2ban&lt;/code&gt;. In addition to allowing your custom SSL port, be sure to enable ports 80 and 443 with &lt;code&gt;sudo ufw allow &amp;quot;WWW Full&amp;quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;caddy&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#caddy&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Caddy&lt;/h3&gt;
+&lt;p&gt;I usually use nginx, but I wanted to give Caddy a shot, and it has been a great experience. I installed Caddy using the &lt;a href=&quot;https://caddyserver.com/docs/install&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;official instructions&lt;/a&gt;.&lt;br&gt;
+Here is the Caddyfile I made—you will need to change the domain names and the email. Email could be removed, but it is there so that SSL certificate issuers can contact you if there is a problem with your certificates.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-caddy&quot;&gt;&lt;code class=&quot;language-caddy&quot;&gt;# Global options block
+{
+	email you@example.com # &amp;lt;&amp;lt;&amp;lt;&amp;lt; CHANGE THIS &amp;lt;&amp;lt;&amp;lt;&amp;lt;
+	on_demand_tls {
+		ask http://localhost/check
+	}
+}
+
+# Webhooks
+https://webhooks.subdomain.here.tld { &amp;lt;&amp;lt;&amp;lt;&amp;lt; CHANGE THIS &amp;lt;&amp;lt;&amp;lt;&amp;lt;
+	reverse_proxy localhost:9000
+}
+
+# Filter for which SSL certs we will create. Prevents abuse.
+http://localhost {
+	handle /check {
+		root * /var/www
+		@deny not file /{query.domain}/
+		respond @deny 404
+	}
+}
+
+# This automatically handles upgrading http:// requests with a redirect
+https:// {
+	tls {
+		on_demand
+	}
+	root /var/www
+	rewrite /{host}{uri}
+	@forbidden {
+		path /.*
+	}
+	respond @forbidden 404
+	file_server
+}
+
+# Refer to the Caddy docs for more information:
+# https://caddyserver.com/docs/caddyfile
+
+# This config based on information at
+# https://caddy.community/t/on-demand-tls-with-dynamic-content-paths/18140
+# checked and corrected with `caddy validate`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I also took ownership of &lt;code&gt;/var/www&lt;/code&gt; with &lt;code&gt;chown -R joshua:joshua /var/www&lt;/code&gt; since the webhooks will run as my login account.&lt;/p&gt;
+&lt;h3 id=&quot;webhooks&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#webhooks&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Webhooks&lt;/h3&gt;
+&lt;p&gt;In my home directory I defined two hook scripts:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/webhooks/update-pages.sh&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# parameter 1 is repo name, parameter 2 is clone url&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; *&lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt;* &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; *&lt;span class=&quot;token string&quot;&gt;&quot;..&quot;&lt;/span&gt;* &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; *&lt;span class=&quot;token string&quot;&gt;&quot;*&quot;&lt;/span&gt;* &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/www/&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/www/&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; fetch origin gh-pages&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; reset &lt;span class=&quot;token parameter variable&quot;&gt;--hard&lt;/span&gt; origin/gh-pages&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;fi&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone &lt;span class=&quot;token parameter variable&quot;&gt;-b&lt;/span&gt; gh-pages --single-branch &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$2&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;~/webhooks/remove-pages.sh&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token shebang important&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# parameter 1 is repo name&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; *&lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt;* &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; *&lt;span class=&quot;token string&quot;&gt;&quot;..&quot;&lt;/span&gt;* &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; *&lt;span class=&quot;token string&quot;&gt;&quot;*&quot;&lt;/span&gt;* &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/www/&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/www&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;token parameter variable&quot;&gt;-rf&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/var/www/&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To trigger these hooks I am using &lt;code&gt;webhook&lt;/code&gt; which is in the default Debian repository.&lt;/p&gt;
+&lt;p&gt;Here are the hook definitions: one for creating/updating a site, and one for deleting. You will need to generate one or two secret values that the server can use to know that the webhook is authorized to run. I used linux command &lt;code&gt;uuidgen -r&lt;/code&gt; to create mine. Save these values so you can enter them in Forgejo later.&lt;/p&gt;
+&lt;p&gt;Also make sure to replace your execute-command lines with ones referencing your username and script paths.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/webhook.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;update-pages&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;execute-command&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/usr/bin/sudo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;pass-arguments-to-command&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;-u&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;joshua&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/joshua/webhooks/update-pages.sh&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;payload&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;repository.name&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;payload&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;repository.clone_url&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;trigger-rule&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;match&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;payload-hmac-sha256&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;secret&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;(omitted)&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;parameter&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;X-Forgejo-Signature&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;match&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;refs/heads/gh-pages&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;parameter&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;payload&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;ref&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;remove-pages&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;execute-command&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/usr/bin/sudo&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;pass-arguments-to-command&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;-u&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;joshua&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/home/joshua/webhooks/remove-pages.sh&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;payload&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;repository.name&quot;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;trigger-rule&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token property&quot;&gt;&quot;and&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token property&quot;&gt;&quot;match&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;payload-hmac-sha256&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;secret&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;(omitted)&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;parameter&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;source&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+              &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;X-Forgejo-Signature&quot;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;forgejo&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#forgejo&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Forgejo&lt;/h3&gt;
+&lt;p&gt;Forgejo supports running webhooks conditionally triggered by certain conditions.&lt;br&gt;
+Under my main user settings I set up each webhook:&lt;/p&gt;
+&lt;h4 id=&quot;update-pages&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#update-pages&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Update pages&lt;/h4&gt;
+&lt;p&gt;Target URL: https:// &lt;em&gt;your domain here&lt;/em&gt; /hooks/update-pages&lt;br&gt;
+HTTP Method: &lt;code&gt;POST&lt;/code&gt; (the default)&lt;br&gt;
+POST content type: &lt;code&gt;application/json&lt;/code&gt; (the default)&lt;br&gt;
+Secret: &lt;em&gt;omitted, use your own&lt;/em&gt;&lt;br&gt;
+Trigger on: Push events&lt;br&gt;
+Branch filter: &lt;code&gt;gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;remove-pages&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#remove-pages&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Remove pages&lt;/h4&gt;
+&lt;p&gt;Target URL: https:// &lt;em&gt;your domain here&lt;/em&gt; /hooks/remove-pages&lt;br&gt;
+HTTP Method: &lt;code&gt;POST&lt;/code&gt; (the default)&lt;br&gt;
+POST content type: &lt;code&gt;application/json&lt;/code&gt; (the default)&lt;br&gt;
+Secret: &lt;em&gt;omitted, use your own&lt;/em&gt;&lt;br&gt;
+Trigger on: Custom Events &amp;gt; Repository &amp;gt; Delete&lt;br&gt;
+Branch filter: &lt;code&gt;gh-pages&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/my-very-own-github-pages/#conclusion&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Conclusion&lt;/h2&gt;
+&lt;p&gt;It works!&lt;br&gt;
+Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seigler.net&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;the marklink repo in my Forgejo instance&lt;/a&gt; and &lt;a href=&quot;https://marklink.pages.seigler.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;its contents on my Caddy server&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That repo is just HTML and JS with only a gh-pages branch, but for repos with npm build scripts, I use &lt;a href=&quot;https://www.npmjs.com/package/gh-pages&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;gh-pages @ npm&lt;/a&gt; to push the build to a gh-pages branch and up to the server.&lt;/p&gt;
+&lt;p&gt;I’m putting off rolling my own CI server, but I imagine that’s the next stage here. Stay tuned.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Tools of the trade</title>
+      <link href="https://joshua.seigler.net/posts/tools-of-the-trade/" />
+      <updated>2025-05-15T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/tools-of-the-trade/</id>
+      <content type="html">&lt;p&gt;Everyone has different tools that they find especially effective. Here are some I have found with a few words about why I like them.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Update: I made a &lt;a href=&quot;https://joshua.seigler.net/uses&quot;&gt;/uses&lt;/a&gt; page that lists these tools and many others I like.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;mise-en-place&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#mise-en-place&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://mise.jdx.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mise-en-place&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Universal dev tool version manager. Specify tool versions in a config file and this tool can ensure that they are installed and active when entering the project directory. Amazing for getting a new dev environment set up in seconds. Replaces &lt;code&gt;asdf&lt;/code&gt;, &lt;code&gt;nvm&lt;/code&gt;, &lt;code&gt;pyenv&lt;/code&gt;, &lt;code&gt;venv&lt;/code&gt;, &lt;code&gt;rbenv&lt;/code&gt;, and many other tool-specific version managers. Supports an incredible number of tools thanks to compatibility with &lt;code&gt;asdf&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It also supports installing specific global tools, like &lt;code&gt;angular-cli&lt;/code&gt; from &lt;code&gt;npm&lt;/code&gt;, or &lt;code&gt;stack-pr&lt;/code&gt; from &lt;code&gt;pipx&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;stack-pr&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#stack-pr&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/modular/stack-pr&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stack-pr&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Open source tool for &lt;a href=&quot;https://www.stacking.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stacking PRs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;PR stacks are, as far as I can tell, the best way to manage large features in git. I first heard about this practice in a series of blog posts from Graphite, a company offering free PR-stacking software and related paid services. But you don’t need a custom CI flow or managed service for stacking to work - this CLI tool or one of the others at &lt;a href=&quot;https://www.stacking.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stacking.dev&lt;/a&gt; can take care of this.&lt;/p&gt;
+&lt;p&gt;If you start using PR stacks your whole company will start copying you.&lt;/p&gt;
+&lt;h3 id=&quot;xc&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#xc&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://xcfile.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;xc&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Markdown based task runner.&lt;/p&gt;
+&lt;p&gt;Define tasks in code blocks in markdown, and call them from the CLI. Serves as both task definition and documentation.&lt;/p&gt;
+&lt;h3 id=&quot;pd2slack&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#pd2slack&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/sidpremkumar/pd2slack&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pd2slack&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Simple python script to update the members of a Slack group such as &lt;code&gt;@oncall&lt;/code&gt; to match the active member(s) of a PagerDuty schedule. This replaces several expensive SAAS services.&lt;/p&gt;
+&lt;h3 id=&quot;syncthing&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#syncthing&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://syncthing.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SyncThing&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;P2P alternative to Dropbox, supports mobile and desktop. Synchronize folders of content across all my devices.&lt;/p&gt;
+&lt;h3 id=&quot;obsidian&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#obsidian&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://obsidian.md/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Obsidian&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For notes and reference. Sync across devices with &lt;code&gt;syncthing&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;keepassxc&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#keepassxc&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://keepassxc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;KeePassXC&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For passwords. Sync across devices with &lt;code&gt;syncthing&lt;/code&gt;.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Site design updated</title>
+      <link href="https://joshua.seigler.net/posts/site-design-updated/" />
+      <updated>2024-06-05T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/site-design-updated/</id>
+      <content type="html">&lt;style&gt;@import url(&#39;/fonts/ftaurebesh/ftaurebesh.css&#39;);&lt;/style&gt;
+&lt;p&gt;New design! The tools I used before have a lot of unmaintained or outdated dependencies and I wanted something a little simpler. The new site uses &lt;a href=&quot;https://pnpm.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pnpm&lt;/a&gt;, &lt;a href=&quot;https://www.11ty.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;11ty&lt;/a&gt;, and &lt;a href=&quot;https://mozilla.github.io/nunjucks/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nunjucks&lt;/a&gt;. Content is still in &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;markdown&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;One thing I’m proud of is a visual ping for footnotes.&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote1&quot;&gt;[1]&lt;/a&gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref1&quot;&gt;&lt;/a&gt;&lt;/sup&gt; When you click a footnote&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote2&quot;&gt;[2]&lt;/a&gt;&lt;a class=&quot;footnote-anchor&quot; id=&quot;footnote-ref2&quot;&gt;&lt;/a&gt;&lt;/sup&gt; it briefly highlights the thing you jumped to.&lt;/p&gt;
+&lt;p&gt;In the upper right I added a style toggle that applies the font from Star Wars, “Aurebesh”. I learned how to read it but sometimes want some practice. &lt;span data-language=&quot;aurebesh&quot;&gt;People who can read this are cool and I like them.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I also finally made a section for recipes!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;May 2025 edit: I updated the design some more without changing the tech stack. The main improvements are animated clouds and a host of minor adjustments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;June 2025 edit: I have continued to alter the design. Pray I don’t alter it any further.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr class=&quot;footnotes-sep&quot;&gt;
+&lt;section class=&quot;footnotes&quot;&gt;
+&lt;ol class=&quot;footnotes-list&quot;&gt;
+&lt;li id=&quot;footnote1&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;It highlights when you click back, too. &lt;a href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote-ref1&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&quot;footnote2&quot; class=&quot;footnote-item&quot;&gt;&lt;p&gt;Hi. &lt;a href=&quot;https://joshua.seigler.net/posts/site-design-updated/#footnote-ref2&quot; class=&quot;footnote-backref&quot;&gt;↩︎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content>
+    </entry>
+</feed>

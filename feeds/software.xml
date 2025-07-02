@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>joshua.seigler.net - software</title>
+  <subtitle>Personal homepage of Joshua Seigler</subtitle>
+  <link href="https://joshua.seigler.net//feeds/software.xml" rel="self" />
+  <link href="https://joshua.seigler.net/" />
+  <updated>2025-06-28T00:00:00Z</updated>
+  <id>https://joshua.seigler.net/</id>
+  <author>
+    <name></name>
+  </author>
+    <entry>
+      <title>Tools of the trade</title>
+      <link href="https://joshua.seigler.net/posts/tools-of-the-trade/" />
+      <updated>2025-05-15T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/tools-of-the-trade/</id>
+      <content type="html">&lt;p&gt;Everyone has different tools that they find especially effective. Here are some I have found with a few words about why I like them.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Update: I made a &lt;a href=&quot;https://joshua.seigler.net/uses&quot;&gt;/uses&lt;/a&gt; page that lists these tools and many others I like.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;mise-en-place&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#mise-en-place&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://mise.jdx.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mise-en-place&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Universal dev tool version manager. Specify tool versions in a config file and this tool can ensure that they are installed and active when entering the project directory. Amazing for getting a new dev environment set up in seconds. Replaces &lt;code&gt;asdf&lt;/code&gt;, &lt;code&gt;nvm&lt;/code&gt;, &lt;code&gt;pyenv&lt;/code&gt;, &lt;code&gt;venv&lt;/code&gt;, &lt;code&gt;rbenv&lt;/code&gt;, and many other tool-specific version managers. Supports an incredible number of tools thanks to compatibility with &lt;code&gt;asdf&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It also supports installing specific global tools, like &lt;code&gt;angular-cli&lt;/code&gt; from &lt;code&gt;npm&lt;/code&gt;, or &lt;code&gt;stack-pr&lt;/code&gt; from &lt;code&gt;pipx&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;stack-pr&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#stack-pr&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/modular/stack-pr&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stack-pr&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Open source tool for &lt;a href=&quot;https://www.stacking.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stacking PRs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;PR stacks are, as far as I can tell, the best way to manage large features in git. I first heard about this practice in a series of blog posts from Graphite, a company offering free PR-stacking software and related paid services. But you don’t need a custom CI flow or managed service for stacking to work - this CLI tool or one of the others at &lt;a href=&quot;https://www.stacking.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;stacking.dev&lt;/a&gt; can take care of this.&lt;/p&gt;
+&lt;p&gt;If you start using PR stacks your whole company will start copying you.&lt;/p&gt;
+&lt;h3 id=&quot;xc&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#xc&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://xcfile.dev/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;xc&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Markdown based task runner.&lt;/p&gt;
+&lt;p&gt;Define tasks in code blocks in markdown, and call them from the CLI. Serves as both task definition and documentation.&lt;/p&gt;
+&lt;h3 id=&quot;pd2slack&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#pd2slack&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://github.com/sidpremkumar/pd2slack&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pd2slack&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Simple python script to update the members of a Slack group such as &lt;code&gt;@oncall&lt;/code&gt; to match the active member(s) of a PagerDuty schedule. This replaces several expensive SAAS services.&lt;/p&gt;
+&lt;h3 id=&quot;syncthing&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#syncthing&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://syncthing.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SyncThing&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;P2P alternative to Dropbox, supports mobile and desktop. Synchronize folders of content across all my devices.&lt;/p&gt;
+&lt;h3 id=&quot;obsidian&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#obsidian&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://obsidian.md/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Obsidian&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For notes and reference. Sync across devices with &lt;code&gt;syncthing&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;keepassxc&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/tools-of-the-trade/#keepassxc&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://keepassxc.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;KeePassXC&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;For passwords. Sync across devices with &lt;code&gt;syncthing&lt;/code&gt;.&lt;/p&gt;
+</content>
+    </entry>
+</feed>
