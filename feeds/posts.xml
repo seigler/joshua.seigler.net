@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
-  <title>joshua.seigler.net</title>
+  <title>joshua.seigler.net - posts</title>
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
-  <link href="https://joshua.seigler.net/feed.xml" rel="self" />
+  <link href="https://joshua.seigler.net/feeds/posts.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
   <updated>2025-06-28T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
@@ -11,51 +11,7 @@
     <name></name>
   </author>
     <entry>
-      <title>Recipe: Chicken Chili Verde</title>
-      <link href="https://joshua.seigler.net/recipes/chicken-chili-verde/" />
-      <updated>2025-07-01T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/chicken-chili-verde/</id>
-      <content type="html">&lt;p&gt;Serves six. Prep 20 minutes, cooking time about 1 hour. Mildly spicy. Requires an immersion blender or kitchen blender.&lt;/p&gt;
-&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1-3 jalapeño peppers&lt;/li&gt;
-&lt;li&gt;1 Anaheim or Cubanelle pepper&lt;/li&gt;
-&lt;li&gt;6 tomatillos&lt;/li&gt;
-&lt;li&gt;2 large chicken breasts&lt;/li&gt;
-&lt;li&gt;1 large white onion&lt;/li&gt;
-&lt;li&gt;1 head of garlic&lt;/li&gt;
-&lt;li&gt;3 cups chicken stock&lt;/li&gt;
-&lt;li&gt;2 tsp neutral oil&lt;/li&gt;
-&lt;li&gt;Salt&lt;/li&gt;
-&lt;li&gt;Pepper&lt;/li&gt;
-&lt;li&gt;1 lime&lt;/li&gt;
-&lt;li&gt;1 tsp oregano&lt;/li&gt;
-&lt;li&gt;Fresh cilantro, optional&lt;/li&gt;
-&lt;li&gt;3 cups white rice&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;directions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#directions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Directions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Rough chop the onion. Dice a little bit and set aside for a garnish.&lt;/li&gt;
-&lt;li&gt;Add the chicken, 1/3 of the chopped onion, 1/3 of the garlic, and the chicken broth to a small pot. Boil, then simmer covered for 45 minutes.&lt;/li&gt;
-&lt;li&gt;While that cooks, deseed the peppers.&lt;/li&gt;
-&lt;li&gt;In a sauté pan over medium-high heat, sear the peppers, tomatillos, and the rest of the garlic and chopped onion in about 2 tsp of oil. Stir the pan intermittently until the veggies are softened and seared, about 15 minutes.&lt;/li&gt;
-&lt;li&gt;Set aside the seared veggies. Cook the rice by your preferred method.&lt;/li&gt;
-&lt;li&gt;When the chicken is done simmering, remove the breasts and add the broth, onions, etc to the veggies.&lt;/li&gt;
-&lt;li&gt;Add to the mixture half the lime juice, and salt, pepper, oregano, and cilantro.&lt;/li&gt;
-&lt;li&gt;Blend until very smooth.&lt;/li&gt;
-&lt;li&gt;Shred the chicken breasts with forks and add to the mixture.&lt;/li&gt;
-&lt;li&gt;Heat the mixture, covered, over medium heat for 15 minutes.&lt;/li&gt;
-&lt;li&gt;Serve over rice and garnish with diced onion and lime juice.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;You can use jarred minced garlic instead of fresh, just delay adding it when you char the veggies because it will burn easily.&lt;br&gt;
-Original recipe from &lt;a href=&quot;https://www.tiktok.com/@oldscoolkevmo/video/7520712000826133791&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Kevin Ashton&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 6 389g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 558kcal (26%), &lt;strong&gt;Protein&lt;/strong&gt;: 28.18g (52%), &lt;strong&gt;Total Fat&lt;/strong&gt;: 11.64g (24%), Cholesterol: 64mg, Saturated Fat: 3g, Trans Fat: 0.11g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 82.35g (34%), Dietary Fiber: 3.9g (16%), Sugars: 3.11g, &lt;strong&gt;Calcium&lt;/strong&gt;: 45mg (5%), &lt;strong&gt;Iron&lt;/strong&gt;: 2.72mg (15%), &lt;strong&gt;Potassium&lt;/strong&gt;: 474mg (10%), &lt;strong&gt;Sodium&lt;/strong&gt;: 584mg (39%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Post: Alternate rules for Bananagrams</title>
+      <title>Alternate rules for Bananagrams</title>
       <link href="https://joshua.seigler.net/posts/alternate-rules-for-bananagrams/" />
       <updated>2025-06-28T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/alternate-rules-for-bananagrams/</id>
@@ -71,7 +27,7 @@ Original recipe from &lt;a href=&quot;https://www.tiktok.com/@oldscoolkevmo/vide
 </content>
     </entry>
     <entry>
-      <title>Post: FFmpeg audio cleanup</title>
+      <title>FFmpeg audio cleanup</title>
       <link href="https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/" />
       <updated>2025-06-26T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/</id>
@@ -112,7 +68,7 @@ Original recipe from &lt;a href=&quot;https://www.tiktok.com/@oldscoolkevmo/vide
 </content>
     </entry>
     <entry>
-      <title>Post: War</title>
+      <title>War</title>
       <link href="https://joshua.seigler.net/posts/july-21-2025/" />
       <updated>2025-06-21T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/july-21-2025/</id>
@@ -135,7 +91,7 @@ Original recipe from &lt;a href=&quot;https://www.tiktok.com/@oldscoolkevmo/vide
 </content>
     </entry>
     <entry>
-      <title>Post: My Very Own GitHub Pages</title>
+      <title>My Very Own GitHub Pages</title>
       <link href="https://joshua.seigler.net/posts/my-very-own-github-pages/" />
       <updated>2025-06-15T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/my-very-own-github-pages/</id>
@@ -331,145 +287,7 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Recipe: Amish Egg Noodles</title>
-      <link href="https://joshua.seigler.net/recipes/amish-egg-noodles/" />
-      <updated>2025-06-13T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/amish-egg-noodles/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;6 tablespoons butter, divided&lt;/li&gt;
-&lt;li&gt;28 ounces chicken broth&lt;/li&gt;
-&lt;li&gt;1 chicken bouillon cube&lt;/li&gt;
-&lt;li&gt;12 ounces extra wide egg noodles&lt;/li&gt;
-&lt;li&gt;1 teaspoon parsley flakes&lt;/li&gt;
-&lt;li&gt;Salt and pepper, to taste&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;In a large pan, brown two tablespoons of butter over medium heat.&lt;/li&gt;
-&lt;li&gt;Pour the chicken stock and bouillon cube into the pan and bring to a boil.&lt;/li&gt;
-&lt;li&gt;Add the egg noodles to the chicken stock and return to a boil. Cover the pot and remove from the heat.&lt;/li&gt;
-&lt;li&gt;Let the noodles set for 30 minutes, stirring every 10 minutes or so.&lt;/li&gt;
-&lt;li&gt;Test the noodles for doneness. If they are not cooked through, turn the heat back on and cook for 1-2 minutes until noodles are tender.&lt;/li&gt;
-&lt;li&gt;Top with the remaining 4 tablespoons of butter, parsley, and salt and pepper to taste.&lt;/li&gt;
-&lt;li&gt;Serve immediately or leave in the pan, covered, until ready to serve. These will stay warm for 20 more minutes or so with no problems.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;We use 4.5 tsp of Better than Bouillon with 28oz water, replacing the broth and bouillon cube.&lt;br&gt;
-We also usually brown some canned chicken and add it at the same time as the butter and seasonings.&lt;/p&gt;
-&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.bunsinmyoven.com/amish-egg-noodles/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bunsinmyoven&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 6 servings. Each serving:&lt;br&gt;
-&lt;strong&gt;Calories&lt;/strong&gt; 328kcal (16%), &lt;strong&gt;Total Fat&lt;/strong&gt; 14g (22%), Saturated Fat 7g (44%), Cholesterol 77mg (26%), &lt;strong&gt;Sodium&lt;/strong&gt; 758mg (33%), &lt;strong&gt;Total Carbohydrates&lt;/strong&gt; 41g (14%), Dietary Fiber 2g (8%), Sugar 1g (1%), &lt;strong&gt;Protein&lt;/strong&gt; 9g (18%), &lt;strong&gt;Vitamin C&lt;/strong&gt; 10.3mg (12%), &lt;strong&gt;Vitamin A&lt;/strong&gt; 400IU (8%), &lt;strong&gt;Iron&lt;/strong&gt; 1.5mg (8%), &lt;strong&gt;Calcium&lt;/strong&gt; 41mg (4%), &lt;strong&gt;Potassium&lt;/strong&gt; 266mg (8%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Recipe: Perfect Homemade Brownies</title>
-      <link href="https://joshua.seigler.net/recipes/perfect-homemade-brownies/" />
-      <updated>2025-05-20T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/perfect-homemade-brownies/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1 cup butter&lt;/li&gt;
-&lt;li&gt;2 1/4 cups sugar&lt;/li&gt;
-&lt;li&gt;4 large eggs&lt;/li&gt;
-&lt;li&gt;1 1/4 cups cocoa powder&lt;/li&gt;
-&lt;li&gt;1 teaspoon salt&lt;/li&gt;
-&lt;li&gt;1 teaspoon baking powder&lt;/li&gt;
-&lt;li&gt;1 teaspoon espresso powder (optional)&lt;/li&gt;
-&lt;li&gt;1 tablespoon vanilla extract&lt;/li&gt;
-&lt;li&gt;1 1/2 cups all-purpose flour&lt;/li&gt;
-&lt;li&gt;2 cups semi-sweet chocolate chips&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Pre-heat the oven to 350 degrees. Butter a 9×13 baking dish.&lt;/li&gt;
-&lt;li&gt;In small saucepan over low heat, melt butter completely. Stir in sugar and continue cooking for 1-2 minutes, stirring constantly. Do not allow sugar mixture to boil.&lt;/li&gt;
-&lt;li&gt;Pour butter mixture into a large bowl or stand mixer, and cool for 2 minutes. Beat in cocoa powder, eggs, salt, baking powder, espresso powder, and vanilla extract. Mix until well combined.&lt;/li&gt;
-&lt;li&gt;Stir in the flour and chocolate chips until well combined.&lt;/li&gt;
-&lt;li&gt;Spread into prepared pan (batter will be very thick and sticky) and bake for about 30 minutes, until a tester comes out mostly clean. The edges should be set and the center should still look slightly moist, but not uncooked. Cool on a wire rack.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.bunsinmyoven.com/good-ol-homemade-brownies/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Buns In My Oven&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;16 servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt; 419kcal (21%) &lt;strong&gt;Carbohydrates&lt;/strong&gt; 53g (18%) &lt;strong&gt;Protein&lt;/strong&gt; 5g (10%) &lt;strong&gt;Fat&lt;/strong&gt; 22g (34%) &lt;strong&gt;Saturated Fat&lt;/strong&gt; 13g (81%) &lt;strong&gt;Cholesterol&lt;/strong&gt; 78mg (26%) &lt;strong&gt;Sodium&lt;/strong&gt; 268mg (12%) &lt;strong&gt;Potassium&lt;/strong&gt; 290mg (8%) &lt;strong&gt;Fiber&lt;/strong&gt; 4g (17%) &lt;strong&gt;Sugar&lt;/strong&gt; 36g (40%) &lt;strong&gt;Vitamin A&lt;/strong&gt; 435IU (9%) &lt;strong&gt;Calcium&lt;/strong&gt; 46mg (5%) &lt;strong&gt;Iron&lt;/strong&gt; 3.2mg (18%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Recipe: Pasta Rosatella</title>
-      <link href="https://joshua.seigler.net/recipes/pasta-rosatella/" />
-      <updated>2025-05-20T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/pasta-rosatella/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1lb any pasta&lt;/li&gt;
-&lt;li&gt;2 cups (approximate) garlic &amp;amp; herb pasta sauce&lt;/li&gt;
-&lt;li&gt;1½ cups milk&lt;/li&gt;
-&lt;li&gt;2 tablespoons flour&lt;/li&gt;
-&lt;li&gt;2 tablespoons oil&lt;/li&gt;
-&lt;li&gt;Salt and pepper&lt;/li&gt;
-&lt;li&gt;Grated Parmesan cheese&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Cook the pasta according to the package directions.&lt;/li&gt;
-&lt;li&gt;Meanwhile in a saucepan, whisk together the oil and flour over medium heat to form a roux. Cook for 1–2 minutes until lightly golden.&lt;/li&gt;
-&lt;li&gt;Slowly whisk in the milk to make a béchamel and continue stirring until thickened.&lt;/li&gt;
-&lt;li&gt;Season with salt and pepper, and add cheese.&lt;/li&gt;
-&lt;li&gt;Stir in the pasta sauce and let the mixture simmer on low.&lt;/li&gt;
-&lt;li&gt;When the pasta is done cooking, drain it, then top with the sauce and extra cheese to serve.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;The recipe works the same with almond milk and vegan mozarella replacing the existing dairy.&lt;/p&gt;
-&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.tiktok.com/@dollartreedinners/video/7499238134434123051&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;dollartreedinners&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 4 servings. Each serving:&lt;br&gt;
-&lt;strong&gt;Calories&lt;/strong&gt; 626kcal (31%) &lt;strong&gt;Total Fat&lt;/strong&gt; 14.1g (18%) &lt;strong&gt;Saturated Fat&lt;/strong&gt; 4.4g (22%) &lt;strong&gt;Trans Fat&lt;/strong&gt; 0.19g &lt;strong&gt;Cholesterol&lt;/strong&gt; 18.1mg (6%) &lt;strong&gt;Sodium&lt;/strong&gt; 980.9mg (41%) &lt;strong&gt;Total Carbohydrate&lt;/strong&gt; 100g (36%) &lt;strong&gt;Dietary Fiber&lt;/strong&gt; 4.8g (17%) &lt;strong&gt;Total Sugars&lt;/strong&gt; 10.7g (21%) &lt;strong&gt;Protein&lt;/strong&gt; 22.8g (46%) &lt;strong&gt;Vitamin C&lt;/strong&gt; 2.6mg (3%) &lt;strong&gt;Vitamin D&lt;/strong&gt; 1.2mcg (6%) &lt;strong&gt;Iron&lt;/strong&gt; 4.8mg (27%) &lt;strong&gt;Calcium&lt;/strong&gt; 242.6mg (19%) &lt;strong&gt;Potassium&lt;/strong&gt; 642.7mg (14%) &lt;strong&gt;Phosphorus&lt;/strong&gt; 381.7mg (31%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Recipe: Creamy Chicken Orzo</title>
-      <link href="https://joshua.seigler.net/recipes/creamy-chicken-orzo/" />
-      <updated>2025-05-20T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/creamy-chicken-orzo/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;2 boneless skinless chicken breasts, cooked and diced&lt;/li&gt;
-&lt;li&gt;8 ounces Orzo pasta&lt;/li&gt;
-&lt;li&gt;2 celery stalks, finely diced&lt;/li&gt;
-&lt;li&gt;2 carrots, finely diced&lt;/li&gt;
-&lt;li&gt;1/2 yellow onion, finely diced&lt;/li&gt;
-&lt;li&gt;5 tablespoons butter&lt;/li&gt;
-&lt;li&gt;2 tablespoons olive oil&lt;/li&gt;
-&lt;li&gt;2 cups chicken broth&lt;/li&gt;
-&lt;li&gt;½ cup heavy whipping cream&lt;/li&gt;
-&lt;li&gt;1 teaspoon chicken bouillon powder&lt;/li&gt;
-&lt;li&gt;1/3 cup all purpose flour&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Cook the Orzo per the package instructions.&lt;/li&gt;
-&lt;li&gt;While that cooks, make a mirepoix:
-&lt;ol&gt;
-&lt;li&gt;In a large skillet over medium high heat add the butter and olive oil.&lt;/li&gt;
-&lt;li&gt;Once the butter is melted add in the diced onion, carrots and celery.&lt;/li&gt;
-&lt;li&gt;Allow the veggies to sauté for 4-5 minutes until they start to soften up.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Reduce the heat to low and sprinkle the all-purpose flour over the veggies and whisk together until it forms a paste/roux. While stirring constantly, allow the roux to cook for 2-3 minutes.&lt;/li&gt;
-&lt;li&gt;Pour into the roux the chicken broth, chicken boullion powder, and heavy whipping cream. Whisk together until no clumps are present and the mixture starts to thicken.&lt;/li&gt;
-&lt;li&gt;Add in the diced chicken and allow the mixture to simmer until it reaches desired thickness. Pour in drained orzo and stir to combine. Serve &amp;amp; enjoy!&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;You can use rotisserie chicken or cook your own chicken for this recipe. If you use a rotisserie chicken then no additional seasonings are needed, but if you are planning to cook your own chicken then you will need to season it to your liking. I typically use a blend of onion powder, garlic powder, paprika, salt and black pepper.&lt;/p&gt;
-&lt;p&gt;Original recipe from &lt;a href=&quot;https://cookingwithkatiecross.com/creamy-chicken-pot-pie-orzo/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Cooking with Katie Cross&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 5 servings, 1700g. Each 340g serving:&lt;br&gt;
-&lt;strong&gt;Calories&lt;/strong&gt; 496kcal (25%), &lt;strong&gt;Total Fat&lt;/strong&gt; 21g (32%), Saturated Fat 9g (45%), Trans Fat 0g, &lt;strong&gt;Cholesterol&lt;/strong&gt; 102mg (34%), &lt;strong&gt;Sodium&lt;/strong&gt; 504mg (21%), &lt;strong&gt;Total Carbohydrates&lt;/strong&gt; 45g (15%), Dietary Fiber 3g (13%), Sugars 3g, &lt;strong&gt;Protein&lt;/strong&gt; 30g (60%), &lt;strong&gt;Vitamin A&lt;/strong&gt; 4646IU, &lt;strong&gt;Vitamin C&lt;/strong&gt; 3mg, &lt;strong&gt;Calcium&lt;/strong&gt; 78mg, &lt;strong&gt;Iron&lt;/strong&gt; 2mg, &lt;strong&gt;Potassium&lt;/strong&gt; 442mg&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Post: Tools of the trade</title>
+      <title>Tools of the trade</title>
       <link href="https://joshua.seigler.net/posts/tools-of-the-trade/" />
       <updated>2025-05-15T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/tools-of-the-trade/</id>
@@ -498,107 +316,7 @@ We also usually brown some canned chicken and add it at the same time as the but
 </content>
     </entry>
     <entry>
-      <title>Recipe: Spanish Style Rice</title>
-      <link href="https://joshua.seigler.net/recipes/spanish-style-rice/" />
-      <updated>2025-05-05T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/spanish-style-rice/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;3 Tbsp neutral oil&lt;/li&gt;
-&lt;li&gt;2 cups long grain white rice&lt;/li&gt;
-&lt;li&gt;4 cups water&lt;/li&gt;
-&lt;li&gt;8 oz tomato sauce&lt;/li&gt;
-&lt;li&gt;2 Tbsp chicken or vegetable bouillon powder&lt;/li&gt;
-&lt;li&gt;1.5 cups water&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Add oil to a large frying pan over medium-high heat.&lt;/li&gt;
-&lt;li&gt;Add uncooked rice, stirring continually until rice is toasted.&lt;/li&gt;
-&lt;li&gt;Stir in 4 cups water, tomato sauce, and bouillon.&lt;/li&gt;
-&lt;li&gt;Return to boil and leave uncovered &lt;strong&gt;10 minutes&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Stir in 1.5 cups water and return to a boil.&lt;/li&gt;
-&lt;li&gt;Reduce heat to low and cover. Simmer &lt;strong&gt;10 minutes&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Turn off heat and leave in place, covered for &lt;strong&gt;20 minutes&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.tiktok.com/t/ZT2Qy1AtF/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;dollartreedinners&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 4 servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt; 441kcal (22%), &lt;strong&gt;Total Fat&lt;/strong&gt; 11.3g (17%), Saturated Fat 1.9g (10%), Trans Fat 0.1g, Cholesterol 1mg (0%), &lt;strong&gt;Sodium&lt;/strong&gt; 56mg (2%), &lt;strong&gt;Total Carbohydrates&lt;/strong&gt; 76g (25%), Dietary Fiber 2g (6%), Sugars 0g, &lt;strong&gt;Protein&lt;/strong&gt; 7g, &lt;strong&gt;Vitamin A&lt;/strong&gt; (1%), &lt;strong&gt;Vitamin C&lt;/strong&gt; (9%), &lt;strong&gt;Calcium&lt;/strong&gt; (7%), &lt;strong&gt;Iron&lt;/strong&gt; (24%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Recipe: Luther Salad</title>
-      <link href="https://joshua.seigler.net/recipes/luther-salad/" />
-      <updated>2025-05-05T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/luther-salad/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1 lb tri-color rotini&lt;/li&gt;
-&lt;li&gt;italian dressing&lt;/li&gt;
-&lt;li&gt;extras
-&lt;ul&gt;
-&lt;li&gt;cubed low-moisture mozzarella&lt;/li&gt;
-&lt;li&gt;frozen peas&lt;/li&gt;
-&lt;li&gt;shredded chicken&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Cook rotini in well salted water according to box directions. While rotini cooks, prepare your extras.&lt;/li&gt;
-&lt;li&gt;Drain pasta and rinse twice in cold water to remove starch and stop carryover cooking.&lt;/li&gt;
-&lt;li&gt;In a large bowl combine rotini and extras. Add italian dressing, at least 8 oz. Mix and serve or refrigerate.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;At first we called this “worm salad” but this proved off-putting, and we needed a new name. We had recently learned about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Diet_of_Worms&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1521 Diet of Worms&lt;/a&gt; where Martin Luther was summoned to defend or recant his beliefs, so we called it “Luther salad” instead.&lt;/p&gt;
-&lt;p&gt;The base salad already covers elements of &lt;a href=&quot;https://www.saltfatacidheat.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;salt, fat, acid, and heat&lt;/a&gt;, so your extras are mostly for texture, leaving lots of room for variations:&lt;/p&gt;
-&lt;h3 id=&quot;vegan-%2F-healthy%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#vegan-%2F-healthy%3A&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Vegan / healthy:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;halved cherry tomatoes&lt;/li&gt;
-&lt;li&gt;slivered sweet peppers&lt;/li&gt;
-&lt;li&gt;paysanne cucumber&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;italian%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#italian%3A&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Italian:&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;halved cherry tomatoes&lt;/li&gt;
-&lt;li&gt;sliced black olives, drained&lt;/li&gt;
-&lt;li&gt;cubed cheese&lt;/li&gt;
-&lt;li&gt;chopped pepperoni&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;This is less a recipe and more a category of foods. It has a pound of pasta, a good amount of oil, and some protein. So, kinda high on carbs but not the worst thing. No label for this one.&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Recipe: Corn Casserole</title>
-      <link href="https://joshua.seigler.net/recipes/corn-casserole/" />
-      <updated>2025-04-24T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/corn-casserole/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1 can of corn drained&lt;/li&gt;
-&lt;li&gt;1 can of creamed corn&lt;/li&gt;
-&lt;li&gt;1 stick melted butter 1/2 cup&lt;/li&gt;
-&lt;li&gt;1 box of Jiffy Corn Muffin mix&lt;/li&gt;
-&lt;li&gt;1 cup sour cream&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Preheat the oven to 350 degrees.&lt;/li&gt;
-&lt;li&gt;In a bowl, mix all of the ingredients together in order, then pour into a greased 8&amp;quot;x8&amp;quot; baking pan.&lt;/li&gt;
-&lt;li&gt;Cook uncovered for 45-50 minutes or until lightly browned.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;Vegan substitutions: almond milk instead of sour cream, vegetable butter or neutral oil instead of butter. Made this way, the result will be less bready but still excellent. Increase cooking time slightly.&lt;/p&gt;
-&lt;p&gt;Doubling: if the pan size makes the uncooked mix more than about an inch deep, you will need extra cooking time. Cover it with foil and cook another 20 minutes or so.&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 15.5 100g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 167g (8%), &lt;strong&gt;Protein&lt;/strong&gt;: 2.82g (5%), &lt;strong&gt;Total Fat&lt;/strong&gt;: 9.35g (19%), Cholesterol: 31g, Saturated Fat: 5.2g, Trans Fat: 0.24g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 20g (8%), Dietary Fiber: 1.1g (4%), Sugars: 2.05g, &lt;strong&gt;Calcium&lt;/strong&gt;: 36mg (4%), &lt;strong&gt;Iron&lt;/strong&gt;: 0.6mg (3%), &lt;strong&gt;Potassium&lt;/strong&gt;: 137mg (3%), &lt;strong&gt;Sodium&lt;/strong&gt;: 346mg (23%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Post: Thinking machines</title>
+      <title>Thinking machines</title>
       <link href="https://joshua.seigler.net/posts/thinking-machines/" />
       <updated>2025-04-24T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/thinking-machines/</id>
@@ -629,40 +347,7 @@ We also usually brown some canned chicken and add it at the same time as the but
 </content>
     </entry>
     <entry>
-      <title>Recipe: Sloppy Joes</title>
-      <link href="https://joshua.seigler.net/recipes/sloppy-joes/" />
-      <updated>2024-06-07T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/sloppy-joes/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1 lb. hamburger&lt;/li&gt;
-&lt;li&gt;1/2 teaspoon paprika&lt;/li&gt;
-&lt;li&gt;1 teaspoon chili powder&lt;/li&gt;
-&lt;li&gt;1 Tablespoon dry mustard&lt;/li&gt;
-&lt;li&gt;1 Tablespoon parsley, chopped&lt;/li&gt;
-&lt;li&gt;1 Tablespoon Worcestershire sauce&lt;/li&gt;
-&lt;li&gt;2 Tablespoons brown sugar&lt;/li&gt;
-&lt;li&gt;2 Tablespoons apple cider vinegar&lt;/li&gt;
-&lt;li&gt;1/2 cup onion, diced&lt;/li&gt;
-&lt;li&gt;1/2 cup Ketchup&lt;/li&gt;
-&lt;li&gt;1 cup water&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Brown beef with onion, draining fat.&lt;/li&gt;
-&lt;li&gt;Add all remaining ingredients and bring to a boil.&lt;/li&gt;
-&lt;li&gt;Simmer 20 minutes or until thickened, stirring occasionally.&lt;/li&gt;
-&lt;li&gt;Refrigerate overnight, serve hot.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;If you don’t have onion you can substitute 1/2 tablespoon onion powder.&lt;br&gt;
-Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 9.5 100g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 135 kcal (6%), &lt;strong&gt;Fat&lt;/strong&gt;: 7.43g (15%), Cholesterol: 32 mg, Saturated Fat: 2.738g, Trans Fat: 0.408g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 7.62g (3%), Fiber: 0.4g (2%), Sugars: 5.99g, &lt;strong&gt;Protein&lt;/strong&gt;: 9.26g (17%), &lt;strong&gt;Vitamin C&lt;/strong&gt;: 1.8mg (2%), &lt;strong&gt;Vitamin A&lt;/strong&gt;: 253 IU 1(1%), &lt;strong&gt;Vitamin D&lt;/strong&gt;: 1 IU (0%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
-      <title>Post: Site design updated</title>
+      <title>Site design updated</title>
       <link href="https://joshua.seigler.net/posts/site-design-updated/" />
       <updated>2024-06-05T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/site-design-updated/</id>
@@ -689,7 +374,7 @@ Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
 </content>
     </entry>
     <entry>
-      <title>Post: Finally, a Coherent Worldview</title>
+      <title>Finally, a Coherent Worldview</title>
       <link href="https://joshua.seigler.net/posts/finally-a-coherent-worldview/" />
       <updated>2023-07-14T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/finally-a-coherent-worldview/</id>
@@ -699,7 +384,7 @@ Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
 </content>
     </entry>
     <entry>
-      <title>Post: Embracing Mysticism</title>
+      <title>Embracing Mysticism</title>
       <link href="https://joshua.seigler.net/posts/embracing-mysticism/" />
       <updated>2021-10-16T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/embracing-mysticism/</id>
@@ -723,7 +408,7 @@ Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
 </content>
     </entry>
     <entry>
-      <title>Post: Needs-based communication</title>
+      <title>Needs-based communication</title>
       <link href="https://joshua.seigler.net/posts/needs-based-communication/" />
       <updated>2021-05-26T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/needs-based-communication/</id>
@@ -805,7 +490,7 @@ Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
 </content>
     </entry>
     <entry>
-      <title>Post: The Trivium: A Tool for Learning Anything</title>
+      <title>The Trivium: A Tool for Learning Anything</title>
       <link href="https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/" />
       <updated>2021-04-03T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/</id>
@@ -827,7 +512,7 @@ Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
 </content>
     </entry>
     <entry>
-      <title>Post: Authority - Consent&#39;s Blind Spot</title>
+      <title>Authority - Consent&#39;s Blind Spot</title>
       <link href="https://joshua.seigler.net/posts/authority-consents-blind-spot/" />
       <updated>2020-07-02T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/authority-consents-blind-spot/</id>
