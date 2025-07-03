@@ -58,8 +58,20 @@ function addEffect({ target }: UIEvent) {
   })
 }
 
+function attend({ target}: UIEvent) {
+  if (!isElement(target) || !target.matches("a[href][target=_blank]")) {
+    return
+  }
+  umami?.track(`Link: ${target['innerText'] ?? target.getAttribute('href')}`, {
+    from: document.location,
+    destination: target.getAttribute('href'),
+  })
+}
+
 document.addEventListener("mouseenter", addEffect, true)
 document.addEventListener("focus", addEffect, true)
 
 document.addEventListener("mouseleave", removeEffect, true)
 document.addEventListener("blur", removeEffect, true)
+
+document.addEventListener("click", attend, true)
