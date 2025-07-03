@@ -8,7 +8,6 @@ import mdLinkAttributes from "markdown-it-link-attributes"
 import mdPrism from "markdown-it-prism"
 import dayjs from "dayjs"
 import utc from "dayjs/plugin/utc.js"
-import site from "./site/_data/site.js"
 import clean from "eleventy-plugin-clean"
 import toc from "eleventy-plugin-toc"
 import EleventyFeedPlugin from "@11ty/eleventy-plugin-rss"
@@ -113,6 +112,12 @@ export default async (config) => {
   })
 
   config.addCollection("links", fetchShaarliWebroll)
+
+  config.addCollection("combinedFeed", (collectionApi) => {
+    return collectionApi.getAllSorted().filter(item => {
+      return (item.data.tags ?? []).some(t => ['posts', 'recipes', 'links'].includes(t))
+    })
+  })
 
   config.addFilter("toISOString", (dateString) => {
     return new Date(dateString).toISOString()

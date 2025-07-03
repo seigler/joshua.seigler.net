@@ -4,13 +4,9 @@ eleventyComputed:
   tag: "{{ page.fileSlug }}"
   title: "{{ tag | capitalize }}"
   rssUrl: "
-  {%- if tag == 'posts' -%}
-  /feed.xml
-  {%- else -%}
     {%- if tag != 'music' -%}
-      /feeds/{{tag}}
+      /feeds/{{tag}}.xml
     {%- endif -%}
-  {%- endif -%}
   "
 ---
 

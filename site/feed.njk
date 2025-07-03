@@ -10,13 +10,13 @@ pagination:
     - links
     - timeline
 eleventyComputed:
-  finalLink: "{% if tag == 'posts' %}feed.xml{% else %}feeds/{{tag | slugify}}.xml{% endif %}"
+  finalLink: "{% if tag == 'combinedFeed' %}feed.xml{% else %}feeds/{{tag | slugify}}.xml{% endif %}"
   permalink: "/assets/{{finalLink}}"
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.language }}">
-  <title>{{ site.title }} - {{ tag }}</title>
+  <title>{{ site.title }}{% if tag !== 'combinedFeed' %} - {{ tag }}{% endif %}</title>
   <subtitle>{{ collections.pages[tag].data.description or site.description }}</subtitle>
   <link href="{{ site.baseUrl }}{{ finalLink }}" rel="self" />
   <link href="{{ site.baseUrl | addPathPrefixToFullUrl }}" />
@@ -29,7 +29,7 @@ eleventyComputed:
   {%- if entry.url and entry.date -%}
     {%- set absolutePostUrl %}{{ entry.url | htmlBaseUrl(site.baseUrl) }}{% endset %}
     <entry>
-      <title>{{ entry.data.title }}</title>
+      <title>{% if tag == 'combinedFeed' %}{{ entry.data.tags[0].slice(0,-1) | title }}: {% endif %}{{ entry.data.title }}</title>
       <link href="{{ absolutePostUrl }}" />
       <updated>{{ entry.date | dateToRfc3339 }}</updated>
       <id>{{ absolutePostUrl }}</id>
