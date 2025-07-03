@@ -63,7 +63,7 @@ function attend({ target}: UIEvent) {
     return
   }
   umami?.track(`Link: ${target['innerText'] ?? target.getAttribute('href')}`, {
-    from: document.location,
+    from: document.location.href,
     destination: target.getAttribute('href'),
   })
 }
