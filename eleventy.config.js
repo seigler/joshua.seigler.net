@@ -111,14 +111,16 @@ export default async (config) => {
     )
   })
 
-  config.addCollection("links", fetchShaarliWebroll)
+  const linksCollection = await fetchShaarliWebroll()
+  config.addCollection("links", () => linksCollection)
 
-  config.addCollection("combinedFeed", (collectionApi) => {
-    return collectionApi.getAllSorted().filter((item) => {
-      return (item.data.tags ?? []).some((t) =>
-        ["posts", "recipes", "links"].includes(t)
-      )
+  config.addCollection("combinedFeed", async (collectionApi) => {
+    const results = collectionApi.getAll().filter((item) => {
+      return (item.data.tags ?? []).some((t) => {
+        return ["posts", "recipes"].includes(t)
+      })
     })
+    return [...results, ...linksCollection].sort((a, b) => a.date.getTime() - b.date.getTime())
   })
 
   config.addFilter("toISOString", (dateString) => {
@@ -173,7 +175,7 @@ export default async (config) => {
 
 async function fetchShaarliWebroll() {
   const url = "https://links.apps.seigler.net/feed/atom?&searchtags=%24webroll"
-  const urlTextContent = await fetch(url, { duration: "30s", type: "text" })
+  const urlTextContent = await fetch(url, { duration: "0", type: "text" })
   const validation = XMLValidator.validate(urlTextContent)
   let feedContent
   if (validation === true) {
