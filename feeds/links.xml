@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>joshua.seigler.net - links</title>
+  <subtitle>Personal homepage of Joshua Seigler</subtitle>
+  <link href="https://joshua.seigler.net/feeds/links.xml" rel="self" />
+  <link href="https://joshua.seigler.net/" />
+  <updated>2025-06-28T00:00:00Z</updated>
+  <id>https://joshua.seigler.net/</id>
+  <author>
+    <name></name>
+  </author>
+    <entry>
+      <title>htmz - a low power tool for html</title>
+      <link href="https://leanrada.com/htmz/" />
+      <updated>2025-07-01T19:01:52Z</updated>
+      <id>https://leanrada.com/htmz/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Super clever approach for putting HTML into other HTML. &amp;quot;Is it a framework? It&#39;s a snippet.&amp;quot;&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Speed Catan - seanmcp.com</title>
+      <link href="https://www.seanmcp.com/board-games/speed-catan/" />
+      <updated>2025-06-29T03:05:58Z</updated>
+      <id>https://www.seanmcp.com/board-games/speed-catan/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Speed Catan is a variation of the popular board game Catan that emphasizes game speed and simplicity for younger (or impatient) players.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>How to Surf the Web in 2025, and Why You Should</title>
+      <link href="https://www.raptitude.com/2025/06/how-to-surf-the-web-in-2025-and-why-you-should/" />
+      <updated>2025-06-28T22:20:45Z</updated>
+      <id>https://www.raptitude.com/2025/06/how-to-surf-the-web-in-2025-and-why-you-should/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Just as it’s still possible (though seldom necessary) to ride a horse, it is still possible to surf the internet. It’s a thrill not yet lost to time.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Comic Helvetic Font | dafont.com</title>
+      <link href="https://www.dafont.com/comic-helvetic.font" />
+      <updated>2025-06-26T14:29:51Z</updated>
+      <id>https://www.dafont.com/comic-helvetic.font</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;I don&#39;t understand why this feels ok but Comic Sans makes my skin crawl.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>NIKA:&#92;git-revise&#92;&gt;</title>
+      <link href="https://mystor.github.io/git-revise.html" />
+      <updated>2025-06-18T16:18:36Z</updated>
+      <id>https://mystor.github.io/git-revise.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;git-revise is a history editing tool designed for the patch-stack workflow. It&#39;s fast, non-destructive, and aims to provide a familiar, powerful, and easy to use re-imagining of the patch stack workflow.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Markdown Code Blocks With a Title / Filename - Lusitos Tech Blog</title>
+      <link href="https://blog.lusito.info/markdown-code-blocks-with-a-title-filename.html" />
+      <updated>2025-06-15T02:28:23Z</updated>
+      <id>https://blog.lusito.info/markdown-code-blocks-with-a-title-filename.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Smart alternative to immediately using some kind of markdown extension or plugin. Good perspective.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>MidWord! The world&#39;s favorite word guessing game</title>
+      <link href="https://midword.com/" />
+      <updated>2025-06-14T04:28:49Z</updated>
+      <id>https://midword.com/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Just found my new favorite long-car-ride verbal game!&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Verissimo Monthly - May 2025 - by Binyamin Grobman</title>
+      <link href="https://verissimo.substack.com/p/verissimo-monthly-may-2025" />
+      <updated>2025-06-03T17:39:50Z</updated>
+      <id>https://verissimo.substack.com/p/verissimo-monthly-may-2025</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;The Unreliability of LLMs &amp;amp; What Lies Ahead&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Keeping up appearances | deadSimpleTech</title>
+      <link href="https://deadsimpletech.com/blog/keeping_up_appearances" />
+      <updated>2025-05-31T04:02:35Z</updated>
+      <id>https://deadsimpletech.com/blog/keeping_up_appearances</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;The only reason that LLMs took root in the first place was because our societies in the anglosphere have already developed cultures solely devoted to gaining status and keeping up the appearance of doing things rather than actually doing them. All other values, increasingly including even the accumulation of wealth (while this is still very much a thing that people pursue, wealth is increasingly becoming a proxy for status more than something desired in itself) are becoming subordinated to symbolic status games completely detached from anything real.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+</feed>
