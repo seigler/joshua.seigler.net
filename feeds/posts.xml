@@ -5,18 +5,11 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feeds/posts.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2025-07-04T00:00:00Z</updated>
+  <updated>2025-06-28T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
-    <entry>
-      <title>Joshua&#39;s Homepage</title>
-      <link href="https://joshua.seigler.net/posts/joshuas-homepage/" />
-      <updated>2025-07-04T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/posts/joshuas-homepage/</id>
-      <content type="html"></content>
-    </entry>
     <entry>
       <title>Alternate rules for Bananagrams</title>
       <link href="https://joshua.seigler.net/posts/alternate-rules-for-bananagrams/" />
