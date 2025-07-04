@@ -85,10 +85,6 @@
         <lastmod>2025-06-26T00:00:00.000Z</lastmod>
       </url>
       <url>
-        <loc>/site.css</loc>
-        <lastmod>2025-06-26T23:35:15.837Z</lastmod>
-      </url>
-      <url>
         <loc>/about/</loc>
         <lastmod>2025-06-26T23:35:15.838Z</lastmod>
       </url>
@@ -187,5 +183,9 @@
       <url>
         <loc>/recipes/chicken-chili-verde/</loc>
         <lastmod>2025-07-01T00:00:00.000Z</lastmod>
+      </url>
+      <url>
+        <loc>/posts/joshuas-homepage/</loc>
+        <lastmod>2025-07-04T00:00:00.000Z</lastmod>
       </url>
 </urlset>
