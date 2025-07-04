@@ -7,7 +7,6 @@ pagination:
   filter:
     - all
     - pages
-    - links
     - timeline
 eleventyComputed:
   finalLink: "{% if tag == 'combinedFeed' %}feed.xml{% else %}feeds/{{tag | slugify}}.xml{% endif %}"

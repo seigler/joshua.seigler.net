@@ -114,8 +114,10 @@ export default async (config) => {
   config.addCollection("links", fetchShaarliWebroll)
 
   config.addCollection("combinedFeed", (collectionApi) => {
-    return collectionApi.getAllSorted().filter(item => {
-      return (item.data.tags ?? []).some(t => ['posts', 'recipes', 'links'].includes(t))
+    return collectionApi.getAllSorted().filter((item) => {
+      return (item.data.tags ?? []).some((t) =>
+        ["posts", "recipes", "links"].includes(t)
+      )
     })
   })
 
@@ -184,19 +186,23 @@ async function fetchShaarliWebroll() {
     )
   }
   const entries = feedContent.map((entry) => {
+    const content = entry.content["#text"].split(
+      '\n<br>&#8212; <a href="https://links.apps.seigler.net/'
+    )[0]
     return {
       url: entry.link["@_href"],
+      date: new Date(entry.published),
+      content,
       data: {
         title: entry.title,
         date: new Date(entry.published),
-        description: entry.content["#text"].split(
-          '\n<br>&#8212; <a href="https://links.apps.seigler.net/'
-        )[0],
-        tags: entry.category
-          .map((category) => category["@_label"])
-          .filter((category) => category !== "$webroll"),
+        description: content,
+        tags: ['links'],
+        // tags: entry.category
+        //   .map((category) => category["@_label"])
+        //   .filter((category) => category !== "$webroll"),
       },
     }
-  })
+  }).sort((a, b) => a.date.getTime() - b.date.getTime())
   return entries
 }
