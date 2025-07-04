@@ -14,9 +14,12 @@ title: Joshua's Homepage
     <script defer src="/scripts/main.js" type="module"></script>
     <link rel="me" href="https://github.com/seigler"/>
     <link rel="webmention" href="https://webmention.io/joshua.seigler.net/webmention"/>
+    {%- if rssUrl %}
+    <link rel="alternate" type="application/atom+xml" title="{{ computedTitle }}" href="{{ rssUrl }}">
+    {%- endif %}
     <title>{{ computedTitle }} - {{ site.title }}</title>
     <meta name="description" content="{{ description }}"/>
-    {%- if keywords -%}
+    {%- if keywords %}
     <meta name="keywords" content="{{ keywords }}">
     {%- endif %}
     <meta property="og:title" content="{{ computedTitle }}"/>

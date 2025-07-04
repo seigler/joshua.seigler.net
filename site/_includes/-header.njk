@@ -5,24 +5,18 @@
       <div class="nav-home"><a href="{{ "/" | url }}">{{ site.title }}</a></div>
     </div>
     <div class="nav-categories">
-      <a class="{{ 'nav-active' if '/posts' in page.url }}" href="{{ "/posts/" | url }}">/posts</a>
-      <a class="{{ 'nav-active' if '/about' in page.url }}" href="{{ "/about/" | url }}">/about</a>
-      <a class="{{ 'nav-active' if '/now' in page.url }}" href="{{ "/now/" | url }}">/now</a>
-      <a class="{{ 'nav-active' if '/uses' in page.url }}" href="{{ "/uses/" | url }}">/uses</a>
-      <a class="{{ 'nav-active' if '/recipes' in page.url }}" href="{{ "/recipes/" | url }}">/recipes</a>
-      <a class="{{ 'nav-active' if '/music' in page.url }}" href="{{ "/music/" | url }}">/music</a>
-      <a class="{{ 'nav-active' if '/books' in page.url }}" href="{{ "/books/" | url }}">/books</a>
-      <a class="{{ 'nav-active' if '/links' in page.url }}" href="{{ "/links/" | url }}">/links</a>
-      <a class="{{ 'nav-active' if '/search' in page.url }}" href="{{ "/search/" | url }}">/search</a>
+      {%- for item in [ "posts", "about", "now", "uses", "recipes", "music", "books", "links", "search"] %}
+        <a {% if "/" + item in page.url %}aria-current="page" {% endif %} href="{{ "/" +item + "/" | url }}">/{{ item }}</a>
+      {%- endfor %}
     </div>
   </nav>
   {%- if cover %}
   <div class="cover">
     <img src="{{ cover | url }}" alt="" loading="eager">
-    <h1>{{ title }}{% if rssUrl %}<a class="rss" href="{{rssUrl}}"></a>{% endif %}</h1>
+    <h1>{{ title }}{% if rssUrl and page.url !== '/' %}<a class="rss" href="{{ rssUrl }}"></a>{% endif %}</h1>
   </div>
   {%- else %}
-    <h1>{{ title }}{% if rssUrl %}<a class="rss" href="{{rssUrl}}"></a>{% endif %}</h1>
+    <h1>{{ title }}{% if rssUrl and page.url !== '/' %}<a class="rss" href="{{ rssUrl }}"></a>{% endif %}</h1>
   {%- endif %}
   <div class="header-meta">
     {%- if date and not omitMetadata -%}

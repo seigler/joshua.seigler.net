@@ -383,7 +383,7 @@ body > header > nav {
   order: 2;
 }
 .nav-home,
-.nav-active {
+nav [aria-current] {
   font-weight: bold;
 }
 .nav-settings {
