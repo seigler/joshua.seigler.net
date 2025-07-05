@@ -1,4 +1,4 @@
-<div style="--totalTags:{{ collections.categories | dictsort | length }}">
+<div>
   {%- for tag, data in collections.categories -%}
     <a class="button tag" style="--tagIndex:{{ collections.categories[tag].id }}" href="/tags/{{ tag | slugify }}/">{{ tag }}
       <span class="tagCount">{{ data.count }}</span>

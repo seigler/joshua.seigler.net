@@ -1,5 +1,5 @@
 {% macro tagList(tags) %}
-  <span class="tags" style="--totalTags:{{ collections.categories | dictsort | length }}">
+  <span class="tags">
   {%- for tag in tags -%}
     {%- if tag in collections.categories -%}
     <a

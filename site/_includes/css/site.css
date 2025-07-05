@@ -730,7 +730,7 @@ button, a.button {
   &::before {
     content: "#";
   }
-  --tagLCH: var(--tag-luminance) 0.25 calc(25 + 360 * var(--tagIndex, 0) / var(--totalTags, 1));
+  --tagLCH: var(--tag-luminance) 0.25 calc(300 + 137.508 * var(--tagIndex, 0));
   --glowColor: oklch(var(--tagLCH) / 0.3);
   --c-text-background: color-mix(in oklch, oklch(var(--tagLCH) / 0.4), #000A 50%);
   --c-accent: color-mix(in oklch, oklch(var(--tagLCH) / 0.8), #000A 50%);
