@@ -57,7 +57,10 @@ body {
   background-color: var(--c-body-background);
   color: var(--c-text);
   background-image:
-    url(/noise.png),
+    image-set(
+      url("noise.avif") type("image/avif"),
+      url("noise.png") type("image/png")
+    ),
     radial-gradient(ellipse at -20% 20vmin, var(--c-bg1), transparent 90%),
     radial-gradient(
       ellipse at 120% calc(100% - 20vmin),
@@ -69,13 +72,6 @@ body {
 ::selection {
   background: var(--c-highlight);
   color: var(--c-text);
-}
-
-mark {
-  background: var(--c-highlight);
-  color: inherit;
-  border-radius: 0.4rem;
-  box-shadow: 0 0 0.75em 0.25em var(--c-highlight);
 }
 
 *,
@@ -100,10 +96,8 @@ a[href] {
   margin: -0.1em;
   position: relative;
 }
-:is(a, nav label):hover,
-:is(a, nav label):focus-visible,
-nav label:has(input:focus-visible),
-nav label:has(input:checked) {
+a:hover,
+a:focus-visible {
   outline: none;
   color: var(--c-text);
   background-color: var(--glowColor);
@@ -118,8 +112,7 @@ nav label:has(input:checked) {
       0 0 1rem var(--glowColor);
   }
 }
-:is(a[href], button, nav label):focus-visible,
-nav label:has(input:focus-visible) {
+:is(a[href], button):focus-visible {
   z-index: 1;
   outline: 2px solid var(--c-text);
 }
@@ -838,6 +831,13 @@ body .isso-post-action {
     font-size: var(--s2);
     font-weight: 200;
   }
+}
+
+mark {
+  background: var(--c-highlight);
+  color: inherit;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.75em 0.25em var(--c-highlight);
 }
 
 @media print {
