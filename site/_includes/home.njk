@@ -5,11 +5,6 @@ rssUrl: "feed.xml"
 {%- from "components/collectionList.njk" import collectionList with context -%}
 <main data-pagefind-body>
   {{ content | safe }}
-  {%- for name, collection in collections -%}
-    {%- if name in ["posts"] -%}
-      <h2>{{name | capitalize }}</h2>
-      {% include "-taglist.njk" %}
-      {{ collectionList(name, limit=5) }}
-    {%- endif -%}
-  {%- endfor -%}
+  <h2>Recent posts</h2>
+  {{ collectionList("posts", limit=5) }}
 </main>

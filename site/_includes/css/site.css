@@ -206,7 +206,6 @@ li::marker {
 aside {
   display: inline-block;
   margin-left: 1ch;
-  font-size: var(--s-1);
 }
 
 span.aside {
@@ -284,7 +283,7 @@ ul.collection {
       box-shadow: inset 0 0 2rem -1rem var(--c-accent);
       padding: 0.5rem;
       border-radius: 0.25rem;
-      > a:first-of-type {
+      a.collection-itemTitle {
         position: static;
         &::before {
           content: "";
@@ -292,9 +291,6 @@ ul.collection {
           inset: 0;
         }
       }
-    }
-    > aside {
-      display: inline;
     }
     > p {
       &::before {
@@ -307,11 +303,6 @@ ul.collection {
     }
     + li {
       margin-top: 1rem;
-    }
-    @media (max-width: 40rem) {
-      .tags {
-        display: block;
-      }
     }
   }
 }

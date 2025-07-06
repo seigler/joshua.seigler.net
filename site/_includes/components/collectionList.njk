@@ -8,17 +8,19 @@
           {% if item.data.cover %}
           {% image item.data.cover, "", "(min-width: 60rem) calc(0.5 * var(--content-width)), var(--content-width)", "lazy", "collection-cover", item.page.inputPath %}
           {% endif %}
-          <a href="{{item.url}}">{{item.data.title}}</a>
-          {%- if item.data.date -%}
-            <aside>{{item.data.date | formatDate("MMMM DD, YYYY") }}</aside>
-          {%- endif -%}
-            <aside>{{ tagList(item.data.tags.slice(1)) }}</aside>
-          <p>{{item.data.description | safe}}</p>
+          <a class="collection-itemTitle" href="{{item.url}}">{{item.data.title}}</a>
+          <div class="collection-itemData">
+            {%- if item.data.date -%}
+              <span>{{item.data.date | formatDate("MMMM DD, YYYY") }}</span>
+            {%- endif -%}
+            <span>{{ tagList(item.data.tags.slice(1)) }}</span>
+          </div>
+          <p class="collection-itemDescription">{{item.data.description | safe}}</p>
         </li>
       {%- endif -%}
       {%- if (limit !== 0 and loop.index == limit + 1) -%}
         <li>
-          <a href="/{{tagName}}/">More {{tagName}}&hellip;</a>
+          <a class="collection-itemTitle" href="/{{tagName}}/">More {{tagName}}&hellip;</a>
         </li>
       {%- endif -%}
     {%- endfor -%}
