@@ -128,6 +128,14 @@ main p img {
   max-width: 100%;
 }
 
+:where(img[width]) {
+  width: auto;
+}
+
+:where(img[width][height]) {
+  height: auto;
+}
+
 section:nth-child(n + 2) {
   margin-top: 1rem;
 }
@@ -405,7 +413,7 @@ nav [aria-current] {
   flex-direction: column;
   justify-content: end;
   min-height: 20rem;
-  > img {
+  img {
     position: absolute;
     top: 0;
     left: 0;

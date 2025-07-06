@@ -12,6 +12,7 @@ import clean from "eleventy-plugin-clean"
 import toc from "eleventy-plugin-toc"
 import EleventyFeedPlugin from "@11ty/eleventy-plugin-rss"
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
+import EleventyImage from "@11ty/eleventy-img"
 import { ViteMinifyPlugin } from "vite-plugin-minify"
 import { execSync } from "child_process"
 import fetch from "@11ty/eleventy-fetch"
@@ -65,6 +66,32 @@ export default async (config) => {
   config.addPassthroughCopy({
     assets: "/",
   })
+  mdLib.renderer.rules.image = (tokens, idx, _options, env, _self) => {
+    const token = tokens[idx];
+    let src = token.attrGet('src');
+    const alt = token.content;
+    const title = token.attrGet('title');
+
+    const file = relativeToInputPath(env.page.inputPath, src);
+    const formats = ["avif", "auto"];
+    const imageOptions = {
+      widths: [125, 250, 500, "auto"],
+      formats,
+      outputDir:
+      path.join(config.dir.output, "img"),
+    }
+    EleventyImage(file, imageOptions); // async but we won't await it
+    const metadata = EleventyImage.statsSync(file, imageOptions);
+    const imageAttributes = {
+      alt,
+      title,
+      sizes: "var(--content-width)",
+      loading: "lazy",
+      decoding: "async",
+    };
+
+    return EleventyImage.generateHTML(metadata, imageAttributes);
+  }
 
   // collection from music folder
   config.addPassthroughCopy("site/music", {
@@ -120,8 +147,35 @@ export default async (config) => {
         return ["posts", "recipes"].includes(t)
       })
     })
-    return [...results, ...linksCollection].sort((a, b) => a.date.getTime() - b.date.getTime())
+    return [...results, ...linksCollection].sort(
+      (a, b) => a.date.getTime() - b.date.getTime()
+    )
   })
+
+  config.addShortcode("image", function imageShortcode(src, alt, sizes, loading, classNames, inputPath) {
+    const file = relativeToInputPath(inputPath ?? this.page.inputPath, src);
+    const formats = ["avif", "auto"];
+    const imageOptions = {
+      widths: [125, 250, 500, "auto"],
+      formats,
+      outputDir:
+      path.join(config.dir.output, "img"),
+    }
+    console.log({
+      src, alt, sizes, loading, classNames, imageOptions
+    })
+    EleventyImage(file, imageOptions); // async but we won't await it
+    const metadata = EleventyImage.statsSync(file, imageOptions);
+    const imageAttributes = {
+      alt,
+      sizes,
+      loading,
+      decoding: "async",
+      ...(classNames ? { class: classNames} : {})
+    };
+
+    return EleventyImage.generateHTML(metadata, imageAttributes);
+  });
 
   config.addFilter("toISOString", (dateString) => {
     return new Date(dateString).toISOString()
@@ -187,24 +241,32 @@ async function fetchShaarliWebroll() {
       `Invalid XML from webroll feed. Reason: ${validation.err.msg}`
     )
   }
-  const entries = feedContent.map((entry) => {
-    const content = entry.content["#text"].split(
-      '\n<br>&#8212; <a href="https://links.apps.seigler.net/'
-    )[0]
-    return {
-      url: entry.link["@_href"],
-      date: new Date(entry.published),
-      content,
-      data: {
-        title: entry.title,
+  const entries = feedContent
+    .map((entry) => {
+      const content = entry.content["#text"].split(
+        '\n<br>&#8212; <a href="https://links.apps.seigler.net/'
+      )[0]
+      return {
+        url: entry.link["@_href"],
         date: new Date(entry.published),
-        description: content,
-        tags: ['links'],
-        // tags: entry.category
-        //   .map((category) => category["@_label"])
-        //   .filter((category) => category !== "$webroll"),
-      },
-    }
-  }).sort((a, b) => a.date.getTime() - b.date.getTime())
+        content,
+        data: {
+          title: entry.title,
+          date: new Date(entry.published),
+          description: content,
+          tags: ["links"],
+          // tags: entry.category
+          //   .map((category) => category["@_label"])
+          //   .filter((category) => category !== "$webroll"),
+        },
+      }
+    })
+    .sort((a, b) => a.date.getTime() - b.date.getTime())
   return entries
 }
+
+function relativeToInputPath(inputPath, relativeFilePath) {
+  let split = inputPath.split("/");
+  split.pop();
+  return path.resolve(split.join(path.sep), relativeFilePath);
+ }

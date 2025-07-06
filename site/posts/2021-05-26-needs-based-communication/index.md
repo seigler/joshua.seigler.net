@@ -6,7 +6,7 @@ tags:
   - how to
 date: 2021-05-26
 updated: 2025-06-30
-cover: "/2021-05-26--needs-based-communication.jpg"
+cover: "cover.jpg"
 coverInfo: "[David Clode](https://unsplash.com/photos/two-birds-sitting-on-top-of-a-white-rope-VYEBlG63bwc)"
 ---
 

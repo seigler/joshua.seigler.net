@@ -2,15 +2,15 @@
 title: Thinking machines
 slug: thinking-machines
 description: "The computers will start thinking, and people will stop."
-cover: "/2025-04-24--tron-mcp.jpg"
 tags:
   - zeitgeist
   - ai
+cover: "cover.jpg"
 ---
 
 There's an exchange early in the classic '80s movie [TRON](https://www.themoviedb.org/movie/97-tron). Some scientists are talking shop:
 
-![Still from TRON, left to right Linda, Alan, and Gibbs, in conversation.](/2025-04-24--computers-will-start-thinking.jpg)
+![Still from TRON, left to right Linda, Alan, and Gibbs, in conversation.](computers-will-start-thinking.jpg)
 
 > **ALAN:** I tell ya, ever since he got that Master Control Program, system's got more bugs than a bait store.
 >
@@ -47,4 +47,4 @@ Science fiction is littered with cautionary tales about inhuman intelligence. Fo
 
 I don't think I am wise enough to safely use a genie in a bottle. And I don't want to outsource my creative efforts to an addictive, bullshitting alien intellect, even if it might save time and effort in the short term.
 
-![End of line](/2025-04-24--end-of-line.jpg)
+![End of line](end-of-line.jpg)

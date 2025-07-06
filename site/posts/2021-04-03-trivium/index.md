@@ -4,7 +4,7 @@ description: An ancient methodology for learning, which formed the basis of clas
 tags:
   - learning
   - how to
-cover: "/2021-04-03--the-seven-liberal-arts.jpg"
+cover: "cover.jpg"
 coverInfo: "[The seven Liberal Arts - Museo del Prado](https://www.museodelprado.es/en/the-collection/art-work/the-seven-liberal-arts/89d9f351-fff6-4141-9efc-d5ea2951b488)"
 date: 2021-04-03
 updated: 2025-07-01
