@@ -8,7 +8,7 @@
           {% if item.data.cover %}
           <img class="collection-cover" src="/{{item.page.inputPath | pathOnly }}/{{item.data.cover}}" alt="" sizes="(min-width: 60rem) calc(0.5 * var(--content-width)), var(--content-width)">
           {% endif %}
-          <a class="collection-itemTitle" href="{{item.url}}">{{item.data.title}}</a>
+          <a class="collection-itemTitle" href="{{item.url}}" {% if item.url.startsWith("http") %}target="_blank"{% endif %}>{{item.data.title}}</a>
           <div class="collection-itemData">
             {%- if item.data.date -%}
               <span>{{item.data.date | formatDate("MMMM DD, YYYY") }}</span>
