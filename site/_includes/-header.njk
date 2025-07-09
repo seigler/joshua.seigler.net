@@ -12,7 +12,7 @@
   </nav>
   {%- if cover %}
   <div class="cover">
-    {% image cover, "", "var(--content-width)", "eager" %}
+    <img src="{{cover}}" alt="" sizes="var(--content-width)" loading="eager">
     <h1>{{ title }}{% if rssUrl and page.url !== '/' %}<a class="rss" href="{{ rssUrl }}"></a>{% endif %}</h1>
   </div>
   {%- else %}

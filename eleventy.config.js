@@ -12,7 +12,7 @@ import clean from "eleventy-plugin-clean"
 import toc from "eleventy-plugin-toc"
 import EleventyFeedPlugin from "@11ty/eleventy-plugin-rss"
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
-import EleventyImage from "@11ty/eleventy-img"
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import { ViteMinifyPlugin } from "vite-plugin-minify"
 import { execSync } from "child_process"
 import fetch from "@11ty/eleventy-fetch"
@@ -66,32 +66,6 @@ export default async (config) => {
   config.addPassthroughCopy({
     assets: "/",
   })
-  mdLib.renderer.rules.image = (tokens, idx, _options, env, _self) => {
-    const token = tokens[idx];
-    let src = token.attrGet('src');
-    const alt = token.content;
-    const title = token.attrGet('title');
-
-    const file = relativeToInputPath(env.page.inputPath, src);
-    const formats = ["avif", "auto"];
-    const imageOptions = {
-      widths: [125, 250, 500, "auto"],
-      formats,
-      outputDir:
-      path.join(config.dir.output, "img"),
-    }
-    EleventyImage(file, imageOptions); // async but we won't await it
-    const metadata = EleventyImage.statsSync(file, imageOptions);
-    const imageAttributes = {
-      alt,
-      title,
-      sizes: "var(--content-width)",
-      loading: "lazy",
-      decoding: "async",
-    };
-
-    return EleventyImage.generateHTML(metadata, imageAttributes);
-  }
 
   // collection from music folder
   config.addPassthroughCopy("site/music", {
@@ -152,30 +126,29 @@ export default async (config) => {
     )
   })
 
-  config.addShortcode("image", function imageShortcode(src, alt, sizes, loading, classNames, inputPath) {
-    const file = relativeToInputPath(inputPath ?? this.page.inputPath, src);
-    const formats = ["avif", "auto"];
-    const imageOptions = {
-      widths: [125, 250, 500, "auto"],
-      formats,
-      outputDir:
-      path.join(config.dir.output, "img"),
-    }
-    console.log({
-      src, alt, sizes, loading, classNames, imageOptions
-    })
-    EleventyImage(file, imageOptions); // async but we won't await it
-    const metadata = EleventyImage.statsSync(file, imageOptions);
-    const imageAttributes = {
-      alt,
-      sizes,
-      loading,
-      decoding: "async",
-      ...(classNames ? { class: classNames} : {})
-    };
+  // config.addShortcode(
+  //   "image",
+  //   function imageShortcode(src, alt, sizes, loading, classNames, inputPath) {
+  //     const file = relativeToInputPath(inputPath ?? this.page.inputPath, src)
+  //     const formats = ["avif", "auto"]
+  //     const imageOptions = {
+  //       widths: [125, 250, 500, "auto"],
+  //       formats,
+  //       outputDir: path.join(config.dir.output, "img"),
+  //     }
+  //     EleventyImage(file, imageOptions) // async but we won't await it
+  //     const metadata = EleventyImage.statsSync(file, imageOptions)
+  //     const imageAttributes = {
+  //       alt,
+  //       sizes,
+  //       loading,
+  //       decoding: "async",
+  //       ...(classNames ? { class: classNames } : {}),
+  //     }
 
-    return EleventyImage.generateHTML(metadata, imageAttributes);
-  });
+  //     return EleventyImage.generateHTML(metadata, imageAttributes)
+  //   }
+  // )
 
   config.addFilter("toISOString", (dateString) => {
     return new Date(dateString).toISOString()
@@ -186,11 +159,33 @@ export default async (config) => {
   config.addFilter("markdown", (markdownString) => {
     return mdLib.renderInline(String(markdownString ?? "").trim())
   })
+  config.addFilter("pathOnly", (filePath) => {
+    let split = filePath.split("/")
+    split.pop() // gets rid of filename
+    split.shift() // gets rid of leading "."
+    split.shift() // gets rid of base folder "site"
+    return split.join("/")
+  })
+  config.addFilter("debug", (value) => {
+    console.log(`######## ${JSON.stringify(value, null, 2)}`)
+  })
 
   clean.updateFileRecord("dist")
 
   const buildTime = new Date().toISOString().replace(/[:.-]/g, "")
   config.addGlobalData("buildTime", buildTime)
+
+  config.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "jpeg"],
+    widths: [128, 384, 1152, "auto"],
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {},
+    },
+  })
 
   config.addPlugin(EleventyFeedPlugin)
 
@@ -205,7 +200,6 @@ export default async (config) => {
       build: {
         mode: "production",
         emptyOutDir: true,
-        sourcemap: true,
       },
       plugins: [ViteMinifyPlugin({})],
     },
@@ -264,9 +258,3 @@ async function fetchShaarliWebroll() {
     .sort((a, b) => a.date.getTime() - b.date.getTime())
   return entries
 }
-
-function relativeToInputPath(inputPath, relativeFilePath) {
-  let split = inputPath.split("/");
-  split.pop();
-  return path.resolve(split.join(path.sep), relativeFilePath);
- }
