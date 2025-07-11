@@ -22,7 +22,7 @@ dayjs.extend(utc)
 
 export default async (config) => {
   const slugify = config.getFilter("slugify")
-  const url = config.getFilter("url")
+  const url = (value) => value
   const mdLib = md({
     html: true,
     breaks: true,
@@ -78,7 +78,7 @@ export default async (config) => {
     const musicFiles = fs.readdirSync("./assets/music/").map((filename) => {
       const ext = path.extname(filename)
       const base = path.basename(filename, ext)
-      const absUrl = `/music/${slugify(base)}${ext}`
+      const absUrl = `/music/${base}${ext}`
       return {
         data: {
           title: base,
