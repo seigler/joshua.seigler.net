@@ -33,14 +33,14 @@ Here is the Caddyfile I made---you will need to change the domain names and the 
 ```caddy
 # Global options block
 {
-	email you@example.com # <<<< CHANGE THIS <<<<
+	email you@example.com #### CHANGE THIS ####
 	on_demand_tls {
 		ask http://localhost/check
 	}
 }
 
 # Webhooks
-https://webhooks.subdomain.here.tld { <<<< CHANGE THIS <<<<
+https://webhooks.subdomain.here.tld { #### CHANGE THIS ####
 	reverse_proxy localhost:9000
 }
 

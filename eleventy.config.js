@@ -5,14 +5,14 @@ import mdAnchor from "markdown-it-anchor"
 import { spoiler as mdSpoiler } from "@mdit/plugin-spoiler"
 import { footnote as mdFootnote } from "@mdit/plugin-footnote"
 import mdLinkAttributes from "markdown-it-link-attributes"
-import mdPrism from "markdown-it-prism"
 import dayjs from "dayjs"
 import utc from "dayjs/plugin/utc.js"
 import clean from "eleventy-plugin-clean"
 import toc from "eleventy-plugin-toc"
 import EleventyFeedPlugin from "@11ty/eleventy-plugin-rss"
-import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
+import EleventySyntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight"
+import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
 import { ViteMinifyPlugin } from "vite-plugin-minify"
 import { execSync } from "child_process"
 import fetch from "@11ty/eleventy-fetch"
@@ -49,7 +49,6 @@ export default async (config) => {
         rel: "noopener",
       },
     })
-    .use(mdPrism)
   mdLib.renderer.rules.render_footnote_anchor = (
     tokens,
     idx,
@@ -126,30 +125,6 @@ export default async (config) => {
     )
   })
 
-  // config.addShortcode(
-  //   "image",
-  //   function imageShortcode(src, alt, sizes, loading, classNames, inputPath) {
-  //     const file = relativeToInputPath(inputPath ?? this.page.inputPath, src)
-  //     const formats = ["avif", "auto"]
-  //     const imageOptions = {
-  //       widths: [125, 250, 500, "auto"],
-  //       formats,
-  //       outputDir: path.join(config.dir.output, "img"),
-  //     }
-  //     EleventyImage(file, imageOptions) // async but we won't await it
-  //     const metadata = EleventyImage.statsSync(file, imageOptions)
-  //     const imageAttributes = {
-  //       alt,
-  //       sizes,
-  //       loading,
-  //       decoding: "async",
-  //       ...(classNames ? { class: classNames } : {}),
-  //     }
-
-  //     return EleventyImage.generateHTML(metadata, imageAttributes)
-  //   }
-  // )
-
   config.addFilter("toISOString", (dateString) => {
     return new Date(dateString).toISOString()
   })
@@ -188,6 +163,10 @@ export default async (config) => {
   })
 
   config.addPlugin(EleventyFeedPlugin)
+
+  config.addPlugin(EleventySyntaxHighlightPlugin, {
+    alwaysWrapLineHighlights: true,
+  })
 
   config.addPlugin(EleventyVitePlugin, {
     viteOptions: {

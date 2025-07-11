@@ -58,6 +58,19 @@ function addEffect({ target }: UIEvent) {
   })
 }
 
+function addCodeBlockCopiers() {
+  document.querySelectorAll('pre[class^=language]').forEach(el => {
+    const copyButton = document.createElement('button')
+    copyButton.classList.add('copy-button')
+    copyButton.addEventListener('click', () => {
+      if (el instanceof HTMLElement) {
+        navigator.clipboard.writeText(el.innerText)
+      }
+    })
+    el.appendChild(copyButton)
+  })
+}
+
 function attend({ target}: UIEvent) {
   if (!isElement(target) || !target.matches("a[href][target=_blank]")) {
     return
@@ -75,3 +88,5 @@ document.addEventListener("mouseleave", removeEffect, true)
 document.addEventListener("blur", removeEffect, true)
 
 document.addEventListener("click", attend, true)
+
+document.addEventListener("DOMContentLoaded", addCodeBlockCopiers)
