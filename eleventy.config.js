@@ -75,7 +75,7 @@ export default async (config) => {
     },
   })
   config.addCollection("music", () => {
-    const musicFiles = fs.readdirSync("./site/music/").map((filename) => {
+    const musicFiles = fs.readdirSync("./assets/music/").map((filename) => {
       const ext = path.extname(filename)
       const base = path.basename(filename, ext)
       const absUrl = `/music/${slugify(base)}${ext}`
