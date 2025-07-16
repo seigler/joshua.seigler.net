@@ -23,6 +23,7 @@ body {
   --c-text: oklch(94% 0.045 calc(var(--hue-main) + 180));
   --c-text-dim: oklch(94% 0.045 calc(var(--hue-main) + 180) / 0.67);
   --tag-luminance: 0.85;
+  --glowColor: var(--c-accent);
 
   --ratio: 1.333;
   --s-5: calc(var(--s-4) / var(--ratio));
@@ -85,7 +86,6 @@ body {
 
 a, label {
   color: inherit;
-  --glowColor: var(--c-accent);
   --c-accent: oklch(45% 0.135 var(--hue-main) / 0.8);
 }
 a[href] {

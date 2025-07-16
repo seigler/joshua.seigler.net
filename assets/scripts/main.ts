@@ -1,11 +1,16 @@
-/** @param {Event} evt */
-function removeEffect({ target }) {
+function removeEffect(event: UIEvent) {
+  const { target } = event
   const effectsLayer = document.querySelector("#effects")
   if (effectsLayer == null) {
     return
   }
   const effects = Array.from(effectsLayer.children).filter(
-    (e) => e["__effectParent"] === target
+    (e) => {
+      if (e["__effectParent"] === target) {
+        return true
+      }
+      return isTouchEvent(event) && Array.from(event.changedTouches).some(t => t.identifier === e["__effectTouch"])
+    }
   )
   effects.forEach((e) => {
     e.getAnimations().forEach((anim) => {
@@ -30,23 +35,34 @@ function isElement(target: EventTarget | null): target is Element {
   return target !== null && typeof target["matches"] === "function"
 }
 
-function addEffect({ target }: UIEvent) {
+function isTouchEvent(event: UIEvent): event is TouchEvent {
+  return event.type.startsWith('touch')
+}
+
+function addEffect(event: UIEvent) {
+  const { target } = event
   const effectsLayer = document.querySelector("#effects")
-  if (
-    !isElement(target) ||
-    !target.matches("a[href],.nav-toggle-button,button,input[type='radio']")
-  ) {
-    return
+  const color = window.getComputedStyle(isElement(target) ? target : document.body).getPropertyValue("--glowColor")
+  let rects: {top: number, left: number, width: number, height: number }[] = []
+  if (isTouchEvent(event)) {
+    rects = Array.from(event.targetTouches).map(t => ({ top: t.clientY - 5, left: t.clientX - 5, width: 10, height: 10 }))
+  } else {
+    if (!isElement(target) || !target.matches("a[href],.nav-toggle-button,button,input[type='radio']")) {
+      return
+    }
+    rects = Array.from(target.getClientRects())
+    Array.from(target.children).forEach((child) => {
+      rects.push(...Array.from(child.getClientRects()))
+    })
   }
-  const color = window.getComputedStyle(target).getPropertyValue("--glowColor")
-  const rects = Array.from(target.getClientRects())
-  Array.from(target.children).forEach((child) => {
-    rects.push(...Array.from(child.getClientRects()))
-  })
   rects.forEach((rect) => {
     const { top, left, width, height } = rect
     const newEffect = document.createElement("div")
-    newEffect["__effectParent"] = target
+    if (isTouchEvent(event)) {
+      newEffect["__effectTouch"] = event.targetTouches.item(0)?.identifier
+    } else {
+      newEffect["__effectParent"] = target
+    }
     newEffect.classList.add("effect-instance")
     const padding = "10rem"
     newEffect.style.top = `calc(${top + window.scrollY}px - ${padding})`
@@ -83,9 +99,12 @@ function attend({ target}: UIEvent) {
 
 document.addEventListener("mouseenter", addEffect, true)
 document.addEventListener("focus", addEffect, true)
+document.addEventListener("touchstart", addEffect, true)
 
 document.addEventListener("mouseleave", removeEffect, true)
 document.addEventListener("blur", removeEffect, true)
+document.addEventListener("touchend", removeEffect, true)
+document.addEventListener("touchcancel", removeEffect, true)
 
 document.addEventListener("click", attend, true)
 
