@@ -11,6 +11,22 @@
     <name></name>
   </author>
     <entry>
+      <title>Link: The Capitalist Guide to Killing Free Webtech</title>
+      <link href="https://backlit.neocities.org/capitalist-guide-to-killing-free-webtech.html" />
+      <updated>2025-08-03T20:41:08Z</updated>
+      <id>https://backlit.neocities.org/capitalist-guide-to-killing-free-webtech.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Insight: open source software from for-profit companies (e.g. Wordpress) can still be made obsolete (to force use of newer, enshittified versions) by making the software it depends on (e.g. PHP) adopt (unwanted, unnecessary) breaking changes.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: GitHub - jkoppel/jj-workshop</title>
+      <link href="https://github.com/jkoppel/jj-workshop" />
+      <updated>2025-07-29T19:12:39Z</updated>
+      <id>https://github.com/jkoppel/jj-workshop</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Video-guided 1-2 hour exercise to get hands-on familiarity with Jujutsu version control, starting from nothing.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
       <title>Link: Why Facts Don’t Change Minds in the Culture Wars—Structure Does</title>
       <link href="https://vasily.cc/blog/facts-dont-change-minds/" />
       <updated>2025-07-24T04:20:24Z</updated>
