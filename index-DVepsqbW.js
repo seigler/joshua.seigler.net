@@ -1,0 +1,1 @@
+import"./main-BV1ZpD9u.js";import o from"/pagefind/pagefind.js";new o({element:"#searchbox",showImages:!1,resetStyles:!1,autofocus:!0,processTerm:function(e){window.umami&&window.umami.track(`Search: ${e}`)}});
