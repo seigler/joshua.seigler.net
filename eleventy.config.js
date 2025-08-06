@@ -14,7 +14,6 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import EleventySyntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight"
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
 import { ViteMinifyPlugin } from "vite-plugin-minify"
-import { execSync } from "child_process"
 import fetch from "@11ty/eleventy-fetch"
 import { XMLValidator, XMLParser } from "fast-xml-parser"
 
@@ -180,17 +179,13 @@ export default async (config) => {
         mode: "production",
         emptyOutDir: true,
       },
-      plugins: [ViteMinifyPlugin({})],
+      plugins: [
+        ViteMinifyPlugin({}),
+      ],
     },
   })
 
   config.addPlugin(toc)
-
-  config.on("eleventy.after", () => {
-    execSync(`npx pagefind --site dist --glob \"**/*.html\"`, {
-      encoding: "utf-8",
-    })
-  })
 
   return {
     dir: {

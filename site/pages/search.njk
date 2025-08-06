@@ -7,6 +7,18 @@ title: Search
 <main>
   <div class="searchCard">
     <div id="searchbox"></div>
-  <script src="/pagefind/pagefind-ui.js" type="module" onload="new PagefindUI({ element: '#searchbox', showImages: false, resetStyles: false, autofocus: true });"></script>
+    <script src="/pagefind/pagefind-ui.js" onload="
+      console.log(PagefindUI);
+      new PagefindUI({
+        element: '#searchbox',
+        showImages: false,
+        resetStyles: false,
+        autofocus: true,
+        processTerm: function(term) {
+          if (window.umami) { window.umami.track(`Search: ${term}`) }
+          return term
+        }
+      });
+    "></script>
   </div>
 </main>
