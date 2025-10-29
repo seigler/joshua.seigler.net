@@ -28,6 +28,7 @@
 &lt;li&gt;Angular depends on the DOM in a way React doesn’t. Each Angular component is like a mini application with its own host element. The component’s code renders its template into the host element. In React, a JSX component is more like a persistent function invocation. It has a location in the DOM, but it doesn’t have its own host element. The component could easily emit nothing and be completely absent from the DOM. This is either difficult or impossible in Angular, it’s not even something you would try to do.&lt;/li&gt;
 &lt;li&gt;Angular is complex. Maybe I will come to appreciate DI and the Angular way eventually. But I already know that with a starkly simpler tool like React or especially Solid, I can efficiently accomplish the same result, while being able to understand how my framework functions.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Overall, I feel that Angular is certainly suitable for building web applications. But because of all the DI and decorators, it feels unnecessarily clever, which makes learning to use it more difficult, and makes deeply understanding how it works less likely. It is well tested and is as “batteries included” as it gets, which is nice for large projects.&lt;/p&gt;
 &lt;p&gt;It will be interesting to see how my feelings change with time. Stay posted.&lt;/p&gt;
 </content>
     </entry>
