@@ -1,7 +1,7 @@
 ---
 title: What I Use
 layout: "page.njk"
-date: 2025-06-20
+date: 2025-10-28
 ---
 
 ## Hardware
@@ -39,7 +39,9 @@ date: 2025-06-20
 
 - [Mise](https://mise.jdx.dev/) Dev environment manager, replacing `nvm`, `pyenv`, `venv`, and dozens of others. Great DX.
 
-- [Stack-PR](https://github.com/modular/stack-pr) PR stacking tool, the best way I know to handle feature branches.
+- [Jujutsu](https://jj-vcs.github.io/jj/latest/) Git-compatible VCS, better DX, better mental model.
+
+- [jj-stack](https://github.com/keanemind/jj-stack/) [Stacked PRs](https://www.stacking.dev/) with Jujutsu.
 
 - [VSCodium](https://vscodium.com/) IDE. VSCode with less Microsoft.
 
@@ -62,7 +64,5 @@ date: 2025-06-20
 - [Webhook](https://github.com/adnanh/webhook/) to pull static sites when they are built.
 
 - [Shaarli](https://github.com/shaarli/Shaarli) link site, self-hosted.
-
-- [Isso](https://isso-comments.de/) comments API, self hosted.
 
 - [HedgeDoc](https://hedgedoc.org/) markdown document collaboration, self-hosted.

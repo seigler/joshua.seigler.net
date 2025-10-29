@@ -660,46 +660,7 @@ p > code {
   display: inline-block;
 }
 
-body #isso-thread {
-  margin: 4rem var(--inset) 0;
-}
-
-body .isso-postbox {
-  max-width: none;
-}
-
-body .isso-textarea {
-  margin: 0;
-  line-height: 1.4rem;
-}
-body h4.isso-thread-heading {
-  color: inherit;
-}
-body .isso-auth-section {
-  display: flex;
-  align-items: end;
-  justify-content: end;
-  gap: 5px;
-  margin-top: 0.5rem;
-}
-body .isso-input-wrapper {
-  display: flex;
-  flex-direction: column;
-  font-size: var(--s-1);
-  margin: 0;
-  width: 100%;
-  max-width: none;
-  flex-shrink: 1;
-}
-
-body .isso-input-wrapper label {
-  height: auto;
-}
-
-body .isso-input-wrapper input,
-input[type="text"],
-body .isso-textarea,
-body .isso-preview {
+input[type="text"] {
   color: inherit;
   font-size: 1rem;
   background-color: transparent;
@@ -718,22 +679,6 @@ body .isso-preview {
     border-color: var(--c-accent);
   }
 }
-body .isso-textarea {
-  line-height: 1.2;
-}
-body .isso-preview {
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 10px,
-    var(--c-text-background) 10px,
-    var(--c-text-background) 20px
-  );
-}
-body .isso-post-action > input, button {
-  color: inherit;
-}
-body .isso-post-action > input,
 button, a.button {
   display: inline-block;
   text-decoration: none;
@@ -786,22 +731,6 @@ button, a.button {
     font-weight: bold;
     padding-right: 0.1em;
     opacity: 0.175;
-  }
-}
-
-body .isso-post-action {
-  margin: 0;
-}
-.isso-postbox:not(.isso-preview-mode)
-  .isso-post-action:has(input[name="edit"]) {
-  display: none;
-}
-@media (max-width: 60rem) {
-  body .isso-auth-section {
-    flex-wrap: wrap;
-  }
-  body .isso-input-wrapper {
-    width: 100%;
   }
 }
 
@@ -915,9 +844,6 @@ mark {
     .footnotes & {
       display: block;
     }
-  }
-  .isso-postbox {
-    display: none;
   }
   .tag {
     background: none !important;
