@@ -11,6 +11,134 @@
     <name></name>
   </author>
     <entry>
+      <title>Link: I am sorry, but everyone is getting syntax highlighting wrong @ tonsky.me</title>
+      <link href="https://tonsky.me/blog/syntax-highlighting/" />
+      <updated>2025-10-18T05:52:13Z</updated>
+      <id>https://tonsky.me/blog/syntax-highlighting/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Applying human ergonomics and design principles to syntax highlighting&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Doing presentations</title>
+      <link href="https://gilest.org/doingpresentations/" />
+      <updated>2025-09-26T20:12:25Z</updated>
+      <id>https://gilest.org/doingpresentations/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;If you follow the advice on these pages and the ones we’ve linked to, you’ll end up with an excellent set of slides, and you’ll be able to present them coherently, with confidence. You’ll make your point. The audience you’re presenting to will know exactly what you’re trying to say, or asking them to do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;via &lt;a href=&quot;https://buttondown.com/davesmyth&quot;&gt;Dave Smyth&#39;s &lt;em&gt;Five Links&lt;/em&gt; newsletter&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Is it Time to Un-Sass? | CSS-Tricks</title>
+      <link href="https://css-tricks.com/is-it-time-to-un-sass/" />
+      <updated>2025-09-22T13:58:27Z</updated>
+      <id>https://css-tricks.com/is-it-time-to-un-sass/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Many of the Sass features we&#39;ve grown to love have made their way into native CSS in some shape or form. So, should we still use Sass? This is how developer Jeff Bridgforth is thinking about it.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: I Am An AI Hater | moser’s frame shop</title>
+      <link href="https://anthonymoser.github.io/writing/ai/haterdom/2025/08/26/i-am-an-ai-hater.html" />
+      <updated>2025-08-27T20:59:01Z</updated>
+      <id>https://anthonymoser.github.io/writing/ai/haterdom/2025/08/26/i-am-an-ai-hater.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;&amp;quot;I am an AI hater. This is considered rude, but I do not care, because I am a hater.&amp;quot;&lt;/p&gt;
+&lt;p&gt;Lovingly crafted vitriol - an principled argument from emotion against LLMs. Very effective reframe of this discussion.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Vulfmon &amp; Andy Arthur Smith - Merengue alla Turca (Mozart Rondo) - YouTube</title>
+      <link href="https://www.youtube.com/watch?v=VHRhPItNdIU" />
+      <updated>2025-08-21T13:34:29Z</updated>
+      <id>https://www.youtube.com/watch?v=VHRhPItNdIU</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;High energy, vocal merengue version of Mozart&#39;s Rondo alla Turca, from my favorite music scene ever, Vulfpeck.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: AI is a Mirror in Which We See Our Own Reflection - oftwominds</title>
+      <link href="http://charleshughsmith.blogspot.com/2025/08/ai-is-mirror-in-which-we-see-our-own.html" />
+      <updated>2025-08-19T04:34:46Z</updated>
+      <id>http://charleshughsmith.blogspot.com/2025/08/ai-is-mirror-in-which-we-see-our-own.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;AI is not so much a tool that everyone uses in more or less the same way, but a mirror in which we see our own reflection--if we care to look.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Charles with an insightful take as usual.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Why MCP’s Disregard for 40 Years of RPC Best Practices Will Burn Enterprises</title>
+      <link href="https://julsimon.medium.com/why-mcps-disregard-for-40-years-of-rpc-best-practices-will-burn-enterprises-8ef85ce5bc9b" />
+      <updated>2025-08-12T02:19:08Z</updated>
+      <id>https://julsimon.medium.com/why-mcps-disregard-for-40-years-of-rpc-best-practices-will-burn-enterprises-8ef85ce5bc9b</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;The Model Context Protocol (MCP) promises to standardize AI-tool interactions as the “USB-C for AI.” While its simplicity accelerates adoption, MCP systematically overlooks four decades of hard-won lessons from distributed systems. This isn’t an academic concern: enterprises deploying MCP today are building on foundations that lack fundamental capabilities that every production remote-procedure calling (RPC) system, since 1982, has deemed essential.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Managers have no human rights</title>
+      <link href="https://yosefk.com/blog/managers-have-no-human-rights.html" />
+      <updated>2025-08-11T16:53:57Z</updated>
+      <id>https://yosefk.com/blog/managers-have-no-human-rights.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Individual contributors can expect workplace psychological safety, but managers do not. This is not something that can be fixed, it&#39;s part of the role. Like how a plumber will sometimes have to smell sewage.&lt;/p&gt;
+&lt;p&gt;Reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Managers are more or less fungible.&lt;/li&gt;
+&lt;li&gt;They compete against each other since contributors and other resources are limited.&lt;/li&gt;
+&lt;li&gt;They are exposed to competitive pressures affecting the company.&lt;/li&gt;
+&lt;li&gt;They are not fully informed about the the subjects for which they are responsible.&lt;/li&gt;
+&lt;li&gt;Nobody will protect managers from these factors the way an IC is protected.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Managers can have a psychologically safe environment in a &amp;quot;peace through strength&amp;quot; fashion, or by being in the right place at the right time. But it is not permanent, and regression to the mean is just a growth cycle or reorg away.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: The Capitalist Guide to Killing Free Webtech</title>
+      <link href="https://backlit.neocities.org/capitalist-guide-to-killing-free-webtech.html" />
+      <updated>2025-08-03T20:41:08Z</updated>
+      <id>https://backlit.neocities.org/capitalist-guide-to-killing-free-webtech.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Insight: open source software from for-profit companies (e.g. Wordpress) can still be made obsolete (to force use of newer, enshittified versions) by making the software it depends on (e.g. PHP) adopt (unwanted, unnecessary) breaking changes.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: GitHub - jkoppel/jj-workshop</title>
+      <link href="https://github.com/jkoppel/jj-workshop" />
+      <updated>2025-07-29T19:12:39Z</updated>
+      <id>https://github.com/jkoppel/jj-workshop</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Video-guided 1-2 hour exercise to get hands-on familiarity with Jujutsu version control, starting from nothing.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Why Facts Don’t Change Minds in the Culture Wars—Structure Does</title>
+      <link href="https://vasily.cc/blog/facts-dont-change-minds/" />
+      <updated>2025-07-24T04:20:24Z</updated>
+      <id>https://vasily.cc/blog/facts-dont-change-minds/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;In 2019 Vin Armani was telling people we were transitioning from an age of rationalism to one of mysticism. Six years later this knowledge has begun to reach mainstream discourse. Charts and graphs are &lt;em&gt;tactics&lt;/em&gt;, they come after the belief is formed and reinforce or justify it. A worldview has a structure to it, and this article reframes persuasion and argument strategies as attempts to destabilize the structure of belief that supports a given worldview.&lt;/p&gt;
+&lt;p&gt;Thinking about worldviews with this lens is useful for maintaining or examining your own beliefs, and for understanding the motivation behind other people&#39;s persuasive efforts.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: The Hater&#39;s Guide To The AI Bubble</title>
+      <link href="https://www.wheresyoured.at/the-haters-gui/" />
+      <updated>2025-07-24T02:35:19Z</updated>
+      <id>https://www.wheresyoured.at/the-haters-gui/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;The final word in AI haterade. This is an economic bubble, where NVidia sells GPUs so a handful of other companies can use them to lose massive amounts of money. It makes up a significant fraction of the economy, and it won&#39;t last forever. &lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Jujutsu VCS Introduction and Patterns | Kuba Martin</title>
+      <link href="https://kubamartin.com/posts/introduction-to-the-jujutsu-vcs/" />
+      <updated>2025-07-23T05:06:07Z</updated>
+      <id>https://kubamartin.com/posts/introduction-to-the-jujutsu-vcs/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;I&#39;ve used Jujutsu for a week or so. It&#39;s fantastic. I was going to write an introduction to Jujutsu article but this one is so much better than what I had planned. Read this one instead.&lt;br /&gt;
+I do wish it had a better name. Try looking up &amp;quot;Jujutsu conflict resolution&amp;quot; and you get a bunch of stuff about martial arts.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
       <title>Link: The EU as suicide pact, or: How Germany is slowly dismantling its electrical grid and why the EU won&#39;t let them fix it</title>
       <link href="https://www.eugyppius.com/p/the-eu-as-suicide-pact-or-how-germany" />
       <updated>2025-07-09T00:18:20Z</updated>
