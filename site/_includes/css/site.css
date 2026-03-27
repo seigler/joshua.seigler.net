@@ -306,7 +306,12 @@ ul.collection {
           content: "";
           position: absolute;
           inset: 0;
+          z-index: 1;
         }
+      }
+      a:not(.collection-itemTitle) {
+        position: relative;
+        z-index: 2;
       }
     }
     > p {
@@ -335,8 +340,12 @@ blockquote {
   position: relative;
   margin: 1lh 0;
   padding: 0 1em;
-  &::after {
-    content: "";
+  &::before {
+    content: "\201c";
+    font-size: var(--s3);
+    padding: 0.75rem 0 0 0.25rem;
+    line-height: 0;
+    opacity: 0.75;
     pointer-events: none;
     position: absolute;
     z-index: -1;
@@ -350,7 +359,17 @@ blockquote {
       var(--c-highlight),
       transparent
     );
-    opacity: 0.5;
+  }
+  >:last-child::after {
+    z-index: -1;
+    content: "\201c";
+    font-size: var(--s3);
+    padding: 0;
+    line-height: 0;
+    opacity: 0.75;
+    pointer-events: none;
+    position: relative;
+    top: 0.5rem;
   }
 }
 

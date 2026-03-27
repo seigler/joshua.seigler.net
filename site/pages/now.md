@@ -13,7 +13,6 @@ I live in Southbridge, Massachusetts since 2022, with my wife Sara and our three
 - Learn to love God and to love people. Simple but difficult, gradual.
 - Drive success at my new job.
 - Develop leadership and organizational skills.
-- Build a passive income stream.
 - Explore non-tech career skills, in case the world gets even wierder than it is today.
 - Participate in communities:
   - Initiate and maintain connections with people around me (local community, neighbors, etc).
