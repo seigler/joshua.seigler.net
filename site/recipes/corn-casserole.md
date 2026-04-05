@@ -20,7 +20,7 @@ date: 2025-04-24
 
 ## Notes
 
-Vegan substitutions: almond milk instead of sour cream, vegetable butter or neutral oil instead of butter. Made this way, the result will be less bready but still excellent. Increase cooking time slightly.
+Vegan substitutions: instead of sour cream, oat milk with a little vinegar; instead of butter, vegetable butter or neutral oil. Made this way, the result will be less bready but still excellent. You may need to increase cooking time slightly.
 
 Doubling: if the pan size makes the uncooked mix more than about an inch deep, you will need extra cooking time. Cover it with foil and cook another 20 minutes or so.
 
