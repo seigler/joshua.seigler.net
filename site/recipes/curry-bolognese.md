@@ -27,4 +27,4 @@ date: 2026-02-07
 
 ## Nutrition Information
 
-Makes 4 435g servings. Each serving: **Calories**: 545 kcal (25%), **Fat**: 25.46g (52%), Cholesterol: 141 mg, Saturated Fat: 12.12g, Trans Fat: 0.423g, **Carbohydrates**: 44.29g (18%), Fiber: 9.8g (39%), Sugars: 3.98g, **Protein**: 36.09g (66%), **Vitamin C**: 14.4mg (19%), **Vitamin A**: 5613 IU 1(241%), **Vitamin D**: 10 IU (2%)
+Makes 4 435g servings. Each serving: **Calories**: 545 kcal (25%), **Fat**: 25.46g (52%), Cholesterol: 141 mg, Saturated Fat: 12.12g, Trans Fat: 0.423g, **Carbohydrates**: 44.29g (18%), Fiber: 9.8g (39%), Sugars: 3.98g, **Protein**: 36.09g (66%), **Vitamin C**: 14.4mg (19%), **Vitamin A**: 5613 IU (241%), **Vitamin D**: 10 IU (2%)
