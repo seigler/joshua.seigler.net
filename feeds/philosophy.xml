@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
-  <title>joshua.seigler.net - ethos</title>
+  <title>joshua.seigler.net - philosophy</title>
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
-  <link href="https://joshua.seigler.net/feeds/ethos.xml" rel="self" />
+  <link href="https://joshua.seigler.net/feeds/philosophy.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2025-10-29T00:00:00Z</updated>
+  <updated>2026-03-27T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
+    <entry>
+      <title>Digital unreality</title>
+      <link href="https://joshua.seigler.net/posts/digital-unreality/" />
+      <updated>2026-03-26T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/digital-unreality/</id>
+      <content type="html">&lt;p&gt;Overheard at a Cracker Barrel:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Cashier:&lt;/strong&gt; Do you have our loyalty app?&lt;br&gt;
+&lt;strong&gt;A gentleman in his 70s:&lt;/strong&gt; My phone broke, and I don’t remember my passwords so I just have to make a whole new everything. Everyone uses the phone now for the accounts, I have to get a new phone number because the phone company can’t reset my password unless… anyway. I have to make a whole new life because my phone broke.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Something went wrong in the world, that this is possible. Digital reality has a confounding type of ephemeral permanence; it’s information, but it’s also bits in physical hardware. This parallel reality, the limitless, malleable, alien realm of the digital, is less than physical, but also in many ways it dominates the physical world. It mediates access as the customer lamented, but it also can serve as memory, entertainment, work, and whatever else. Pseudo-intelligence, even.&lt;/p&gt;
+&lt;p&gt;I think this is a reminder for me to touch grass and to focus my attention where it matters. When I look back at my life I don’t think I’ll be wishing I had spent more time using screens.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>Finally, a Coherent Worldview</title>
       <link href="https://joshua.seigler.net/posts/finally-a-coherent-worldview/" />

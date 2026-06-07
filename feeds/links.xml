@@ -5,11 +5,35 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feeds/links.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2025-10-29T00:00:00Z</updated>
+  <updated>2026-03-27T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
+    <entry>
+      <title>The Prodigious Plant That Can See and Simultaneously Mimic the Leaves of Surrounding Species Without Physical Contact</title>
+      <link href="https://www.labrujulaverde.com/en/2025/03/the-prodigious-plant-that-can-see-and-simultaneously-mimic-the-leaves-of-surrounding-species-without-physical-contact/" />
+      <updated>2026-05-07T18:28:30Z</updated>
+      <id>https://www.labrujulaverde.com/en/2025/03/the-prodigious-plant-that-can-see-and-simultaneously-mimic-the-leaves-of-surrounding-species-without-physical-contact/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;There is a type of South American vine &lt;em&gt;Boquila trifoliata&lt;/em&gt; aka &lt;em&gt;chameleon vine&lt;/em&gt; that mimics the shape, size, texture, and color of leaves from nearby plants - including fake plastic plants! And how it does this is mostly a mystery. It&#39;s the only known polymorphic mimic in the plant kingdom. Amazing.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Are web apps really slower than native? | Atif Afzal</title>
+      <link href="https://atfzl.com/are-web-apps-really-slower-than-native/" />
+      <updated>2026-05-07T18:26:36Z</updated>
+      <id>https://atfzl.com/are-web-apps-really-slower-than-native/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;A critical look at web defaults, arguing that web performance is capable of essentially matching native performance &lt;em&gt;when the right approach is taken&lt;/em&gt; but this approach often requires deep knowledge or extra work, because the most performant settings are not the defaults (as they are in native environments). Compelling.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>GitHub - cosmiciron/vmprint</title>
+      <link href="https://github.com/cosmiciron/vmprint" />
+      <updated>2026-05-07T18:21:10Z</updated>
+      <id>https://github.com/cosmiciron/vmprint</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Finally a good way to generate PDFs&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
     <entry>
       <title>Bag of words, have mercy on us OR: Claude will you go to prom with me? Adam Mastroianni</title>
       <link href="https://www.experimental-history.com/p/bag-of-words-have-mercy-on-us" />

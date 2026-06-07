@@ -5,11 +5,22 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feeds/software.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2025-10-29T00:00:00Z</updated>
+  <updated>2026-03-27T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
+    <entry>
+      <title>Angular impressions update</title>
+      <link href="https://joshua.seigler.net/posts/angular-impressions-update/" />
+      <updated>2026-03-27T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/angular-impressions-update/</id>
+      <content type="html">&lt;p&gt;This is a six-months-later follow up to &lt;a href=&quot;https://joshua.seigler.net/posts/angular-impressions/&quot;&gt;Angular impressions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Angular is kinda good for me now that I’m used to it. Using modern Angular development practices helps a whole lot – dependency injection is less mysterious with &lt;code&gt;inject&lt;/code&gt;, state management is actually great since I can use signals, and it looks like in a version or two maybe even Observables will be basically optional. I’ve accepted that Angular does more for you than React, and that helps with the daily experience as well.&lt;/p&gt;
+&lt;p&gt;I do miss being able to pass around components as values; in Angular if you want to make a component that accepts another component which it will use to do its rendering (maybe the user can provide a wrapper for table cells), you will be using templates. Not as elegant or simple.&lt;/p&gt;
+&lt;p&gt;But Angular finally feels expressive, and I’m no longer spending effort fighting with it.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>Angular impressions</title>
       <link href="https://joshua.seigler.net/posts/angular-impressions/" />

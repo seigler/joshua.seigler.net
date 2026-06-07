@@ -5,11 +5,126 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feed.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2025-10-29T00:00:00Z</updated>
+  <updated>2026-03-27T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
+    <entry>
+      <title>Link: Are web apps really slower than native? | Atif Afzal</title>
+      <link href="https://atfzl.com/are-web-apps-really-slower-than-native/" />
+      <updated>2026-04-04T01:00:06Z</updated>
+      <id>https://atfzl.com/are-web-apps-really-slower-than-native/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;A critical look at web defaults, arguing that web performance is capable of essentially matching native performance &lt;em&gt;when the right approach is taken&lt;/em&gt; but this approach often requires deep knowledge or extra work, because the most performant settings are not the defaults (as they are in native environments). Compelling.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Red Cabbage Confit</title>
+      <link href="https://joshua.seigler.net/recipes/red-cabbage-confit/" />
+      <updated>2026-04-04T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/red-cabbage-confit/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 small red cabbage, washed and shredded&lt;/li&gt;
+&lt;li&gt;1 red onion, finely chopped&lt;/li&gt;
+&lt;li&gt;2 tbsp walnut oil (vegetable oil is also fine)&lt;/li&gt;
+&lt;li&gt;1 apple, diced&lt;/li&gt;
+&lt;li&gt;3 tbsp vinegar (red wine vinegar or apple cider vinegar are best)&lt;/li&gt;
+&lt;li&gt;3 tbsp red wine (cooking wine or a dry red)&lt;/li&gt;
+&lt;li&gt;1/2 cup jam (blueberry works great)&lt;/li&gt;
+&lt;li&gt;1 tablespoon maple syrup or honey&lt;/li&gt;
+&lt;li&gt;1/2 cup golden raisins&lt;/li&gt;
+&lt;li&gt;1 tsp salt or to taste&lt;/li&gt;
+&lt;li&gt;Pepper to taste&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;directions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#directions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Directions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Soak the shredded lettuce in cold water for about 15 minutes. Drain and set aside.&lt;/li&gt;
+&lt;li&gt;Meanwhile, in a large saute pan or pot, saute onion in oil until golden brown, stirring occasionally.&lt;/li&gt;
+&lt;li&gt;Add cabbage and remaining ingredients, mixing well. Bring to a boil. Simmer on low heat until most of the liquid evaporates, 20-30 minutes.&lt;/li&gt;
+&lt;li&gt;Taste and adjust as needed, adding a little vinegar, jam/syrup, or salt until the balance is right.&lt;/li&gt;
+&lt;li&gt;Serve warm.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;Adapted from Brynie Griesman’s recipe of the same name, in Mishpacha Magazine issue 134.&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes about 2.5 lbs, or about 12 100-gram servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 80kcal (4%), &lt;strong&gt;Fat&lt;/strong&gt;: 2.4g (5%), Cholesterol: 0, Saturated Fat: 1.9g, Trans Fat: 0, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 15.3g (6%), Fiber: 2g, Sugars: 11g &lt;strong&gt;Protein&lt;/strong&gt;: 1.1g (2%), &lt;strong&gt;Vitamin C&lt;/strong&gt;: 28.4mg (38%), &lt;strong&gt;Vitamin B-6&lt;/strong&gt;: 0.14mg (11%), &lt;strong&gt;Vitamin A&lt;/strong&gt;: 535 IU (23%), &lt;strong&gt;Vitamin K&lt;/strong&gt;: 19.6 µg (22%), &lt;strong&gt;Calcium&lt;/strong&gt;: 31mg (3%), &lt;strong&gt;Iron&lt;/strong&gt;: 0.6mg (3%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Angular impressions update</title>
+      <link href="https://joshua.seigler.net/posts/angular-impressions-update/" />
+      <updated>2026-03-27T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/angular-impressions-update/</id>
+      <content type="html">&lt;p&gt;This is a six-months-later follow up to &lt;a href=&quot;https://joshua.seigler.net/posts/angular-impressions/&quot;&gt;Angular impressions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Angular is kinda good for me now that I’m used to it. Using modern Angular development practices helps a whole lot – dependency injection is less mysterious with &lt;code&gt;inject&lt;/code&gt;, state management is actually great since I can use signals, and it looks like in a version or two maybe even Observables will be basically optional. I’ve accepted that Angular does more for you than React, and that helps with the daily experience as well.&lt;/p&gt;
+&lt;p&gt;I do miss being able to pass around components as values; in Angular if you want to make a component that accepts another component which it will use to do its rendering (maybe the user can provide a wrapper for table cells), you will be using templates. Not as elegant or simple.&lt;/p&gt;
+&lt;p&gt;But Angular finally feels expressive, and I’m no longer spending effort fighting with it.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Digital unreality</title>
+      <link href="https://joshua.seigler.net/posts/digital-unreality/" />
+      <updated>2026-03-26T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/digital-unreality/</id>
+      <content type="html">&lt;p&gt;Overheard at a Cracker Barrel:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Cashier:&lt;/strong&gt; Do you have our loyalty app?&lt;br&gt;
+&lt;strong&gt;A gentleman in his 70s:&lt;/strong&gt; My phone broke, and I don’t remember my passwords so I just have to make a whole new everything. Everyone uses the phone now for the accounts, I have to get a new phone number because the phone company can’t reset my password unless… anyway. I have to make a whole new life because my phone broke.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Something went wrong in the world, that this is possible. Digital reality has a confounding type of ephemeral permanence; it’s information, but it’s also bits in physical hardware. This parallel reality, the limitless, malleable, alien realm of the digital, is less than physical, but also in many ways it dominates the physical world. It mediates access as the customer lamented, but it also can serve as memory, entertainment, work, and whatever else. Pseudo-intelligence, even.&lt;/p&gt;
+&lt;p&gt;I think this is a reminder for me to touch grass and to focus my attention where it matters. When I look back at my life I don’t think I’ll be wishing I had spent more time using screens.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: cosmiciron/vmprint: A pure-JS, zero-dependency typesetting engine that yields bit-perfect PDF output across any runtime—from Cloudflare Workers to the browser. Stop using Headless Chrome to print text.</title>
+      <link href="https://github.com/cosmiciron/vmprint" />
+      <updated>2026-03-02T07:30:50Z</updated>
+      <id>https://github.com/cosmiciron/vmprint</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Finally a good way to generate PDFs&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Curry Bolognese</title>
+      <link href="https://joshua.seigler.net/recipes/curry-bolognese/" />
+      <updated>2026-02-07T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/curry-bolognese/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Salt and pepper&lt;/li&gt;
+&lt;li&gt;1 lb ground beef (at least 20 percent fat)&lt;/li&gt;
+&lt;li&gt;1 large onion, diced&lt;/li&gt;
+&lt;li&gt;2 carrots, diced&lt;/li&gt;
+&lt;li&gt;2-3 tbsp red curry paste&lt;/li&gt;
+&lt;li&gt;1 15-ounce can tomato sauce&lt;/li&gt;
+&lt;li&gt;1 lb pasta, save pasta water&lt;/li&gt;
+&lt;li&gt;1 cup heavy cream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Heat a large heavy pot over high heat and add the beef, breaking it up into small pieces and seasoning with salt and pepper; cook until browned and cooked through (4-5 min).&lt;/li&gt;
+&lt;li&gt;Push the beef to one side and add the onion and carrots to the rendered fat, season, and cook until the onion is translucent (5 min).&lt;/li&gt;
+&lt;li&gt;Stir in the curry paste and cook until darkened and fragrant, then add the tomato sauce, swishing a bit of water in the can to get it all into the pot.&lt;/li&gt;
+&lt;li&gt;Bring to a simmer, reduce heat, and let it cook while the pasta boils until al dente.&lt;/li&gt;
+&lt;li&gt;Reserve ½ cup of the pasta water, then add the drained pasta to the sauce, stir in the cream, season to taste, and loosen with pasta water if needed before serving hot.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://cooking.nytimes.com/recipes/1026551-spicy-creamy-weeknight-bolognese&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Originally from Genevieve Ko, published at NYTimes.com&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 4 435g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 545 kcal (25%), &lt;strong&gt;Fat&lt;/strong&gt;: 25.46g (52%), Cholesterol: 141 mg, Saturated Fat: 12.12g, Trans Fat: 0.423g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 44.29g (18%), Fiber: 9.8g (39%), Sugars: 3.98g, &lt;strong&gt;Protein&lt;/strong&gt;: 36.09g (66%), &lt;strong&gt;Vitamin C&lt;/strong&gt;: 14.4mg (19%), &lt;strong&gt;Vitamin A&lt;/strong&gt;: 5613 IU (241%), &lt;strong&gt;Vitamin D&lt;/strong&gt;: 10 IU (2%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Bag of words, have mercy on us OR: Claude will you go to prom with me? Adam Mastroianni</title>
+      <link href="https://www.experimental-history.com/p/bag-of-words-have-mercy-on-us" />
+      <updated>2025-12-08T01:18:11Z</updated>
+      <id>https://www.experimental-history.com/p/bag-of-words-have-mercy-on-us</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Trying to understand LLMs by using the rules of human psychology is like trying to understand a game of Scrabble by using the rules of Pictionary. These things don’t act like people because they aren’t people.&lt;/p&gt;
+&lt;p&gt;We are in dire need of a better metaphor. Here’s my suggestion: instead of seeing AI as a sort of silicon homunculus, we should see it as a bag of words.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
     <entry>
       <title>Post: Angular impressions</title>
       <link href="https://joshua.seigler.net/posts/angular-impressions/" />
@@ -809,32 +924,6 @@ We also usually brown some canned chicken and add it at the same time as the but
 </content>
     </entry>
     <entry>
-      <title>Recipe: Corn Casserole</title>
-      <link href="https://joshua.seigler.net/recipes/corn-casserole/" />
-      <updated>2025-04-24T00:00:00Z</updated>
-      <id>https://joshua.seigler.net/recipes/corn-casserole/</id>
-      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;1 can of corn drained&lt;/li&gt;
-&lt;li&gt;1 can of creamed corn&lt;/li&gt;
-&lt;li&gt;1 stick melted butter 1/2 cup&lt;/li&gt;
-&lt;li&gt;1 box of Jiffy Corn Muffin mix&lt;/li&gt;
-&lt;li&gt;1 cup sour cream&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Preheat the oven to 350 degrees.&lt;/li&gt;
-&lt;li&gt;In a bowl, mix all of the ingredients together in order, then pour into a greased 8&amp;quot;x8&amp;quot; baking pan.&lt;/li&gt;
-&lt;li&gt;Cook uncovered for 45-50 minutes or until lightly browned.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
-&lt;p&gt;Vegan substitutions: almond milk instead of sour cream, vegetable butter or neutral oil instead of butter. Made this way, the result will be less bready but still excellent. Increase cooking time slightly.&lt;/p&gt;
-&lt;p&gt;Doubling: if the pan size makes the uncooked mix more than about an inch deep, you will need extra cooking time. Cover it with foil and cook another 20 minutes or so.&lt;/p&gt;
-&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
-&lt;p&gt;Makes 15.5 100g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 167g (8%), &lt;strong&gt;Protein&lt;/strong&gt;: 2.82g (5%), &lt;strong&gt;Total Fat&lt;/strong&gt;: 9.35g (19%), Cholesterol: 31g, Saturated Fat: 5.2g, Trans Fat: 0.24g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 20g (8%), Dietary Fiber: 1.1g (4%), Sugars: 2.05g, &lt;strong&gt;Calcium&lt;/strong&gt;: 36mg (4%), &lt;strong&gt;Iron&lt;/strong&gt;: 0.6mg (3%), &lt;strong&gt;Potassium&lt;/strong&gt;: 137mg (3%), &lt;strong&gt;Sodium&lt;/strong&gt;: 346mg (23%)&lt;/p&gt;
-</content>
-    </entry>
-    <entry>
       <title>Post: Thinking machines</title>
       <link href="https://joshua.seigler.net/posts/thinking-machines/" />
       <updated>2025-04-24T00:00:00Z</updated>
@@ -863,6 +952,32 @@ We also usually brown some canned chicken and add it at the same time as the but
 &lt;a href=&quot;https://hbr.org/2023/04/generative-ai-has-an-intellectual-property-problem&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Generative AI Has an Intellectual Property Problem&lt;/a&gt;, &lt;em&gt;Harvard Business Review&lt;/em&gt;&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;I don’t think I am wise enough to safely use a genie in a bottle. And I don’t want to outsource my creative efforts to an addictive, bullshitting alien intellect, even if it might save time and effort in the short term.&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-128.avif 128w, https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-384.avif 384w, https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-1152.avif 1152w, https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-1280.avif 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-128.jpeg&quot; alt=&quot;End of line&quot; width=&quot;1280&quot; height=&quot;575&quot; srcset=&quot;https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-128.jpeg 128w, https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-384.jpeg 384w, https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-1152.jpeg 1152w, https://joshua.seigler.net/posts/thinking-machines/-IYuxB_Iur-1280.jpeg 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Corn Casserole</title>
+      <link href="https://joshua.seigler.net/recipes/corn-casserole/" />
+      <updated>2025-04-24T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/corn-casserole/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 can of corn drained&lt;/li&gt;
+&lt;li&gt;1 can of creamed corn&lt;/li&gt;
+&lt;li&gt;1 stick melted butter 1/2 cup&lt;/li&gt;
+&lt;li&gt;1 box of Jiffy Corn Muffin mix&lt;/li&gt;
+&lt;li&gt;1 cup sour cream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preheat the oven to 350 degrees.&lt;/li&gt;
+&lt;li&gt;In a bowl, mix all of the ingredients together in order, then pour into a greased 8&amp;quot;x8&amp;quot; baking pan.&lt;/li&gt;
+&lt;li&gt;Cook uncovered for 45-50 minutes or until lightly browned.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;Vegan substitutions: instead of sour cream, oat milk with a little vinegar; instead of butter, vegetable butter or neutral oil. Made this way, the result will be less bready but still excellent. You may need to increase cooking time slightly.&lt;/p&gt;
+&lt;p&gt;Doubling: if the pan size makes the uncooked mix more than about an inch deep, you will need extra cooking time. Cover it with foil and cook another 20 minutes or so.&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 15.5 100g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 167g (8%), &lt;strong&gt;Protein&lt;/strong&gt;: 2.82g (5%), &lt;strong&gt;Total Fat&lt;/strong&gt;: 9.35g (19%), Cholesterol: 31g, Saturated Fat: 5.2g, Trans Fat: 0.24g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 20g (8%), Dietary Fiber: 1.1g (4%), Sugars: 2.05g, &lt;strong&gt;Calcium&lt;/strong&gt;: 36mg (4%), &lt;strong&gt;Iron&lt;/strong&gt;: 0.6mg (3%), &lt;strong&gt;Potassium&lt;/strong&gt;: 137mg (3%), &lt;strong&gt;Sodium&lt;/strong&gt;: 346mg (23%)&lt;/p&gt;
 </content>
     </entry>
     <entry>
