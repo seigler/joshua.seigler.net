@@ -46,3 +46,7 @@ For the butter rum sauce:
 	- vanilla ice cream
 	- whipped cream
 - Bread choice matters here - best is day-old brioche. Old ginger snap cookies can be good, italian bread would be okay. Texas toast, milk bread, anything a little firm and maybe a little sweet should be fine. Fresh bread gets a little goopy but you could dehydrate it a bit in the oven first.
+
+## Nutrition Information
+
+Makes 15 173g servings. Each serving: **Calories** 552kcal (28%), **Total Fats** 31g (39%), Cholesterol 121mg (40%), Total Saturated Fats 16g (82%), Total Trans Fats 0.1g, **Total Carbs** 60g (22%), Total Dietary Fiber 1.5g (5%), Total Sugars 43g (86%), **Protein** 10g (20%), **Vitamin A** (29%), **Vitamin C** (6%), **Vitamin D** (9%), **Calcium** (19%), **Iron** (9%), **Potassium** (7%), **Sodium** (15%)

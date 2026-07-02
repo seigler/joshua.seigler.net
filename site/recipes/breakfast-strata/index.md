@@ -50,3 +50,7 @@ Prep time 20 minutes. 2-10 hours fridge time, 55 minutes cook time, 10 minutes r
 - Troubleshooting: if the result is too wet, increase cooking time. If it's dry or rubbery, decrease the temperature or time.
 - The target safe internal temperature is 160°F. Egg dishes should only sit out for a maximum of 2 hours.
 - Adapted from a couple web retellings of Gordon Ramsay's breakfast strata. I think recipe sites sometimes just put his name on things.
+
+## Nutrition Information
+
+Makes 8 334g servings. Each serving: **Calories** 581kcal (29%), **Total Fats** 39g (50%), Cholesterol 274mg (91%), Total Saturated Fats 17g (85%), Total Trans Fats 0.1g, **Total Carbs** 30g (11%), Total Dietary Fiber 1.7g (6%), Total Sugars 8.9g (18%), **Protein** 27g (54%), **Vitamin A** (31%), **Vitamin C** (57%), **Vitamin D** (16%), **Calcium** (31%), **Iron** (18%), **Potassium** (12%), **Sodium** (52%)
