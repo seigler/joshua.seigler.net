@@ -5,11 +5,25 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feeds/software.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2026-03-27T00:00:00Z</updated>
+  <updated>2026-07-02T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
+    <entry>
+      <title>I made myself a Recipe Label Generator</title>
+      <link href="https://joshua.seigler.net/posts/i-made-myself-a-recipe-label-generator/" />
+      <updated>2026-07-02T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/i-made-myself-a-recipe-label-generator/</id>
+      <content type="html">&lt;p&gt;I have been dissatisfied with some of the recipe label generators online (except for &lt;a href=&quot;https://tools.myfooddata.com/nutrition-facts&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MyFoodData&lt;/a&gt;, which is fantastic, but I wanted something simpler, purpose-built for my site). I also wanted a small personal software project to preserve my familiarity with &lt;a href=&quot;https://www.solidjs.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SolidJS&lt;/a&gt;. So I made &lt;a href=&quot;https://recipelabels.pages.seigler.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;my own recipe label generator&lt;/a&gt;. (Since one purpose of this project is skill-building, of course I did this without an LLM.)&lt;/p&gt;
+&lt;p&gt;I used &lt;a href=&quot;https://docs.solidjs.com/solid-start&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SolidStart&lt;/a&gt; to scaffold an empty SolidJS TypeScript project with Vite. I downloaded the “SR Legacy” data set from &lt;a href=&quot;https://fdc.nal.usda.gov/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;the USDA FoodData Central site&lt;/a&gt;. This data set is fairly complete, but it’s still small enough that I can serve and load a condensed version for fully client-side lookups. I used &lt;a href=&quot;https://www.fusejs.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;FuseJS&lt;/a&gt; to search this data set - its tuneable fuzzy search and small bundle size were perfect for the project’s needs.&lt;/p&gt;
+&lt;p&gt;This was my first experience with &lt;a href=&quot;https://docs.solidjs.com/concepts/stores&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SolidJS stores&lt;/a&gt;, and I found the developer experience wonderful. It turned out to be an efficient and simple way to reactively manage the dynamic form state I required.&lt;/p&gt;
+&lt;p&gt;I adapted &lt;a href=&quot;https://stackoverflow.com/a/73848584&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;a fraction-parsing script&lt;/a&gt; from StackExchange user &lt;code&gt;machineghost&lt;/code&gt; to allow the quantity to be written as a mixed fraction. And that was it. You can see the results at the bottom of my &lt;a href=&quot;https://joshua.seigler.net/recipes/bread-pudding&quot;&gt;bread pudding&lt;/a&gt; and &lt;a href=&quot;https://joshua.seigler.net/recipes/breakfast-strata&quot;&gt;breakfast strata&lt;/a&gt; posts.&lt;/p&gt;
+&lt;h3 id=&quot;recipe-label-maker&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/i-made-myself-a-recipe-label-generator/#recipe-label-maker&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; &lt;a href=&quot;https://recipelabels.pages.seigler.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Recipe Label Maker&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://git.apps.seigler.net/joshua/recipelabels.pages.seigler.net&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Source code&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It could be interesting to try to parse an entire pasted ingredients list. I would need to fabricate simplified alternatives to the FoodData food names (e.g. “milk” -&amp;gt; “Milk, whole, 3.25% milkfat, with added vitamin D”) and have a good way to disambiguate less obvious ingredients. Ideally this could be accomplished client-side as well, without integrating the Everything Tool (tokenization, vector embeddings). A task for another day.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>Angular impressions update</title>
       <link href="https://joshua.seigler.net/posts/angular-impressions-update/" />
