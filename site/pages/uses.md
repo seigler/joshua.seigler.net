@@ -5,9 +5,10 @@ date: 2025-10-28
 ---
 
 ## Hardware
+
 - Lenovo LOQ laptop (personal), Framework laptop (work).
 
-- Google Pixel 7 phone.
+- Google Pixel 9a phone.
 
 - Wide IKEA GALANT desk (discontinued).
 
@@ -29,7 +30,7 @@ date: 2025-10-28
 
 ## Software
 
-- [Fedora](https://fedoraproject.org/) desktop operating system. I recently switched from Manjaro. XFCE window manager with [Chicago95](https://github.com/grassmunk/Chicago95) theming.
+- [Fedora](https://fedoraproject.org/) desktop operating system with Gnome 50. I occasionally miss XFCE.
 
 - [Debian](https://www.debian.org/) server operating system.
 
@@ -40,8 +41,6 @@ date: 2025-10-28
 - [Mise](https://mise.jdx.dev/) Dev environment manager, replacing `nvm`, `pyenv`, `venv`, and dozens of others. Great DX.
 
 - [Jujutsu](https://jj-vcs.github.io/jj/latest/) Git-compatible VCS, better DX, better mental model.
-
-- [jj-stack](https://github.com/keanemind/jj-stack/) [Stacked PRs](https://www.stacking.dev/) with Jujutsu.
 
 - [VSCodium](https://vscodium.com/) IDE. VSCode with less Microsoft.
 
@@ -59,7 +58,7 @@ date: 2025-10-28
 
 - [Umami](https://umami.is/) analytics, self-hosted.
 
-- [Forgejo](https://forgejo.org/) git forge, self-hosted. Mirroring GitHub for now.
+- [Forgejo](https://forgejo.org/) git forge, self-hosted. Mirroring to GitHub for now.
 
 - [Webhook](https://github.com/adnanh/webhook/) to pull static sites when they are built.
 
