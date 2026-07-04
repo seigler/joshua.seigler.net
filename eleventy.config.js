@@ -11,11 +11,13 @@ import clean from "eleventy-plugin-clean"
 import toc from "eleventy-plugin-toc"
 import EleventyFeedPlugin from "@11ty/eleventy-plugin-rss"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
-import EleventySyntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight"
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite"
 import { ViteMinifyPlugin } from "vite-plugin-minify"
 import fetch from "@11ty/eleventy-fetch"
 import { XMLValidator, XMLParser } from "fast-xml-parser"
+import markdownItShiki from "@shikijs/markdown-it"
+import { createCssVariablesTheme } from "@shikijs/core"
+import caddyfileLanguageDefinition from "./configHelpers/caddyfile.tmLanguage.json" with { type: "json" }
 
 dayjs.extend(utc)
 
@@ -48,12 +50,29 @@ export default async (config) => {
         rel: "noopener",
       },
     })
+    .use(
+      await markdownItShiki({
+        theme: createCssVariablesTheme({
+          name: "css-variables",
+          variablePrefix: "--shiki-",
+          variableDefaults: {},
+          fontStyle: true,
+        }),
+        langs: [
+          caddyfileLanguageDefinition,
+          import("@shikijs/langs/javascript"),
+          import("@shikijs/langs/typescript"),
+          import("@shikijs/langs/bash"),
+          import("@shikijs/langs/json"),
+        ],
+      }),
+    )
   mdLib.renderer.rules.render_footnote_anchor = (
     tokens,
     idx,
     options,
     env,
-    slf
+    slf,
   ) => {
     let id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf)
     if (tokens[idx].meta.subId > 0) id += `:${tokens[idx].meta.subId}`
@@ -106,7 +125,7 @@ export default async (config) => {
     return Object.fromEntries(
       Object.entries(categories).sort((a, b) => {
         return b[1].count - a[1].count
-      })
+      }),
     )
   })
 
@@ -120,7 +139,7 @@ export default async (config) => {
       })
     })
     return [...results, ...linksCollection].sort(
-      (a, b) => a.date.getTime() - b.date.getTime()
+      (a, b) => a.date.getTime() - b.date.getTime(),
     )
   })
 
@@ -163,10 +182,6 @@ export default async (config) => {
 
   config.addPlugin(EleventyFeedPlugin)
 
-  config.addPlugin(EleventySyntaxHighlightPlugin, {
-    alwaysWrapLineHighlights: true,
-  })
-
   config.addPlugin(EleventyVitePlugin, {
     viteOptions: {
       appType: "mpa",
@@ -179,9 +194,7 @@ export default async (config) => {
         mode: "production",
         emptyOutDir: true,
       },
-      plugins: [
-        ViteMinifyPlugin({}),
-      ],
+      plugins: [ViteMinifyPlugin({})],
     },
   })
 
@@ -206,13 +219,13 @@ async function fetchShaarliWebroll() {
     }).parse(urlTextContent).feed.entry
   } else {
     throw new Error(
-      `Invalid XML from webroll feed. Reason: ${validation.err.msg}`
+      `Invalid XML from webroll feed. Reason: ${validation.err.msg}`,
     )
   }
   const entries = feedContent
     .map((entry) => {
       const content = entry.content["#text"].split(
-        '\n<br>&#8212; <a href="https://links.apps.seigler.net/'
+        '\n<br>&#8212; <a href="https://links.apps.seigler.net/',
       )[0]
       return {
         url: entry.link["@_href"],

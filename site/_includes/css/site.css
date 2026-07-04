@@ -84,7 +84,8 @@ body {
   text-decoration-thickness: 0.1rem;
 }
 
-a, label {
+a,
+label {
   color: inherit;
   --c-accent: oklch(45% 0.135 var(--hue-main) / 0.8);
 }
@@ -97,7 +98,7 @@ a[href] {
   position: relative;
 }
 @media screen {
-  a[target=_blank]::after {
+  a[target="_blank"]::after {
     display: inline-block;
     content: "";
     height: 1em;
@@ -296,7 +297,9 @@ ul.collection {
       }
     }
     @media screen {
-      background-color: oklch(from var(--c-accent) calc(l * 0.4) calc(c * 0.33) h / 0.67);
+      background-color: oklch(
+        from var(--c-accent) calc(l * 0.4) calc(c * 0.33) h / 0.67
+      );
       box-shadow: inset 0 0 2rem -1rem var(--c-accent);
       padding: 0.5rem;
       border-radius: 0.25rem;
@@ -360,7 +363,7 @@ blockquote {
       transparent
     );
   }
-  >:last-child::after {
+  > :last-child::after {
     z-index: -1;
     content: "\201c";
     font-size: var(--s3);
@@ -512,7 +515,10 @@ h4 {
   text-shadow: 0 0 0.5em var(--c-highlight);
   margin-top: 3rem;
   line-height: 1.1;
-  + h1, + h2, + h3, + h4 {
+  + h1,
+  + h2,
+  + h3,
+  + h4 {
     margin-top: 0;
   }
   margin-bottom: 0.5rem;
@@ -548,7 +554,7 @@ a.rss {
   height: 1lh;
   width: 1lh;
   margin: 0 0 0 0.5rem;
-  --glowColor: #F80A;
+  --glowColor: #f80a;
   background-image: var(--icon-rss);
   border-radius: 0.25em;
   opacity: 0.25;
@@ -579,16 +585,16 @@ a.rss {
   }
 }
 
-pre[class*="language-"] button {
+pre.shiki button {
   display: none;
 }
 
 @media screen {
-  p:has(+ pre[class*="language-"]) > code:first-child:last-child {
+  p:has(+ pre.shiki) > code {
     position: relative;
     font-size: 0.8em;
   }
-  p:has(+ pre[class*="language-"]) > code::after {
+  p:has(+ pre.shiki) > code::after {
     content: "";
     pointer-events: none;
     opacity: 0.5;
@@ -605,7 +611,7 @@ pre[class*="language-"] button {
       transparent
     );
   }
-  pre[class*="language-"] button {
+  pre.shiki button {
     display: block;
     position: absolute;
     top: 0;
@@ -698,7 +704,8 @@ input[type="text"] {
     border-color: var(--c-accent);
   }
 }
-button, a.button {
+button,
+a.button {
   display: inline-block;
   text-decoration: none;
   background-color: var(--c-text-background);
@@ -713,8 +720,8 @@ button, a.button {
   &:focus-visible {
     background-color: var(--c-accent);
     box-shadow:
-    0 0 0.5rem var(--c-accent),
-    0 0 1rem var(--c-accent);
+      0 0 0.5rem var(--c-accent),
+      0 0 1rem var(--c-accent);
   }
 }
 .button.tag {
@@ -728,8 +735,12 @@ button, a.button {
   }
   --tagLCH: var(--tag-luminance) 0.25 calc(300 + 137.508 * var(--tagIndex, 0));
   --glowColor: oklch(var(--tagLCH) / 0.3);
-  --c-text-background: color-mix(in oklch, oklch(var(--tagLCH) / 0.4), #000A 50%);
-  --c-accent: color-mix(in oklch, oklch(var(--tagLCH) / 0.8), #000A 50%);
+  --c-text-background: color-mix(
+    in oklch,
+    oklch(var(--tagLCH) / 0.4),
+    #000a 50%
+  );
+  --c-accent: color-mix(in oklch, oklch(var(--tagLCH) / 0.8), #000a 50%);
   color: oklch(var(--tagLCH) / 0.8);
   &:hover {
     color: var(--c-text);

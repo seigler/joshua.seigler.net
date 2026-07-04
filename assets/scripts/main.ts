@@ -4,14 +4,17 @@ function removeEffect(event: UIEvent) {
   if (effectsLayer == null) {
     return
   }
-  const effects = Array.from(effectsLayer.children).filter(
-    (e) => {
-      if (e["__effectParent"] === target) {
-        return true
-      }
-      return isTouchEvent(event) && Array.from(event.changedTouches).some(t => t.identifier === e["__effectTouch"])
+  const effects = Array.from(effectsLayer.children).filter((e) => {
+    if (e["__effectParent"] === target) {
+      return true
     }
-  )
+    return (
+      isTouchEvent(event) &&
+      Array.from(event.changedTouches).some(
+        (t) => t.identifier === e["__effectTouch"],
+      )
+    )
+  })
   effects.forEach((e) => {
     e.getAnimations().forEach((anim) => {
       if (+(anim.currentTime ?? 0) < 100) {
@@ -36,18 +39,28 @@ function isElement(target: EventTarget | null): target is Element {
 }
 
 function isTouchEvent(event: UIEvent): event is TouchEvent {
-  return event.type.startsWith('touch')
+  return event.type.startsWith("touch")
 }
 
 function addEffect(event: UIEvent) {
   const { target } = event
   const effectsLayer = document.querySelector("#effects")
-  const color = window.getComputedStyle(isElement(target) ? target : document.body).getPropertyValue("--glowColor")
-  let rects: {top: number, left: number, width: number, height: number }[] = []
+  const color = window
+    .getComputedStyle(isElement(target) ? target : document.body)
+    .getPropertyValue("--glowColor")
+  let rects: { top: number; left: number; width: number; height: number }[] = []
   if (isTouchEvent(event)) {
-    rects = Array.from(event.targetTouches).map(t => ({ top: t.clientY - 5, left: t.clientX - 5, width: 10, height: 10 }))
+    rects = Array.from(event.targetTouches).map((t) => ({
+      top: t.clientY - 5,
+      left: t.clientX - 5,
+      width: 10,
+      height: 10,
+    }))
   } else {
-    if (!isElement(target) || !target.matches("a[href],.nav-toggle-button,button,input[type='radio']")) {
+    if (
+      !isElement(target) ||
+      !target.matches("a[href],.nav-toggle-button,button,input[type='radio']")
+    ) {
       return
     }
     rects = Array.from(target.getClientRects())
@@ -75,10 +88,10 @@ function addEffect(event: UIEvent) {
 }
 
 function addCodeBlockCopiers() {
-  document.querySelectorAll('pre[class^=language]').forEach(el => {
-    const copyButton = document.createElement('button')
-    copyButton.classList.add('copy-button')
-    copyButton.addEventListener('click', () => {
+  document.querySelectorAll("pre.shiki").forEach((el) => {
+    const copyButton = document.createElement("button")
+    copyButton.classList.add("copy-button")
+    copyButton.addEventListener("click", () => {
       if (el instanceof HTMLElement) {
         navigator.clipboard.writeText(el.innerText)
       }
@@ -87,13 +100,13 @@ function addCodeBlockCopiers() {
   })
 }
 
-function attend({ target}: UIEvent) {
+function attend({ target }: UIEvent) {
   if (!isElement(target) || !target.matches("a[href][target=_blank]")) {
     return
   }
-  umami?.track(`Link: ${target['innerText'] ?? target.getAttribute('href')}`, {
+  umami?.track(`Link: ${target["innerText"] ?? target.getAttribute("href")}`, {
     from: document.location.href,
-    destination: target.getAttribute('href'),
+    destination: target.getAttribute("href"),
   })
 }
 

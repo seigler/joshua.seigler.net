@@ -21,6 +21,7 @@
     "@11ty/eleventy-plugin-vite": "^6.0.0",
     "@mdit/plugin-footnote": "^0.22.0",
     "@mdit/plugin-spoiler": "^0.21.0",
+    "@shikijs/markdown-it": "^4.3.1",
     "@types/node": "^24.0.5",
     "@types/umami": "^2.10.0",
     "dayjs": "^1.11.11",

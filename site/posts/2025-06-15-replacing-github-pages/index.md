@@ -11,12 +11,15 @@ tags:
 I recently started self-hosting [Forgejo](https://forgejo.org/), but I wanted something to replace GitHub pages, which has been very convenient for publishing little website projects. My server runs Debian, so I decided to use [webhook](https://github.com/adnanh/webhook) and [Caddy](https://caddyserver.com/). I'm very happy how it turned out.
 
 ## The objective
+
 When I push a `gh-pages` branch to any public repository on my Forgejo instance, the name of the repo is used as a domain name (e.g. [marklink.pages.seigler.net](https://marklink.pages.seigler.net/)) and the branch contents are automatically served with SSL. If I push updates to the branch, they are automatically published. If the branch or repo is deleted, the site is taken down.
 
 ## How to do it
 
 ### Debian server preparation
+
 In case you don't have a basic server setup routine yet, this is a good start:
+
 - Change the default root password.
 - Create a new user and add it to the sudo group. In my examples below the user is `joshua`.
 - Use `ssh-copy-id` to install your ssl pubkey for easier login.
@@ -26,11 +29,13 @@ In case you don't have a basic server setup routine yet, this is a good start:
 - On the server, install and enable `ufw` and `fail2ban`. In addition to allowing your custom SSL port, be sure to enable ports 80 and 443 with `sudo ufw allow "WWW Full"`.
 
 ### Caddy
+
 I usually use nginx, but I wanted to give Caddy a shot, and it has been a great experience. I installed Caddy using the [official instructions](https://caddyserver.com/docs/install).
 Here is the Caddyfile I made---you will need to change the domain names and the email. Email could be removed, but it is there so that SSL certificate issuers can contact you if there is a problem with your certificates.
 
 `/etc/caddy/Caddyfile`
-```caddy
+
+```Caddyfile
 # Global options block
 {
 	email you@example.com #### CHANGE THIS ####
@@ -82,6 +87,7 @@ I also took ownership of `/var/www` with `chown -R joshua:joshua /var/www` since
 In my home directory I defined two hook scripts:
 
 `~/webhooks/update-pages.sh`
+
 ```bash
 #!/bin/bash
 # parameter 1 is repo name, parameter 2 is clone url
@@ -98,6 +104,7 @@ git clone -b gh-pages --single-branch "$2" "$1" || exit 1;
 ```
 
 `~/webhooks/remove-pages.sh`
+
 ```bash
 #!/bin/bash
 # parameter 1 is repo name
@@ -116,42 +123,36 @@ Here are the hook definitions: one for creating/updating a site, and one for del
 Also make sure to replace your execute-command lines with ones referencing your username and script paths.
 
 `/etc/webhook.conf`
+
 ```json
 [
   {
     "id": "update-pages",
     "execute-command": "/usr/bin/sudo",
-    "pass-arguments-to-command":
-    [
-      { "source": "string", "name": "-u"},
-      { "source": "string", "name": "joshua"},
-      { "source": "string", "name": "/home/joshua/webhooks/update-pages.sh"},
+    "pass-arguments-to-command": [
+      { "source": "string", "name": "-u" },
+      { "source": "string", "name": "joshua" },
+      { "source": "string", "name": "/home/joshua/webhooks/update-pages.sh" },
       { "source": "payload", "name": "repository.name" },
       { "source": "payload", "name": "repository.clone_url" }
     ],
-    "trigger-rule":
-    {
-      "and":
-      [
+    "trigger-rule": {
+      "and": [
         {
-          "match":
-          {
+          "match": {
             "type": "payload-hmac-sha256",
             "secret": "(omitted)",
-            "parameter":
-            {
+            "parameter": {
               "source": "header",
               "name": "X-Forgejo-Signature"
             }
           }
         },
         {
-          "match":
-          {
+          "match": {
             "type": "value",
             "value": "refs/heads/gh-pages",
-            "parameter":
-            {
+            "parameter": {
               "source": "payload",
               "name": "ref"
             }
@@ -163,24 +164,19 @@ Also make sure to replace your execute-command lines with ones referencing your 
   {
     "id": "remove-pages",
     "execute-command": "/usr/bin/sudo",
-    "pass-arguments-to-command":
-    [
-      { "source": "string", "name": "-u"},
-      { "source": "string", "name": "joshua"},
-      { "source": "string", "name": "/home/joshua/webhooks/remove-pages.sh"},
+    "pass-arguments-to-command": [
+      { "source": "string", "name": "-u" },
+      { "source": "string", "name": "joshua" },
+      { "source": "string", "name": "/home/joshua/webhooks/remove-pages.sh" },
       { "source": "payload", "name": "repository.name" }
     ],
-    "trigger-rule":
-    {
-      "and":
-      [
+    "trigger-rule": {
+      "and": [
         {
-          "match":
-          {
+          "match": {
             "type": "payload-hmac-sha256",
             "secret": "(omitted)",
-            "parameter":
-            {
+            "parameter": {
               "source": "header",
               "name": "X-Forgejo-Signature"
             }
