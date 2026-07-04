@@ -94,16 +94,45 @@ p:has(> code) + pre.shiki {
 
 @media screen {
   .shiki {
-    --shiki-foreground: var(--c-text-dim);
+    --shiki-foreground: var(--c-text);
     --shiki-background: transparent;
-    --shiki-token-constant: oklch(85% 0.275 23.2);
-    --shiki-token-string: oklch(85% 0.201 37.8);
-    --shiki-token-comment: color-mix(in oklch, currentcolor 75%, transparent);
-    --shiki-token-keyword: oklch(85% 0.214 311.1);
-    --shiki-token-parameter: oklch(85% 0.201 129.4);
-    --shiki-token-function: oklch(85% 0.128 81.1);
-    --shiki-token-string-expression: oklch(85% 0.214 113.5);
-    --shiki-token-punctuation: oklch(85% 0.094 225.9);
-    --shiki-token-link: oklch(85% 0.139 37.8);
+    --shiki-token-comment: var(--c-text-dim);
+    --shiki-token-string: var(--c-text);
+
+    --shiki-token-keyword: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 5) 80%,
+      var(--c-accent)
+    );
+    --shiki-token-constant: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 35) 80%,
+      var(--c-accent)
+    );
+    --shiki-token-parameter: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 93) 80%,
+      var(--c-accent)
+    );
+    --shiki-token-link: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 123) 80%,
+      var(--c-accent)
+    );
+    --shiki-token-string-expression: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 152) 80%,
+      var(--c-accent)
+    );
+    --shiki-token-punctuation: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 257) 80%,
+      var(--c-accent)
+    );
+    --shiki-token-function: color-mix(
+      in oklch shorter hue,
+      oklch(0.8 0.2 322) 80%,
+      var(--c-accent)
+    );
   }
 }
