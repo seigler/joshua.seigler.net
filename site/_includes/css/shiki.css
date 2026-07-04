@@ -136,3 +136,8 @@ p:has(> code) + pre.shiki {
     );
   }
 }
+@media print {
+  .shiki .line::before {
+    opacity: 0.5;
+  }
+}
