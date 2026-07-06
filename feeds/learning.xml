@@ -15,32 +15,20 @@
       <link href="https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/" />
       <updated>2026-07-06T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/</id>
-      <content type="html">&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/01-C.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/02-Cs.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/03-D.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/04-Ds.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/05-E.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/06-F.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/07-Fs.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/08-G.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/09-Gs.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/10-A.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/11-As.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/12-B.mp3&quot; as=&quot;audio&quot;&gt;
-&lt;script&gt;
+      <content type="html">&lt;script&gt;
   const files = [
-    &quot;shepard-chromatic-c/01-C.mp3&quot;,
-    &quot;shepard-chromatic-c/02-Cs.mp3&quot;,
-    &quot;shepard-chromatic-c/03-D.mp3&quot;,
-    &quot;shepard-chromatic-c/04-Ds.mp3&quot;,
-    &quot;shepard-chromatic-c/05-E.mp3&quot;,
-    &quot;shepard-chromatic-c/06-F.mp3&quot;,
-    &quot;shepard-chromatic-c/07-Fs.mp3&quot;,
-    &quot;shepard-chromatic-c/08-G.mp3&quot;,
-    &quot;shepard-chromatic-c/09-Gs.mp3&quot;,
-    &quot;shepard-chromatic-c/10-A.mp3&quot;,
-    &quot;shepard-chromatic-c/11-As.mp3&quot;,
-    &quot;shepard-chromatic-c/12-B.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/01-C.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/02-Cs.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/03-D.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/04-Ds.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/05-E.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/06-F.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/07-Fs.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/08-G.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/09-Gs.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/10-A.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/11-As.mp3&quot;,
+    &quot;/sfx/shepard-chromatic-c/12-B.mp3&quot;,
   ];
   const audios = files.map(f =&gt; new Audio(f));
   audios.forEach((x, i) =&gt; {

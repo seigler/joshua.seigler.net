@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/simple-atom.xslt"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
-  <title>joshua.seigler.net - posts</title>
+  <title>joshua.seigler.net</title>
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
-  <link href="https://joshua.seigler.net/feeds/posts.xml" rel="self" />
+  <link href="https://joshua.seigler.net/feed.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
   <updated>2026-07-06T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
@@ -11,24 +11,36 @@
     <name></name>
   </author>
     <entry>
-      <title>Cool musical illusion - tritone paradox</title>
+      <title>Post: Cool musical illusion - tritone paradox</title>
       <link href="https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/" />
       <updated>2026-07-06T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/</id>
-      <content type="html">&lt;script&gt;
+      <content type="html">&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/01-C.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/02-Cs.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/03-D.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/04-Ds.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/05-E.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/06-F.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/07-Fs.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/08-G.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/09-Gs.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/10-A.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/11-As.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/12-B.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;script&gt;
   const files = [
-    &quot;/sfx/shepard-chromatic-c/01-C.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/02-Cs.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/03-D.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/04-Ds.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/05-E.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/06-F.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/07-Fs.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/08-G.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/09-Gs.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/10-A.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/11-As.mp3&quot;,
-    &quot;/sfx/shepard-chromatic-c/12-B.mp3&quot;,
+    &quot;shepard-chromatic-c/01-C.mp3&quot;,
+    &quot;shepard-chromatic-c/02-Cs.mp3&quot;,
+    &quot;shepard-chromatic-c/03-D.mp3&quot;,
+    &quot;shepard-chromatic-c/04-Ds.mp3&quot;,
+    &quot;shepard-chromatic-c/05-E.mp3&quot;,
+    &quot;shepard-chromatic-c/06-F.mp3&quot;,
+    &quot;shepard-chromatic-c/07-Fs.mp3&quot;,
+    &quot;shepard-chromatic-c/08-G.mp3&quot;,
+    &quot;shepard-chromatic-c/09-Gs.mp3&quot;,
+    &quot;shepard-chromatic-c/10-A.mp3&quot;,
+    &quot;shepard-chromatic-c/11-As.mp3&quot;,
+    &quot;shepard-chromatic-c/12-B.mp3&quot;,
   ];
   const audios = files.map(f =&gt; new Audio(f));
   audios.forEach((x, i) =&gt; {
@@ -115,7 +127,64 @@
 </content>
     </entry>
     <entry>
-      <title>I made myself a Recipe Label Generator</title>
+      <title>Recipe: Bread Pudding with Butter Rum Sauce</title>
+      <link href="https://joshua.seigler.net/recipes/bread-pudding/" />
+      <updated>2026-07-06T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/bread-pudding/</id>
+      <content type="html">&lt;p&gt;This is a southern dessert, elevated significantly with a decadent butter rum sauce.&lt;/p&gt;
+&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/bread-pudding/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;p&gt;For the bread pudding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 loaf of day-old bread (about 1 lb) cut into small cubes&lt;/li&gt;
+&lt;li&gt;4 large eggs&lt;/li&gt;
+&lt;li&gt;1 (12-ounce) can evaporated milk&lt;/li&gt;
+&lt;li&gt;1 cup heavy whipping cream&lt;/li&gt;
+&lt;li&gt;1 cup granulated sugar&lt;/li&gt;
+&lt;li&gt;½ cup (1 stick) salted butter, melted &amp;amp; slightly cooled&lt;/li&gt;
+&lt;li&gt;⅓ cup golden raisins&lt;/li&gt;
+&lt;li&gt;1 tablespoon rum extract (or vanilla extract)&lt;/li&gt;
+&lt;li&gt;1 teaspoon ground cinnamon&lt;/li&gt;
+&lt;li&gt;¾ cup chopped pecans&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For the butter rum sauce:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;½ cup (1 stick) salted butter&lt;/li&gt;
+&lt;li&gt;1 (14-ounce) can sweetened condensed milk&lt;/li&gt;
+&lt;li&gt;½ cup heavy whipping cream&lt;/li&gt;
+&lt;li&gt;¼ cup packed dark brown sugar&lt;/li&gt;
+&lt;li&gt;¼ cup rum (Myers’s dark rum is good)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;directions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/bread-pudding/#directions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Directions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cut or tear the bread into 1-inch pieces in a large bowl. Set aside.&lt;/li&gt;
+&lt;li&gt;In another bowl, make a custard, whisking together the eggs, evaporated milk, heavy cream, sugar, melted butter, raisins, rum extract/vanilla extract, ground cinnamon, and nutmeg. The mixture should be homogenous.&lt;/li&gt;
+&lt;li&gt;Pour the custard over the bread pieces and mix gently until the bread is saturated. Set aside to rest.&lt;/li&gt;
+&lt;li&gt;Preheat the oven to 350°F.&lt;/li&gt;
+&lt;li&gt;Once it is preheated, empty the bread mixture into a greased 9×13 baking dish.&lt;/li&gt;
+&lt;li&gt;Bake for 50 minutes to 1 hour, until the custard is set and the edges of things are golden brown.&lt;/li&gt;
+&lt;li&gt;After the custard is done, set it aside to cool.&lt;/li&gt;
+&lt;li&gt;While it cools, in a small saucepan over medium heat, combine the butter, sweetened condensed milk, heavy cream, and brown sugar. Stir briefly to combine, and occasionally until the butter is melted. Increase the heat to medium-high and bring to a gentle boil, then remove from the heat. Stir in rum until fully incorporated.&lt;/li&gt;
+&lt;li&gt;Pour &lt;em&gt;half&lt;/em&gt; of the hot butter rum sauce over the bread pudding, and let it rest for 30 minutes. Reserve the rest of the sauce in a microwave safe container for serving.&lt;/li&gt;
+&lt;li&gt;To serve, slice the bread pudding into wedges and serve room temperature or warm, with hot rum sauce.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/bread-pudding/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.butterbeready.com/bread-pudding-with-rum-sauce/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Original recipe by Quin Liburd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Plus-up toppings:
+&lt;ul&gt;
+&lt;li&gt;chopped pecans&lt;/li&gt;
+&lt;li&gt;vanilla ice cream&lt;/li&gt;
+&lt;li&gt;whipped cream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bread choice matters here - best is day-old brioche. Old ginger snap cookies can be good, italian bread would be okay. Texas toast, milk bread, anything a little firm and maybe a little sweet should be fine. Fresh bread gets a little goopy but you could dehydrate it a bit in the oven first.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/bread-pudding/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 15 173g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt; 552kcal (28%), &lt;strong&gt;Total Fats&lt;/strong&gt; 31g (39%), Cholesterol 121mg (40%), Total Saturated Fats 16g (82%), Total Trans Fats 0.1g, &lt;strong&gt;Total Carbs&lt;/strong&gt; 60g (22%), Total Dietary Fiber 1.5g (5%), Total Sugars 43g (86%), &lt;strong&gt;Protein&lt;/strong&gt; 10g (20%), &lt;strong&gt;Vitamin A&lt;/strong&gt; (29%), &lt;strong&gt;Vitamin C&lt;/strong&gt; (6%), &lt;strong&gt;Vitamin D&lt;/strong&gt; (9%), &lt;strong&gt;Calcium&lt;/strong&gt; (19%), &lt;strong&gt;Iron&lt;/strong&gt; (9%), &lt;strong&gt;Potassium&lt;/strong&gt; (7%), &lt;strong&gt;Sodium&lt;/strong&gt; (15%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: I made myself a Recipe Label Generator</title>
       <link href="https://joshua.seigler.net/posts/i-made-myself-a-recipe-label-generator/" />
       <updated>2026-07-02T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/i-made-myself-a-recipe-label-generator/</id>
@@ -129,7 +198,127 @@
 </content>
     </entry>
     <entry>
-      <title>Angular impressions update</title>
+      <title>Link: Signals, the push-pull based algorithm — Willy Brauner</title>
+      <link href="https://willybrauner.com/journal/signal-the-push-pull-based-algorithm" />
+      <updated>2026-06-13T16:45:08Z</updated>
+      <id>https://willybrauner.com/journal/signal-the-push-pull-based-algorithm</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;A clear explanation of the push-pull algorithm used in Signals, my favorite fine-grained reactivity mechanism. (Which may soon become a native Javascript feature!)&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Breakfast Strata</title>
+      <link href="https://joshua.seigler.net/recipes/breakfast-strata/" />
+      <updated>2026-06-07T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/breakfast-strata/</id>
+      <content type="html">&lt;p&gt;This is a cheesy, savory, custardy breakfast, assembled the night before and cooked in the morning for about an hour. Like a quiche, a strata has a lot of room for variation.&lt;/p&gt;
+&lt;p&gt;The short version is, make six layers in a big pan: day-old bread cubes, cooked meat and veggies, cheese, repeat. Cover with custard, soak overnight, and bake covered for about an hour at 350°F, uncovering halfway through.&lt;/p&gt;
+&lt;p&gt;Prep time 20 minutes. 2-10 hours fridge time, 55 minutes cook time, 10 minutes rest time.&lt;/p&gt;
+&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/breakfast-strata/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;butter or oil for greasing a baking dish&lt;/li&gt;
+&lt;li&gt;8 cups cubed day-old bread (French, sourdough, or sandwich bread)&lt;/li&gt;
+&lt;li&gt;1 pound meat (I use sausage, but ham and bacon are also good)&lt;/li&gt;
+&lt;li&gt;diced vegetables (I like 1 small onion, 1 sweet bell pepper, and a couple jalapeños)&lt;/li&gt;
+&lt;li&gt;2 cups shredded cheese (cheddar, or your choice. Bold flavor is good here, and you want something that melts and toasts)&lt;/li&gt;
+&lt;li&gt;8 large eggs&lt;/li&gt;
+&lt;li&gt;2 ½ cups milk (whole milk, ideally)&lt;/li&gt;
+&lt;li&gt;½ cup heavy cream (or just more milk is fine)&lt;/li&gt;
+&lt;li&gt;1 teaspoon salt&lt;/li&gt;
+&lt;li&gt;½ teaspoon black pepper&lt;/li&gt;
+&lt;li&gt;½ teaspoon dry mustard (or maybe garlic powder? you can be creative)&lt;/li&gt;
+&lt;li&gt;a pinch of nutmeg&lt;/li&gt;
+&lt;li&gt;fresh parsley or chives for garnish (if you like)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;directions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/breakfast-strata/#directions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Directions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Set out the eggs and milk to come to room temperature.&lt;/li&gt;
+&lt;li&gt;Grease a 9×13 baking dish.&lt;/li&gt;
+&lt;li&gt;Dice your vegetables. If you work quickly and want to multitask, you could combine this with the next two steps.&lt;/li&gt;
+&lt;li&gt;Cook your meat, crumbling it.&lt;/li&gt;
+&lt;li&gt;When it is nearly done, mix in and saute the vegetables, starting with the most resilient (e.g. onion or mushroom) and ending with anything that burns easily (e.g. minced garlic). Soften the vegetables, stirring them in over medium-low heat. If your meat is not very fatty, like ham, maybe add a little oil (or remove fat if e.g. bacon makes too much).&lt;/li&gt;
+&lt;li&gt;When the meat is cooked and the veggies are softened, remove the pan from the heat.&lt;/li&gt;
+&lt;li&gt;While that cools a bit, spread half of the cubed bread into the bottom of the pan.&lt;/li&gt;
+&lt;li&gt;Spread half of the meat and veggie mixture on top of the bread cubes.&lt;/li&gt;
+&lt;li&gt;Spread half of the shredded cheese on top of that.&lt;/li&gt;
+&lt;li&gt;Repeat with more layers: the rest of the bread, the rest of the meat/veggies, and the rest of the cheese.&lt;/li&gt;
+&lt;li&gt;Prepare a custard: scramble together in a bowl all the eggs, milk, heavy cream, and all the seasonings (salt, pepper, mustard powder, nutmeg, etc). The mixture should be homogeneous.&lt;/li&gt;
+&lt;li&gt;Gently pour the custard over everything. Compress the filling with a spatula so it all gets soaked in the custard.&lt;/li&gt;
+&lt;li&gt;Cover tightly with foil and refrigerate at least two hours, or ideally overnight.&lt;/li&gt;
+&lt;li&gt;In the morning, bake at 350°F for 30 minutes, then remove the foil and bake an additional 25 minutes.&lt;/li&gt;
+&lt;li&gt;Let it rest about 10 minutes to firm up, then it can be served. A green garnish like parsley or chives dresses it up a little.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/breakfast-strata/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;You can just use 3 cups of whole milk if you don’t have heavy cream.&lt;/li&gt;
+&lt;li&gt;Since the bulk of the dish is custard and bread, crumbly or fresh bread will lead to a loose end result that is hard to serve.&lt;/li&gt;
+&lt;li&gt;You can be very creative with the meat, veggies, and seasonings. Chorizo and cumin? Mushrooms and onions? Italian sausage, feta, and spinach? Have fun.&lt;/li&gt;
+&lt;li&gt;Troubleshooting: if the result is too wet, increase cooking time. If it’s dry or rubbery, decrease the temperature or time.&lt;/li&gt;
+&lt;li&gt;The target safe internal temperature is 160°F. Egg dishes should only sit out for a maximum of 2 hours.&lt;/li&gt;
+&lt;li&gt;Adapted from a couple web retellings of Gordon Ramsay’s breakfast strata. I think recipe sites sometimes just put his name on things.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/breakfast-strata/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 8 334g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt; 581kcal (29%), &lt;strong&gt;Total Fats&lt;/strong&gt; 39g (50%), Cholesterol 274mg (91%), Total Saturated Fats 17g (85%), Total Trans Fats 0.1g, &lt;strong&gt;Total Carbs&lt;/strong&gt; 30g (11%), Total Dietary Fiber 1.7g (6%), Total Sugars 8.9g (18%), &lt;strong&gt;Protein&lt;/strong&gt; 27g (54%), &lt;strong&gt;Vitamin A&lt;/strong&gt; (31%), &lt;strong&gt;Vitamin C&lt;/strong&gt; (57%), &lt;strong&gt;Vitamin D&lt;/strong&gt; (16%), &lt;strong&gt;Calcium&lt;/strong&gt; (31%), &lt;strong&gt;Iron&lt;/strong&gt; (18%), &lt;strong&gt;Potassium&lt;/strong&gt; (12%), &lt;strong&gt;Sodium&lt;/strong&gt; (52%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: The Prodigious Plant That Can See and Simultaneously Mimic the Leaves of Surrounding Species Without Physical Contact</title>
+      <link href="https://www.labrujulaverde.com/en/2025/03/the-prodigious-plant-that-can-see-and-simultaneously-mimic-the-leaves-of-surrounding-species-without-physical-contact/" />
+      <updated>2026-05-07T18:28:30Z</updated>
+      <id>https://www.labrujulaverde.com/en/2025/03/the-prodigious-plant-that-can-see-and-simultaneously-mimic-the-leaves-of-surrounding-species-without-physical-contact/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;There is a type of South American vine &lt;em&gt;Boquila trifoliata&lt;/em&gt; aka &lt;em&gt;chameleon vine&lt;/em&gt; that mimics the shape, size, texture, and color of leaves from nearby plants - including fake plastic plants! And how it does this is mostly a mystery. It&#39;s the only known polymorphic mimic in the plant kingdom. Amazing.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Are web apps really slower than native? | Atif Afzal</title>
+      <link href="https://atfzl.com/are-web-apps-really-slower-than-native/" />
+      <updated>2026-05-07T18:26:36Z</updated>
+      <id>https://atfzl.com/are-web-apps-really-slower-than-native/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;A critical look at web defaults, arguing that web performance is capable of essentially matching native performance &lt;em&gt;when the right approach is taken&lt;/em&gt; but this approach often requires deep knowledge or extra work, because the most performant settings are not the defaults (as they are in native environments). Compelling.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: GitHub - cosmiciron/vmprint</title>
+      <link href="https://github.com/cosmiciron/vmprint" />
+      <updated>2026-05-07T18:21:10Z</updated>
+      <id>https://github.com/cosmiciron/vmprint</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Finally a good way to generate PDFs&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Red Cabbage Confit</title>
+      <link href="https://joshua.seigler.net/recipes/red-cabbage-confit/" />
+      <updated>2026-04-04T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/red-cabbage-confit/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 small red cabbage, washed and shredded&lt;/li&gt;
+&lt;li&gt;1 red onion, finely chopped&lt;/li&gt;
+&lt;li&gt;2 tbsp walnut oil (vegetable oil is also fine)&lt;/li&gt;
+&lt;li&gt;1 apple, diced&lt;/li&gt;
+&lt;li&gt;3 tbsp vinegar (red wine vinegar or apple cider vinegar are best)&lt;/li&gt;
+&lt;li&gt;3 tbsp red wine (cooking wine or a dry red)&lt;/li&gt;
+&lt;li&gt;1/2 cup jam (blueberry works great)&lt;/li&gt;
+&lt;li&gt;1 tablespoon maple syrup or honey&lt;/li&gt;
+&lt;li&gt;1/2 cup golden raisins&lt;/li&gt;
+&lt;li&gt;1 tsp salt or to taste&lt;/li&gt;
+&lt;li&gt;Pepper to taste&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;directions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#directions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Directions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Soak the shredded lettuce in cold water for about 15 minutes. Drain and set aside.&lt;/li&gt;
+&lt;li&gt;Meanwhile, in a large saute pan or pot, saute onion in oil until golden brown, stirring occasionally.&lt;/li&gt;
+&lt;li&gt;Add cabbage and remaining ingredients, mixing well. Bring to a boil. Simmer on low heat until most of the liquid evaporates, 20-30 minutes.&lt;/li&gt;
+&lt;li&gt;Taste and adjust as needed, adding a little vinegar, jam/syrup, or salt until the balance is right.&lt;/li&gt;
+&lt;li&gt;Serve warm.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;Adapted from Brynie Griesman’s recipe of the same name, in Mishpacha Magazine issue 134.&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/red-cabbage-confit/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes about 2.5 lbs, or about 12 100-gram servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 80kcal (4%), &lt;strong&gt;Fat&lt;/strong&gt;: 2.4g (5%), Cholesterol: 0, Saturated Fat: 1.9g, Trans Fat: 0, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 15.3g (6%), Fiber: 2g, Sugars: 11g &lt;strong&gt;Protein&lt;/strong&gt;: 1.1g (2%), &lt;strong&gt;Vitamin C&lt;/strong&gt;: 28.4mg (38%), &lt;strong&gt;Vitamin B-6&lt;/strong&gt;: 0.14mg (11%), &lt;strong&gt;Vitamin A&lt;/strong&gt;: 535 IU (23%), &lt;strong&gt;Vitamin K&lt;/strong&gt;: 19.6 µg (22%), &lt;strong&gt;Calcium&lt;/strong&gt;: 31mg (3%), &lt;strong&gt;Iron&lt;/strong&gt;: 0.6mg (3%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Angular impressions update</title>
       <link href="https://joshua.seigler.net/posts/angular-impressions-update/" />
       <updated>2026-03-27T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/angular-impressions-update/</id>
@@ -140,7 +329,7 @@
 </content>
     </entry>
     <entry>
-      <title>Digital unreality</title>
+      <title>Post: Digital unreality</title>
       <link href="https://joshua.seigler.net/posts/digital-unreality/" />
       <updated>2026-03-26T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/digital-unreality/</id>
@@ -154,7 +343,48 @@
 </content>
     </entry>
     <entry>
-      <title>Angular impressions</title>
+      <title>Recipe: Curry Bolognese</title>
+      <link href="https://joshua.seigler.net/recipes/curry-bolognese/" />
+      <updated>2026-02-07T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/curry-bolognese/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Salt and pepper&lt;/li&gt;
+&lt;li&gt;1 lb ground beef (at least 20 percent fat)&lt;/li&gt;
+&lt;li&gt;1 large onion, diced&lt;/li&gt;
+&lt;li&gt;2 carrots, diced&lt;/li&gt;
+&lt;li&gt;2-3 tbsp red curry paste&lt;/li&gt;
+&lt;li&gt;1 15-ounce can tomato sauce&lt;/li&gt;
+&lt;li&gt;1 lb pasta, save pasta water&lt;/li&gt;
+&lt;li&gt;1 cup heavy cream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Heat a large heavy pot over high heat and add the beef, breaking it up into small pieces and seasoning with salt and pepper; cook until browned and cooked through (4-5 min).&lt;/li&gt;
+&lt;li&gt;Push the beef to one side and add the onion and carrots to the rendered fat, season, and cook until the onion is translucent (5 min).&lt;/li&gt;
+&lt;li&gt;Stir in the curry paste and cook until darkened and fragrant, then add the tomato sauce, swishing a bit of water in the can to get it all into the pot.&lt;/li&gt;
+&lt;li&gt;Bring to a simmer, reduce heat, and let it cook while the pasta boils until al dente.&lt;/li&gt;
+&lt;li&gt;Reserve ½ cup of the pasta water, then add the drained pasta to the sauce, stir in the cream, season to taste, and loosen with pasta water if needed before serving hot.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://cooking.nytimes.com/recipes/1026551-spicy-creamy-weeknight-bolognese&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Originally from Genevieve Ko, published at NYTimes.com&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/curry-bolognese/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 4 435g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 545 kcal (25%), &lt;strong&gt;Fat&lt;/strong&gt;: 25.46g (52%), Cholesterol: 141 mg, Saturated Fat: 12.12g, Trans Fat: 0.423g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 44.29g (18%), Fiber: 9.8g (39%), Sugars: 3.98g, &lt;strong&gt;Protein&lt;/strong&gt;: 36.09g (66%), &lt;strong&gt;Vitamin C&lt;/strong&gt;: 14.4mg (19%), &lt;strong&gt;Vitamin A&lt;/strong&gt;: 5613 IU (241%), &lt;strong&gt;Vitamin D&lt;/strong&gt;: 10 IU (2%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Bag of words, have mercy on us OR: Claude will you go to prom with me? Adam Mastroianni</title>
+      <link href="https://www.experimental-history.com/p/bag-of-words-have-mercy-on-us" />
+      <updated>2025-12-08T01:18:11Z</updated>
+      <id>https://www.experimental-history.com/p/bag-of-words-have-mercy-on-us</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Trying to understand LLMs by using the rules of human psychology is like trying to understand a game of Scrabble by using the rules of Pictionary. These things don’t act like people because they aren’t people.&lt;/p&gt;
+&lt;p&gt;We are in dire need of a better metaphor. Here’s my suggestion: instead of seeing AI as a sort of silicon homunculus, we should see it as a bag of words.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Angular impressions</title>
       <link href="https://joshua.seigler.net/posts/angular-impressions/" />
       <updated>2025-10-29T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/angular-impressions/</id>
@@ -176,7 +406,223 @@
 </content>
     </entry>
     <entry>
-      <title>Alternate rules for Bananagrams</title>
+      <title>Link: I am sorry, but everyone is getting syntax highlighting wrong @ tonsky.me</title>
+      <link href="https://tonsky.me/blog/syntax-highlighting/" />
+      <updated>2025-10-18T05:52:13Z</updated>
+      <id>https://tonsky.me/blog/syntax-highlighting/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Applying human ergonomics and design principles to syntax highlighting&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Doing presentations</title>
+      <link href="https://gilest.org/doingpresentations/" />
+      <updated>2025-09-26T20:12:25Z</updated>
+      <id>https://gilest.org/doingpresentations/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;If you follow the advice on these pages and the ones we’ve linked to, you’ll end up with an excellent set of slides, and you’ll be able to present them coherently, with confidence. You’ll make your point. The audience you’re presenting to will know exactly what you’re trying to say, or asking them to do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;via &lt;a href=&quot;https://buttondown.com/davesmyth&quot;&gt;Dave Smyth&#39;s &lt;em&gt;Five Links&lt;/em&gt; newsletter&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Is it Time to Un-Sass? | CSS-Tricks</title>
+      <link href="https://css-tricks.com/is-it-time-to-un-sass/" />
+      <updated>2025-09-22T13:58:27Z</updated>
+      <id>https://css-tricks.com/is-it-time-to-un-sass/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Many of the Sass features we&#39;ve grown to love have made their way into native CSS in some shape or form. So, should we still use Sass? This is how developer Jeff Bridgforth is thinking about it.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: I Am An AI Hater | moser’s frame shop</title>
+      <link href="https://anthonymoser.github.io/writing/ai/haterdom/2025/08/26/i-am-an-ai-hater.html" />
+      <updated>2025-08-27T20:59:01Z</updated>
+      <id>https://anthonymoser.github.io/writing/ai/haterdom/2025/08/26/i-am-an-ai-hater.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;&amp;quot;I am an AI hater. This is considered rude, but I do not care, because I am a hater.&amp;quot;&lt;/p&gt;
+&lt;p&gt;Lovingly crafted vitriol - an principled argument from emotion against LLMs. Very effective reframe of this discussion.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Vulfmon &amp; Andy Arthur Smith - Merengue alla Turca (Mozart Rondo) - YouTube</title>
+      <link href="https://www.youtube.com/watch?v=VHRhPItNdIU" />
+      <updated>2025-08-21T13:34:29Z</updated>
+      <id>https://www.youtube.com/watch?v=VHRhPItNdIU</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;High energy, vocal merengue version of Mozart&#39;s Rondo alla Turca, from my favorite music scene ever, Vulfpeck.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: AI is a Mirror in Which We See Our Own Reflection - oftwominds</title>
+      <link href="http://charleshughsmith.blogspot.com/2025/08/ai-is-mirror-in-which-we-see-our-own.html" />
+      <updated>2025-08-19T04:34:46Z</updated>
+      <id>http://charleshughsmith.blogspot.com/2025/08/ai-is-mirror-in-which-we-see-our-own.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;AI is not so much a tool that everyone uses in more or less the same way, but a mirror in which we see our own reflection--if we care to look.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Charles with an insightful take as usual.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Why MCP’s Disregard for 40 Years of RPC Best Practices Will Burn Enterprises</title>
+      <link href="https://julsimon.medium.com/why-mcps-disregard-for-40-years-of-rpc-best-practices-will-burn-enterprises-8ef85ce5bc9b" />
+      <updated>2025-08-12T02:19:08Z</updated>
+      <id>https://julsimon.medium.com/why-mcps-disregard-for-40-years-of-rpc-best-practices-will-burn-enterprises-8ef85ce5bc9b</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;The Model Context Protocol (MCP) promises to standardize AI-tool interactions as the “USB-C for AI.” While its simplicity accelerates adoption, MCP systematically overlooks four decades of hard-won lessons from distributed systems. This isn’t an academic concern: enterprises deploying MCP today are building on foundations that lack fundamental capabilities that every production remote-procedure calling (RPC) system, since 1982, has deemed essential.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Managers have no human rights</title>
+      <link href="https://yosefk.com/blog/managers-have-no-human-rights.html" />
+      <updated>2025-08-11T16:53:57Z</updated>
+      <id>https://yosefk.com/blog/managers-have-no-human-rights.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Individual contributors can expect workplace psychological safety, but managers do not. This is not something that can be fixed, it&#39;s part of the role. Like how a plumber will sometimes have to smell sewage.&lt;/p&gt;
+&lt;p&gt;Reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Managers are more or less fungible.&lt;/li&gt;
+&lt;li&gt;They compete against each other since contributors and other resources are limited.&lt;/li&gt;
+&lt;li&gt;They are exposed to competitive pressures affecting the company.&lt;/li&gt;
+&lt;li&gt;They are not fully informed about the the subjects for which they are responsible.&lt;/li&gt;
+&lt;li&gt;Nobody will protect managers from these factors the way an IC is protected.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Managers can have a psychologically safe environment in a &amp;quot;peace through strength&amp;quot; fashion, or by being in the right place at the right time. But it is not permanent, and regression to the mean is just a growth cycle or reorg away.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: The Capitalist Guide to Killing Free Webtech</title>
+      <link href="https://backlit.neocities.org/capitalist-guide-to-killing-free-webtech.html" />
+      <updated>2025-08-03T20:41:08Z</updated>
+      <id>https://backlit.neocities.org/capitalist-guide-to-killing-free-webtech.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Insight: open source software from for-profit companies (e.g. Wordpress) can still be made obsolete (to force use of newer, enshittified versions) by making the software it depends on (e.g. PHP) adopt (unwanted, unnecessary) breaking changes.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: GitHub - jkoppel/jj-workshop</title>
+      <link href="https://github.com/jkoppel/jj-workshop" />
+      <updated>2025-07-29T19:12:39Z</updated>
+      <id>https://github.com/jkoppel/jj-workshop</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Video-guided 1-2 hour exercise to get hands-on familiarity with Jujutsu version control, starting from nothing.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Why Facts Don’t Change Minds in the Culture Wars—Structure Does</title>
+      <link href="https://vasily.cc/blog/facts-dont-change-minds/" />
+      <updated>2025-07-24T04:20:24Z</updated>
+      <id>https://vasily.cc/blog/facts-dont-change-minds/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;In 2019 Vin Armani was telling people we were transitioning from an age of rationalism to one of mysticism. Six years later this knowledge has begun to reach mainstream discourse. Charts and graphs are &lt;em&gt;tactics&lt;/em&gt;, they come after the belief is formed and reinforce or justify it. A worldview has a structure to it, and this article reframes persuasion and argument strategies as attempts to destabilize the structure of belief that supports a given worldview.&lt;/p&gt;
+&lt;p&gt;Thinking about worldviews with this lens is useful for maintaining or examining your own beliefs, and for understanding the motivation behind other people&#39;s persuasive efforts.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: The Hater&#39;s Guide To The AI Bubble</title>
+      <link href="https://www.wheresyoured.at/the-haters-gui/" />
+      <updated>2025-07-24T02:35:19Z</updated>
+      <id>https://www.wheresyoured.at/the-haters-gui/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;The final word in AI haterade. This is an economic bubble, where NVidia sells GPUs so a handful of other companies can use them to lose massive amounts of money. It makes up a significant fraction of the economy, and it won&#39;t last forever. &lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Jujutsu VCS Introduction and Patterns | Kuba Martin</title>
+      <link href="https://kubamartin.com/posts/introduction-to-the-jujutsu-vcs/" />
+      <updated>2025-07-23T05:06:07Z</updated>
+      <id>https://kubamartin.com/posts/introduction-to-the-jujutsu-vcs/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;I&#39;ve used Jujutsu for a week or so. It&#39;s fantastic. I was going to write an introduction to Jujutsu article but this one is so much better than what I had planned. Read this one instead.&lt;br /&gt;
+I do wish it had a better name. Try looking up &amp;quot;Jujutsu conflict resolution&amp;quot; and you get a bunch of stuff about martial arts.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: The EU as suicide pact, or: How Germany is slowly dismantling its electrical grid and why the EU won&#39;t let them fix it</title>
+      <link href="https://www.eugyppius.com/p/the-eu-as-suicide-pact-or-how-germany" />
+      <updated>2025-07-09T00:18:20Z</updated>
+      <id>https://www.eugyppius.com/p/the-eu-as-suicide-pact-or-how-germany</id>
+      <content type="html">
+</content>
+    </entry>
+    <entry>
+      <title>Link: Voice of God - The Truth About AI Assistants</title>
+      <link href="https://backlit.neocities.org/voice-of-god-the-truth-about-ai-assistants.html" />
+      <updated>2025-07-06T18:32:46Z</updated>
+      <id>https://backlit.neocities.org/voice-of-god-the-truth-about-ai-assistants.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Insightful. Basically claims that AI has been made so convenient (at great expense and effort) because it gives AI providers/operators enormous benefit: control over narrative at unprecedented depth and scale. &lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: htmz - a low power tool for html</title>
+      <link href="https://leanrada.com/htmz/" />
+      <updated>2025-07-01T19:01:52Z</updated>
+      <id>https://leanrada.com/htmz/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Super clever approach for putting HTML into other HTML. &amp;quot;Is it a framework? It&#39;s a snippet.&amp;quot;&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Chicken Chili Verde</title>
+      <link href="https://joshua.seigler.net/recipes/chicken-chili-verde/" />
+      <updated>2025-07-01T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/chicken-chili-verde/</id>
+      <content type="html">&lt;p&gt;Serves six. Prep 20 minutes, cooking time about 1 hour. Mildly spicy. Requires an immersion blender or kitchen blender.&lt;/p&gt;
+&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1-3 jalapeño peppers&lt;/li&gt;
+&lt;li&gt;1 Anaheim or Cubanelle pepper&lt;/li&gt;
+&lt;li&gt;6 tomatillos&lt;/li&gt;
+&lt;li&gt;2 large chicken breasts&lt;/li&gt;
+&lt;li&gt;1 large white onion&lt;/li&gt;
+&lt;li&gt;1 head of garlic&lt;/li&gt;
+&lt;li&gt;3 cups chicken stock&lt;/li&gt;
+&lt;li&gt;2 tsp neutral oil&lt;/li&gt;
+&lt;li&gt;Salt&lt;/li&gt;
+&lt;li&gt;Pepper&lt;/li&gt;
+&lt;li&gt;1 lime&lt;/li&gt;
+&lt;li&gt;1 tsp oregano&lt;/li&gt;
+&lt;li&gt;Fresh cilantro, optional&lt;/li&gt;
+&lt;li&gt;3 cups white rice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;directions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#directions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Directions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Rough chop the onion. Dice a little bit and set aside for a garnish.&lt;/li&gt;
+&lt;li&gt;Add the chicken, 1/3 of the chopped onion, 1/3 of the garlic, and the chicken broth to a small pot. Boil, then simmer covered for 45 minutes.&lt;/li&gt;
+&lt;li&gt;While that cooks, deseed the peppers.&lt;/li&gt;
+&lt;li&gt;In a sauté pan over medium-high heat, sear the peppers, tomatillos, and the rest of the garlic and chopped onion in about 2 tsp of oil. Stir the pan intermittently until the veggies are softened and seared, about 15 minutes.&lt;/li&gt;
+&lt;li&gt;Set aside the seared veggies. Cook the rice by your preferred method.&lt;/li&gt;
+&lt;li&gt;When the chicken is done simmering, remove the breasts and add the broth, onions, etc to the veggies.&lt;/li&gt;
+&lt;li&gt;Add to the mixture half the lime juice, and salt, pepper, oregano, and cilantro.&lt;/li&gt;
+&lt;li&gt;Blend until very smooth.&lt;/li&gt;
+&lt;li&gt;Shred the chicken breasts with forks and add to the mixture.&lt;/li&gt;
+&lt;li&gt;Heat the mixture, covered, over medium heat for 15 minutes.&lt;/li&gt;
+&lt;li&gt;Serve over rice and garnish with diced onion and lime juice.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;You can use jarred minced garlic instead of fresh, just delay adding it when you char the veggies because it will burn easily.&lt;br&gt;
+Original recipe from &lt;a href=&quot;https://www.tiktok.com/@oldscoolkevmo/video/7520712000826133791&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Kevin Ashton&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/chicken-chili-verde/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 6 389g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 558kcal (26%), &lt;strong&gt;Protein&lt;/strong&gt;: 28.18g (52%), &lt;strong&gt;Total Fat&lt;/strong&gt;: 11.64g (24%), Cholesterol: 64mg, Saturated Fat: 3g, Trans Fat: 0.11g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 82.35g (34%), Dietary Fiber: 3.9g (16%), Sugars: 3.11g, &lt;strong&gt;Calcium&lt;/strong&gt;: 45mg (5%), &lt;strong&gt;Iron&lt;/strong&gt;: 2.72mg (15%), &lt;strong&gt;Potassium&lt;/strong&gt;: 474mg (10%), &lt;strong&gt;Sodium&lt;/strong&gt;: 584mg (39%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Speed Catan - seanmcp.com</title>
+      <link href="https://www.seanmcp.com/board-games/speed-catan/" />
+      <updated>2025-06-29T03:05:58Z</updated>
+      <id>https://www.seanmcp.com/board-games/speed-catan/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Speed Catan is a variation of the popular board game Catan that emphasizes game speed and simplicity for younger (or impatient) players.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: How to Surf the Web in 2025, and Why You Should</title>
+      <link href="https://www.raptitude.com/2025/06/how-to-surf-the-web-in-2025-and-why-you-should/" />
+      <updated>2025-06-28T22:20:45Z</updated>
+      <id>https://www.raptitude.com/2025/06/how-to-surf-the-web-in-2025-and-why-you-should/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;blockquote&gt;
+&lt;p&gt;Just as it’s still possible (though seldom necessary) to ride a horse, it is still possible to surf the internet. It’s a thrill not yet lost to time.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Alternate rules for Bananagrams</title>
       <link href="https://joshua.seigler.net/posts/alternate-rules-for-bananagrams/" />
       <updated>2025-06-28T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/alternate-rules-for-bananagrams/</id>
@@ -192,7 +638,15 @@
 </content>
     </entry>
     <entry>
-      <title>FFmpeg audio cleanup</title>
+      <title>Link: Comic Helvetic Font | dafont.com</title>
+      <link href="https://www.dafont.com/comic-helvetic.font" />
+      <updated>2025-06-26T14:29:51Z</updated>
+      <id>https://www.dafont.com/comic-helvetic.font</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;I don&#39;t understand why this feels ok but Comic Sans makes my skin crawl.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: FFmpeg audio cleanup</title>
       <link href="https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/" />
       <updated>2025-06-26T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/ffmpeg-audio-cleanup/</id>
@@ -232,7 +686,7 @@
 </content>
     </entry>
     <entry>
-      <title>War</title>
+      <title>Post: War</title>
       <link href="https://joshua.seigler.net/posts/july-21-2025/" />
       <updated>2025-06-21T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/july-21-2025/</id>
@@ -255,7 +709,23 @@
 </content>
     </entry>
     <entry>
-      <title>My Very Own GitHub Pages</title>
+      <title>Link: NIKA:&#92;git-revise&#92;&gt;</title>
+      <link href="https://mystor.github.io/git-revise.html" />
+      <updated>2025-06-18T16:18:36Z</updated>
+      <id>https://mystor.github.io/git-revise.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;git-revise is a history editing tool designed for the patch-stack workflow. It&#39;s fast, non-destructive, and aims to provide a familiar, powerful, and easy to use re-imagining of the patch stack workflow.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Markdown Code Blocks With a Title / Filename - Lusitos Tech Blog</title>
+      <link href="https://blog.lusito.info/markdown-code-blocks-with-a-title-filename.html" />
+      <updated>2025-06-15T02:28:23Z</updated>
+      <id>https://blog.lusito.info/markdown-code-blocks-with-a-title-filename.html</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Smart alternative to immediately using some kind of markdown extension or plugin. Good perspective.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: My Very Own GitHub Pages</title>
       <link href="https://joshua.seigler.net/posts/my-very-own-github-pages/" />
       <updated>2025-06-15T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/my-very-own-github-pages/</id>
@@ -435,7 +905,169 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Tools of the trade</title>
+      <title>Link: MidWord! The world&#39;s favorite word guessing game</title>
+      <link href="https://midword.com/" />
+      <updated>2025-06-14T04:28:49Z</updated>
+      <id>https://midword.com/</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;Just found my new favorite long-car-ride verbal game!&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Amish Egg Noodles</title>
+      <link href="https://joshua.seigler.net/recipes/amish-egg-noodles/" />
+      <updated>2025-06-13T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/amish-egg-noodles/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;6 tablespoons butter, divided&lt;/li&gt;
+&lt;li&gt;28 ounces chicken broth&lt;/li&gt;
+&lt;li&gt;1 chicken bouillon cube&lt;/li&gt;
+&lt;li&gt;12 ounces extra wide egg noodles&lt;/li&gt;
+&lt;li&gt;1 teaspoon parsley flakes&lt;/li&gt;
+&lt;li&gt;Salt and pepper, to taste&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;In a large pan, brown two tablespoons of butter over medium heat.&lt;/li&gt;
+&lt;li&gt;Pour the chicken stock and bouillon cube into the pan and bring to a boil.&lt;/li&gt;
+&lt;li&gt;Add the egg noodles to the chicken stock and return to a boil. Cover the pot and remove from the heat.&lt;/li&gt;
+&lt;li&gt;Let the noodles set for 30 minutes, stirring every 10 minutes or so.&lt;/li&gt;
+&lt;li&gt;Test the noodles for doneness. If they are not cooked through, turn the heat back on and cook for 1-2 minutes until noodles are tender.&lt;/li&gt;
+&lt;li&gt;Top with the remaining 4 tablespoons of butter, parsley, and salt and pepper to taste.&lt;/li&gt;
+&lt;li&gt;Serve immediately or leave in the pan, covered, until ready to serve. These will stay warm for 20 more minutes or so with no problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;We use 4.5 tsp of Better than Bouillon with 28oz water, replacing the broth and bouillon cube.&lt;br&gt;
+We also usually brown some canned chicken and add it at the same time as the butter and seasonings.&lt;/p&gt;
+&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.bunsinmyoven.com/amish-egg-noodles/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bunsinmyoven&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/amish-egg-noodles/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 6 servings. Each serving:&lt;br&gt;
+&lt;strong&gt;Calories&lt;/strong&gt; 328kcal (16%), &lt;strong&gt;Total Fat&lt;/strong&gt; 14g (22%), Saturated Fat 7g (44%), Cholesterol 77mg (26%), &lt;strong&gt;Sodium&lt;/strong&gt; 758mg (33%), &lt;strong&gt;Total Carbohydrates&lt;/strong&gt; 41g (14%), Dietary Fiber 2g (8%), Sugar 1g (1%), &lt;strong&gt;Protein&lt;/strong&gt; 9g (18%), &lt;strong&gt;Vitamin C&lt;/strong&gt; 10.3mg (12%), &lt;strong&gt;Vitamin A&lt;/strong&gt; 400IU (8%), &lt;strong&gt;Iron&lt;/strong&gt; 1.5mg (8%), &lt;strong&gt;Calcium&lt;/strong&gt; 41mg (4%), &lt;strong&gt;Potassium&lt;/strong&gt; 266mg (8%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Verissimo Monthly - May 2025 - by Binyamin Grobman</title>
+      <link href="https://verissimo.substack.com/p/verissimo-monthly-may-2025" />
+      <updated>2025-06-03T17:39:50Z</updated>
+      <id>https://verissimo.substack.com/p/verissimo-monthly-may-2025</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;The Unreliability of LLMs &amp;amp; What Lies Ahead&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Link: Keeping up appearances | deadSimpleTech</title>
+      <link href="https://deadsimpletech.com/blog/keeping_up_appearances" />
+      <updated>2025-05-31T04:02:35Z</updated>
+      <id>https://deadsimpletech.com/blog/keeping_up_appearances</id>
+      <content type="html">&lt;div class=&quot;markdown&quot;&gt;&lt;p&gt;The only reason that LLMs took root in the first place was because our societies in the anglosphere have already developed cultures solely devoted to gaining status and keeping up the appearance of doing things rather than actually doing them. All other values, increasingly including even the accumulation of wealth (while this is still very much a thing that people pursue, wealth is increasingly becoming a proxy for status more than something desired in itself) are becoming subordinated to symbolic status games completely detached from anything real.&lt;/p&gt;&lt;/div&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Perfect Homemade Brownies</title>
+      <link href="https://joshua.seigler.net/recipes/perfect-homemade-brownies/" />
+      <updated>2025-05-20T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/perfect-homemade-brownies/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 cup butter&lt;/li&gt;
+&lt;li&gt;2 1/4 cups sugar&lt;/li&gt;
+&lt;li&gt;4 large eggs&lt;/li&gt;
+&lt;li&gt;1 1/4 cups cocoa powder&lt;/li&gt;
+&lt;li&gt;1 teaspoon salt&lt;/li&gt;
+&lt;li&gt;1 teaspoon baking powder&lt;/li&gt;
+&lt;li&gt;1 teaspoon espresso powder (optional)&lt;/li&gt;
+&lt;li&gt;1 tablespoon vanilla extract&lt;/li&gt;
+&lt;li&gt;1 1/2 cups all-purpose flour&lt;/li&gt;
+&lt;li&gt;2 cups semi-sweet chocolate chips&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Pre-heat the oven to 350 degrees. Butter a 9×13 baking dish.&lt;/li&gt;
+&lt;li&gt;In small saucepan over low heat, melt butter completely. Stir in sugar and continue cooking for 1-2 minutes, stirring constantly. Do not allow sugar mixture to boil.&lt;/li&gt;
+&lt;li&gt;Pour butter mixture into a large bowl or stand mixer, and cool for 2 minutes. Beat in cocoa powder, eggs, salt, baking powder, espresso powder, and vanilla extract. Mix until well combined.&lt;/li&gt;
+&lt;li&gt;Stir in the flour and chocolate chips until well combined.&lt;/li&gt;
+&lt;li&gt;Spread into prepared pan (batter will be very thick and sticky) and bake for about 30 minutes, until a tester comes out mostly clean. The edges should be set and the center should still look slightly moist, but not uncooked. Cool on a wire rack.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.bunsinmyoven.com/good-ol-homemade-brownies/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Buns In My Oven&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/perfect-homemade-brownies/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;16 servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt; 419kcal (21%) &lt;strong&gt;Carbohydrates&lt;/strong&gt; 53g (18%) &lt;strong&gt;Protein&lt;/strong&gt; 5g (10%) &lt;strong&gt;Fat&lt;/strong&gt; 22g (34%) &lt;strong&gt;Saturated Fat&lt;/strong&gt; 13g (81%) &lt;strong&gt;Cholesterol&lt;/strong&gt; 78mg (26%) &lt;strong&gt;Sodium&lt;/strong&gt; 268mg (12%) &lt;strong&gt;Potassium&lt;/strong&gt; 290mg (8%) &lt;strong&gt;Fiber&lt;/strong&gt; 4g (17%) &lt;strong&gt;Sugar&lt;/strong&gt; 36g (40%) &lt;strong&gt;Vitamin A&lt;/strong&gt; 435IU (9%) &lt;strong&gt;Calcium&lt;/strong&gt; 46mg (5%) &lt;strong&gt;Iron&lt;/strong&gt; 3.2mg (18%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Pasta Rosatella</title>
+      <link href="https://joshua.seigler.net/recipes/pasta-rosatella/" />
+      <updated>2025-05-20T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/pasta-rosatella/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1lb any pasta&lt;/li&gt;
+&lt;li&gt;2 cups (approximate) garlic &amp;amp; herb pasta sauce&lt;/li&gt;
+&lt;li&gt;1½ cups milk&lt;/li&gt;
+&lt;li&gt;2 tablespoons flour&lt;/li&gt;
+&lt;li&gt;2 tablespoons oil&lt;/li&gt;
+&lt;li&gt;Salt and pepper&lt;/li&gt;
+&lt;li&gt;Grated Parmesan cheese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cook the pasta according to the package directions.&lt;/li&gt;
+&lt;li&gt;Meanwhile in a saucepan, whisk together the oil and flour over medium heat to form a roux. Cook for 1–2 minutes until lightly golden.&lt;/li&gt;
+&lt;li&gt;Slowly whisk in the milk to make a béchamel and continue stirring until thickened.&lt;/li&gt;
+&lt;li&gt;Season with salt and pepper, and add cheese.&lt;/li&gt;
+&lt;li&gt;Stir in the pasta sauce and let the mixture simmer on low.&lt;/li&gt;
+&lt;li&gt;When the pasta is done cooking, drain it, then top with the sauce and extra cheese to serve.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;The recipe works the same with almond milk and vegan mozarella replacing the existing dairy.&lt;/p&gt;
+&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.tiktok.com/@dollartreedinners/video/7499238134434123051&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;dollartreedinners&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/pasta-rosatella/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 4 servings. Each serving:&lt;br&gt;
+&lt;strong&gt;Calories&lt;/strong&gt; 626kcal (31%) &lt;strong&gt;Total Fat&lt;/strong&gt; 14.1g (18%) &lt;strong&gt;Saturated Fat&lt;/strong&gt; 4.4g (22%) &lt;strong&gt;Trans Fat&lt;/strong&gt; 0.19g &lt;strong&gt;Cholesterol&lt;/strong&gt; 18.1mg (6%) &lt;strong&gt;Sodium&lt;/strong&gt; 980.9mg (41%) &lt;strong&gt;Total Carbohydrate&lt;/strong&gt; 100g (36%) &lt;strong&gt;Dietary Fiber&lt;/strong&gt; 4.8g (17%) &lt;strong&gt;Total Sugars&lt;/strong&gt; 10.7g (21%) &lt;strong&gt;Protein&lt;/strong&gt; 22.8g (46%) &lt;strong&gt;Vitamin C&lt;/strong&gt; 2.6mg (3%) &lt;strong&gt;Vitamin D&lt;/strong&gt; 1.2mcg (6%) &lt;strong&gt;Iron&lt;/strong&gt; 4.8mg (27%) &lt;strong&gt;Calcium&lt;/strong&gt; 242.6mg (19%) &lt;strong&gt;Potassium&lt;/strong&gt; 642.7mg (14%) &lt;strong&gt;Phosphorus&lt;/strong&gt; 381.7mg (31%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Creamy Chicken Orzo</title>
+      <link href="https://joshua.seigler.net/recipes/creamy-chicken-orzo/" />
+      <updated>2025-05-20T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/creamy-chicken-orzo/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2 boneless skinless chicken breasts, cooked and diced&lt;/li&gt;
+&lt;li&gt;8 ounces Orzo pasta&lt;/li&gt;
+&lt;li&gt;2 celery stalks, finely diced&lt;/li&gt;
+&lt;li&gt;2 carrots, finely diced&lt;/li&gt;
+&lt;li&gt;1/2 yellow onion, finely diced&lt;/li&gt;
+&lt;li&gt;5 tablespoons butter&lt;/li&gt;
+&lt;li&gt;2 tablespoons olive oil&lt;/li&gt;
+&lt;li&gt;2 cups chicken broth&lt;/li&gt;
+&lt;li&gt;½ cup heavy whipping cream&lt;/li&gt;
+&lt;li&gt;1 teaspoon chicken bouillon powder&lt;/li&gt;
+&lt;li&gt;1/3 cup all purpose flour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cook the Orzo per the package instructions.&lt;/li&gt;
+&lt;li&gt;While that cooks, make a mirepoix:
+&lt;ol&gt;
+&lt;li&gt;In a large skillet over medium high heat add the butter and olive oil.&lt;/li&gt;
+&lt;li&gt;Once the butter is melted add in the diced onion, carrots and celery.&lt;/li&gt;
+&lt;li&gt;Allow the veggies to sauté for 4-5 minutes until they start to soften up.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Reduce the heat to low and sprinkle the all-purpose flour over the veggies and whisk together until it forms a paste/roux. While stirring constantly, allow the roux to cook for 2-3 minutes.&lt;/li&gt;
+&lt;li&gt;Pour into the roux the chicken broth, chicken boullion powder, and heavy whipping cream. Whisk together until no clumps are present and the mixture starts to thicken.&lt;/li&gt;
+&lt;li&gt;Add in the diced chicken and allow the mixture to simmer until it reaches desired thickness. Pour in drained orzo and stir to combine. Serve &amp;amp; enjoy!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;You can use rotisserie chicken or cook your own chicken for this recipe. If you use a rotisserie chicken then no additional seasonings are needed, but if you are planning to cook your own chicken then you will need to season it to your liking. I typically use a blend of onion powder, garlic powder, paprika, salt and black pepper.&lt;/p&gt;
+&lt;p&gt;Original recipe from &lt;a href=&quot;https://cookingwithkatiecross.com/creamy-chicken-pot-pie-orzo/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Cooking with Katie Cross&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/creamy-chicken-orzo/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 5 servings, 1700g. Each 340g serving:&lt;br&gt;
+&lt;strong&gt;Calories&lt;/strong&gt; 496kcal (25%), &lt;strong&gt;Total Fat&lt;/strong&gt; 21g (32%), Saturated Fat 9g (45%), Trans Fat 0g, &lt;strong&gt;Cholesterol&lt;/strong&gt; 102mg (34%), &lt;strong&gt;Sodium&lt;/strong&gt; 504mg (21%), &lt;strong&gt;Total Carbohydrates&lt;/strong&gt; 45g (15%), Dietary Fiber 3g (13%), Sugars 3g, &lt;strong&gt;Protein&lt;/strong&gt; 30g (60%), &lt;strong&gt;Vitamin A&lt;/strong&gt; 4646IU, &lt;strong&gt;Vitamin C&lt;/strong&gt; 3mg, &lt;strong&gt;Calcium&lt;/strong&gt; 78mg, &lt;strong&gt;Iron&lt;/strong&gt; 2mg, &lt;strong&gt;Potassium&lt;/strong&gt; 442mg&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Tools of the trade</title>
       <link href="https://joshua.seigler.net/posts/tools-of-the-trade/" />
       <updated>2025-05-15T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/tools-of-the-trade/</id>
@@ -464,7 +1096,81 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Thinking machines</title>
+      <title>Recipe: Spanish Style Rice</title>
+      <link href="https://joshua.seigler.net/recipes/spanish-style-rice/" />
+      <updated>2025-05-05T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/spanish-style-rice/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;3 Tbsp neutral oil&lt;/li&gt;
+&lt;li&gt;2 cups long grain white rice&lt;/li&gt;
+&lt;li&gt;4 cups water&lt;/li&gt;
+&lt;li&gt;8 oz tomato sauce&lt;/li&gt;
+&lt;li&gt;2 Tbsp chicken or vegetable bouillon powder&lt;/li&gt;
+&lt;li&gt;1.5 cups water&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Add oil to a large frying pan over medium-high heat.&lt;/li&gt;
+&lt;li&gt;Add uncooked rice, stirring continually until rice is toasted.&lt;/li&gt;
+&lt;li&gt;Stir in 4 cups water, tomato sauce, and bouillon.&lt;/li&gt;
+&lt;li&gt;Return to boil and leave uncovered &lt;strong&gt;10 minutes&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Stir in 1.5 cups water and return to a boil.&lt;/li&gt;
+&lt;li&gt;Reduce heat to low and cover. Simmer &lt;strong&gt;10 minutes&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Turn off heat and leave in place, covered for &lt;strong&gt;20 minutes&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;Original recipe from &lt;a href=&quot;https://www.tiktok.com/t/ZT2Qy1AtF/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;dollartreedinners&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/spanish-style-rice/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 4 servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt; 441kcal (22%), &lt;strong&gt;Total Fat&lt;/strong&gt; 11.3g (17%), Saturated Fat 1.9g (10%), Trans Fat 0.1g, Cholesterol 1mg (0%), &lt;strong&gt;Sodium&lt;/strong&gt; 56mg (2%), &lt;strong&gt;Total Carbohydrates&lt;/strong&gt; 76g (25%), Dietary Fiber 2g (6%), Sugars 0g, &lt;strong&gt;Protein&lt;/strong&gt; 7g, &lt;strong&gt;Vitamin A&lt;/strong&gt; (1%), &lt;strong&gt;Vitamin C&lt;/strong&gt; (9%), &lt;strong&gt;Calcium&lt;/strong&gt; (7%), &lt;strong&gt;Iron&lt;/strong&gt; (24%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Luther Salad</title>
+      <link href="https://joshua.seigler.net/recipes/luther-salad/" />
+      <updated>2025-05-05T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/luther-salad/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 lb tri-color rotini&lt;/li&gt;
+&lt;li&gt;italian dressing&lt;/li&gt;
+&lt;li&gt;extras
+&lt;ul&gt;
+&lt;li&gt;cubed low-moisture mozzarella&lt;/li&gt;
+&lt;li&gt;frozen peas&lt;/li&gt;
+&lt;li&gt;shredded chicken&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Cook rotini in well salted water according to box directions. While rotini cooks, prepare your extras.&lt;/li&gt;
+&lt;li&gt;Drain pasta and rinse twice in cold water to remove starch and stop carryover cooking.&lt;/li&gt;
+&lt;li&gt;In a large bowl combine rotini and extras. Add italian dressing, at least 8 oz. Mix and serve or refrigerate.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;At first we called this “worm salad” but this proved off-putting, and we needed a new name. We had recently learned about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Diet_of_Worms&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1521 Diet of Worms&lt;/a&gt; where Martin Luther was summoned to defend or recant his beliefs, so we called it “Luther salad” instead.&lt;/p&gt;
+&lt;p&gt;The base salad already covers elements of &lt;a href=&quot;https://www.saltfatacidheat.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;salt, fat, acid, and heat&lt;/a&gt;, so your extras are mostly for texture, leaving lots of room for variations:&lt;/p&gt;
+&lt;h3 id=&quot;vegan-%2F-healthy%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#vegan-%2F-healthy%3A&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Vegan / healthy:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;halved cherry tomatoes&lt;/li&gt;
+&lt;li&gt;slivered sweet peppers&lt;/li&gt;
+&lt;li&gt;paysanne cucumber&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;italian%3A&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#italian%3A&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Italian:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;halved cherry tomatoes&lt;/li&gt;
+&lt;li&gt;sliced black olives, drained&lt;/li&gt;
+&lt;li&gt;cubed cheese&lt;/li&gt;
+&lt;li&gt;chopped pepperoni&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/luther-salad/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;This is less a recipe and more a category of foods. It has a pound of pasta, a good amount of oil, and some protein. So, kinda high on carbs but not the worst thing. No label for this one.&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Thinking machines</title>
       <link href="https://joshua.seigler.net/posts/thinking-machines/" />
       <updated>2025-04-24T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/thinking-machines/</id>
@@ -495,7 +1201,66 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Site design updated</title>
+      <title>Recipe: Corn Casserole</title>
+      <link href="https://joshua.seigler.net/recipes/corn-casserole/" />
+      <updated>2025-04-24T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/corn-casserole/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 can of corn drained&lt;/li&gt;
+&lt;li&gt;1 can of creamed corn&lt;/li&gt;
+&lt;li&gt;1 stick melted butter 1/2 cup&lt;/li&gt;
+&lt;li&gt;1 box of Jiffy Corn Muffin mix&lt;/li&gt;
+&lt;li&gt;1 cup sour cream&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preheat the oven to 350 degrees.&lt;/li&gt;
+&lt;li&gt;In a bowl, mix all of the ingredients together in order, then pour into a greased 8&amp;quot;x8&amp;quot; baking pan.&lt;/li&gt;
+&lt;li&gt;Cook uncovered for 45-50 minutes or until lightly browned.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;Vegan substitutions: instead of sour cream, oat milk with a little vinegar; instead of butter, vegetable butter or neutral oil. Made this way, the result will be less bready but still excellent. You may need to increase cooking time slightly.&lt;/p&gt;
+&lt;p&gt;Doubling: if the pan size makes the uncooked mix more than about an inch deep, you will need extra cooking time. Cover it with foil and cook another 20 minutes or so.&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/corn-casserole/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 15.5 100g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 167g (8%), &lt;strong&gt;Protein&lt;/strong&gt;: 2.82g (5%), &lt;strong&gt;Total Fat&lt;/strong&gt;: 9.35g (19%), Cholesterol: 31g, Saturated Fat: 5.2g, Trans Fat: 0.24g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 20g (8%), Dietary Fiber: 1.1g (4%), Sugars: 2.05g, &lt;strong&gt;Calcium&lt;/strong&gt;: 36mg (4%), &lt;strong&gt;Iron&lt;/strong&gt;: 0.6mg (3%), &lt;strong&gt;Potassium&lt;/strong&gt;: 137mg (3%), &lt;strong&gt;Sodium&lt;/strong&gt;: 346mg (23%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Recipe: Sloppy Joes</title>
+      <link href="https://joshua.seigler.net/recipes/sloppy-joes/" />
+      <updated>2024-06-07T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/recipes/sloppy-joes/</id>
+      <content type="html">&lt;h2 id=&quot;ingredients&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#ingredients&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1 lb. hamburger&lt;/li&gt;
+&lt;li&gt;1/2 teaspoon paprika&lt;/li&gt;
+&lt;li&gt;1 teaspoon chili powder&lt;/li&gt;
+&lt;li&gt;1 Tablespoon dry mustard&lt;/li&gt;
+&lt;li&gt;1 Tablespoon parsley, chopped&lt;/li&gt;
+&lt;li&gt;1 Tablespoon Worcestershire sauce&lt;/li&gt;
+&lt;li&gt;2 Tablespoons brown sugar&lt;/li&gt;
+&lt;li&gt;2 Tablespoons apple cider vinegar&lt;/li&gt;
+&lt;li&gt;1/2 cup onion, diced&lt;/li&gt;
+&lt;li&gt;1/2 cup Ketchup&lt;/li&gt;
+&lt;li&gt;1 cup water&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;instructions&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#instructions&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Instructions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Brown beef with onion, draining fat.&lt;/li&gt;
+&lt;li&gt;Add all remaining ingredients and bring to a boil.&lt;/li&gt;
+&lt;li&gt;Simmer 20 minutes or until thickened, stirring occasionally.&lt;/li&gt;
+&lt;li&gt;Refrigerate overnight, serve hot.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Notes&lt;/h2&gt;
+&lt;p&gt;If you don’t have onion you can substitute 1/2 tablespoon onion powder.&lt;br&gt;
+Recipe originally from Connie Henderson of Charlottesville, VA&lt;/p&gt;
+&lt;h2 id=&quot;nutrition-information&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/recipes/sloppy-joes/#nutrition-information&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Nutrition Information&lt;/h2&gt;
+&lt;p&gt;Makes 9.5 100g servings. Each serving: &lt;strong&gt;Calories&lt;/strong&gt;: 135 kcal (6%), &lt;strong&gt;Fat&lt;/strong&gt;: 7.43g (15%), Cholesterol: 32 mg, Saturated Fat: 2.738g, Trans Fat: 0.408g, &lt;strong&gt;Carbohydrates&lt;/strong&gt;: 7.62g (3%), Fiber: 0.4g (2%), Sugars: 5.99g, &lt;strong&gt;Protein&lt;/strong&gt;: 9.26g (17%), &lt;strong&gt;Vitamin C&lt;/strong&gt;: 1.8mg (2%), &lt;strong&gt;Vitamin A&lt;/strong&gt;: 253 IU 1(1%), &lt;strong&gt;Vitamin D&lt;/strong&gt;: 1 IU (0%)&lt;/p&gt;
+</content>
+    </entry>
+    <entry>
+      <title>Post: Site design updated</title>
       <link href="https://joshua.seigler.net/posts/site-design-updated/" />
       <updated>2024-06-05T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/site-design-updated/</id>
@@ -522,7 +1287,7 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Finally, a Coherent Worldview</title>
+      <title>Post: Finally, a Coherent Worldview</title>
       <link href="https://joshua.seigler.net/posts/finally-a-coherent-worldview/" />
       <updated>2023-07-14T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/finally-a-coherent-worldview/</id>
@@ -532,7 +1297,7 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Embracing Mysticism</title>
+      <title>Post: Embracing Mysticism</title>
       <link href="https://joshua.seigler.net/posts/embracing-mysticism/" />
       <updated>2021-10-16T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/embracing-mysticism/</id>
@@ -556,7 +1321,7 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Needs-based communication</title>
+      <title>Post: Needs-based communication</title>
       <link href="https://joshua.seigler.net/posts/needs-based-communication/" />
       <updated>2021-05-26T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/needs-based-communication/</id>
@@ -638,7 +1403,7 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>The Trivium: A Tool for Learning Anything</title>
+      <title>Post: The Trivium: A Tool for Learning Anything</title>
       <link href="https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/" />
       <updated>2021-04-03T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/the-trivium-a-tool-for-learning-anything/</id>
@@ -660,7 +1425,7 @@ Here is &lt;a href=&quot;https://git.apps.seigler.net/joshua/marklink.pages.seig
 </content>
     </entry>
     <entry>
-      <title>Authority - Consent&#39;s Blind Spot</title>
+      <title>Post: Authority - Consent&#39;s Blind Spot</title>
       <link href="https://joshua.seigler.net/posts/authority-consents-blind-spot/" />
       <updated>2020-07-02T00:00:00Z</updated>
       <id>https://joshua.seigler.net/posts/authority-consents-blind-spot/</id>
