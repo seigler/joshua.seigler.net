@@ -7,33 +7,20 @@ tags:
   - learning
 ---
 
-<link rel="preload" href="shepard-chromatic-c/01-C.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/02-Cs.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/03-D.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/04-Ds.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/05-E.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/06-F.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/07-Fs.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/08-G.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/09-Gs.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/10-A.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/11-As.mp3" as="audio" />
-<link rel="preload" href="shepard-chromatic-c/12-B.mp3" as="audio" />
-
 <script>
   const files = [
-    "shepard-chromatic-c/01-C.mp3",
-    "shepard-chromatic-c/02-Cs.mp3",
-    "shepard-chromatic-c/03-D.mp3",
-    "shepard-chromatic-c/04-Ds.mp3",
-    "shepard-chromatic-c/05-E.mp3",
-    "shepard-chromatic-c/06-F.mp3",
-    "shepard-chromatic-c/07-Fs.mp3",
-    "shepard-chromatic-c/08-G.mp3",
-    "shepard-chromatic-c/09-Gs.mp3",
-    "shepard-chromatic-c/10-A.mp3",
-    "shepard-chromatic-c/11-As.mp3",
-    "shepard-chromatic-c/12-B.mp3",
+    "/sfx/shepard-chromatic-c/01-C.mp3",
+    "/sfx/shepard-chromatic-c/02-Cs.mp3",
+    "/sfx/shepard-chromatic-c/03-D.mp3",
+    "/sfx/shepard-chromatic-c/04-Ds.mp3",
+    "/sfx/shepard-chromatic-c/05-E.mp3",
+    "/sfx/shepard-chromatic-c/06-F.mp3",
+    "/sfx/shepard-chromatic-c/07-Fs.mp3",
+    "/sfx/shepard-chromatic-c/08-G.mp3",
+    "/sfx/shepard-chromatic-c/09-Gs.mp3",
+    "/sfx/shepard-chromatic-c/10-A.mp3",
+    "/sfx/shepard-chromatic-c/11-As.mp3",
+    "/sfx/shepard-chromatic-c/12-B.mp3",
   ];
   const audios = files.map(f => new Audio(f));
   audios.forEach((x, i) => {
@@ -103,9 +90,9 @@ I find that if you listen to them too quickly, they all seem to be in the same d
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(calc(var(--index) * 30deg)) translateY(-10rem) rotate(calc(var(--index) * -30deg));
-    &.active {
-      background-color: var(--c-text) !important;
-    }
+  }
+  .piano-key.active {
+    background-color: var(--c-text) !important;
   }
 </style>
 

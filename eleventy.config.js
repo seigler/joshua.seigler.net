@@ -85,11 +85,6 @@ export default async (config) => {
     assets: "/",
   })
 
-  // pass through all template-relative files
-  config.addPassthroughCopy("**/*.mp3", {
-    mode: "html-relative",
-  })
-
   // collection from music folder
   config.addPassthroughCopy("site/music", {
     rename: (filename) => {
