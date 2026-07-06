@@ -5,11 +5,127 @@
   <subtitle>Personal homepage of Joshua Seigler</subtitle>
   <link href="https://joshua.seigler.net/feed.xml" rel="self" />
   <link href="https://joshua.seigler.net/" />
-  <updated>2026-07-02T00:00:00Z</updated>
+  <updated>2026-07-06T00:00:00Z</updated>
   <id>https://joshua.seigler.net/</id>
   <author>
     <name></name>
   </author>
+    <entry>
+      <title>Post: Cool musical illusion - tritone paradox</title>
+      <link href="https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/" />
+      <updated>2026-07-06T00:00:00Z</updated>
+      <id>https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/</id>
+      <content type="html">&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/01-C.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/02-Cs.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/03-D.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/04-Ds.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/05-E.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/06-F.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/07-Fs.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/08-G.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/09-Gs.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/10-A.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/11-As.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/shepard-chromatic-c/12-B.mp3&quot; as=&quot;audio&quot;&gt;
+&lt;script&gt;
+  const files = [
+    &quot;shepard-chromatic-c/01-C.mp3&quot;,
+    &quot;shepard-chromatic-c/02-Cs.mp3&quot;,
+    &quot;shepard-chromatic-c/03-D.mp3&quot;,
+    &quot;shepard-chromatic-c/04-Ds.mp3&quot;,
+    &quot;shepard-chromatic-c/05-E.mp3&quot;,
+    &quot;shepard-chromatic-c/06-F.mp3&quot;,
+    &quot;shepard-chromatic-c/07-Fs.mp3&quot;,
+    &quot;shepard-chromatic-c/08-G.mp3&quot;,
+    &quot;shepard-chromatic-c/09-Gs.mp3&quot;,
+    &quot;shepard-chromatic-c/10-A.mp3&quot;,
+    &quot;shepard-chromatic-c/11-As.mp3&quot;,
+    &quot;shepard-chromatic-c/12-B.mp3&quot;,
+  ];
+  const audios = files.map(f =&gt; new Audio(f));
+  audios.forEach((x, i) =&gt; {
+    x.addEventListener(&#39;play&#39;, () =&gt; {
+      document.getElementById(`pitch-${i}`).classList.add(&quot;active&quot;);
+    })
+    x.addEventListener(&#39;ended&#39;, () =&gt; {
+      document.getElementById(`pitch-${i}`).classList.remove(&quot;active&quot;);
+    })
+  })
+  const controller = new AbortController();
+  function playTone(index, clearOnended = true) {
+    const tone = audios[index];
+    if (clearOnended) {
+      tone.onended = undefined
+    }
+    if (tone.readyState &gt;= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      tone.pause();
+      tone.currentTime = 0;
+      tone.play();
+    }
+  }
+  function playTritone(index1) {
+    const index2 = (index1 + 6) % 12;
+    const tone1 = audios[index1];
+    const tone2 = audios[index2];
+    tone1.onended = () =&gt; {
+      playTone(index2, false);
+    };
+    tone2.onended = () =&gt; {
+      tone1.onended = undefined;
+      tone2.onended = undefined;
+    }
+    playTone(index1, false);
+  }
+&lt;/script&gt;
+&lt;p&gt;Have you heard of “Shepard tones”? They are produced when you play a note in every octave at once, so the “pitch height” is ambiguous.&lt;/p&gt;
+&lt;p&gt;Well, if you play one of these shepard tones (just a single note, like a &lt;button class=&quot;inline&quot; onclick=&quot;playTone(0)&quot;&gt;C&lt;/button&gt;) and you then play its tritone &lt;button class=&quot;inline&quot; onclick=&quot;playTone(6)&quot;&gt;F♯&lt;/button&gt; which is half an octave away, some people will hear the second note as higher, and some will hear it as lower.&lt;/p&gt;
+&lt;p&gt;Try it! &lt;button class=&quot;inline&quot; onclick=&quot;playTritone(0)&quot;&gt;C =&amp;gt; F♯&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;Which you hear seems to depend on your perception of the first note as high or low, which is connected with how you process pitch in language (and therefore is not something you can easily change). People tend to hear the same thing their mother hears, and there are regional tendencies as well (England vs California have opposite tendencies).&lt;/p&gt;
+&lt;p&gt;This would only be possible if &lt;em&gt;everyone has a latent sense of absolute pitch&lt;/em&gt;!&lt;/p&gt;
+&lt;p&gt;If you arrange the pitches in a loop or circle, you generally hear up for half of the circle and down for the other half, with a little ambiguity in the middle where you might be able to hear it either way.&lt;/p&gt;
+&lt;p&gt;I find that if you listen to them too quickly, they all seem to be in the same direction. But if you pause between each one, or jump around, you can identify which tones you always hear strongly in one direction, and which ones you can hear both directions. Try it out! See if people around you hear things differently than you.&lt;/p&gt;
+&lt;style&gt;
+  #shepard-piano {
+    width: 40ch;
+    height: 40ch;
+    margin-inline: auto;
+    position: relative;
+  }
+  .piano-key {
+    position: absolute;
+    background-color: var(--c-accent);
+    transition: background-color 0.2s ease;
+    font-size: 1.5em;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(calc(var(--index) * 30deg)) translateY(-10rem) rotate(calc(var(--index) * -30deg));
+    &amp;.active {
+      background-color: var(--c-text) !important;
+    }
+  }
+&lt;/style&gt;
+&lt;h2 id=&quot;tritone-paradox-piano&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/#tritone-paradox-piano&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Tritone paradox piano&lt;/h2&gt;
+&lt;div id=&quot;shepard-piano&quot;&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-0&quot; style=&quot;--index: 0&quot; onclick=&quot;playTritone(0)&quot;&gt;C&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-1&quot; style=&quot;--index: 1&quot; onclick=&quot;playTritone(1)&quot;&gt;C♯&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-2&quot; style=&quot;--index: 2&quot; onclick=&quot;playTritone(2)&quot;&gt;D&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-3&quot; style=&quot;--index: 3&quot; onclick=&quot;playTritone(3)&quot;&gt;D♯&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-4&quot; style=&quot;--index: 4&quot; onclick=&quot;playTritone(4)&quot;&gt;E&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-5&quot; style=&quot;--index: 5&quot; onclick=&quot;playTritone(5)&quot;&gt;F&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-6&quot; style=&quot;--index: 6&quot; onclick=&quot;playTritone(6)&quot;&gt;F♯&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-7&quot; style=&quot;--index: 7&quot; onclick=&quot;playTritone(7)&quot;&gt;G&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-8&quot; style=&quot;--index: 8&quot; onclick=&quot;playTritone(8)&quot;&gt;G♯&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-9&quot; style=&quot;--index: 9&quot; onclick=&quot;playTritone(9)&quot;&gt;A&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-10&quot; style=&quot;--index: 10&quot; onclick=&quot;playTritone(10)&quot;&gt;A♯&lt;/button&gt;
+  &lt;button class=&quot;piano-key&quot; id=&quot;pitch-11&quot; style=&quot;--index: 11&quot; onclick=&quot;playTritone(11)&quot;&gt;B&lt;/button&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;references-and-notes&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/#references-and-notes&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; References and notes&lt;/h2&gt;
+&lt;p&gt;This effect was first discovered by psychologist Diana Deutsch - read more and see references on &lt;a href=&quot;https://en.wikipedia.org/wiki/Tritone_paradox&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;the Wikipedia entry for Tritone paradox&lt;/a&gt;. Thanks to Joseph Sardin for his &lt;a href=&quot;https://bigsoundbank.com/generator/shepard.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;shepard tone generator&lt;/a&gt; which produced these sounds. To make the tones a little less harsh and make the illusion as salient as possible, I tried to center the octaves on the human vocal range, 80hz to 1000hz.&lt;/p&gt;
+</content>
+    </entry>
     <entry>
       <title>Recipe: Bread Pudding with Butter Rum Sauce</title>
       <link href="https://joshua.seigler.net/recipes/bread-pudding/" />
