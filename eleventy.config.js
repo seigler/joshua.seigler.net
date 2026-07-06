@@ -80,8 +80,14 @@ export default async (config) => {
     return ` <a href="#fnref${id}" class="footnote-backref">\u21a9\uFE0E</a>`
   }
   config.setLibrary("md", mdLib)
+  config.setTemplateFormats(["md", "html", "njk"])
   config.addPassthroughCopy({
     assets: "/",
+  })
+
+  // pass through all template-relative files
+  config.addPassthroughCopy("**/*.mp3", {
+    mode: "html-relative",
   })
 
   // collection from music folder

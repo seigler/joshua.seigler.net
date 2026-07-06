@@ -723,6 +723,11 @@ a.button {
       0 0 0.5rem var(--c-accent),
       0 0 1rem var(--c-accent);
   }
+  &.inline {
+    color: var(--c-text);
+    background-color: var(--c-accent);
+    padding-block: 0;
+  }
 }
 .button.tag {
   margin: 0 0.2em 0.2em 0;
