@@ -90,9 +90,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(calc(var(--index) * 30deg)) translateY(-10rem) rotate(calc(var(--index) * -30deg));
-    &amp;.active {
-      background-color: var(--c-text) !important;
-    }
+  }
+  .piano-key.active {
+    background-color: var(--c-text) !important;
   }
 &lt;/style&gt;
 &lt;h2 id=&quot;tritone-paradox-piano&quot; tabindex=&quot;-1&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;https://joshua.seigler.net/posts/cool-musical-illusion-tritone-paradox/#tritone-paradox-piano&quot; aria-hidden=&quot;true&quot;&gt;&lt;/a&gt; Tritone paradox piano&lt;/h2&gt;

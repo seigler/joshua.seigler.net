@@ -113,11 +113,7 @@
         <lastmod>2025-07-11T18:34:35.850Z</lastmod>
       </url>
       <url>
-        <loc>/tags/philosophy/</loc>
-        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
-      </url>
-      <url>
-        <loc>/tags/learning/</loc>
+        <loc>/tags/communication/</loc>
         <lastmod>2025-07-11T18:34:35.850Z</lastmod>
       </url>
       <url>
@@ -125,23 +121,19 @@
         <lastmod>2025-07-11T18:34:35.850Z</lastmod>
       </url>
       <url>
+        <loc>/tags/learning/</loc>
+        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
+      </url>
+      <url>
+        <loc>/tags/philosophy/</loc>
+        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
+      </url>
+      <url>
         <loc>/tags/faith/</loc>
         <lastmod>2025-07-11T18:34:35.850Z</lastmod>
       </url>
       <url>
-        <loc>/tags/communication/</loc>
-        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
-      </url>
-      <url>
         <loc>/tags/technical/</loc>
-        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
-      </url>
-      <url>
-        <loc>/tags/zeitgeist/</loc>
-        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
-      </url>
-      <url>
-        <loc>/tags/ai/</loc>
         <lastmod>2025-07-11T18:34:35.850Z</lastmod>
       </url>
       <url>
@@ -150,6 +142,14 @@
       </url>
       <url>
         <loc>/tags/selfhosting/</loc>
+        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
+      </url>
+      <url>
+        <loc>/tags/zeitgeist/</loc>
+        <lastmod>2025-07-11T18:34:35.850Z</lastmod>
+      </url>
+      <url>
+        <loc>/tags/ai/</loc>
         <lastmod>2025-07-11T18:34:35.850Z</lastmod>
       </url>
       <url>
@@ -219,5 +219,9 @@
       <url>
         <loc>/recipes/bread-pudding/</loc>
         <lastmod>2026-07-06T00:00:00.000Z</lastmod>
+      </url>
+      <url>
+        <loc>/recipes/pear-upside-down-cake/</loc>
+        <lastmod>2026-07-08T00:00:00.000Z</lastmod>
       </url>
 </urlset>
